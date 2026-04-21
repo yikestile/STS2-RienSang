@@ -213,7 +213,7 @@
   "RIENSANG-UNLOCK_II_I.description": "Deal {Damage:diff()} Damage 3 times. Gain 1 [gold]Energy[/gold] and [gold]Draw[/gold] {DrawAmount:diff()} cards.",
 
   "RIENSANG-GODS_BLESSING.title": "God's Blessing",
-  "RIENSANG-GODS_BLESSING.description": "Can only be played at 0 [gold]Karma[/gold]\nWhile having 20+ [gold]Caduceus[/gold] cards in the deck.\nSet [gold]Procuration Hermes[/gold] to 9.",
+  "RIENSANG-GODS_BLESSING.description": "Can only be played at less than 15 [gold]Karma[/gold]\nWhile having 15+ [gold]Caduceus[/gold] cards in the deck.\nSet [gold]Procuration Hermes[/gold] to 9.",
   
   "RIENSANG-SPORK.title": "Spork",
   "RIENSANG-SPORK.description": "If this card is in the hand, it must be played first. Take 5 damage.",

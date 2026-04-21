@@ -1,0 +1,21 @@
+﻿{
+  "RIENSANG-PRESCRIPT_DEVICE.title": "指令端末",
+  "RIENSANG-PRESCRIPT_DEVICE.flavor": "予測不能な気まぐれによって",
+  "RIENSANG-PRESCRIPT_DEVICE.description": "[gold]指令の標的[/gold]と[gold]傷を隠した仮面[/gold]を得ます。\n毎ターン：ランダムな敵1体に[gold]指令の対象[/gold]を付与します。",
+
+  "RIENSANG-ORACLES_PRESCRIPT.title": "神託の指令",
+  "RIENSANG-ORACLES_PRESCRIPT.description": "[gold]指令の標的[/gold]と[gold]傷を隠した仮面[/gold]を得ます。\n毎ターン：ランダムな敵1体に[gold]指令の対象[/gold]を付与します。\n毎ターンの[gold]標識[/gold]付与枚数が[blue]3[/blue]枚に増加し、[gold]業報の代価[/gold]のペナルティが減少します。\n[gold]指令の対象[/gold]が受けるダメージが10%増加します。",
+  "RIENSANG-ORACLES_PRESCRIPT.flavor": "主の御心のままに",
+
+  "RIENSANG-SOMEONES_DEVICE.title": "誰かの端末",
+  "RIENSANG-SOMEONES_DEVICE.flavor": "誰かのもののようだ……",
+  "RIENSANG-SOMEONES_DEVICE.description": "[gold]指令の対象[/gold]状態の敵を攻撃すると、次ターンにその敵へ[gold]沈潜回数[/gold] [blue]2[/blue]を付与します。",
+
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.title": "指令の摂理",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.flavor": "",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.description": "毎ターン開始時、[gold]呼吸威力[/gold] [blue]3[/blue]または[gold]呼吸回数[/gold] [blue]2[/blue]を得ます。[blue]4[/blue]ターン目以降、呼吸の[gold]クリティカルダメージ[/gold]が15%増加します。",
+
+  "RIENSANG-OMNITOOL.title": "多目的ツール",
+  "RIENSANG-OMNITOOL.flavor": "",
+  "RIENSANG-OMNITOOL.description": "同じ攻撃タイプ（[gold]斬撃/貫通/打撃[/gold]）で敵を[blue]5[/blue]回攻撃した時、毎ターン開始時にその攻撃タイプの[gold]脆弱[/gold]を付与します。（最大3スタック）"
+}

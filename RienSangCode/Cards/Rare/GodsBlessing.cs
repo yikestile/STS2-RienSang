@@ -35,21 +35,23 @@ public class GodsBlessing : RienSangCard
         HoverTipFactory.FromPower<KarmicConsequence>()
     ];
 
-    protected override bool IsPlayable
+    public bool MeetConditions
     {
         get
         {
             if (Owner == null || Owner.Creature == null) return false;
 
             int uniqueCaduceusCount = CountUniqueCaduceusCards(Owner);
-            if (uniqueCaduceusCount < 20) return false;
+            if (uniqueCaduceusCount < 15) return false;
 
             var karmicPower = Owner.Creature.GetPower<KarmicConsequence>();
-            if (karmicPower != null && karmicPower.Amount > 0) return false;
+            if (karmicPower != null && karmicPower.Amount >= 15) return false;
 
             return true;
         }
     }
+
+    protected override bool IsPlayable => MeetConditions;
 
     protected override bool ShouldGlowGoldInternal => IsPlayable;
 

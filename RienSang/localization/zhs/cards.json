@@ -1,0 +1,226 @@
+﻿{
+  "RIENSANG-FURIOSO_REPLICA.title": "Furioso [复刻]",
+  "RIENSANG-FURIOSO_REPLICA.description": "理智值(SP)为0+时：消耗 [blue]10[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 [赫尔墨斯][/gold]。",
+
+  "RIENSANG-FURIOSO_CRESCENDO.title": "Furioso [渐强]",
+  "RIENSANG-FURIOSO_CRESCENDO.description": "理智值(SP)为0+时：消耗 [blue]20[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 [赫尔墨斯][/gold]。",
+
+  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.title": "Furioso [流泪渐强]",
+  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.description": "理智值(SP)为0+时：消耗 [blue]30[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 [赫尔墨斯][/gold]。",
+
+  "RIENSANG-GLOOM_IN_RUINS.title": "废墟中的沉沦",
+  "RIENSANG-GLOOM_IN_RUINS.description": "[gold]沉沦[/gold]现在会造成伤害。被击中时：每 5 层[gold]沉沦强度[/gold]受到 {SinkingDamage:diff()} 点伤害。",
+
+  "RIENSANG-BY_GODS_WILL.title": "谨遵主命",
+  "RIENSANG-BY_GODS_WILL.description": "获得 {LCEvadePower:diff()} 层[gold]回避[/gold]。若处于[gold]解禁 II[/gold]以下，将[gold]指令的恩赐[/gold]设为 6。每以此法获得 1 层[gold]恩赐[/gold]，获得 {KarmaGain:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-BY_UNPREDICTABLE_WHIM.title": "随着变幻莫测的兴致",
+  "RIENSANG-BY_UNPREDICTABLE_WHIM.description": "若处于[gold]解禁 II[/gold]以下，将[gold]指令的恩赐[/gold]设为 6。每以此法获得 1 层[gold]恩赐[/gold]，获得 5 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-FOLLOWING_THE_PRESCRIPT.title": "追随指令",
+  "RIENSANG-FOLLOWING_THE_PRESCRIPT.description": "造成 {Damage:diff()} 点伤害。",
+
+  "RIENSANG-STRIKE_RIEN_SANG.title": "打击",
+  "RIENSANG-STRIKE_RIEN_SANG.description": "造成 {Damage:diff()} 点伤害。",
+
+  "RIENSANG-DEFEND_RIEN_SANG.title": "防御",
+  "RIENSANG-DEFEND_RIEN_SANG.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。",
+
+  "RIENSANG-CROWS_EYE_VIEW.title": "乌鸦之眼",
+  "RIENSANG-CROWS_EYE_VIEW.description": "造成 {Damage:diff()} 点伤害。施加 {WeakPower:diff()} 层[gold]虚弱[/gold]与 {StrengthPower:diff()} 点[gold]力量下降[/gold]。",
+
+  "RIENSANG-BYGONE_DAYS.title": "过往",
+  "RIENSANG-BYGONE_DAYS.description": "对所有敌人施加 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]与 {LCSinkingPower:diff()} 层[gold]次数[/gold]。",
+
+  "RIENSANG-FOURTH_MATCH_FLAME.title": "第四面火柴",
+  "RIENSANG-FOURTH_MATCH_FLAME.description": "对所有敌人造成 {Damage:diff()} 点伤害。施加 {BurnPotency:diff()} 层[gold]烧伤强度[/gold]与 {LCBurnPower:diff()} 层[gold]次数[/gold]。",
+
+  "RIENSANG-WISHING_CAIRN.title": "许愿石堆",
+  "RIENSANG-WISHING_CAIRN.description": "造成 {Damage:diff()} 点伤害。施加 {LCParalyzePower:diff()} 层[gold]麻痹[/gold]。",
+
+  "RIENSANG-DIMENSION_SHREDDER.title": "维度切断器",
+  "RIENSANG-DIMENSION_SHREDDER.description": "对随机敌人造成 {Damage:diff()} 点伤害。有概率额外造成 +{BonusDamage:diff()} 点伤害。\n概率 = 50 + 使用后的[gold]理智值(SP)[/gold]。",
+
+  "RIENSANG-FELL_BULLET.title": "致死弹丸",
+  "RIENSANG-FELL_BULLET.description": "对一名友军造成 {AllyDamage:diff()} 或 {AllyHighDamage:diff()} 点伤害。对所有敌人造成 {EnemyDamage:diff()} 或 {EnemyHighDamage:diff()} 点伤害。每击杀一个目标获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]。施加 {BleedPotency:diff()} 层[gold]流血强度[/gold]。",
+
+  "RIENSANG-SUNSHOWER.title": "狐雨",
+  "RIENSANG-SUNSHOWER.description": "对所有敌人造成 {Damage:diff()} 点伤害。有概率额外造成 +{BonusDamage:diff()} 点伤害并回复 15 点[gold]SP[/gold]。在本回合与下回合为所有友军提供 {LCProtectionPower:diff()} 层[gold]守护[/gold]。",
+
+  "RIENSANG-GREAT_TRICHILIOCosm.title": "三千大世界",
+  "RIENSANG-GREAT_TRICHILIOCosm.description": "获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。对所有敌人造成 {Damage:diff()} 点伤害，重复 4 次。若目标拥有 10 层以上的[gold]沉沦[/gold]或[gold]烧伤[/gold]，额外造成 +1 点伤害。施加[gold]破碎世界[/gold]。施加 {LCSinkingPower:diff()} 层[gold]沉沦次数[/gold]。施加 {BurnPotency:diff()} 层[gold]烧伤强度[/gold]与 {LCBurnPower:diff()} 层[gold]次数[/gold]。触发[gold]暴击[/gold]时，结算一次目标身上的[gold]烧伤[/gold]伤害并使其次数减少 1。",
+
+  "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.title": "指令指向之处",
+  "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.description": "造成 {Damage:diff()} 点伤害。下回合施加 {FragileAmount:diff()} 层[gold]脆弱[/gold]。",
+
+  "RIENSANG-WILL_OF_THE_PRESCRIPT.title": "指令之志",
+  "RIENSANG-WILL_OF_THE_PRESCRIPT.description": "获得 {LCEvadePower:diff()} 层[gold]回避[/gold]。成功[gold]回避[/gold]时，[gold]抽[/gold] 3 张牌。处于[gold]解禁 III[/gold]时，获得 {Energy:diff()} 点[gold]能量[/gold]。",
+
+  "RIENSANG-WILL_OF_THE_CITY.title": "都市之志",
+  "RIENSANG-WILL_OF_THE_CITY.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。获得 {Energy:diff()} 点 {Energy:energyIcons()} 能量并[gold]抽[/gold] 1 张牌。",
+
+  "RIENSANG-FAITH.title": "信仰",
+  "RIENSANG-FAITH.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。回复 {Energy:diff()} 点[gold]能量[/gold]。",
+
+  "RIENSANG-BLIND_FAITH.title": "盲信",
+  "RIENSANG-BLIND_FAITH.description": "战斗开始时：将 {CopyAmount:diff()} 张该牌的复制品加入抽牌堆。造成 {Damage:diff()} 点伤害。将抽牌堆中所有的[gold]盲信[/gold]加入手牌。",
+
+  "RIENSANG-BINDING_CHAIN.title": "束缚之链",
+  "RIENSANG-BINDING_CHAIN.description": "获得 {LCEvadePower:diff()} 层[gold]回避[/gold]。目标在本回合内失去 {StrLoss:diff()} 点[gold]力量[/gold]。处于[gold]解禁 III[/gold]时，目标额外失去 2 点[gold]力量[/gold]。",
+
+  "RIENSANG-MULTISLASH.title": "多重斩击",
+  "RIENSANG-MULTISLASH.description": "造成 {Damage:diff()} 点伤害 2 次。[gold]抽[/gold] {DrawAmount:diff()} 张牌。处于[gold]解禁 III[/gold]时，回复 {Energy:diff()} 点[gold]能量[/gold]。",
+
+  "RIENSANG-SENSE_QUARRY.title": "锁定猎物",
+  "RIENSANG-SENSE_QUARRY.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。处于[gold]解禁 III[/gold]时额外获得 {BonusBlock:diff()} 点[gold]格挡[/gold]与 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]。",
+
+  "RIENSANG-THE_INDEXS_BLADE.title": "食指之刃",
+  "RIENSANG-THE_INDEXS_BLADE.description": "对所有敌人造成 {Damage:diff()} 点伤害。",
+
+  "RIENSANG-AS_THE_PRESCRIPT_ORDERED.title": "正如指令下达的那样",
+  "RIENSANG-AS_THE_PRESCRIPT_ORDERED.description": "从你的抽牌堆中随机将一张攻击牌加入手牌，该牌在本回合内耗能为 0。",
+
+  "RIENSANG-UNDERTAKE_PRESCRIPTS.title": "承接指令",
+  "RIENSANG-UNDERTAKE_PRESCRIPTS.description": "随机使用抽牌堆中的 {Repeat:diff()} 张牌。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-SOMBER_PROCURATION.title": "忧郁的代行",
+  "RIENSANG-SOMBER_PROCURATION.description": "造成 {Damage:diff()} 点伤害并获得 {Block:diff()} 点[gold]格挡[/gold]。处于[gold]解禁 III[/gold]时，格挡量与伤害量额外增加 {UnlockBonus:diff()} 点。",
+
+  "RIENSANG-DELIVER_PRESCRIPTS.title": "传达指令",
+  "RIENSANG-DELIVER_PRESCRIPTS.description": "随机使用抽牌堆中的 1 张牌。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-TRADEOFF.title": "权衡",
+  "RIENSANG-TRADEOFF.description": "[gold]升级[/gold]手牌中的任意卡牌。每以此法升级一张卡牌，获得 {KarmaGain:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-POISED_BREATHING.title": "呼吸法调节",
+  "RIENSANG-POISED_BREATHING.description": "获得 {LCEvadePower:diff()} 层[gold]回避[/gold]。成功[gold]回避[/gold]时，获得 {PoiseAmount:diff()} 层[gold]呼吸法强度[/gold]与[gold]次数[/gold]。",
+
+  "RIENSANG-SLAM_DOWN_WITH_WEIGHT_TOPPLE_THE_BODY.title": "沉重落下，身躯倾颓",
+  "RIENSANG-SLAM_DOWN_WITH_WEIGHT_TOPPLE_THE_BODY.description": "[gold]打击威力增幅[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]。造成 {Damage:diff()} 点伤害。",
+
+  "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.title": "垂直，刺穿心脏",
+  "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.description": "[gold]穿刺威力增幅[/gold]。获得 {LCPoisePower:diff()} 层[gold]呼吸法次数[/gold]。造成 {Damage:diff()} 点伤害。",
+
+  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.title": "横置，斩断气息",
+  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]斩击威力增幅[/gold]。获得 {LCPoisePower:diff()} 层[gold]呼吸法次数[/gold]。造成 {Damage:diff()} 点伤害。",
+
+  "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.title": "挥击，使其坠地",
+  "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.description": "[gold]打击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。施加 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]。",
+
+  "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.title": "刺击，使其共鸣",
+  "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.description": "[gold]穿刺威力增幅[/gold]。造成 {Damage:diff()} 点伤害。施加 {LCSinkingPower:diff()} 层[gold]沉沦次数[/gold]。",
+
+  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.title": "斜切，使其剥落",
+  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。施加 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]。",
+
+  "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.title": "粉碎，使其寂灭",
+  "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.description": "[gold]打击威力增幅[/gold]。造成 {Damage:diff()} 点伤害 2 次。下回合获得 {StrNextTurn:diff()} 点[gold]力量[/gold]。",
+
+  "RIENSANG-STAB_THE_HEART_OF_SILENCE_PENETRATE_THE_MEMORY.title": "穿透，使其铭刻",
+  "RIENSANG-STAB_THE_HEART_OF_SILENCE_PENETRATE_THE_MEMORY.description": "[gold]穿刺威力增幅[/gold]。造成 {Damage:diff()} 点伤害 2 次。下回合施加 {WeakNextTurn:diff()} 层[gold]虚弱[/gold]。",
+
+  "RIENSANG-WITH_TEMPERED_SECRET_SEVER_THE_FORM.title": "洗练，使其分离",
+  "RIENSANG-WITH_TEMPERED_SECRET_SEVER_THE_FORM.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害 2 次。施加 {Vulnerable:diff()} 层[gold]易伤[/gold]。",
+
+  "RIENSANG-ENWRAP330_TIMES.title": "缭绕三百三十遭",
+  "RIENSANG-ENWRAP330_TIMES.description": "[gold]打击威力增幅[/gold]。造成 {Damage:diff()} 点伤害 2 次。",
+
+  "RIENSANG-IN_LONG_SWATHS_OF_FROZEN_BLOOD.title": "在冻结的血迹中",
+  "RIENSANG-IN_LONG_SWATHS_OF_FROZEN_BLOOD.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。施加 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]与 {LCSinkingPower:diff()} 层[gold]次数[/gold]。",
+
+  "RIENSANG-REVEL_WITH_SOUNDLESS_APPLAUSE.title": "在无声的欢呼中",
+  "RIENSANG-REVEL_WITH_SOUNDLESS_APPLAUSE.description": "[gold]穿刺威力增幅[/gold]。造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。",
+
+  "RIENSANG-IMPALE_IN_VOICELESS_SORROW.title": "在寂寥的哀伤中",
+  "RIENSANG-IMPALE_IN_VOICELESS_SORROW.description": "获得 {LCEvadePower:diff()} 层[gold]回避[/gold]。成功[gold]回避[/gold]时，对所有敌人施加 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]。",
+
+  "RIENSANG-RAISE_AND_LAUGH_THE_BLADE.title": "举刃嘲弄",
+  "RIENSANG-RAISE_AND_LAUGH_THE_BLADE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。施加 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]。",
+
+  "RIENSANG-CRY_THE_WATERFALL.title": "泣如落叶之香的瀑布",
+  "RIENSANG-CRY_THE_WATERFALL.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。对所有敌人施加 {LCSinkingPower:diff()} 层[gold]沉沦次数[/gold]。",
+
+  "RIENSANG-EXECUTE.title": "处决",
+  "RIENSANG-EXECUTE.description": "造成 {Damage:diff()} 点伤害 2 次。若击杀了敌人，获得 1 点[gold]力量[/gold]。若上一张使用的牌不是攻击牌，额外造成 {BonusDamage:diff()} 点伤害。",
+
+  "RIENSANG-ELIMINATE.title": "扫除",
+  "RIENSANG-ELIMINATE.description": "造成 {Damage:diff()} 点伤害 2 次。若击杀了敌人，获得 1 点[gold]力量[/gold]。若目标生命值低于或等于 50%，额外造成 {BonusDamage:diff()} 点伤害。",
+
+  "RIENSANG-PROCURATION_ENGRAVE.title": "代行：铭刻",
+  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。处于[gold]解禁 III[/gold]时，额外造成 15% 的伤害。",
+
+  "RIENSANG-DEFENSIVE_STANCE.title": "防御架势",
+  "RIENSANG-DEFENSIVE_STANCE.description": "本回合内你使用的攻击牌不再造成伤害，改为获得[gold]格挡[/gold]。",
+
+  "RIENSANG-EQUIVALENT_EXCHANGE.title": "等价交换",
+  "RIENSANG-EQUIVALENT_EXCHANGE.description": "本回合内受到的伤害将转化为[gold]因果报应[/gold]。",
+
+  "RIENSANG-RECITE_PRESCRIPT.title": "背诵指令",
+  "RIENSANG-RECITE_PRESCRIPT.description": "随机使用并[gold]消耗[/gold]手牌中的 {Repeat:diff()} 张牌。减少 5 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-THE_INDEX_NURSEFATHER.title": "食指父辈",
+  "RIENSANG-THE_INDEX_NURSEFATHER.description": "每回合开始时对随机敌人施加 1 层[gold]虚弱[/gold]。处于[gold]解禁 III[/gold]时，每回合额外[gold]抽[/gold] 1 张牌。",
+
+  "RIENSANG-SANGUINE_POINTILLISM.title": "血色点描 [复刻]",
+  "RIENSANG-SANGUINE_POINTILLISM.description": "造成 {Damage:diff()} 点伤害。有 {Chance:diff()}% 的概率额外触发一次攻击。目标每有一种负面效果，概率增加 +{BonusChance:diff()}%。最多额外触发 2 次。",
+
+  "RIENSANG-RIME_SHANK.title": "冰结之爪",
+  "RIENSANG-RIME_SHANK.description": "对所有敌人施加 [blue]{LCSinkingPower:diff()}*X[/blue] 层[gold]沉沦次数[/gold]。",
+
+  "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "正如指令要求的那样",
+  "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.description": "[gold]丢弃[/gold]你的手牌，并[gold]抽取[/gold]等量的牌。随机使用 3 张牌。",
+
+  "RIENSANG-TO_DECIDE_MY_FATE.title": "主宰天命",
+  "RIENSANG-TO_DECIDE_MY_FATE.description": "[gold]消耗[/gold] [blue]X[/blue] 张随机卡牌，[gold]抽取[/gold] [blue]X[/blue] 张牌，随后随机使用 [blue]X[/blue]+{ExtraPlays:diff()} 张牌。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-THE_WILL_OF_HERMES.title": "赫尔墨斯之志",
+  "RIENSANG-THE_WILL_OF_HERMES.description": "{IfUpgraded:show:获得 {Energy:energyIcons()}\n} [gold]赫尔墨斯[/gold]将在本回合代你行动。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-OBEDIENCE.title": "服从",
+  "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:下回合获得 {Energy:energyIcons()}\n} [gold]赫尔墨斯[/gold]将在你的下个回合代你行动。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-SINKING_DELUGE.title": "沉沦爆发",
+  "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:施加 3 层[gold]沉沦强度[/gold]\n} 造成等同于 [gold](沉沦强度 * 次数)/2[/gold] 的伤害。移除所有[gold]沉沦[/gold]。",
+
+  "RIENSANG-THE_ORACLES_PROXY.title": "神谕代行者",
+  "RIENSANG-THE_ORACLES_PROXY.description": "[gold]赫尔墨斯[/gold]将在接下来的 [blue]X[/blue] 个回合代你行动。在此期间无法获得[gold]因果报应[/gold]。[gold]赫尔墨斯[/gold]每行动一个轮次，[gold]治疗[/gold] [blue]{Heal:diff()}+X[/blue] 点生命值。",
+
+  "RIENSANG-RECONSTRUCT.title": "重构",
+  "RIENSANG-RECONSTRUCT.description": "[gold]转化[/gold]一张手牌。在手牌中生成一张该牌的复制品。获得 {KarmaGain:diff()} 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-PRECOGNITION_REPLICA.title": "预知 [复刻]",
+  "RIENSANG-PRECOGNITION_REPLICA.description": "获得 [blue]{LCEvadePower:diff()}*X[/blue] 层[gold]回避[/gold]。成功[gold]回避[/gold]时，获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]，下回合获得 +1 点[gold]能量[/gold]。",
+
+  "RIENSANG-PROCURATION_ANNIHILATE.title": "代行：湮灭 [复刻]",
+  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。处于[gold]解禁 III[/gold]时，额外造成 15% 的伤害。",
+
+  "RIENSANG-GRACE_OF_GOD.title": "神之恩赐",
+  "RIENSANG-GRACE_OF_GOD.description": "若该单位在本场战斗中将受到致死伤害，则在本回合内免疫所有伤害。[gold]触发后消失[/gold]。",
+
+  "RIENSANG-STAR_OF_THE_CITY.title": "都市之星",
+  "RIENSANG-STAR_OF_THE_CITY.description": "回合开始时，对所有敌人施加 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]与 {SinkingCount:diff()} 层[gold]次数[/gold]。",
+
+  "RIENSANG-ORACLE_DEVICE_CADUCEUS.title": "神谕终端 [使者之杖]",
+  "RIENSANG-ORACLE_DEVICE_CADUCEUS.description": "所有[gold]使者之杖[/gold]卡牌造成的伤害增加 +{DamageBonus:diff()} 点。",
+
+  "RIENSANG-UNLOCK_I.title": "解禁-I",
+  "RIENSANG-UNLOCK_I.description": "造成 {Damage:diff()} 点伤害。将[gold]解禁-II[/gold]置于抽牌堆顶部。",
+
+  "RIENSANG-UNLOCK_I_I.title": "解禁-II",
+  "RIENSANG-UNLOCK_I_I.description": "造成 {Damage:diff()} 点伤害 2 次。将[gold]解禁-III[/gold]置于抽牌堆顶部。",
+
+  "RIENSANG-UNLOCK_II_I.title": "解禁-III",
+  "RIENSANG-UNLOCK_II_I.description": "造成 {Damage:diff()} 点伤害 3 次。获得 1 点[gold]能量[/gold]并[gold]抽[/gold] {DrawAmount:diff()} 张牌。",
+
+  "RIENSANG-GODS_BLESSING.title": "神的祝愿",
+  "RIENSANG-GODS_BLESSING.description": "仅能在[gold]因果报应[/gold]为 15 或以下且牌组中拥有 15 张以上[gold]使者之杖[/gold]时使用。\n将[gold]代行 [赫尔墨斯][/gold]层数设为 9。",
+
+  "RIENSANG-SPORK.title": "勺叉",
+  "RIENSANG-SPORK.description": "若此牌在手中，必须优先打出。受到 5 点伤害。",
+
+  "RIENSANG-FPOON.title": "鱼叉勺",
+  "RIENSANG-FPOON.description": "当你抽到此牌时，获得 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]与 {LCSinkingPower:diff()} 层[gold]次数[/gold]。[gold]虚无[/gold]。",
+
+  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.title": "指令违背风险",
+  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.description": "受到基于[gold]因果报应[/gold]层数的伤害。\n伤害量 = [gold]因果报应 / 5[/gold]。\n若未打出此牌，获得 10 层[gold]因果报应[/gold]。\n在抽牌堆顶部加入一张此牌的复制品。"
+}

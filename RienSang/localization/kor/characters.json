@@ -1,0 +1,16 @@
+﻿{
+  "RIENSANG-RIEN_SANG.title": "검지 아비 이상",
+  "RIENSANG-RIEN_SANG.titleObject": "리엔상",
+  "RIENSANG-RIEN_SANG.description": "그때는 그때고, 지금은 지금이지요.",
+  "RIENSANG-RIEN_SANG.pronounObject": "그를",
+  "RIENSANG-RIEN_SANG.possessiveAdjective": "그의",
+  "RIENSANG-RIEN_SANG.pronounPossessive": "그의 것",
+  "RIENSANG-RIEN_SANG.pronounSubject": "그는",
+  "RIENSANG-RIEN_SANG.cardsModifierTitle": "__ 카드",
+  "RIENSANG-RIEN_SANG.cardsModifierDescription": "이제 보상과 상점에서 __ 카드가 등장합니다.",
+  "RIENSANG-RIEN_SANG.eventDeathPrevention": "[blue]*삐이익*[/blue] 그저 일어날 일이었을 뿐입니다. 그뿐인 일이지요.",
+  "RIENSANG-RIEN_SANG.goldMonologue": "[blue]*삐이익*[/blue] 특별히 기록할 가치가 있는 일은 없었습니다.",
+  "RIENSANG-RIEN_SANG.aromaPrinciple": "설정",
+  "RIENSANG-RIEN_SANG.banter.dead.endTurnPing": "... 참으로... 외롭군요.",
+  "RIENSANG-RIEN_SANG.banter.alive.endTurnPing": "여전히... 박제되어 있는 것만 같군요."
+}

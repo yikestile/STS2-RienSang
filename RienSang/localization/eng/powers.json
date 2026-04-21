@@ -61,7 +61,7 @@
 
   "RIENSANG-PAINFUL_SCAR.title": "Painful Scar",
   "RIENSANG-PAINFUL_SCAR.description": "Panic Status. Gain [gold]Burn[/gold] and [gold]Bleed[/gold] each turn and take more damage. Removed at [blue]0[/blue] [gold]SP[/gold].",
-  "RIENSANG-PAINFUL_SCAR.smartDescription": "Panic Status. Each turn, Gain [blue]3[/blue] [gold]Burn Potency[/gold], [blue]2[/blue] [gold]Burn Count[/gold]. Gain [blue]3[/blue] [gold]Burn Potency[/gold] and [blue]2[/blue] [gold]Burn Count[/gold]. Take [blue]10%[/blue] more damage. Removed at 0 [gold]SP[/gold].",
+  "RIENSANG-PAINFUL_SCAR.smartDescription": "Panic Status. Each turn, Gain [blue]3[/blue] [gold]Burn Potency[/gold], [blue]2[/blue] [gold]Burn Count[/gold]. Gain [blue]3[/blue] [gold]Bleed Potency[/gold] and [blue]2[/blue] [gold]Bleed Count[/gold]. Take [blue]10%[/blue] more damage. Removed at 0 [gold]SP[/gold].",
 
   "RIENSANG-THE_ORACLES_PROXY_POWER.title": "The Oracle's Proxy",
   "RIENSANG-THE_ORACLES_PROXY_POWER.description": "[gold]Hermes[/gold] plays for you and heals your HP each turn.",

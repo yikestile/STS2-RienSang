@@ -1,0 +1,16 @@
+﻿{
+  "RIENSANG-RIEN_SANG.title": "人差し指の親方 イサン",
+  "RIENSANG-RIEN_SANG.titleObject": "リエンサン",
+  "RIENSANG-RIEN_SANG.description": "あの時はあの時、今は今。",
+  "RIENSANG-RIEN_SANG.pronounObject": "彼",
+  "RIENSANG-RIEN_SANG.possessiveAdjective": "彼の",
+  "RIENSANG-RIEN_SANG.pronounPossessive": "彼のもの",
+  "RIENSANG-RIEN_SANG.pronounSubject": "彼は",
+  "RIENSANG-RIEN_SANG.cardsModifierTitle": "報酬のカード",
+  "RIENSANG-RIEN_SANG.cardsModifierDescription": "報酬やショップに特定のカードが出現するようになります。",
+  "RIENSANG-RIEN_SANG.eventDeathPrevention": "[blue]*ピッ*[/blue] 単にそうなっただけのことだ。それ以上の意味はない。",
+  "RIENSANG-RIEN_SANG.goldMonologue": "[blue]*ピッ*[/blue] 特に書き記すべきことは何もないな。",
+  "RIENSANG-RIEN_SANG.aromaPrinciple": "設定",
+  "RIENSANG-RIEN_SANG.banter.dead.endTurnPing": "……なんて……孤独なのだ。",
+  "RIENSANG-RIEN_SANG.banter.alive.endTurnPing": "どうやら……私は未だ「凍りついた」ままのようだ。"
+}

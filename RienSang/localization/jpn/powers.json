@@ -1,0 +1,81 @@
+﻿{
+  "RIENSANG-PROCURATION_HERMES.title": "代行 [ヘルメス]",
+  "RIENSANG-PROCURATION_HERMES.description": "[blue]9[/blue]スタック時、[gold]特殊なカード[/gold]と[gold]指令の加護[/gold]を得ます。最大スタック数は[gold]解禁[/gold]状態によって制限されます。",
+  "RIENSANG-PROCURATION_HERMES.smartDescription": "[blue]9[/blue]スタック時、[gold]特殊なカード[/gold]と[gold]指令の加護[/gold] [blue]3[/blue]を得ます。\n[gold]解禁 II[/gold]未満の場合、最大スタック数は8に制限されます。\n消費されたターン内では再度獲得できません。",
+
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.title": "指令の印",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "毎ターン、ランダムなカードに印を付与します。印が付与されたカードを使用すると[gold]指令の加護[/gold]と[gold]代行 [ヘルメス][/gold]を得ます。使用されなかった印は[gold]カルマ[/gold]を招きます。",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "毎ターン、ランダムなカード[blue]2[/blue]枚に印を付与します。印カード使用時、[gold]指令の加護[/gold] [blue]1[/blue]と[gold]代行 [ヘルメス][/gold]を得ます。\nターン終了時、使用されなかった印カード1枚につき[gold]カルマ[/gold]を[blue]5[/blue]得ます。",
+
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.title": "指令の加護",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.description": "スタックを蓄積して[gold]筋力[/gold]を得、[gold]解禁[/gold]状態を進めます。",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "最大9スタック。[blue]9[/blue]スタック時、[gold]筋力[/gold] [blue]1[/blue]を得ます。[blue]3/6/9[/blue]スタック到達時、それぞれ[gold]解禁 I/II/III[/gold]を付与します。",
+
+  "RIENSANG-UNLOCK.title": "解禁",
+  "RIENSANG-UNLOCK.description": "[gold]解禁 III[/gold]時、[gold]シン(心) - 運命[/gold]と[gold]敏捷[/gold]を得ます。\n戦闘終了時：状態に応じてHPと精神力(SP)を[gold]回復[/gold]します。",
+  "RIENSANG-UNLOCK.smartDescription": "[gold]解禁 III[/gold]時、[gold]シン(心) - 運命[/gold]と[gold]敏捷[/gold] [blue]1[/blue]を得ます。\n戦闘終了時：解禁 I/II/IIIの段階に応じて、HPを[blue]{HealAmount:diff()}[/blue]、精神力(SP)を[blue]{SPHealAmount:diff()}[/blue][gold]回復[/gold]します。",
+
+  "RIENSANG-THE_PRESCRIPTS_TARGET.title": "指令対象",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.description": "[gold]イサン[/gold]から受けるダメージが増加します。",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.smartDescription": "[gold]イサン[/gold]から受けるダメージが[blue]5%[/blue]増加します。",
+
+  "RIENSANG-SHIN_FATE.title": "シン(心) - 運命",
+  "RIENSANG-SHIN_FATE.description": "毎ターン[gold]エネルギー[/gold]を得ます。与えるダメージが増加し、[gold]呼吸[/gold]の獲得量が増えます。",
+  "RIENSANG-SHIN_FATE.smartDescription": "毎ターン[gold]エネルギー[/gold] [blue]1[/blue]を得ます。与えるダメージが[blue]5%[/blue]増加します。カードから得られる[gold]呼吸威力[/gold]と[gold]回数[/gold]が増加します。",
+
+  "RIENSANG-MANG.title": "望 (マン)",
+  "RIENSANG-MANG.description": "[gold]フュリオッソ[/gold]が追加ダメージを与え、[gold]一時的な筋力[/gold]を得ます。",
+  "RIENSANG-MANG.smartDescription": "[gold]フュリオッソ[/gold]のダメージが[blue]{DamageBonus}%[/blue]増加します。[blue]{TempStr}[/blue]の[gold]一時的な筋力[/gold]を得ます。(最大[blue]3[/blue])",
+
+  "RIENSANG-WOUNDCASING_MASK.title": "傷を隠した仮面",
+  "RIENSANG-WOUNDCASING_MASK.description": "ブロックされていないダメージを軽減します。[gold]フュリオッソ[/gold]を使用した場合、[gold]じりじりと焼ける傷[/gold]に変化します。",
+  "RIENSANG-WOUNDCASING_MASK.smartDescription": "ブロックされていないダメージを[blue]5%[/blue]軽減します。この戦闘で[gold]フュリオッソ[/gold]を使用していた場合、ターン終了時に[gold]じりじりと焼ける傷[/gold]に変化します。消失。",
+
+  "RIENSANG-SIZZLING_WOUND.title": "じりじりと焼ける傷",
+  "RIENSANG-SIZZLING_WOUND.description": "受けるダメージが減少し、与えるダメージが増加しますが、ターン終了時にダメージを受けます。",
+  "RIENSANG-SIZZLING_WOUND.smartDescription": "ブロックされていないダメージを[blue]10%[/blue]軽減し、与えるダメージを[blue]5%[/blue]増加させます。ターン終了時に[blue]2[/blue]ダメージを受けます。",
+
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.title": "指令耽溺",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.description": "[gold]フュリオッソ[/gold]に追加ダメージ、[gold]沈潜[/gold]、[gold]呼吸[/gold]の効果を付与します。",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.smartDescription": "[gold]フュリオッソ[/gold]に以下の効果を適用：沈潜威力 1付与、呼吸威力 1追加獲得、ダメージ 10%増加。ターン終了時に消失。",
+
+  "RIENSANG-KARMIC_CONSEQUENCE.title": "カルマ",
+  "RIENSANG-KARMIC_CONSEQUENCE.description": "スタックが増えるにつれて[gold]脆弱[/gold]と[gold]呪い[/gold]を得ます。100スタックで[red]死亡[/red]します。",
+  "RIENSANG-KARMIC_CONSEQUENCE.smartDescription": "[blue]20[/blue]スタックごとに[gold]脆弱[/gold] [blue]1[/blue]を得ます。\n[blue]40スタック時[/blue]：一時的な[gold]呪い[/gold]を得る。\n[blue]60スタック時[/blue]：[gold]毎ターンのドロー枚数が1枚減少[/gold]。\n[blue]80スタック時[/blue]：永続的な[gold]呪い[/gold]を得る。\n[blue]100スタック時[/blue]：[red]死亡する[/red]。",
+
+  "RIENSANG-STAR_OF_THE_CITY_POWER.title": "都市の星",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.description": "ターン開始時、全ての敵に[gold]沈潜威力[/gold]と[gold]回数[/gold]を付与します。",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.smartDescription": "ターン開始時、全ての敵に[blue]{SinkingPotency}[/blue]の[gold]沈潜威力[/gold]と[blue]{SinkingCount}[/blue]の[gold]回数[/gold]を付与します。",
+
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.title": "人差し指の親方",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.description": "ターン開始時に[gold]脱力[/gold]を付与します。[gold]解禁 III[/gold]時、追加でカードをドローします。",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.smartDescription": "毎ターン開始時、ランダムな敵に[gold]脱力[/gold] [blue]{Amount}[/blue]を付与します。[gold]解禁 III[/gold]時、毎ターンカードを[blue]1[/blue]枚追加で[gold]ドロー[/gold]します。",
+
+  "RIENSANG-GRACE_OF_GOD_POWER.title": "主の恩寵",
+  "RIENSANG-GRACE_OF_GOD_POWER.description": "1ターンの間、致命的なダメージを防ぎます。発動後に消失します。",
+  "RIENSANG-GRACE_OF_GOD_POWER.smartDescription": "この戦闘で致命的なダメージを受ける場合、そのターンの間ダメージを受けなくなります。消失。",
+
+  "RIENSANG-SHATTERED_WORLD.title": "破砕世界",
+  "RIENSANG-SHATTERED_WORLD.description": "[gold]火傷[/gold]と[gold]イサン[/gold]から受けるダメージが増加します。",
+  "RIENSANG-SHATTERED_WORLD.smartDescription": "[gold]火傷[/gold]から受けるダメージが[blue]1.2倍[/blue]になります。[gold]イサン[/gold]から受けるダメージが[blue]10%[/blue]増加します。",
+
+  "RIENSANG-PAINFUL_SCAR.title": "苦痛な傷跡",
+  "RIENSANG-PAINFUL_SCAR.description": "パニック状態。毎ターン[gold]火傷[/gold]と[gold]出血[/gold]を得て、受けるダメージが増加します。精神力(SP)が[blue]0[/blue]で解除されます。",
+  "RIENSANG-PAINFUL_SCAR.smartDescription": "パニック状態。毎ターン、[gold]火傷威力[/gold] [blue]3[/blue]、[gold]火傷回数[/gold] [blue]2[/blue]を獲得。[gold]出血威力[/gold] [blue]3[/blue]、[gold]出血回数[/gold] [blue]2[/blue]を獲得。受けるダメージが[blue]10%[/blue]増加。精神力(SP)が0になると解除されます。",
+
+  "RIENSANG-THE_ORACLES_PROXY_POWER.title": "神託の代行者",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.description": "[gold]ヘルメス[/gold]が代わりに戦闘を行い、毎ターンHPを回復します。",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.smartDescription": "[gold]ヘルメス[/gold]が代行します。残りターン：[blue]{Amount}[/blue]。毎ターンHPを[blue]{HealAmount:diff()}[/blue][gold]回復[/gold]します。",
+
+  "RIENSANG-ORACLE_DEVICE_POWER.title": "神託端末 [カドゥケウス]",
+  "RIENSANG-ORACLE_DEVICE_POWER.description": "全ての[gold]カドゥケウス[/gold]武器のダメージが増加します。",
+  "RIENSANG-ORACLE_DEVICE_POWER.smartDescription": "全ての[gold]カドゥケウス[/gold]武器のダメージが +[blue]{Amount}[/blue]増加します。",
+
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.title": "等価交換",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.description": "受けたダメージが代わりに[gold]カルマ[/gold]に変換されます。",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.smartDescription": "このターン受けるダメージが、代わりに[gold]カルマ[/gold]に変換されます。",
+
+  "RIENSANG-DEFENSIVE_STANCE_POWER.title": "防御構え",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.description": "攻撃カード使用時、ダメージを与える代わりに[gold]ブロック[/gold]を得ます。",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "このターンに使用した攻撃カードは、ダメージを与える代わりに[gold]ブロック[/gold]を得ます。"
+}

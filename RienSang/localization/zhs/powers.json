@@ -1,0 +1,81 @@
+﻿{
+  "RIENSANG-PROCURATION_HERMES.title": "代行 [赫尔墨斯]",
+  "RIENSANG-PROCURATION_HERMES.description": "达到 [blue]9[/blue] 层时，获得一张[gold]特殊卡牌[/gold]与[gold]指令的恩宠[/gold]。层数上限受[gold]解禁[/gold]状态限制。",
+  "RIENSANG-PROCURATION_HERMES.smartDescription": "达到 [blue]9[/blue] 层时，获得一张[gold]特殊卡牌[/gold]与 [blue]3[/blue] 层[gold]指令的恩宠[/gold]。\n在未达到[gold]解禁 II[/gold]前，层数上限限制为 8。 \n触发后的本回合内无法再次获得。",
+
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.title": "指令之印",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "每回合标记随机卡牌。使用标记卡牌可获得[gold]指令的恩宠[/gold]与[gold]代行 [赫尔墨斯][/gold]。未使用的标记卡牌会产生[gold]因果报应[/gold]。",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "每回合标记 [blue]2[/blue] 张随机卡牌。使用标记卡牌可获得 [blue]1[/blue] 层[gold]指令的恩宠[/gold]与[gold]代行 [赫尔墨斯][/gold]。\n每有一张未被使用的标记卡牌，获得 [blue]5[/blue] 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.title": "指令的恩宠",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.description": "积累层数以获得[gold]力量[/gold]并推进[gold]解禁[/gold]进度。",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "层数上限为 9。达到 [blue]9[/blue] 层时获得 [blue]1[/blue] 点[gold]力量[/gold]。在达到 [blue]3/6/9[/blue] 层时，分别获得[gold]解禁 I/II/III[/gold]。",
+
+  "RIENSANG-UNLOCK.title": "解禁",
+  "RIENSANG-UNLOCK.description": "达到[gold]解禁 III[/gold]时，获得[gold]心 (心) - 天命[/gold]与[gold]敏捷[/gold]。战斗结束时：根据阶段[gold]治疗[/gold]生命值与理智值(SP)。",
+  "RIENSANG-UNLOCK.smartDescription": "达到[gold]解禁 III[/gold]时，获得[gold]心 - 天命[/gold]与 [blue]1[/blue] 点[gold]敏捷[/gold]。\n战斗结束时：在解禁 I/II/III 阶段分别[gold]治疗[/gold] [blue]{HealAmount:diff()}[/blue] 点生命值与 [blue]{SPHealAmount:diff()}[/blue] 点理智值。",
+
+  "RIENSANG-THE_PRESCRIPTS_TARGET.title": "指令目标",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.description": "受到来自[gold]李箱[/gold]的伤害增加。",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.smartDescription": "受到来自[gold]李箱[/gold]的伤害增加 [blue]5%[/blue]。",
+
+  "RIENSANG-SHIN_FATE.title": "心 - [天命]",
+  "RIENSANG-SHIN_FATE.description": "每回合获得[gold]能量[/gold]。造成的伤害增加，且获得的[gold]呼吸法[/gold]层数增加。",
+  "RIENSANG-SHIN_FATE.smartDescription": "每回合获得 [blue]1[/blue] 点[gold]能量[/gold]。造成的伤害增加 [blue]5%[/blue]。从卡牌中获得的[gold]呼吸法强度[/gold]与[gold]次数[/gold]增加。",
+
+  "RIENSANG-MANG.title": "望",
+  "RIENSANG-MANG.description": "[gold]Furioso[/gold] 造成的伤害增加，且获得[gold]临时力量[/gold]。",
+  "RIENSANG-MANG.smartDescription": "[gold]Furioso[/gold] 造成的伤害增加 [blue]{DamageBonus}%[/blue]。获得 [blue]{TempStr}[/blue] 点[gold]临时力量[/gold]。（最高 [blue]3[/blue] 层）。",
+
+  "RIENSANG-WOUNDCASING_MASK.title": "缠绕伤口的假面",
+  "RIENSANG-WOUNDCASING_MASK.description": "受到的未被格挡伤害减少。若使用了 [gold]Furioso[/gold]，则转化为[gold]焦灼伤口[/gold]。",
+  "RIENSANG-WOUNDCASING_MASK.smartDescription": "受到的未被格挡伤害减少 [blue]5%[/blue]。若本场战斗中使用了 [gold]Furioso[/gold]，则在回合结束时转化为[gold]焦灼伤口[/gold]。会消失。",
+
+  "RIENSANG-SIZZLING_WOUND.title": "焦灼伤口",
+  "RIENSANG-SIZZLING_WOUND.description": "受到的未被格挡伤害减少，且造成的伤害增加。回合结束时受到伤害。",
+  "RIENSANG-SIZZLING_WOUND.smartDescription": "受到的未被格挡伤害减少 [blue]10%[/blue]，造成的伤害增加 [blue]5%[/blue]。回合结束时受到 [blue]2[/blue] 点伤害。",
+
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.title": "指令的沉溺",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.description": "强化 [gold]Furioso[/gold]，使其额外造成伤害、[gold]沉沦[/gold]与[gold]呼吸法[/gold]。",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.smartDescription": "使 Furioso 获得以下效果：施加 1 层沉沦强度并获得 1 层呼吸法强度。造成的伤害增加 10%。回合结束时消失。",
+
+  "RIENSANG-KARMIC_CONSEQUENCE.title": "因果报应",
+  "RIENSANG-KARMIC_CONSEQUENCE.description": "随着层数增加，获得[gold]脆弱[/gold]与[gold]诅咒[/gold]。达到 100 层时[red]死亡[/red]。",
+  "RIENSANG-KARMIC_CONSEQUENCE.smartDescription": "每 [blue]20[/blue] 层获得 [blue]1[/blue] 层[gold]脆弱[/gold]。\n[blue]达到 40 层时[/blue]：获得一张临时[gold]诅咒[/gold]卡。\n[blue]达到 60 层时[/blue]：[gold]每回合少抽 1 张牌[/gold]。\n[blue]达到 80 层时[/blue]：获得一张永久[gold]诅咒[/gold]卡。\n[blue]达到 100 层时[/blue]：[red]死亡[/red]。",
+
+  "RIENSANG-STAR_OF_THE_CITY_POWER.title": "都市之星",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.description": "回合开始时，对所有敌人施加[gold]沉沦强度[/gold]与[gold]次数[/gold]。",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.smartDescription": "回合开始时，对所有敌人施加 [blue]{SinkingPotency}[/blue] 层[gold]沉沦强度[/gold]与 [blue]{SinkingCount}[/blue] 层[gold]次数[/gold]。",
+
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.title": "食指父辈",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.description": "回合开始时施加[gold]虚弱[/gold]。处于[gold]解禁 III[/gold]状态时额外抽一张牌。",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.smartDescription": "每回合开始时，对随机敌人施加 [blue]{Amount}[/blue] 层[gold]虚弱[/gold]。在[gold]解禁 III[/gold]状态下，每回合额外[gold]抽[/gold] 1 张牌。",
+
+  "RIENSANG-GRACE_OF_GOD_POWER.title": "神之恩宠",
+  "RIENSANG-GRACE_OF_GOD_POWER.description": "在一回合内防止致死伤害。触发后消失。",
+  "RIENSANG-GRACE_OF_GOD_POWER.smartDescription": "若该单位在本场战斗中将受到致死伤害，则在本回合内免疫所有伤害。触发后消失。",
+
+  "RIENSANG-SHATTERED_WORLD.title": "破碎世界",
+  "RIENSANG-SHATTERED_WORLD.description": "受到来自[gold]烧伤[/gold]与[gold]李箱[/gold]的伤害增加。",
+  "RIENSANG-SHATTERED_WORLD.smartDescription": "受到的[gold]烧伤[/gold]伤害增加至 [blue]1.2[/blue] 倍。受到来自[gold]李箱[/gold]的伤害增加 [blue]10%[/blue]。",
+
+  "RIENSANG-PAINFUL_SCAR.title": "痛苦伤痕",
+  "RIENSANG-PAINFUL_SCAR.description": "恐慌状态。每回合获得[gold]烧伤[/gold]与[gold]流血[/gold]，且受到更多伤害。在理智值(SP)达到 [blue]0[/blue] 时移除。",
+  "RIENSANG-PAINFUL_SCAR.smartDescription": "恐慌状态。每回合获得 [blue]3[/blue] 层[gold]烧伤强度[/gold]与 [blue]2[/blue] 层[gold]次数[/gold]。获得 [blue]3[/blue] 层[gold]流血强度[/gold]与 [blue]2[/blue] 层[gold]次数[/gold]。受到的伤害增加 [blue]10%[/blue]。在理智值(SP)达到 0 时移除。",
+
+  "RIENSANG-THE_ORACLES_PROXY_POWER.title": "神谕代行者",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.description": "[gold]赫尔墨斯[/gold]将代你战斗，并在每回合治疗你的生命值。",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.smartDescription": "[gold]赫尔墨斯[/gold]将代你战斗。剩余回合数：[blue]{Amount}[/blue]。每回合治疗 [blue]{HealAmount:diff()}[/blue] 点[gold]生命值[/gold]。",
+
+  "RIENSANG-ORACLE_DEVICE_POWER.title": "神谕终端 [使者之杖]",
+  "RIENSANG-ORACLE_DEVICE_POWER.description": "所有[gold]使者之杖[/gold]武器造成的伤害增加。",
+  "RIENSANG-ORACLE_DEVICE_POWER.smartDescription": "所有[gold]使者之杖[/gold]武器造成的伤害增加 [blue]{Amount}[/blue] 点。",
+
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.title": "等价交换",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.description": "受到的伤害将转化为[gold]因果报应[/gold]。",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.smartDescription": "本回合内受到的伤害将转化为[gold]因果报应[/gold]。",
+
+  "RIENSANG-DEFENSIVE_STANCE_POWER.title": "防御架势",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.description": "攻击牌不再造成伤害，改为获得[gold]格挡[/gold]。",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "本回合内使用的攻击牌不再造成伤害，改为获得[gold]格挡[/gold]点数。"
+}

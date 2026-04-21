@@ -1,0 +1,81 @@
+﻿{
+  "RIENSANG-PROCURATION_HERMES.title": "대행 [헤르메스]",
+  "RIENSANG-PROCURATION_HERMES.description": "[blue]9[/blue] 중첩 시, [gold]특별한 카드[/gold]와 [gold]지령의 가호[/gold]를 얻습니다. 최대 중첩수는 [gold]해금[/gold] 단계에 따라 제한됩니다.",
+  "RIENSANG-PROCURATION_HERMES.smartDescription": "[blue]9[/blue] 중첩 시, [gold]특별한 카드[/gold]와 [gold]지령의 가호[/gold] [blue]3[/blue]을 얻습니다. \n[gold]해금 II[/gold] 미만일 경우, 최대 중첩수가 8로 제한됩니다. \n소모된 턴에는 다시 획득할 수 없습니다.",
+
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.title": "지령 표식",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "매 턴 무작위 카드에 표식을 부여합니다. 표식 카드는 사용 시 [gold]지령의 가호[/gold]와 [gold]대행 [헤르메스][/gold]를 부여합니다. 사용하지 않은 표식은 [gold]업보의 대가[/gold]를 불러옵니다.",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "매 턴 무작위 카드 [blue]2[/blue]장에 표식을 부여합니다. 표식 카드 사용 시 [gold]지령의 가호[/gold] [blue]1[/blue]과 [gold]대행 [헤르메스][/gold]를 얻습니다. \n턴 종료 시 사용하지 않은 표식 카드 한 장당 [gold]업보의 대가[/gold]를 [blue]5[/blue] 얻습니다.",
+
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.title": "지령의 가호",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.description": "중첩을 쌓아 [gold]힘[/gold]을 얻고 [gold]해금[/gold] 단계를 진행시킵니다.",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "최대 9 중첩. [blue]9[/blue] 중첩 시 [gold]힘[/gold] [blue]1[/blue]을 얻습니다. [blue]3/6/9[/blue] 중첩 도달 시, 각각 [gold]해금 I/II/III[/gold] 상태가 됩니다.",
+
+  "RIENSANG-UNLOCK.title": "해금",
+  "RIENSANG-UNLOCK.description": "[gold]해금 III[/gold] 달성 시, [gold]신(心) - 운명[/gold]과 [gold]민첩[/gold]을 얻습니다. \n전투 종료 시: 단계에 비례하여 체력과 정신력(SP)을 [gold]회복[/gold]합니다.",
+  "RIENSANG-UNLOCK.smartDescription": "[gold]해금 III[/gold] 달성 시, [gold]신(心) - 운명[/gold]과 [gold]민첩[/gold] [blue]1[/blue]을 얻습니다. \n전투 종료 시: 해금 I/II/III 단계에 따라 체력을 [blue]{HealAmount:diff()}[/blue], 정신력(SP)을 [blue]{SPHealAmount:diff()}[/blue]만큼 [gold]회복[/gold]합니다.",
+
+  "RIENSANG-THE_PRESCRIPTS_TARGET.title": "지령 대상",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.description": "[gold]이상[/gold]에게 받는 피해가 증가합니다.",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.smartDescription": "[gold]이상[/gold]에게 받는 피해량이 [blue]5%[/blue] 증가합니다.",
+
+  "RIENSANG-SHIN_FATE.title": "신(心) - [운명]",
+  "RIENSANG-SHIN_FATE.description": "매 턴 [gold]에너지[/gold]를 얻습니다. 가하는 피해량이 증가하고 [gold]호흡[/gold] 획득량이 늘어납니다.",
+  "RIENSANG-SHIN_FATE.smartDescription": "매 턴 [gold]에너지[/gold] [blue]1[/blue]을 얻습니다. 가하는 피해량이 [blue]5%[/blue] 증가합니다. 카드로 얻는 [gold]호흡 위력[/gold] 및 [gold]횟수[/gold]가 증가합니다.",
+
+  "RIENSANG-MANG.title": "망(望)",
+  "RIENSANG-MANG.description": "[gold]퓨리오소[/gold]가 추가 피해를 입히며 [gold]임시 힘[/gold]을 얻습니다.",
+  "RIENSANG-MANG.smartDescription": "[gold]퓨리오소[/gold]의 피해량이 [blue]{DamageBonus}%[/blue] 증가합니다. [blue]{TempStr}[/blue] [gold]임시 힘[/gold]을 얻습니다. (최대 [blue]3[/blue])",
+
+  "RIENSANG-WOUNDCASING_MASK.title": "상처를 가린 가면",
+  "RIENSANG-WOUNDCASING_MASK.description": "방어도로 막지 못한 피해가 감소합니다. [gold]퓨리오소[/gold] 사용 시 [gold]이글거리는 상처[/gold]로 변환됩니다.",
+  "RIENSANG-WOUNDCASING_MASK.smartDescription": "방어도로 막지 못한 피해량이 [blue]5%[/blue] 감소합니다. 이번 전투에서 [gold]퓨리오소[/gold]를 사용했다면 턴 종료 시 [gold]이글거리는 상처[/gold]로 변환됩니다. 휘발성.",
+
+  "RIENSANG-SIZZLING_WOUND.title": "이글거리는 상처",
+  "RIENSANG-SIZZLING_WOUND.description": "받는 피해는 감소하고 가하는 피해는 증가하지만, 턴 종료 시 피해를 입습니다.",
+  "RIENSANG-SIZZLING_WOUND.smartDescription": "방어도로 막지 못한 피해량이 [blue]10%[/blue] 감소하고 가하는 피해량이 [blue]5%[/blue] 증가합니다. 턴 종료 시 피해를 [blue]2[/blue] 입습니다.",
+
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.title": "지령 탐닉",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.description": "[gold]퓨리오소[/gold]의 피해량이 증가하며 [gold]침잠[/gold]과 [gold]호흡[/gold] 효과가 강화됩니다.",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.smartDescription": "[gold]퓨리오소[/gold] 사용 시: [gold]침잠 위력[/gold] 1 부여, [gold]호흡 위력[/gold] 1 추가 획득, 피해량 10% 증가. 턴 종료 시 소멸합니다.",
+
+  "RIENSANG-KARMIC_CONSEQUENCE.title": "업보의 대가",
+  "RIENSANG-KARMIC_CONSEQUENCE.description": "중첩이 쌓일수록 [gold]취약[/gold]과 [gold]저주[/gold]를 얻습니다. 100 중첩 시 [red]사망[/red]합니다.",
+  "RIENSANG-KARMIC_CONSEQUENCE.smartDescription": "매 [blue]20[/blue] 중첩당 [gold]취약[/gold] [blue]1[/blue]을 얻습니다. \n[blue]40 중첩[/blue]: 일시적인 [gold]저주[/gold]를 얻습니다. \n[blue]60 중첩[/blue]: [gold]매 턴 뽑는 카드 수가 1장 감소합니다[/gold]. \n[blue]80 중첩[/blue]: 영구적인 [gold]저주[/gold]를 얻습니다. \n[blue]100 중첩[/blue]: [red]즉시 사망[/red]합니다.",
+
+  "RIENSANG-STAR_OF_THE_CITY_POWER.title": "도시의 별",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.description": "턴 시작 시, 모든 적에게 [gold]침잠 위력[/gold]과 [gold]횟수[/gold]를 부여합니다.",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.smartDescription": "턴 시작 시, 모든 적에게 [blue]{SinkingPotency}[/blue] [gold]침잠 위력[/gold]과 [blue]{SinkingCount}[/blue] [gold]횟수[/gold]를 부여합니다.",
+
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.title": "검지 아비",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.description": "턴 시작 시 [gold]허약[/gold]을 부여합니다. [gold]해금 III[/gold] 상태라면 카드를 추가로 뽑습니다.",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.smartDescription": "턴 시작 시 무작위 적에게 [gold]허약[/gold] [blue]{Amount}[/blue]을 부여합니다. [gold]해금 III[/gold] 상태라면 매 턴 카드를 [blue]1[/blue]장 더 [gold]뽑습니다[/gold].",
+
+  "RIENSANG-GRACE_OF_GOD_POWER.title": "신의 은총",
+  "RIENSANG-GRACE_OF_GOD_POWER.description": "한 턴 동안 치명적인 피해를 방지합니다. 발동 후 소멸합니다.",
+  "RIENSANG-GRACE_OF_GOD_POWER.smartDescription": "이번 전투에서 치명적인 피해를 입을 상황이 되면, 해당 턴 동안 피해 면역 상태가 됩니다. 발동 후 소멸합니다.",
+
+  "RIENSANG-SHATTERED_WORLD.title": "파쇄세계",
+  "RIENSANG-SHATTERED_WORLD.description": "[gold]화상[/gold]과 [gold]이상[/gold]에게 받는 피해가 증가합니다.",
+  "RIENSANG-SHATTERED_WORLD.smartDescription": "[gold]화상[/gold]으로 받는 피해량이 [blue]1.2배[/blue] 증가합니다. [gold]이상[/gold]에게 받는 피해량이 [blue]10%[/blue] 증가합니다.",
+
+  "RIENSANG-PAINFUL_SCAR.title": "상처 자국",
+  "RIENSANG-PAINFUL_SCAR.description": "패닉 상태입니다. 매 턴 [gold]화상[/gold]과 [gold]출혈[/gold]을 얻으며 받는 피해량이 증가합니다. [blue]0[/blue] [gold]정신력(SP)[/gold]에서 해제됩니다.",
+  "RIENSANG-PAINFUL_SCAR.smartDescription": "패닉 상태. 매 턴 [gold]화상 위력[/gold] [blue]3[/blue], [gold]화상 횟수[/gold] [blue]2[/blue]를 얻습니다. 또한 [gold]출혈 위력[/gold] [blue]3[/blue], [gold]출혈 횟수[/gold] [blue]2[/blue]를 얻습니다. 받는 피해량이 [blue]10%[/blue] 증가합니다. 정신력(SP)이 0이 되면 해제됩니다.",
+
+  "RIENSANG-THE_ORACLES_PROXY_POWER.title": "신탁 대행자",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.description": "[gold]헤르메스[/gold]가 대신 행동하며 매 턴 체력을 회복합니다.",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.smartDescription": "[gold]헤르메스[/gold]가 당신을 대신해 카드를 사용합니다. 남은 턴: [blue]{Amount}[/blue]. 매 턴 체력을 [blue]{HealAmount:diff()}[/blue]만큼 [gold]회복[/gold]합니다.",
+
+  "RIENSANG-ORACLE_DEVICE_POWER.title": "신탁 단말기 [카두세우스]",
+  "RIENSANG-ORACLE_DEVICE_POWER.description": "모든 [gold]카두세우스[/gold] 무기의 피해량이 증가합니다.",
+  "RIENSANG-ORACLE_DEVICE_POWER.smartDescription": "모든 [gold]카두세우스[/gold] 무기의 피해량이 +[blue]{Amount}[/blue] 증가합니다.",
+
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.title": "등가교환",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.description": "받는 피해가 대신 [gold]카르마[/gold]로 변환됩니다.",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.smartDescription": "이번 턴에 받는 피해가 수치만큼 [gold]카르마[/gold]로 변환됩니다.",
+
+  "RIENSANG-DEFENSIVE_STANCE_POWER.title": "방어 자세",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.description": "공격 카드 사용 시 피해를 입히는 대신 [gold]방어도[/gold]를 얻습니다.",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "이번 턴에 사용하는 공격 카드는 피해를 입히는 대신 그 수치만큼 [gold]방어도[/gold]를 얻습니다."
+}

@@ -12,8 +12,10 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Helpers; // TaskHelperのために追加
 using RienSang.RienSangCode.Cards.Ancient;
 using RienSang.RienSangCode.Cards.Basic; 
+using RienSang.RienSangCode.Cards.Rare; 
 using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Powers;
 using RienSang.RienSangCode.Relics;
@@ -56,7 +58,22 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         var hand = PileType.Hand.GetPile(Owner.Player);
         if (hand == null) return; 
 
-        var availableCards = hand.Cards.Where(c => !c.HasSingleTurnMark() && !c.Keywords.Contains(CardKeyword.Unplayable)).ToList();
+        var availableCards = hand.Cards.Where(c => 
+            !c.HasSingleTurnMark() && 
+            !c.Keywords.Contains(CardKeyword.Unplayable) &&
+            c.GetType().Name != "ByUnpredictableWhim" &&
+            c.GetType().Name != "ByGodsWill" &&
+            c.GetType().Name != "Tradeoff" &&
+            c.GetType().Name != "Reconstruct" 
+        ).ToList();
+
+        availableCards = availableCards.Where(c => {
+            if (c is GodsBlessing godsBlessing) {
+                return godsBlessing.MeetConditions;
+            }
+            return true;
+        }).ToList();
+
         if (!availableCards.Any()) return;
 
         var targetMarkCount = IsUpgraded ? 3 : 2;
@@ -90,25 +107,30 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         }
     }
 
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var playedCard = cardPlay.Card; 
-
-        if (playedCard.Owner != Owner?.Player) return;
+        if (playedCard.Owner != Owner?.Player) return Task.CompletedTask;
 
         if (playedCard.HasSingleTurnMark())
         {
-            await PowerCmd.Apply<GraceofthePrescriptPower>(Owner, 1m, Owner, cardPlay.Card);
-            await PowerCmd.Apply<ProcurationHermes>(Owner, 1m, Owner, cardPlay.Card);
-        
             playedCard.ClearSingleTurnMark();
+            
+            TaskHelper.RunSafely(ApplyPrescriptRewards(playedCard));
         }
+        
+        return Task.CompletedTask;
+    }
+
+    private async Task ApplyPrescriptRewards(CardModel sourceCard)
+    {
+        await PowerCmd.Apply<GraceofthePrescriptPower>(Owner, 1m, Owner, null);
+        await PowerCmd.Apply<ProcurationHermes>(Owner, 1m, Owner, null);
     }
 
     public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
         if (Owner?.Player == null || side != Owner.Side) return;
-
         if (Owner.HasPower<TheOraclesProxyPower>()) return;
 
         var hand = PileType.Hand.GetPile(Owner.Player);
@@ -117,8 +139,6 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         int currentMissed = hand.Cards.Count(c => c.HasSingleTurnMark());
         if (currentMissed > 0)
         {
-            var fallbackCard = ModelDb.Card<StrikeRienSang>();
-            
             decimal totalKarma;
             if (IsUpgraded)
             {
@@ -133,7 +153,7 @@ public sealed class MarkofthePrescriptPower : RienSangPower
                 _totalMissedThisCombat[Owner] = totalMissedBefore + currentMissed;
             }
 
-            await PowerCmd.Apply<KarmicConsequence>(Owner, totalKarma, Owner, fallbackCard);
+            await PowerCmd.Apply<KarmicConsequence>(Owner, totalKarma, Owner, null);
         }
     }
     

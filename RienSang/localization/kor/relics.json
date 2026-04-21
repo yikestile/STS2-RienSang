@@ -1,0 +1,21 @@
+﻿{
+  "RIENSANG-PRESCRIPT_DEVICE.title": "지령 단말기",
+  "RIENSANG-PRESCRIPT_DEVICE.flavor": "예측할 수 없는 변덕으로",
+  "RIENSANG-PRESCRIPT_DEVICE.description": "[gold]지령 표식[/gold]과 [gold]상처를 가린 가면[/gold]을 얻습니다. \n매 턴 시작 시: 무작위 적 하나에게 [gold]지령 대상[/gold]을 부여합니다.",
+
+  "RIENSANG-ORACLES_PRESCRIPT.title": "신탁의 지령",
+  "RIENSANG-ORACLES_PRESCRIPT.description": "[gold]지령 표식[/gold]과 [gold]상처를 가린 가면[/gold]을 얻습니다. \n매 턴 시작 시: 무작위 적 하나에게 [gold]지령 대상[/gold]을 부여합니다. \n매 턴 [gold]표식[/gold]이 부여되는 카드 수가 [blue]3[/blue]장으로 증가하고 [gold]업보의 대가[/gold] 페널티가 감소합니다. \n[gold]지령 대상[/gold]에게 가하는 피해량이 10% 증가합니다.",
+  "RIENSANG-ORACLES_PRESCRIPT.flavor": "주님의 뜻대로",
+
+  "RIENSANG-SOMEONES_DEVICE.title": "누군가의 단말기",
+  "RIENSANG-SOMEONES_DEVICE.flavor": " 누군가의 것인 듯하다...",
+  "RIENSANG-SOMEONES_DEVICE.description": "[gold]지령 대상[/gold] 상태인 적을 적중시키면, 다음 턴에 해당 적에게 [gold]침잠 횟수[/gold] [blue]2[/blue]를 부여합니다.",
+
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.title": "지령의 섭리",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.flavor": "",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.description": "매 턴 시작 시 [gold]호흡 위력[/gold] [blue]3[/blue] 또는 [gold]호흡 횟수[/gold] [blue]2[/blue]를 얻습니다. [blue]4[/blue]턴부터 호흡의 [gold]치명타 피해량[/gold]이 15% 증가합니다.",
+
+  "RIENSANG-OMNITOOL.title": "다용도 단말기",
+  "RIENSANG-OMNITOOL.flavor": "",
+  "RIENSANG-OMNITOOL.description": "동일한 공격 속성([gold]참격/관통/타격[/gold])으로 적을 [blue]5[/blue]번 적중시키면, 매 턴 시작 시 해당 속성의 [gold]취약[/gold]을 부여합니다. (최대 3중첩)"
+}

@@ -1,0 +1,21 @@
+﻿{
+  "RIENSANG-PRESCRIPT_DEVICE.title": "指令：[终端]",
+  "RIENSANG-PRESCRIPT_DEVICE.flavor": "随着变幻莫测的兴致。",
+  "RIENSANG-PRESCRIPT_DEVICE.description": "获得[gold]指令之印[/gold]与[gold]缠绕伤口的假面[/gold]。\n每回合：随机为一名敌人施加 [blue]1[/blue] 层[gold]指令目标[/gold]。",
+
+  "RIENSANG-ORACLES_PRESCRIPT.title": "神谕的指令",
+  "RIENSANG-ORACLES_PRESCRIPT.description": "获得[gold]指令之印[/gold]与[gold]缠绕伤口的假面[/gold]。\n每回合：随机为一名敌人施加 [blue]1[/blue] 层[gold]指令目标[/gold]。\n每回合获得的[gold]标记[/gold]卡牌数量增加至 [blue]3[/blue] 张，并降低[gold]因果报应[/gold]带来的惩罚。\n[gold]指令目标[/gold]现在会额外承受 10% 的伤害。",
+  "RIENSANG-ORACLES_PRESCRIPT.flavor": "谨遵主命。",
+
+  "RIENSANG-SOMEONES_DEVICE.title": "某人的终端",
+  "RIENSANG-SOMEONES_DEVICE.flavor": "它属于某个人……",
+  "RIENSANG-SOMEONES_DEVICE.description": "若击中了带有[gold]指令目标[/gold]的敌人，则在下回合对该敌人施加 [blue]2[/blue] 层[gold]沉沦次数[/gold]。",
+
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.title": "指令的庇护",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.flavor": "",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.description": "在每回合开始时获得 [blue]3[/blue] 层[gold]呼吸法强度[/gold]或 [blue]2[/blue] 层[gold]呼吸法次数[/gold]。从第 [blue]4[/blue] 回合开始，[gold]呼吸法[/gold]提供的暴击伤害增加 15%。",
+
+  "RIENSANG-OMNITOOL.title": "万能工具",
+  "RIENSANG-OMNITOOL.flavor": "",
+  "RIENSANG-OMNITOOL.description": "当同一种伤害类型（[gold]斩击/穿刺/打击[/gold]）击中敌人 [blue]5[/blue] 次后，在每回合开始时施加该伤害类型的[gold]脆弱[/gold]（最高 3 层）。"
+}

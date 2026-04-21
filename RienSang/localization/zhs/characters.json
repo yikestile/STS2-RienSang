@@ -1,0 +1,16 @@
+﻿{
+  "RIENSANG-RIEN_SANG.title": "食指代行者 李箱",
+  "RIENSANG-RIEN_SANG.titleObject": "食指代行者",
+  "RIENSANG-RIEN_SANG.description": "彼时是彼时，此时是此时。",
+  "RIENSANG-RIEN_SANG.pronounObject": "他",
+  "RIENSANG-RIEN_SANG.possessiveAdjective": "他的",
+  "RIENSANG-RIEN_SANG.pronounPossessive": "他的",
+  "RIENSANG-RIEN_SANG.pronounSubject": "他",
+  "RIENSANG-RIEN_SANG.cardsModifierTitle": "__ 卡牌",
+  "RIENSANG-RIEN_SANG.cardsModifierDescription": "__ 卡牌现在会出现在奖励与商店中。",
+  "RIENSANG-RIEN_SANG.eventDeathPrevention": "[blue]*嘀——*[/blue] 事情就这么发生了。仅此而已。",
+  "RIENSANG-RIEN_SANG.goldMonologue": "[blue]*嘀——*[/blue] 并没有什么特别值得关注的。",
+  "RIENSANG-RIEN_SANG.aromaPrinciple": "设定",
+  "RIENSANG-RIEN_SANG.banter.dead.endTurnPing": "……何等……孤独。",
+  "RIENSANG-RIEN_SANG.banter.alive.endTurnPing": "似乎……我仍处于“冻结”之中。"
+}
