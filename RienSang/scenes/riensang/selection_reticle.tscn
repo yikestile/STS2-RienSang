@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqdon0a7d3q5e"]
+
+[ext_resource type="Script" path="res://RienSangCode/Nodes/RienSangNSelectionReticle.cs" id="1_script"]
+
+[node name="SelectionReticle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_script")
+
+[node name="ReticleImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+# You can add a texture here later

@@ -1,0 +1,381 @@
+﻿using System.Collections.Generic;
+using BaseLib.Abstracts;
+using RienSang.RienSangCode.Extensions;
+using Godot;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
+using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.Models;
+using RienSang.RienSangCode.Cards.Basic;
+using RienSang.RienSangCode.Cards.EGO;
+using RienSang.RienSangCode.Relics;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.ValueProps;
+using LimbusCore.LimbusCoreCode.Powers;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Hooks;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Nodes;
+using MegaCrit.Sts2.Core.Nodes.Events.Custom;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
+using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Relics;
+using System.Threading.Tasks;
+using System.Linq;
+using MegaCrit.Sts2.Core.Helpers;
+using System;
+using RienSang.RienSangCode.Cards.Ancient;
+using RienSang.RienSangCode.Cards.Common;
+using RienSang.RienSangCode.Cards.Curse;
+using RienSang.RienSangCode.Cards.Rare;
+using RienSang.RienSangCode.Cards.Uncommon;
+
+namespace RienSang.RienSangCode.Character;
+
+public class RienSang : CustomCharacterModel
+{
+    public const string CharacterId = "RienSang";
+
+    public static readonly Color Color = new("31c2ee");
+
+    public override Color NameColor => Color;
+    public override CharacterGender Gender => CharacterGender.Masculine;
+    public override int StartingHp => 66;
+
+    public override IEnumerable<CardModel> StartingDeck =>
+    [
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<DefendRienSang>(),
+        ModelDb.Card<DefendRienSang>(),
+        ModelDb.Card<DefendRienSang>(),
+        ModelDb.Card<FollowingThePrescript>(),
+        ModelDb.Card<ByUnpredictableWhim>(),
+        ModelDb.Card<CrowsEyeView>()
+    ];
+    
+    public override IReadOnlyList<RelicModel> StartingRelics => [ModelDb.Relic<PrescriptDevice>()];
+
+
+    public override CardPoolModel CardPool => ModelDb.CardPool<RienSangCardPool>();
+    public override RelicPoolModel RelicPool => ModelDb.RelicPool<RienSangRelicPool>();
+    public override PotionPoolModel PotionPool => ModelDb.PotionPool<RienSangPotionPool>();
+
+    public override CustomEnergyCounter? CustomEnergyCounter => 
+        new CustomEnergyCounter(EnergyCounterPaths, new Color(0.69f, 0.67f, 0.55f), new Color(1f, 1f, 1f));
+    
+    public override string CustomVisualPath => "res://RienSang/scenes/riensang/riensang.tscn";
+    public override string CustomCharacterSelectBg => "res://RienSang/scenes/riensang/char_select_bg_riensang.tscn";
+    public override string CustomIconPath => "res://RienSang/scenes/riensang/riensang_icon.tscn";
+    public override string CustomIconTexturePath => "char_icon_riensang.png".CharacterUiPath();
+    public override string CustomCharacterSelectIconPath => "char_select_riensang.png".CharacterUiPath();
+    public override string CustomCharacterSelectLockedIconPath => "char_select_riensang_locked.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "map_marker_riensang.png".CharacterUiPath();
+    
+    public override string CustomRestSiteAnimPath => "res://RienSang/scenes/riensang/riensang_rest_site.tscn";
+    public override string CustomMerchantAnimPath => "res://RienSang/scenes/riensang/riensang_merchant.tscn";
+    
+    public override string CustomCharacterSelectTransitionPath =>
+        "res://RienSang/images/riensang/transitions/riensang_transition_mat.tres";
+    
+    public override string CustomTrailPath => "res://RienSang/scenes/riensang/card_trail_riensang.tscn";
+    
+    public override CreatureAnimator? GenerateAnimator(MegaSprite controller)
+    {
+        return null; 
+    }
+
+    private static readonly SpireField<Creature, Vector2?> _originalPositions = new SpireField<Creature, Vector2?>(() => null);
+    public static readonly SpireField<Creature, Creature?> LastDashTarget = new SpireField<Creature, Creature?>(() => null);
+
+    public void PrepareVisualsForAction(Creature creature, Creature target)
+    {
+        var node = NCombatRoom.Instance?.GetCreatureNode(creature);
+        var targetNode = NCombatRoom.Instance?.GetCreatureNode(target);
+        if (node?.Visuals == null || targetNode == null) return;
+
+        var visuals = node.Visuals.GetNodeOrNull<Sprite2D>("Visuals");
+        if (visuals != null)
+        {
+            visuals.FlipH = node.GlobalPosition.X > targetNode.GlobalPosition.X;
+            visuals.Position = Vector2.Zero;
+        }
+    }
+
+    public void DoScreenShake(ShakeStrength strength = ShakeStrength.Medium, ShakeDuration duration = ShakeDuration.Short)
+    {
+        NGame.Instance?.ScreenShake(strength, duration);
+    }
+
+    public (float total, float[] impacts) PlayAnimation(Creature creature, string trigger)
+    {
+        if (creature == null || string.IsNullOrEmpty(trigger)) return (0f, []);
+
+        var node = NCombatRoom.Instance?.GetCreatureNode(creature);
+        if (node?.Visuals == null) return (0f, []);
+
+        var animPlayer = node.Visuals.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
+        if (animPlayer != null)
+        {
+            string godotTrigger = trigger.ToLowerInvariant() switch {
+                "hit" => "hurt",
+                "idle" => "idle_loop",
+                "dead" => "die",
+                "cast" => "cast",
+                "block" => "block",
+                "evade" => "evade",
+                "dash" => "dash_forward",
+                _ => trigger
+            };
+
+            if (animPlayer.HasAnimation(godotTrigger))
+            {
+                var visuals = node.Visuals.GetNodeOrNull<Sprite2D>("Visuals");
+                if (visuals != null)
+                {
+                    var slash = visuals.GetNodeOrNull<CanvasItem>("SlashTex");
+                    var smoke = visuals.GetNodeOrNull<CanvasItem>("Smoke");
+                    if (slash != null) slash.Visible = false;
+                    if (smoke != null) smoke.Visible = false;
+                }
+
+                var anim = animPlayer.GetAnimation(godotTrigger);
+                float totalLength = anim.Length;
+                float[] impactDelays = GetImpactDelays(godotTrigger, totalLength);
+
+                animPlayer.Play(godotTrigger);
+                if (godotTrigger != "idle_loop" && godotTrigger != "die")
+                {
+                    animPlayer.Queue("idle_loop");
+                }
+                return (totalLength, impactDelays);
+            }
+        }
+        return (0f, []);
+    }
+
+    private float[] GetImpactDelays(string animName, float totalLength)
+    {
+        return animName switch
+        {
+            "attack_hammer_1" => [0.5f],
+            "attack_hammer_2" => [0.35f],
+            "attack_hammer_3" => [0.5f],
+            "attack_hatchet_1" => [0.4f],
+            "attack_hatchet_2" => [0.3f],
+            "attack_hatchet_3" => [0.3f],
+            "attack_bastardsword_1" => [0.1f],
+            "attack_bastardsword_2" => [0.1f],
+            "attack_bastardsword_3" => [0.1f],
+            "attack_greatsword_1" => [0.1f],
+            "attack_greatsword_2" => [0.1f],
+            "attack_greatsword_3" => [0.1f],
+            "attack_lance_1" => [0.1f],
+            "attack_lance_2" => [0.1f],
+            "attack_lance_3" => [0.4f],
+            "attack_rapier_1" => [0.1f],
+            "attack_rapier_2" => [0.1f],
+            "attack_rapier_3" => [0.1f],
+            "attack_scythe_1" => [0.1f],
+            "attack_scythe_2" => [0.1f],
+            "attack_scythe_3" => [0.1f],
+            "attack_stiletto_1" => [0.1f],
+            "attack_stiletto_2" => [0.1f],
+            "attack_stiletto_3" => [0.1f],
+            "attack_whip_1" => [0.1f],
+            "attack_whip_2" => [0.1f],
+            "attack_whip_3" => [0.1f],
+            "FuriosoFinish" => [0.1f],
+            _ => [totalLength * 0.5f] 
+        };
+    }
+
+    public async Task DashTo(Creature creature, Creature target, float duration)
+    {
+        var node = NCombatRoom.Instance?.GetCreatureNode(creature);
+        var targetNode = NCombatRoom.Instance?.GetCreatureNode(target);
+        if (node == null || targetNode == null) return;
+
+        if (_originalPositions[creature] == null)
+        {
+            _originalPositions[creature] = node.GlobalPosition;
+        }
+
+        LastDashTarget[creature] = target;
+        PlayAnimation(creature, "dash");
+
+        var tween = node.CreateTween();
+        Vector2 targetPos = targetNode.GlobalPosition + (creature.Side == CombatSide.Player ? Vector2.Left : Vector2.Right) * 150f;
+        tween.TweenProperty(node, "global_position", targetPos, duration).SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out);
+        
+        await Task.Delay((int)(duration * 1000));
+    }
+
+    public async Task ReturnToIdlePosition(Creature creature, float duration)
+    {
+        var node = NCombatRoom.Instance?.GetCreatureNode(creature);
+        if (node == null || !_originalPositions[creature].HasValue) return;
+
+        var tween = node.CreateTween();
+        tween.TweenProperty(node, "global_position", _originalPositions[creature]!.Value, duration).SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.InOut);
+        
+        await Task.Delay((int)(duration * 1000));
+        
+        _originalPositions[creature] = null;
+        
+        LastDashTarget[creature] = null;
+        var visuals = node.Visuals.GetNodeOrNull<Sprite2D>("Visuals");
+        if (visuals != null)
+        {
+            visuals.FlipH = creature.Side != CombatSide.Player; 
+            visuals.Position = Vector2.Zero;
+        }
+    }
+    
+    public override List<string> GetArchitectAttackVfx()
+    {
+        return
+        [
+            "vfx/vfx_attack_blunt", "vfx/vfx_heavy_blunt", "vfx/vfx_attack_slash", "vfx/vfx_bloody_impact",
+            "vfx/vfx_rock_shatter"
+        ];
+    }
+    
+    private string EnergyCounterPaths(int i)
+    {
+        return "res://RienSang/images/ui/combat/energy_counters/riensang/limbus_orb_layer.png";
+    }
+    
+    [HarmonyPatch(typeof(NCreature), nameof(NCreature.SetAnimationTrigger))]
+    public static class NCreatureSetTriggerPatch
+    {
+        [HarmonyPrefix]
+        public static bool Prefix(NCreature __instance, string trigger)
+        {
+            if (__instance.Entity?.Player?.Character is RienSang character)
+            {
+                character.PlayAnimation(__instance.Entity, trigger);
+                return false; 
+            }
+            return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(NCreature), nameof(NCreature.StartDeathAnim))]
+    public static class StartDeathAnimPatch
+    {
+        [HarmonyPostfix]
+        public static void Postfix(NCreature __instance, ref float __result)
+        {
+            if (__instance.Entity?.Player?.Character is RienSang character)
+            {
+                character.PlayAnimation(__instance.Entity, "dead");
+                
+                var animPlayer = __instance.Visuals.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
+                float duration = animPlayer?.GetAnimation("die")?.Length ?? 1.5f;
+            
+                __result = duration;
+
+                __instance.ZIndex = 0;
+                __instance.Visuals.ZIndex = 0;
+            }
+        }
+    }
+    
+    [HarmonyPatch(typeof(NCombatRoom), "CreateAllyNodes")]
+    public static class CaptureInitialPositionPatch
+    {
+        [HarmonyPostfix]
+        public static void Postfix()
+        {
+            var room = NCombatRoom.Instance;
+            if (room == null) return;
+
+            foreach (var node in room.CreatureNodes)
+            {
+                if (node.Entity?.Player?.Character is RienSang)
+                {
+                    _originalPositions[node.Entity] = node.GlobalPosition;
+                    LastDashTarget[node.Entity] = null;
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(NFakeMerchant), "AfterRoomIsLoaded")]
+    public static class FakeMerchantLayeringPatch
+    {
+        [HarmonyPostfix]
+        public static void Postfix(NFakeMerchant __instance)
+        {
+            var container = AccessTools.Field(typeof(NFakeMerchant), "_characterContainer")
+                .GetValue(__instance) as Control;
+        
+            if (container != null)
+            {
+                container.ZIndex = -1; 
+            
+                var inventory = AccessTools.Field(typeof(NFakeMerchant), "_inventory")
+                    .GetValue(__instance) as Control;
+                if (inventory != null)
+                {
+                    inventory.ZIndex = 10;
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(CardModel), nameof(CardModel.OnPlayWrapper))]
+    public static class CardPlayCastPatch
+    {
+        [HarmonyPostfix]
+        public static void Postfix(CardModel __instance)
+        {
+            if (__instance.Type == CardType.Skill && __instance.Owner?.Character is RienSang character)
+            {
+                character.PlayAnimation(__instance.Owner.Creature, "cast");
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Hook), nameof(Hook.AfterDamageReceived))]
+    public static class DamageAnimationPatch
+    {
+        [HarmonyPostfix]
+        public static void Postfix(Creature target, DamageResult result, ValueProp props, Creature? dealer)
+        {
+            if (target.Player?.Character is RienSang character)
+            {
+                if (result.WasFullyBlocked && result.BlockedDamage > 0)
+                {
+                    if (dealer != null && dealer.Side == CombatSide.Enemy && !props.HasFlag(ValueProp.SkipHurtAnim) && !props.HasFlag(ValueProp.Unpowered))
+                    {
+                        character.PlayAnimation(target, "block");
+                    }
+                }
+                
+                else if (result.UnblockedDamage > 0 && !target.IsDead)
+                {
+                    if (dealer != null && dealer.Side == CombatSide.Enemy && !props.HasFlag(ValueProp.SkipHurtAnim) && !props.HasFlag(ValueProp.Unpowered))
+                    {
+                        character.PlayAnimation(target, "hit");
+                    }
+                }
+
+                if (LCEvadePower.HasEvadedThisTurn[target] && !props.HasFlag(ValueProp.Unpowered))
+                {
+                    if (dealer != null && dealer.Side == CombatSide.Enemy && !props.HasFlag(ValueProp.SkipHurtAnim) && !props.HasFlag(ValueProp.Unpowered))
+                    {
+                        character.PlayAnimation(target, "evade");
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RienSang", "RienSang.csproj", "{10E25EA1-7D93-4755-B983-D06BF8377E32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LimbusCore", "..\LimbusCore\LimbusCore.csproj", "{973278E4-1192-48F1-BAF4-32AE5A4657B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10E25EA1-7D93-4755-B983-D06BF8377E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E25EA1-7D93-4755-B983-D06BF8377E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E25EA1-7D93-4755-B983-D06BF8377E32}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{10E25EA1-7D93-4755-B983-D06BF8377E32}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{10E25EA1-7D93-4755-B983-D06BF8377E32}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{10E25EA1-7D93-4755-B983-D06BF8377E32}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{973278E4-1192-48F1-BAF4-32AE5A4657B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973278E4-1192-48F1-BAF4-32AE5A4657B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973278E4-1192-48F1-BAF4-32AE5A4657B1}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{973278E4-1192-48F1-BAF4-32AE5A4657B1}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{973278E4-1192-48F1-BAF4-32AE5A4657B1}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{973278E4-1192-48F1-BAF4-32AE5A4657B1}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

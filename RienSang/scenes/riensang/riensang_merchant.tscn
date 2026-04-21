@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdi38oerrlaos"]
+
+[ext_resource type="Script" uid="uid://lw2exr6olp1p" path="res://RienSangCode/Nodes/RienSangNMerchantCharacter.cs" id="1_ifaa7"]
+[ext_resource type="PackedScene" uid="uid://dtcimbukdv8h2" path="res://RienSang/scenes/riensang/riensang.tscn" id="2_63iep"]
+[ext_resource type="Texture2D" uid="uid://crerx4sfeui1t" path="res://RienSang/scenes/riensang/merchant.png" id="2_xpjq1"]
+
+[node name="RiensangMerchant" type="Node2D"]
+script = ExtResource("1_ifaa7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -226)
+texture = ExtResource("2_xpjq1")
+
+[node name="Riensang" parent="." instance=ExtResource("2_63iep")]
+visible = false
+scale = Vector2(1.5, 1.5)

@@ -1,0 +1,24 @@
+{
+  "RIENSANG-PRESCRIPT_DEVICE.title": "Prescript: [Device]",
+  "RIENSANG-PRESCRIPT_DEVICE.flavor": "By unpredictable whim",
+  "RIENSANG-PRESCRIPT_DEVICE.description": "Gain [gold]Mark of the Prescript[/gold] and [gold]Wound-casing Mask[/gold]. \nEach turn: Mark [blue]1[/blue] random enemy with [gold]The Prescript's Target[/gold].",
+
+  "RIENSANG-ORACLES_PRESCRIPT.title": "Oracle's Prescript",
+  "RIENSANG-ORACLES_PRESCRIPT.description": "Gain [gold]Mark of the Prescript[/gold] and [gold]Wound-casing Mask[/gold]. \nEach turn: Mark [blue]1[/blue] random enemy with [gold]The Prescript's Target[/gold]. \nIncreased the number of [gold]Marked[/gold] cards to [blue]3[/blue] each turn and decreased [gold]Karmic Consequence[/gold] Penalty. \n[gold]The Prescript's Target[/gold] now receives 10% damage instead.",
+  "RIENSANG-ORACLES_PRESCRIPT.flavor": "By God's Will",
+
+  
+  "RIENSANG-SOMEONES_DEVICE.title": "Someone's Device",
+  "RIENSANG-SOMEONES_DEVICE.flavor": " Belongs to someone...",
+  "RIENSANG-SOMEONES_DEVICE.description": "If an enemy with [gold]The Prescript’s Target[/gold] is hit, inflict [blue]2[/blue] [gold]Sinking Count[/gold] to the enemy with [gold]The Prescript’s Target[/gold] next turn.",
+
+
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.title": "Providence Of The Prescript",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.flavor": "",
+  "RIENSANG-PROVIDENCE_OF_THE_PRESCRIPT.description": "Gain [blue]3[/blue] [gold]Poise Potency[/gold] or [blue]2[/blue] [gold]Poise Count[/gold] at the start of each turn. Starting turn [blue]4[/blue], increase Poise's [gold]Crit Damage[/gold] by 15%.",
+
+  "RIENSANG-OMNITOOL.title": "Omni-tool",
+  "RIENSANG-OMNITOOL.flavor": "",
+  "RIENSANG-OMNITOOL.description": "When the same damage type ([gold]Slash/Pierce/Blunt[/gold]) hits an enemy [blue]5[/blue] times. Inflict that damage type’s [gold]Fragility[/gold] at the start of each turn (3 Max). "
+  
+}

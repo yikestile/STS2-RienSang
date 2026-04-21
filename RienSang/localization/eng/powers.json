@@ -1,0 +1,81 @@
+{
+  "RIENSANG-PROCURATION_HERMES.title": "Procuration [Hermes]",
+  "RIENSANG-PROCURATION_HERMES.description": "At [blue]9[/blue] stacks, gain a [gold]Special Card[/gold] and [gold]Grace of the Prescript[/gold]. Max stacks are limited by [gold]Unlock[/gold] state.",
+  "RIENSANG-PROCURATION_HERMES.smartDescription": "At [blue]9[/blue] stacks, gain a [gold]Special Card[/gold] and [blue]3[/blue] [gold]Grace of the Prescript[/gold]. \nAt below [gold]Unlock II[/gold], max stack is limited to 8. \nCannot be gained on the same turn after being consumed.",
+
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.title": "Mark of the Prescript",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "Marks random cards each turn. Marked cards grant [gold]Grace of the Prescript[/gold] and [gold]Procuration [Hermes][/gold]. Unplayed marks grant [gold]Karmic Consequences[/gold].",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "Marks [blue]2[/blue] random cards each turn. Marked cards grant [blue]1[/blue] [gold]Grace of the Prescript[/gold] and [gold]Procuration [Hermes][/gold]. \nGain [blue]5[/blue] [gold]Karmic Consequences[/gold] for each unplayed Marked card.",
+
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.title": "Grace of the Prescript",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.description": "Accumulate stacks to gain [gold]Strength[/gold] and progress through [gold]Unlock[/gold] states.",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "Max 9 stacks. At [blue]9[/blue] stacks Gain [blue]1[/blue] [gold]Strength[/gold]. At [blue]3/6/9[/blue] stacks, grant [gold]Unlock I/II/III[/gold].",
+
+  "RIENSANG-UNLOCK.title": "Unlock",
+  "RIENSANG-UNLOCK.description": "At [gold]Unlock III[/gold], gain [gold]Shin (心) - Fate[/gold] and [gold]Dexterity[/gold]. \nCombat End: [gold]Heal[/gold] HP and SP based on state.",
+  "RIENSANG-UNLOCK.smartDescription": "At [gold]Unlock III[/gold], gain [gold]Shin - Fate[/gold] and [blue]1[/blue] [gold]Dexterity[/gold]. \nCombat End: [gold]Heal[/gold] [blue]{HealAmount:diff()}[/blue] HP and [blue]{SPHealAmount:diff()}[/blue] SP at Unlock I/II/III.",
+
+  "RIENSANG-THE_PRESCRIPTS_TARGET.title": "The Prescript’s Target",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.description": "Takes more damage from [gold]Yi Sang[/gold].",
+  "RIENSANG-THE_PRESCRIPTS_TARGET.smartDescription": "Takes [blue]5%[/blue] more damage from [gold]Yi Sang[/gold].",
+
+  "RIENSANG-SHIN_FATE.title": "Shin (心) - [Fate]",
+  "RIENSANG-SHIN_FATE.description": "Gain [gold]Energy[/gold] each turn. Deal more damage and increase [gold]Poise[/gold] gains.",
+  "RIENSANG-SHIN_FATE.smartDescription": "Gain [blue]1[/blue] [gold]Energy[/gold] every turn. Deal [blue]5%[/blue] more damage. Gain more [gold]Poise Potency[/gold] and [gold]Count[/gold] from cards.",
+
+  "RIENSANG-MANG.title": "Mang (望)",
+  "RIENSANG-MANG.description": "[gold]Furioso[/gold] deals extra damage and unit gains [gold]Temporary Strength[/gold].",
+  "RIENSANG-MANG.smartDescription": "[gold]Furioso[/gold] deals [blue]{DamageBonus}%[/blue] extra damage. Gain [blue]{TempStr}[/blue] [gold]Temporary Strength[/gold]. Max [blue]3[/blue].",
+
+  "RIENSANG-WOUNDCASING_MASK.title": "Woundcasing Mask",
+  "RIENSANG-WOUNDCASING_MASK.description": "Take less unblocked damage. Converts to [gold]Sizzling Wound[/gold] if [gold]Furioso[/gold] is used.",
+  "RIENSANG-WOUNDCASING_MASK.smartDescription": "Take [blue]5%[/blue] less unblocked damage. Converts to [gold]Sizzling Wound[/gold] at turn end if [gold]Furioso[/gold] was used this combat. Expires.",
+
+  "RIENSANG-SIZZLING_WOUND.title": "Sizzling Wound",
+  "RIENSANG-SIZZLING_WOUND.description": "Take less unblocked damage and deal more damage. Take damage at turn end.",
+  "RIENSANG-SIZZLING_WOUND.smartDescription": "Take [blue]10%[/blue] less unblocked damage and deal [blue]5%[/blue] more damage. Take [blue]2[/blue] damage at turn end.",
+
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.title": "Indulgence in Prescript",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.description": "Empowers [gold]Furioso[/gold] with extra damage, [gold]Sinking[/gold], and [gold]Poise[/gold].",
+  "RIENSANG-INDULGENCE_IN_PRESCRIPT.smartDescription": "Apply the following to Furioso: Inflict 1 Sinking Potency and Gain 1 more Poise Potency. Deal 10% more damage. Expires at turn end.",
+
+  "RIENSANG-KARMIC_CONSEQUENCE.title": "Karmic Consequence",
+  "RIENSANG-KARMIC_CONSEQUENCE.description": "Gain [gold]Fragile[/gold] and [gold]Curses[/gold] as stacks increase. [red]Dies[/red] at 100 stacks.",
+  "RIENSANG-KARMIC_CONSEQUENCE.smartDescription": "Gain [blue]1[/blue] [gold]Fragile[/gold] for every [blue]20[/blue] stacks. \n[blue]At 40 stacks[/blue]: Gain a temporary [gold]Curse[/gold]. \n[blue]At 60 stacks[/blue]: [gold]Draw 1 less card each turn[/gold]. \n[blue]At 80 stacks[/blue]: Gain a permanent [gold]Curse[/gold]. \n[blue]At 100 stacks[/blue]: [red]Dies[/red].",
+
+  "RIENSANG-STAR_OF_THE_CITY_POWER.title": "Star of the City",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.description": "On turn start, inflict [gold]Sinking Potency[/gold] and [gold]Count[/gold] on ALL enemies.",
+  "RIENSANG-STAR_OF_THE_CITY_POWER.smartDescription": "On turn start, Inflict [blue]{SinkingPotency}[/blue] [gold]Sinking Potency[/gold] and [blue]{SinkingCount}[/blue] [gold]Count[/gold] on ALL enemies.",
+
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.title": "The Index Nursefather",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.description": "Inflict [gold]Weak[/gold] at start of turn. At [gold]Unlock III[/gold], draw an extra card.",
+  "RIENSANG-THE_INDEX_NURSEFATHER_POWER.smartDescription": "Inflict [blue]{Amount}[/blue] [gold]Weak[/gold] to a random enemy at the start of each turn. At [gold]Unlock III[/gold], [gold]Draw[/gold] 1 card each turn.",
+
+  "RIENSANG-GRACE_OF_GOD_POWER.title": "Grace of God",
+  "RIENSANG-GRACE_OF_GOD_POWER.description": "Prevents lethal damage for one turn. Expires after activation.",
+  "RIENSANG-GRACE_OF_GOD_POWER.smartDescription": "If this unit would take lethal damage this combat, becomes immune to damage for the turn. Expires.",
+
+  "RIENSANG-SHATTERED_WORLD.title": "Shattered World",
+  "RIENSANG-SHATTERED_WORLD.description": "Takes more damage from [gold]Burn[/gold] and [gold]Yi Sang[/gold].",
+  "RIENSANG-SHATTERED_WORLD.smartDescription": "Takes [blue]1.2x[/blue] more damage from [gold]Burn[/gold]. Takes [blue]10%[/blue] more damage from [gold]Yi Sang[/gold].",
+
+  "RIENSANG-PAINFUL_SCAR.title": "Painful Scar",
+  "RIENSANG-PAINFUL_SCAR.description": "Panic Status. Gain [gold]Burn[/gold] and [gold]Bleed[/gold] each turn and take more damage. Removed at [blue]0[/blue] [gold]SP[/gold].",
+  "RIENSANG-PAINFUL_SCAR.smartDescription": "Panic Status. Each turn, Gain [blue]3[/blue] [gold]Burn Potency[/gold], [blue]2[/blue] [gold]Burn Count[/gold]. Gain [blue]3[/blue] [gold]Burn Potency[/gold] and [blue]2[/blue] [gold]Burn Count[/gold]. Take [blue]10%[/blue] more damage. Removed at 0 [gold]SP[/gold].",
+
+  "RIENSANG-THE_ORACLES_PROXY_POWER.title": "The Oracle's Proxy",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.description": "[gold]Hermes[/gold] plays for you and heals your HP each turn.",
+  "RIENSANG-THE_ORACLES_PROXY_POWER.smartDescription": "[gold]Hermes[/gold] plays for you. Remaining turns: [blue]{Amount}[/blue]. Heal [blue]{HealAmount:diff()}[/blue] [gold]HP[/gold] each turn.",
+
+  "RIENSANG-ORACLE_DEVICE_POWER.title": "Oracle Device [Caduceus]",
+  "RIENSANG-ORACLE_DEVICE_POWER.description": "ALL [gold]Caduceus[/gold] weapons deal extra damage.",
+  "RIENSANG-ORACLE_DEVICE_POWER.smartDescription": "ALL [gold]Caduceus[/gold] weapons deal +[blue]{Amount}[/blue] damage.",
+
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.title": "Equivalent Exchange",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.description": "Damage received is converted to [gold]Karma[/gold] instead.",
+  "RIENSANG-EQUIVALENT_EXCHANGE_POWER.smartDescription": "Damage received this turn is converted to [gold]Karma[/gold] instead.",
+
+  "RIENSANG-DEFENSIVE_STANCE_POWER.title": "Defensive Stance",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.description": "Attack cards gain [gold]Block[/gold] instead of dealing damage.",
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "Attack cards you played this turn will gain [gold]Block[/gold] instead of dealing damage."
+}

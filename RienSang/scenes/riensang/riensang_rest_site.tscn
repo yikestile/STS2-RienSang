@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8j0o44adujwh"]
+
+[ext_resource type="Script" uid="uid://b8ceudoy1i0q1" path="res://RienSangCode/Nodes/RienSangNRestSiteCharacter.cs" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://bqdon0a7d3q5e" path="res://RienSang/scenes/riensang/selection_reticle.tscn" id="2_reticle"]
+[ext_resource type="Texture2D" uid="uid://bip3dt6bx0p5b" path="res://RienSang/scenes/riensang/rest.png" id="2_wppb2"]
+
+[node name="RiensangRestSite" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_wppb2")
+
+[node name="ControlRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 68.4205
+offset_top = -9.21045
+offset_right = 68.4205
+offset_bottom = -9.21045
+
+[node name="SelectionReticle" parent="ControlRoot" instance=ExtResource("2_reticle")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -294.629
+offset_top = -529.78955
+offset_right = 114.5795
+offset_bottom = 232.21045
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -270.4205
+offset_top = -488.78955
+offset_right = 104.5795
+offset_bottom = 210.21045
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 44.7365
+offset_top = -313.155
+offset_right = 44.7365
+offset_bottom = -313.155
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -218.419
+offset_top = -315.787
+offset_right = -218.419
+offset_bottom = -315.787

@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf3tih3n280wk"]
+
+[ext_resource type="VideoStream" uid="uid://cy61yn01nfrql" path="res://RienSang/scenes/riensang/intro_optimized.ogv" id="1_q7ol1"]
+
+[node name="CharSelectBgRiensang" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 75.0
+offset_right = 80.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+mouse_filter = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+audio_track = 1
+stream = ExtResource("1_q7ol1")
+autoplay = true
+loop = true
