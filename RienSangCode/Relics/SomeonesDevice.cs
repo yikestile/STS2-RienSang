@@ -21,7 +21,7 @@ namespace RienSang.RienSangCode.Relics;
 [Pool(typeof(RienSangRelicPool))]
 public class SomeonesDevice : RienSangRelic
 {
-    private static readonly SpireField<CombatState, bool> _sinkingNextTurn = new SpireField<CombatState, bool>(() => false);
+    private static readonly SpireField<ICombatState, bool> _sinkingNextTurn = new SpireField<ICombatState, bool>(() => false);
 
     public override RelicRarity Rarity => RelicRarity.Shop;
 
@@ -40,7 +40,7 @@ public class SomeonesDevice : RienSangRelic
         await Task.CompletedTask;
     }
 
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
     {
         if (side == CombatSide.Player && _sinkingNextTurn[combatState])
         {
@@ -48,7 +48,7 @@ public class SomeonesDevice : RienSangRelic
             var target = combatState.Enemies.FirstOrDefault(e => e.IsAlive && e.HasPower<ThePrescriptsTarget>());
             if (target != null)
             {
-                await PowerCmd.Apply<LCSinkingPower>(target, 2, Owner.Creature, null);
+                await PowerCmd.Apply<LCSinkingPower>(new ThrowingPlayerChoiceContext(), target, 2m, Owner.Creature, null);
             }
             _sinkingNextTurn[combatState] = false;
         }

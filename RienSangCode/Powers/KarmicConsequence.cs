@@ -49,7 +49,7 @@ public class KarmicConsequence : RienSangPower
         return Task.CompletedTask;
     }
 
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power != this) return;
         
@@ -68,27 +68,27 @@ public class KarmicConsequence : RienSangPower
         {
             DynamicVars["KarmaAmount"].BaseValue = newKarma;
             InvokeDisplayAmountChanged();
-            await HandleThresholds(currentKarma, newKarma);
+            await HandleThresholds(choiceContext, currentKarma, newKarma);
         }
     }
 
-    private async Task HandleThresholds(int oldKarma, int newKarma)
+    private async Task HandleThresholds(PlayerChoiceContext choiceContext, int oldKarma, int newKarma)
     {
         var oldMilestones20 = oldKarma / 20;
         var newMilestones20 = newKarma / 20;
         if (newMilestones20 > oldMilestones20)
         {
-            await PowerCmd.Apply<LCFragilePower>(Owner, newMilestones20 - oldMilestones20, Owner, null);
+            await PowerCmd.Apply<LCFragilePower>(choiceContext, Owner, newMilestones20 - oldMilestones20, Owner, null);
         }
 
         if (oldKarma < 40 && newKarma >= 40)
         {
-            await ApplyRandomCurse(true);
+            await ApplyRandomCurse(choiceContext, true);
         }
 
         if (oldKarma < 80 && newKarma >= 80)
         {
-            await ApplyRandomCurse(false);
+            await ApplyRandomCurse(choiceContext, false);
         }
 
         if (newKarma >= 100)
@@ -104,7 +104,7 @@ public class KarmicConsequence : RienSangPower
         }
     }
 
-    private async Task ApplyRandomCurse(bool temporary)
+    private async Task ApplyRandomCurse(PlayerChoiceContext choiceContext, bool temporary)
     {
         if (Owner.CombatState == null || Owner.Player == null) return;
 
@@ -121,7 +121,7 @@ public class KarmicConsequence : RienSangPower
 
         if (temporary)
         {
-            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Draw, true);
+            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Draw, Owner.Player);
         }
         else
         {
@@ -151,7 +151,7 @@ public class KarmicConsequence : RienSangPower
         var milestones = DynamicVars["KarmaAmount"].IntValue / 20;
         if (milestones > 0)
         {
-            await PowerCmd.Apply<LCFragilePower>(Owner, milestones, Owner, null);
+            await PowerCmd.Apply<LCFragilePower>(choiceContext, Owner, milestones, Owner, null);
         }
     }
 }

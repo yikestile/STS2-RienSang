@@ -26,9 +26,7 @@ public class SomberProcuration : RienSangCard
         new BlockVar(6, ValueProp.Move),
         new("UnlockBonus", 2)
     ];
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus, RienSangKeywords.Unlock];
-
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<Unlock>()
     ];

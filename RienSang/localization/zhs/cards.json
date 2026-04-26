@@ -1,12 +1,12 @@
 ﻿{
-  "RIENSANG-FURIOSO_REPLICA.title": "Furioso [复刻]",
-  "RIENSANG-FURIOSO_REPLICA.description": "理智值(SP)为0+时：消耗 [blue]10[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 [赫尔墨斯][/gold]。",
+  "RIENSANG-FURIOSO_REPLICA.title": "Furioso [Replica]",
+  "RIENSANG-FURIOSO_REPLICA.description": "理智值(SP)为0+时：消耗 [blue]10[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 (赫尔墨斯)[/gold]。",
 
-  "RIENSANG-FURIOSO_CRESCENDO.title": "Furioso [渐强]",
-  "RIENSANG-FURIOSO_CRESCENDO.description": "理智值(SP)为0+时：消耗 [blue]20[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 [赫尔墨斯][/gold]。",
+  "RIENSANG-FURIOSO_CRESCENDO.title": "Furioso [Crescendo]",
+  "RIENSANG-FURIOSO_CRESCENDO.description": "理智值(SP)为0+时：消耗 [blue]20[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 (赫尔墨斯)[/gold]。",
 
-  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.title": "Furioso [流泪渐强]",
-  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.description": "理智值(SP)为0+时：消耗 [blue]30[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 [赫尔墨斯][/gold]。",
+  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.title": "Furioso [Lacrimosa Crescendo]",
+  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.description": "理智值(SP)为0+时：消耗 [blue]30[/blue] [gold]SP[/gold] 以产生 {Mang:diff()} 层[gold]望[/gold]。获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。使用[gold]使者之杖[/gold]造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。消耗所有[gold]代行 (赫尔墨斯)[/gold]。",
 
   "RIENSANG-GLOOM_IN_RUINS.title": "废墟中的沉沦",
   "RIENSANG-GLOOM_IN_RUINS.description": "[gold]沉沦[/gold]现在会造成伤害。被击中时：每 5 层[gold]沉沦强度[/gold]受到 {SinkingDamage:diff()} 点伤害。",
@@ -47,8 +47,8 @@
   "RIENSANG-SUNSHOWER.title": "狐雨",
   "RIENSANG-SUNSHOWER.description": "对所有敌人造成 {Damage:diff()} 点伤害。有概率额外造成 +{BonusDamage:diff()} 点伤害并回复 15 点[gold]SP[/gold]。在本回合与下回合为所有友军提供 {LCProtectionPower:diff()} 层[gold]守护[/gold]。",
 
-  "RIENSANG-GREAT_TRICHILIOCosm.title": "三千大世界",
-  "RIENSANG-GREAT_TRICHILIOCosm.description": "获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。对所有敌人造成 {Damage:diff()} 点伤害，重复 4 次。若目标拥有 10 层以上的[gold]沉沦[/gold]或[gold]烧伤[/gold]，额外造成 +1 点伤害。施加[gold]破碎世界[/gold]。施加 {LCSinkingPower:diff()} 层[gold]沉沦次数[/gold]。施加 {BurnPotency:diff()} 层[gold]烧伤强度[/gold]与 {LCBurnPower:diff()} 层[gold]次数[/gold]。触发[gold]暴击[/gold]时，结算一次目标身上的[gold]烧伤[/gold]伤害并使其次数减少 1。",
+  "RIENSANG-GREAT_TRICHILIOCOSM.title": "三千大世界",
+  "RIENSANG-GREAT_TRICHILIOCOSM.description": "获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]。对所有敌人造成 {Damage:diff()} 点伤害，重复 4 次。若目标拥有 10 层以上的[gold]沉沦[/gold]或[gold]烧伤[/gold]，额外造成 +1 点伤害。施加[gold]破碎世界[/gold]。施加 {LCSinkingPower:diff()} 层[gold]沉沦次数[/gold]。施加 {BurnPotency:diff()} 层[gold]烧伤强度[/gold]与 {LCBurnPower:diff()} 层[gold]次数[/gold]。触发[gold]暴击[/gold]时，结算一次目标身上的[gold]烧伤[/gold]伤害并使其次数减少 1。",
 
   "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.title": "指令指向之处",
   "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.description": "造成 {Damage:diff()} 点伤害。下回合施加 {FragileAmount:diff()} 层[gold]脆弱[/gold]。",
@@ -59,8 +59,8 @@
   "RIENSANG-WILL_OF_THE_CITY.title": "都市之志",
   "RIENSANG-WILL_OF_THE_CITY.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。获得 {Energy:diff()} 点 {Energy:energyIcons()} 能量并[gold]抽[/gold] 1 张牌。",
 
-  "RIENSANG-FAITH.title": "信仰",
-  "RIENSANG-FAITH.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。回复 {Energy:diff()} 点[gold]能量[/gold]。",
+  "RIENSANG-BELIEF.title": "信仰",
+  "RIENSANG-BELIEF.description": "获得 {Block:diff()} 点[gold]格挡[/gold]。回复 {Energy:energyIcons()}。",
 
   "RIENSANG-BLIND_FAITH.title": "盲信",
   "RIENSANG-BLIND_FAITH.description": "战斗开始时：将 {CopyAmount:diff()} 张该牌的复制品加入抽牌堆。造成 {Damage:diff()} 点伤害。将抽牌堆中所有的[gold]盲信[/gold]加入手牌。",
@@ -161,10 +161,10 @@
   "RIENSANG-THE_INDEX_NURSEFATHER.title": "食指父辈",
   "RIENSANG-THE_INDEX_NURSEFATHER.description": "每回合开始时对随机敌人施加 1 层[gold]虚弱[/gold]。处于[gold]解禁 III[/gold]时，每回合额外[gold]抽[/gold] 1 张牌。",
 
-  "RIENSANG-SANGUINE_POINTILLISM.title": "血色点描 [复刻]",
+  "RIENSANG-SANGUINE_POINTILLISM.title": "血色点描 [Replica]",
   "RIENSANG-SANGUINE_POINTILLISM.description": "造成 {Damage:diff()} 点伤害。有 {Chance:diff()}% 的概率额外触发一次攻击。目标每有一种负面效果，概率增加 +{BonusChance:diff()}%。最多额外触发 2 次。",
 
-  "RIENSANG-RIME_SHANK.title": "冰结之爪",
+  "RIENSANG-RIME_SHANK.title": "冰结之爪 [Replica]",
   "RIENSANG-RIME_SHANK.description": "对所有敌人施加 [blue]{LCSinkingPower:diff()}*X[/blue] 层[gold]沉沦次数[/gold]。",
 
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "正如指令要求的那样",
@@ -179,7 +179,7 @@
   "RIENSANG-OBEDIENCE.title": "服从",
   "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:下回合获得 {Energy:energyIcons()}\n} [gold]赫尔墨斯[/gold]将在你的下个回合代你行动。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
 
-  "RIENSANG-SINKING_DELUGE.title": "沉沦爆发",
+  "RIENSANG-SINKING_DELUGE.title": "沉沦爆发 [Replica]",
   "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:施加 3 层[gold]沉沦强度[/gold]\n} 造成等同于 [gold](沉沦强度 * 次数)/2[/gold] 的伤害。移除所有[gold]沉沦[/gold]。",
 
   "RIENSANG-THE_ORACLES_PROXY.title": "神谕代行者",
@@ -188,10 +188,10 @@
   "RIENSANG-RECONSTRUCT.title": "重构",
   "RIENSANG-RECONSTRUCT.description": "[gold]转化[/gold]一张手牌。在手牌中生成一张该牌的复制品。获得 {KarmaGain:diff()} 层[gold]因果报应[/gold]。",
 
-  "RIENSANG-PRECOGNITION_REPLICA.title": "预知 [复刻]",
+  "RIENSANG-PRECOGNITION_REPLICA.title": "预知 [Replica]",
   "RIENSANG-PRECOGNITION_REPLICA.description": "获得 [blue]{LCEvadePower:diff()}*X[/blue] 层[gold]回避[/gold]。成功[gold]回避[/gold]时，获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]，下回合获得 +1 点[gold]能量[/gold]。",
 
-  "RIENSANG-PROCURATION_ANNIHILATE.title": "代行：湮灭 [复刻]",
+  "RIENSANG-PROCURATION_ANNIHILATE.title": "代行：湮灭 [Replica]",
   "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。处于[gold]解禁 III[/gold]时，额外造成 15% 的伤害。",
 
   "RIENSANG-GRACE_OF_GOD.title": "神之恩赐",
@@ -213,7 +213,7 @@
   "RIENSANG-UNLOCK_II_I.description": "造成 {Damage:diff()} 点伤害 3 次。获得 1 点[gold]能量[/gold]并[gold]抽[/gold] {DrawAmount:diff()} 张牌。",
 
   "RIENSANG-GODS_BLESSING.title": "神的祝愿",
-  "RIENSANG-GODS_BLESSING.description": "仅能在[gold]因果报应[/gold]为 15 或以下且牌组中拥有 15 张以上[gold]使者之杖[/gold]时使用。\n将[gold]代行 [赫尔墨斯][/gold]层数设为 9。",
+  "RIENSANG-GODS_BLESSING.description": "仅能在[gold]因果报应[/gold]为 15 或以下且牌组中拥有 15 张以上[gold]使者之杖[/gold]时使用。\n将[gold]代行 (赫尔墨斯)[/gold]层数设为 9。",
 
   "RIENSANG-SPORK.title": "勺叉",
   "RIENSANG-SPORK.description": "若此牌在手中，必须优先打出。受到 5 点伤害。",

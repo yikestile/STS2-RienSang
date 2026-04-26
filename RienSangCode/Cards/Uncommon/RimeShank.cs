@@ -23,7 +23,7 @@ public class RimeShank : RienSangCard
     protected override bool HasEnergyCostX => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCSinkingPower>(3) // Multiplier for X
+        new PowerVar<LCSinkingPower>(3)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -44,7 +44,7 @@ public class RimeShank : RienSangCard
                 {
                     if (enemy.IsAlive)
                     {
-                        await PowerCmd.Apply<LCSinkingPower>(enemy, sinkingCount, Owner.Creature, this);
+                        await LCSinkingPower.Apply(choiceContext, enemy, sinkingCount, 1, Owner.Creature, this);
                     }
                 }
             }

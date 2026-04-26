@@ -40,7 +40,7 @@
   "RIENSANG-INDULGENCE_IN_PRESCRIPT.smartDescription": "Apply the following to Furioso: Inflict 1 Sinking Potency and Gain 1 more Poise Potency. Deal 10% more damage. Expires at turn end.",
 
   "RIENSANG-KARMIC_CONSEQUENCE.title": "Karmic Consequence",
-  "RIENSANG-KARMIC_CONSEQUENCE.description": "Gain [gold]Fragile[/gold] and [gold]Curses[/gold] as stacks increase. [red]Dies[/red] at 100 stacks.",
+  "RIENSANG-KARMIC_CONSEQUENCE.description": "Gain [gold]Fragile[/gold] and [gold]Detriments[/gold] as stacks increase. [red]Dies[/red] at 100 stacks.",
   "RIENSANG-KARMIC_CONSEQUENCE.smartDescription": "Gain [blue]1[/blue] [gold]Fragile[/gold] for every [blue]20[/blue] stacks. \n[blue]At 40 stacks[/blue]: Gain a temporary [gold]Curse[/gold]. \n[blue]At 60 stacks[/blue]: [gold]Draw 1 less card each turn[/gold]. \n[blue]At 80 stacks[/blue]: Gain a permanent [gold]Curse[/gold]. \n[blue]At 100 stacks[/blue]: [red]Dies[/red].",
 
   "RIENSANG-STAR_OF_THE_CITY_POWER.title": "Star of the City",
@@ -77,5 +77,33 @@
 
   "RIENSANG-DEFENSIVE_STANCE_POWER.title": "Defensive Stance",
   "RIENSANG-DEFENSIVE_STANCE_POWER.description": "Attack cards gain [gold]Block[/gold] instead of dealing damage.",
-  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "Attack cards you played this turn will gain [gold]Block[/gold] instead of dealing damage."
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "Attack cards you played this turn will gain [gold]Block[/gold] instead of dealing damage.",
+
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.title": "Faith Beyond Question",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.description": "Increase damage of ALL Blind Faith each time it is used.",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.smartDescription": "Blind Faith cards currently deal [blue]{Potency}[/blue] bonus damage. Each further Blind Faith played will increase this bonus by [blue]{Amount}[/blue].",
+  
+  "RIENSANG-POISED_WARDING_POWER.title": "Poised Warding",
+  "RIENSANG-POISED_WARDING_POWER.description": "Gain [gold]Poise Potency[/gold] each turn. On [gold]Crit[/gold]: Gain [gold]Block[/gold].",
+  "RIENSANG-POISED_WARDING_POWER.smartDescription": "At the start of each turn, Gain [blue]{PoiseGain}[/blue] [gold]Poise Potency[/gold].\n[gold]On Crit[/gold]: Gain [blue]{BlockGain}[/blue] [gold]Block[/gold].",
+
+  "RIENSANG-SORS_SALUTIS_POWER.title": "Sors Salutis",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "Reduces damage received by half, taking the remainder as [gold]Karmic Consequence[/gold].",
+  "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "If you would take more than [blue]10[/blue] damage, take half of it as damage and the other half as [gold]Karmic Consequence[/gold].",
+
+  "RIENSANG-SORS_IMMANIS_POWER.title": "Sors Immanis",
+  "RIENSANG-SORS_IMMANIS_POWER.description": "Take an extra turn. Costs [gold]Karmic Consequence[/gold].",
+  "RIENSANG-SORS_IMMANIS_POWER.smartDescription": "Take an extra turn at the end of the round. Expires after one use.",
+
+  "RIENSANG-DIVINE_PROTECTION_POWER.title": "Divine Protection",
+  "RIENSANG-DIVINE_PROTECTION_POWER.description": "Doubles [gold]Block[/gold] and [gold]Evade[/gold] gained this turn.",
+  "RIENSANG-DIVINE_PROTECTION_POWER.smartDescription": "Doubles [gold]Block[/gold] and [gold]Evade[/gold] gained this turn.",
+
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.title": "Karmic Consequence [Fortuna]",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.description": "Gain [gold]Fragile[/gold] and [gold]Detriments[/gold] as stacks increase. [red]Dies[/red] at 200 stacks.",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.smartDescription": "Gain [blue]1[/blue] [gold]Fragile[/gold] for every [blue]20[/blue] stacks. \n[blue]At 40 stacks[/blue]: Gain a temporary [gold]Curse[/gold]. \n[blue]At 80 stacks[/blue]: Gain [blue]2[/blue] temporary [gold]Curses[/gold] and [gold]Draw 1 less card each turn[/gold]. \n[blue]At 100 stacks[/blue]: [gold]-1 Energy each turn[/gold]. \n[blue]At 120 stacks[/blue]: Gain a permanent [gold]Curse[/gold]. \n[blue]At 160 stacks[/blue]: Gain another permanent [gold]Curse[/gold] and [gold]Draw 1 less cards[/gold]. \n[blue]At 200 stacks[/blue]: [red]Dies[/red].",
+
+  "RIENSANG-ATONEMENT_POWER.title": "Atonement",
+  "RIENSANG-ATONEMENT_POWER.description": "Each [gold]Marked[/gold] card played will now reduce [gold]Karmic Consequence[/gold].",
+  "RIENSANG-ATONEMENT_POWER.smartDescription": "Reduces [gold]Karmic Consequence[/gold] by [blue]{KarmaReduction}[/blue] whenever you play a [gold]Marked[/gold] card."
 }

@@ -11,6 +11,8 @@ public partial class NRiensang : NCreatureVisuals
     
     private float _debounceTimer = 0f;
     private const float DebounceTimeLimit = 1.0f;
+    
+    private bool _isRoomMirrored = false;
 
     private static readonly HashSet<string> DashingMoves = new() 
     { 
@@ -82,16 +84,23 @@ public partial class NRiensang : NCreatureVisuals
     private void OnAnimationStartedCinematic(StringName animName)
     {
         string name = animName.ToString();
+
+        // 1. MIRROR TRIGGER: Use idle_loop to prepare the room once.
+        if (name == "idle_loop" && !_isRoomMirrored)
+        {
+            LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0);
+            _isRoomMirrored = true;
+        }
+
+        // 2. ATTACK TRIGGER: Handle UI and internal parallax anchoring
         if (name.StartsWith("attack_"))
         {
             _currentAttack = name;
             _debounceTimer = 0f; 
             LimbusCinematicManager.StartUiHide();
-            
-            if (DashingMoves.Contains(name))
-            {
-                LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0);
-            }
+        
+            // Ensure background is anchored during attacks
+            LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0);
         }
     }
 
@@ -100,10 +109,7 @@ public partial class NRiensang : NCreatureVisuals
         _currentAttack = null;
         _debounceTimer = DebounceTimeLimit; 
 
-        if (_visuals != null)
-        {
-            _visuals.Position = Vector2.Zero;
-        }
+        if (_visuals != null) _visuals.Position = Vector2.Zero;
 
         LimbusCinematicManager.EndUiSequence();
         LimbusCinematicManager.EndBackgroundParallax();
@@ -111,7 +117,9 @@ public partial class NRiensang : NCreatureVisuals
 
     private void OnAnimationFinishedCinematic(StringName animName)
     {
-        if (animName.ToString() == _currentAttack)
+        string name = animName.ToString();
+        // Use the stored _currentAttack to ensure we clean up the correct sequence
+        if (name == _currentAttack)
         {
             HandleAttackFinished();
         }

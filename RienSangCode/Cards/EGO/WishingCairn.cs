@@ -41,7 +41,7 @@ public class WishingCairn : RienSangCard
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
             
             int paralyze = DynamicVars[nameof(LCParalyzePower)].IntValue;
-            await PowerCmd.Apply<LCParalyzePower>(play.Target, paralyze, Owner.Creature, this);
+            await PowerCmd.Apply<LCParalyzePower>(choiceContext, play.Target, paralyze, Owner.Creature, this);
         }
     }
 

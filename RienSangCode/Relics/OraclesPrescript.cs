@@ -41,8 +41,8 @@ public class OraclesPrescript : RienSangRelic
         
         Flash();
 
-        await PowerCmd.Apply<MarkofthePrescriptPower>(Owner.Creature, 1, Owner.Creature, null);
-        await PowerCmd.Apply<WoundcasingMask>(Owner.Creature, 1, Owner.Creature, null);
+        await PowerCmd.Apply<MarkofthePrescriptPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, 1, Owner.Creature, null);
+        await PowerCmd.Apply<WoundcasingMask>(new ThrowingPlayerChoiceContext(), Owner.Creature, 1, Owner.Creature, null);
     }
     
     public override async Task AfterPlayerTurnStartLate(PlayerChoiceContext choiceContext, Player player)
@@ -58,7 +58,7 @@ public class OraclesPrescript : RienSangRelic
         {
             var target = potentialTargets.OrderBy(_ => Owner.RunState.Rng.Niche.NextFloat()).First();
             
-            await PowerCmd.Apply<ThePrescriptsTarget>((Creature)target, 1, Owner.Creature, null);
+            await PowerCmd.Apply<ThePrescriptsTarget>(new ThrowingPlayerChoiceContext(), (Creature)target, 1, Owner.Creature, null);
         }
     }
 }

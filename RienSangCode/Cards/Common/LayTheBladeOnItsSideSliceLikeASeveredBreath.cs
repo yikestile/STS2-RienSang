@@ -26,7 +26,7 @@ public class LayTheBladeOnItsSideSliceLikeASeveredBreath : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(3, ValueProp.Move),
-        new PowerVar<LCPoisePower>(1)
+        new PowerVar<LCPoisePower>(3)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
@@ -52,11 +52,7 @@ public class LayTheBladeOnItsSideSliceLikeASeveredBreath : RienSangCard
         }
         
         int poiseVal = DynamicVars[nameof(LCPoisePower)].IntValue;
-        var poise = await PowerCmd.Apply<LCPoisePower>(player, poiseVal, player, this);
-        if (poise != null)
-        {
-            poise.AddPotency(poiseVal);
-        }
+        await LCPoisePower.Apply(choiceContext, player, poiseVal, poiseVal, player, this);
     }
 
     protected override void OnUpgrade()

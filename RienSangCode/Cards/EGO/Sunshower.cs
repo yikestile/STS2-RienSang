@@ -75,8 +75,8 @@ public class Sunshower : RienSangCard
             {
                 if (ally == null || !ally.IsAlive) continue;
 
-                await PowerCmd.Apply<LCProtectionPower>(ally, protectionStacks, Owner.Creature, this);
-                await PowerCmd.Apply<LCProtectionNextTurn>(ally, protectionStacks, Owner.Creature, this);
+                await PowerCmd.Apply<LCProtectionPower>(choiceContext, ally, protectionStacks, Owner.Creature, this);
+                await PowerCmd.Apply<LCProtectionNextTurn>(choiceContext, ally, protectionStacks, Owner.Creature, this);
 
                 if (success && ally.Player != null)
                 {

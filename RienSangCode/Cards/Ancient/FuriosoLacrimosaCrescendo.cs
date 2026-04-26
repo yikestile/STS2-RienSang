@@ -55,7 +55,7 @@ public class FuriosoLacrimosaCrescendo : RienSangCard
         if (SanityManager.GetSanity(Owner) >= 0)
         {
             SanityManager.SpendSanity(Owner, 30f);
-            await PowerCmd.Apply<Mang>(player, DynamicVars[nameof(Mang)].IntValue, player, null);
+            await PowerCmd.Apply<Mang>(choiceContext, player, (decimal)DynamicVars[nameof(Mang)].IntValue, player, null);
         }
 
         var hermes = player.GetPower<ProcurationHermes>();
@@ -73,8 +73,7 @@ public class FuriosoLacrimosaCrescendo : RienSangCard
         var initialPoisePotency = player.HasPower<IndulgenceInPrescript>() ? 10 : DynamicVars["PoisePotency"].IntValue;
         var poiseCount = DynamicVars[nameof(LCPoisePower)].IntValue;
 
-        var poiseInstance = await PowerCmd.Apply<LCPoisePower>(player, poiseCount, player, null);
-        poiseInstance?.AddPotency(initialPoisePotency);
+        await LCPoisePower.Apply(choiceContext, player, poiseCount, initialPoisePotency, player, this);
 
         int hitCount = base.DynamicVars.Repeat.IntValue;
         decimal baseDamage = base.DynamicVars.Damage.BaseValue;

@@ -24,12 +24,10 @@ public class BindingChain : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCEvadePower>(2),
+        new PowerVar<LCEvadePower>(4),
         new("StrLoss", 2)
     ];
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Unlock];
-
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<LCEvadePower>(),
         HoverTipFactory.FromPower<Unlock>(),
@@ -38,7 +36,7 @@ public class BindingChain : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<LCEvadePower>(Owner.Creature, DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<LCEvadePower>(choiceContext, Owner.Creature, DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
 
         var target = cardPlay.Target;
         if (target != null && target.IsAlive)
@@ -49,8 +47,8 @@ public class BindingChain : RienSangCard
             {
                 strLoss += 2;
             }
-            await PowerCmd.Apply<StrengthPower>(target, -strLoss, Owner.Creature, this);
-            await PowerCmd.Apply<LCStrengthNextTurn>(target, strLoss, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, target, -strLoss, Owner.Creature, this);
+            await PowerCmd.Apply<LCStrengthNextTurn>(choiceContext, target, strLoss, Owner.Creature, this);
         }
     }
 

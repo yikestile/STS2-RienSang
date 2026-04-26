@@ -92,7 +92,7 @@ public class Execute() : RienSangCard(2, CardType.Attack, CardRarity.Uncommon, T
 
         if (killedEnemy)
         {
-            await PowerCmd.Apply<StrengthPower>(Owner.Creature, (int)DynamicVars["StrGain"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, (int)DynamicVars["StrGain"].BaseValue, Owner.Creature, this);
         }
     }
 

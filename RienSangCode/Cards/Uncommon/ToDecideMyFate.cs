@@ -26,7 +26,7 @@ public class ToDecideMyFate : RienSangCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new("KarmaLoss", 5),
         new RepeatVar(0), // Uses X
-        new("ExtraPlays", 1) // +1(+2)
+        new("ExtraPlays", 1)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -43,7 +43,6 @@ public class ToDecideMyFate : RienSangCard
         int extra = (int)DynamicVars["ExtraPlays"].BaseValue;
         int totalPlays = x + extra;
 
-        // Exhaust X random cards
         var hand = PileType.Hand.GetPile(Owner);
         if (hand != null && hand.Cards.Count > 0)
         {
@@ -63,10 +62,8 @@ public class ToDecideMyFate : RienSangCard
             }
         }
         
-        // Draw X
         await CardPileCmd.Draw(choiceContext, x, Owner);
         
-        // Play X + Extra random cards
         hand = PileType.Hand.GetPile(Owner);
         if (hand != null && hand.Cards.Count > 0)
         {
@@ -86,8 +83,7 @@ public class ToDecideMyFate : RienSangCard
             }
         }
 
-        // Lose Karma
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, -DynamicVars["KarmaLoss"].IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<KarmicConsequence>(choiceContext, Owner.Creature, -DynamicVars["KarmaLoss"].IntValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

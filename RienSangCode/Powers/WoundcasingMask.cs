@@ -36,7 +36,7 @@ public class WoundcasingMask : RienSangPower
         
         if (FuriosoPlayedThisCombat)
         {
-            await PowerCmd.Apply<SizzlingWound>(Owner, 1, Owner, null);
+            await PowerCmd.Apply<SizzlingWound>(choiceContext, Owner, 1, Owner, null);
             await PowerCmd.Remove(this);
         }
     }

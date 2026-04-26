@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://dtcimbukdv8h2"]
+[gd_scene load_steps=162 format=3 uid="uid://dtcimbukdv8h2"]
 
 [ext_resource type="Script" uid="uid://y78d2nw3j15n" path="res://RienSangCode/Nodes/NRiensang.cs" id="1_0pcsf"]
 [ext_resource type="Texture2D" uid="uid://ixw65r5tkqws" path="res://RienSang/images/riensang/Riensang.png" id="1_slxwp"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://rtyrfln8oago" path="res://RienSang/animation/sprites/caduceus/blink1.png" id="7_8rviw"]
 [ext_resource type="Texture2D" uid="uid://bosyhyml7jego" path="res://RienSang/animation/sprites/caduceus/hammer2.png" id="7_35nqd"]
 [ext_resource type="Texture2D" uid="uid://cy1s48fqmaosg" path="res://RienSang/animation/vfx/SeamlessSlash.png" id="7_ubcyd"]
-[ext_resource type="Texture2D" uid="uid://o07pk6t0ykfx" path="res://RienSang/animation/sprites/caduceus/bastardswordswing.png" id="10_bjhbm"]
+[ext_resource type="Texture2D" uid="uid://o07pk6t0ykfx" path="res://RienSang/animation/sprites/caduceus/swing1.png" id="10_bjhbm"]
 [ext_resource type="Texture2D" uid="uid://dnx3tlhfth38q" path="res://RienSang/animation/vfx/Triangle2Transparent.png" id="11_1ltr4"]
 [ext_resource type="Shader" uid="uid://d1s6jhr5nncq" path="res://RienSang/scenes/riensang/ringshader.gdshader" id="11_e4bgq"]
 [ext_resource type="Texture2D" uid="uid://bvuju5bky60ja" path="res://RienSang/animation/sprites/caduceus/hatchet2.png" id="11_po47i"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bs6jgaa2fviwv" path="res://RienSang/animation/vfx/Slash05.png" id="15_vfx"]
 [ext_resource type="Texture2D" uid="uid://dlg1dsxpkkjd3" path="res://RienSang/animation/sprites/caduceus/lance1.png" id="19_6aokb"]
 [ext_resource type="Texture2D" uid="uid://dyxjqoxg3ans0" path="res://RienSang/animation/sprites/caduceus/lance3.png" id="20_e4bgq"]
+[ext_resource type="Texture2D" uid="uid://28xvyo6k6qui" path="res://RienSang/animation/sprites/caduceus/swing2.png" id="27_bgjlr"]
 [ext_resource type="Texture2D" uid="uid://bfed7ey5itjk2" path="res://RienSang/animation/sprites/idle/idle00.png" id="39_gpkdp"]
 [ext_resource type="Texture2D" uid="uid://jdk6ydnbq01o" path="res://RienSang/animation/sprites/idle/idle01.png" id="40_po148"]
 [ext_resource type="Texture2D" uid="uid://cxa8la0cw5faq" path="res://RienSang/animation/sprites/idle/idle02.png" id="41_twvo2"]
@@ -98,8 +99,8 @@ resource_local_to_scene = true
 shader = ExtResource("3_bm0ng")
 shader_parameter/detail_tex = ExtResource("12_vfx")
 shader_parameter/dissolve_noise_tex = ExtResource("12_vfx")
-shader_parameter/phase = 0.15000010212499992
-shader_parameter/dissolve_value = 1.0
+shader_parameter/phase = -0.11499991046250012
+shader_parameter/dissolve_value = 0.0
 shader_parameter/noise_rotation = 0.0
 shader_parameter/glow_direction = 0
 shader_parameter/flip_glow = false
@@ -1299,34 +1300,22 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visuals:rotation")
+tracks/3/path = NodePath("Visuals/Petals:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Visuals/Petals:emitting")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.35666668, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -1334,109 +1323,109 @@ tracks/5/keys = {
 "method": &"DoScreenShake"
 }]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Visuals/UppercutVFX:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/UppercutVFX:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.45666668, 0.99),
 "transitions": PackedFloat32Array(1, 3, 1),
 "update": 1,
 "values": [false, true, false]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/UppercutVFX:material:shader_parameter/phase")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/UppercutVFX:material:shader_parameter/phase")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0.45666668, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.11499991046250012, 0.15000010212499992]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/UppercutVFX:material:shader_parameter/glow_alpha")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/UppercutVFX:material:shader_parameter/glow_alpha")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0.6, 0.73333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/UppercutVFX:material:shader_parameter/dissolve_value")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/UppercutVFX:material:shader_parameter/dissolve_value")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0.7066667, 1),
 "transitions": PackedFloat32Array(2.0000033, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/Smoke:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/Smoke:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.46666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/Smoke:material:shader_parameter/dissolve_value")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visuals/Smoke:material:shader_parameter/dissolve_value")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0.45, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/Smoke:material:shader_parameter/phase")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/Smoke:material:shader_parameter/phase")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0.45666668, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.249999916875, 0.5000001187500001]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/Smoke:material:shader_parameter/gravity_strength")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/Smoke:material:shader_parameter/gravity_strength")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0.46666667, 1),
 "transitions": PackedFloat32Array(3.5, 1),
 "update": 0,
 "values": [0.0, 400.000019]
 }
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("AnimationPlayer:speed_scale")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnimationPlayer:speed_scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.59, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
@@ -1468,7 +1457,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.31666666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("7_8rviw"), ExtResource("10_bjhbm")]
+"values": [ExtResource("7_8rviw"), ExtResource("27_bgjlr")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1480,39 +1469,15 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(400, 0)]
+"values": [Vector2(500, 0)]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visuals:rotation")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Visuals:flip_h")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.033333335),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.35),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -1542,7 +1507,7 @@ tracks/1/path = NodePath("Visuals:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.5),
+"times": PackedFloat32Array(0, 0.033333335, 0.16666667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_rht7h"), ExtResource("3_5ficb"), ExtResource("4_35nqd"), ExtResource("7_35nqd")]
@@ -1554,30 +1519,18 @@ tracks/2/path = NodePath("Visuals:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.33333334, 1),
+"transitions": PackedFloat32Array(1, 0.5, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(500, 0)]
+"values": [Vector2(-200, 0), Vector2(-200, 0), Vector2(600, 0)]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visuals:rotation")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -1637,25 +1590,13 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Visuals:flip_h")
+tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.08),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -3603,9 +3544,9 @@ unique_name_in_owner = true
 physics_interpolation_mode = 0
 layout_mode = 3
 anchors_preset = 0
-offset_left = -129.0
+offset_left = -173.0
 offset_top = -370.0
-offset_right = 124.0
+offset_right = 173.0
 
 [node name="IntentPos" type="Marker2D" parent="."]
 unique_name_in_owner = true

@@ -45,7 +45,7 @@ public class DefensiveStancePower : RienSangPower
         return 1m;
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState state)
     {
         if (side == CombatSide.Player)
         {

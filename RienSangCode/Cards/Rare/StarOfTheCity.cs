@@ -33,7 +33,7 @@ public class StarOfTheCity : RienSangCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var player = Owner.Creature;
-        await PowerCmd.Apply<StarOfTheCityPower>(player, 1, player, this);
+        await PowerCmd.Apply<StarOfTheCityPower>(choiceContext, player, 1, player, this);
     }
     
     protected override void OnUpgrade()

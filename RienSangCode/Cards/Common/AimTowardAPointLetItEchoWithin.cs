@@ -50,12 +50,8 @@ public class AimTowardAPointLetItEchoWithin : RienSangCard
         {
             await CaduceusManager.Execute(this, target, baseDamage, choiceContext, 0, LimbusDamageType.Pierce, biasChance);
             
-            int val = DynamicVars[nameof(LCSinkingPower)].IntValue;
-            var sinking = await PowerCmd.Apply<LCSinkingPower>(target, val, player, this);
-            if (sinking != null)
-            {
-                sinking.AddPotency(val);
-            }
+            int count = DynamicVars[nameof(LCSinkingPower)].IntValue;
+            await LCSinkingPower.Apply(choiceContext, target, count, 1, player, this);
         }
     }
 

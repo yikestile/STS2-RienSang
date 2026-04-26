@@ -26,7 +26,7 @@ public class Tradeoff : RienSangCard
     public override bool GainsKarma => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmaGain", 5)
+        new("KarmaGain", 5m)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -66,8 +66,8 @@ public class Tradeoff : RienSangCard
 
             if (upgradedCount > 0)
             {
-                int karma = (int)DynamicVars["KarmaGain"].BaseValue * upgradedCount;
-                await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, karma, Owner.Creature, this);
+                decimal karma = DynamicVars["KarmaGain"].BaseValue * upgradedCount;
+                await Owner.Creature.ApplyKarma(choiceContext, karma, Owner.Creature, this);
             }
         }
     }

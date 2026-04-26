@@ -26,26 +26,21 @@ public class IndulgenceInPrescript : RienSangPower
         {
             if (Owner.CombatState != null && Owner.CombatState.RunState.Rng.Niche.NextBool())
             {
-                var poise = await PowerCmd.Apply<LCPoisePower>(Owner, 1m, Owner, cardSource);
-                poise?.AddPotency(1);
+                await LCPoisePower.Apply(choiceContext, Owner, 1, 1, Owner, cardSource);
             }
             else
             {
                 if (target != null)
                 {
-                    var sinking = await PowerCmd.Apply<LCSinkingPower>(target, 1m, Owner, cardSource);
-                    sinking?.AddPotency(1);
+                    await LCSinkingPower.Apply(choiceContext, target, 1, 1, Owner, cardSource);
                 }
             }
         }
     }
 
-    public override async Task BeforePowerAmountChanged(PowerModel power, decimal amount, Creature applier, Creature? creature, CardModel? cardSource)
+    public override async Task BeforePowerAmountChanged(PowerModel power, decimal amount, Creature target, Creature? applier, CardModel? cardSource)
     {
-        if (applier == Owner && (power is LCPoisePower or LCSinkingPower))
-        {
-            amount += 1m;
-        }
+        if (applier == Owner && (power is LCPoisePower or LCSinkingPower)) { }
         await Task.CompletedTask;
     }
     

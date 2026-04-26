@@ -22,7 +22,7 @@ public class Obedience : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmaLoss", 20),
+        new("KarmaLoss", 20m),
         new EnergyVar(0) // Added for {Energy:diff()}
     ];
 
@@ -38,11 +38,11 @@ public class Obedience : RienSangCard
         int energyGain = DynamicVars.Energy.IntValue;
         if (energyGain > 0)
         {
-            await PowerCmd.Apply<EnergyNextTurnPower>(Owner.Creature, energyGain, Owner.Creature, this);
+            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, Owner.Creature, energyGain, Owner.Creature, this);
         }
         
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, -DynamicVars["KarmaLoss"].IntValue, Owner.Creature, this);
-        await PowerCmd.Apply<TheOraclesProxyPower>(Owner.Creature, 1, Owner.Creature, this);
+        await Owner.Creature.ModifyKarma(choiceContext, -DynamicVars["KarmaLoss"].BaseValue, Owner.Creature);
+        await PowerCmd.Apply<TheOraclesProxyPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

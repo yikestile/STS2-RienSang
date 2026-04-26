@@ -24,7 +24,7 @@ public class RecitePrescript : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new RepeatVar(2),
-        new("KarmaLoss", 10)
+        new("KarmaLoss", 10m)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -35,7 +35,6 @@ public class RecitePrescript : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // "Plays 2(3) random cards in hand and exhaust them."
         var hand = PileType.Hand.GetPile(Owner);
         if (hand == null || hand.Cards.Count == 0)
         {
@@ -61,7 +60,7 @@ public class RecitePrescript : RienSangCard
         }
 
         // Lose Karma
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, -DynamicVars["KarmaLoss"].IntValue, Owner.Creature, this);
+        await Owner.Creature.ModifyKarma(choiceContext, -DynamicVars["KarmaLoss"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

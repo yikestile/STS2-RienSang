@@ -44,7 +44,7 @@ public class TheIndexNursefatherPower : RienSangPower
                 var target = aliveEnemies.TakeRandom(1, player.RunState.Rng.CombatTargets).FirstOrDefault();
                 if (target != null)
                 {
-                    await PowerCmd.Apply<LCWeakNextTurn>(target, (int)DynamicVars["WeakAmount"].BaseValue, Owner, null);
+                    await PowerCmd.Apply<LCWeakNextTurn>(choiceContext, target, (int)DynamicVars["WeakAmount"].BaseValue, Owner, null);
                 }
             }
         }

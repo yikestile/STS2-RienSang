@@ -51,12 +51,8 @@ public class CarveAtALowSlantPeelWhatRemains : RienSangCard
         {
             await CaduceusManager.Execute(this, target, baseDamage, choiceContext, 0, LimbusDamageType.Slash, biasChance);
             
-            int val = (int)DynamicVars["SinkingPotency"].BaseValue;
-            var sinking = await PowerCmd.Apply<LCSinkingPower>(target, 1, player, this);
-            if (sinking != null)
-            {
-                sinking.AddPotency(val);
-            }
+            int potency = (int)DynamicVars["SinkingPotency"].BaseValue;
+            await LCSinkingPower.Apply(choiceContext, target, 1, potency, player, this);
         }
     }
 

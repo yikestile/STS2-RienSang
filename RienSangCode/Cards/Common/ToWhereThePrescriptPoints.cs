@@ -41,7 +41,7 @@ public class ToWhereThePrescriptPoints : RienSangCard
         if (target != null && target.IsAlive)
         {
             await CaduceusManager.Execute(this, target, baseDamage, choiceContext, 0); 
-            await PowerCmd.Apply<LCFragileNextTurn>(target, (int)DynamicVars["FragileAmount"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<LCFragileNextTurn>(choiceContext, target, (int)DynamicVars["FragileAmount"].BaseValue, Owner.Creature, this);
         }
     }
     

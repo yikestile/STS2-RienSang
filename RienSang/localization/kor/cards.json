@@ -1,225 +1,226 @@
 ﻿{
-  "RIENSANG-FURIOSO_REPLICA.title": "퓨리오소 [복제]",
-  "RIENSANG-FURIOSO_REPLICA.description": "정신력(SP) 0 이상일 때: [blue]10[/blue] [gold]정신력[/gold]을 소모하여 {Mang:diff()} [gold]망(望)[/gold]을 생성합니다. {PoisePotency:diff()} [gold]호흡 위력[/gold]과 {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻습니다. [gold]카두세우스[/gold]를 사용하여 {Damage:diff()} 피해를 {Repeat:diff()}번 입힙니다. 모든 [gold]대행 [헤르메스][/gold]를 소모합니다.",
+  "RIENSANG-FURIOSO_REPLICA.title": "Furioso [Replica]",
+  "RIENSANG-FURIOSO_REPLICA.description": "[gold]정신력[/gold] 0+ 시 [blue]10[/blue] 소모, [gold]망[/gold] {Mang:diff()} 얻음. [gold]카두세우스[/gold]로 무작위 적에게 {Damage:diff()} 피해를 {Repeat:diff()}번 줍니다. [gold]호흡 위력[/gold]을 {PoisePotency:diff()}, [gold]횟수[/gold]를 {LCPoisePower:diff()} 얻고, 모든 [gold]대행(헤르메스)[/gold]를 잃습니다.",
 
-  "RIENSANG-FURIOSO_CRESCENDO.title": "퓨리오소 [크레센도]",
-  "RIENSANG-FURIOSO_CRESCENDO.description": "정신력(SP) 0 이상일 때: [blue]20[/blue] [gold]정신력[/gold]을 소모하여 {Mang:diff()} [gold]망(望)[/gold]을 생성합니다. {PoisePotency:diff()} [gold]호흡 위력[/gold]과 {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻습니다. [gold]카두세우스[/gold]를 사용하여 {Damage:diff()} 피해를 {Repeat:diff()}번 입힙니다. 모든 [gold]대행 [헤르메스][/gold]를 소모합니다.",
+  "RIENSANG-FURIOSO_CRESCENDO.title": "Furioso [Crescendo]",
+  "RIENSANG-FURIOSO_CRESCENDO.description": "[gold]정신력[/gold] 0+ 시 [blue]20[/blue] 소모, [gold]망[/gold] {Mang:diff()} 얻음. [gold]카두세우스[/gold]로 무작위 적에게 {Damage:diff()} 피해를 {Repeat:diff()}번 줍니다. [gold]호흡 위력[/gold]을 {PoisePotency:diff()}, [gold]횟수[/gold]를 {LCPoisePower:diff()} 얻고, 모든 [gold]대행(헤르메스)[/gold]를 잃습니다.",
 
-  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.title": "퓨리오소 [라크리모사 크레센도]",
-  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.description": "정신력(SP) 0 이상일 때: [blue]30[/blue] [gold]정신력[/gold]을 소모하여 {Mang:diff()} [gold]망(望)[/gold]을 생성합니다. {PoisePotency:diff()} [gold]호흡 위력[/gold]과 {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻습니다. [gold]카두세우스[/gold]를 사용하여 {Damage:diff()} 피해를 {Repeat:diff()}번 입힙니다. 모든 [gold]대행 [헤르메스][/gold]를 소모합니다.",
+  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.title": "Furioso [Lacrimosa Crescendo]",
+  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.description": "[gold]정신력[/gold] 0+ 시 [blue]30[/blue] 소모, [gold]망[/gold] {Mang:diff()} 얻음. [gold]카두세우스[/gold]로 무작위 적에게 {Damage:diff()} 피해를 {Repeat:diff()}번 줍니다. [gold]호흡 위력[/gold]을 {PoisePotency:diff()}, [gold]횟수[/gold]를 {LCPoisePower:diff()} 얻고, 모든 [gold]대행(헤르메스)[/gold]를 잃습니다.",
 
   "RIENSANG-GLOOM_IN_RUINS.title": "폐허 속의 우울",
-  "RIENSANG-GLOOM_IN_RUINS.description": "[gold]침잠[/gold]이 이제 피해를 입힙니다. 적중 시: [gold]침잠 위력[/gold] 5당 {SinkingDamage:diff()} 피해를 입힙니다.",
+  "RIENSANG-GLOOM_IN_RUINS.description": "[gold]침잠[/gold]이 이제 피해를 줍니다. 적중 시 [gold]침잠 위력[/gold] 5당 피해를 {SinkingDamage:diff()} 줍니다.",
 
-  "RIENSANG-BY_GODS_WILL.title": "주님의 뜻대로",
-  "RIENSANG-BY_GODS_WILL.description": "{LCEvadePower:diff()} [gold]회피[/gold]를 얻습니다. [gold]해금 II[/gold] 미만일 경우, [gold]지령의 가호[/gold]를 6으로 설정합니다. 이 효과로 얻은 [gold]가호[/gold] 하나당 {KarmaGain:diff()} [gold]카르마[/gold]를 얻습니다.",
+  "RIENSANG-BY_GODS_WILL.title": "신의 뜻대로",
+  "RIENSANG-BY_GODS_WILL.description": "[gold]회피[/gold] {LCEvadePower:diff()}를 얻습니다. [gold]해금 II[/gold] 미만일 때, [gold]지령의 가호[/gold]를 6으로 설정하고, 이 효과로 얻은 [gold]가호[/gold] 1당 [gold]카르마[/gold]를 {KarmaGain:diff()}만큼 얻습니다.",
 
   "RIENSANG-BY_UNPREDICTABLE_WHIM.title": "예측할 수 없는 변덕으로",
-  "RIENSANG-BY_UNPREDICTABLE_WHIM.description": "[gold]해금 II[/gold] 미만일 경우, [gold]지령의 가호[/gold]를 6으로 설정합니다. 이 효과로 얻은 [gold]가호[/gold] 하나당 5 [gold]카르마[/gold]를 얻습니다.",
+  "RIENSANG-BY_UNPREDICTABLE_WHIM.description": "[gold]해금 II[/gold] 미만일 때, [gold]지령의 가호[/gold]가 6이 되도록 얻습니다. 이 효과로 얻은 [gold]지령의 가호[/gold] 1당 [gold]카르마[/gold]를 5만큼 얻습니다.",
 
-  "RIENSANG-FOLLOWING_THE_PRESCRIPT.title": "지령을 따르며",
-  "RIENSANG-FOLLOWING_THE_PRESCRIPT.description": "{Damage:diff()} 피해를 입힙니다.",
+  "RIENSANG-FOLLOWING_THE_PRESCRIPT.title": "지령을 따라",
+  "RIENSANG-FOLLOWING_THE_PRESCRIPT.description": "피해를 {Damage:diff()} 줍니다.",
 
   "RIENSANG-STRIKE_RIEN_SANG.title": "타격",
-  "RIENSANG-STRIKE_RIEN_SANG.description": "{Damage:diff()} 피해를 입힙니다.",
+  "RIENSANG-STRIKE_RIEN_SANG.description": "피해를 {Damage:diff()} 줍니다.",
 
   "RIENSANG-DEFEND_RIEN_SANG.title": "수비",
-  "RIENSANG-DEFEND_RIEN_SANG.description": "{Block:diff()} [gold]방어도[/gold]를 얻습니다.",
+  "RIENSANG-DEFEND_RIEN_SANG.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
 
   "RIENSANG-CROWS_EYE_VIEW.title": "오감도",
-  "RIENSANG-CROWS_EYE_VIEW.description": "{Damage:diff()} 피해를 입힙니다. {WeakPower:diff()} [gold]허약[/gold]과 {StrengthPower:diff()} [gold]힘 감소[/gold]를 부여합니다.",
+  "RIENSANG-CROWS_EYE_VIEW.description": "피해를 {Damage:diff()} 줍니다. 적에게 [gold]약화[/gold]를 {WeakPower:diff()} 부여하고 적이 [gold]힘[/gold]을 {StrengthPower:diff()} 잃습니다.",
 
-  "RIENSANG-BYGONE_DAYS.title": "지나간 날들",
-  "RIENSANG-BYGONE_DAYS.description": "모든 적에게 {SinkingPotency:diff()} [gold]침잠 위력[/gold]과 {LCSinkingPower:diff()} [gold]침잠 횟수[/gold]를 부여합니다.",
+  "RIENSANG-BYGONE_DAYS.title": "지난 날",
+  "RIENSANG-BYGONE_DAYS.description": "모든 적에게 [gold]침잠 위력[/gold]을 {SinkingPotency:diff()}, [gold]횟수[/gold]를 {LCSinkingPower:diff()} 부여합니다.",
 
   "RIENSANG-FOURTH_MATCH_FLAME.title": "4번째 성냥불",
-  "RIENSANG-FOURTH_MATCH_FLAME.description": "모든 적에게 {Damage:diff()} 피해를 입힙니다. {BurnPotency:diff()} [gold]화상 위력[/gold]과 {LCBurnPower:diff()} [gold]화상 횟수[/gold]를 부여합니다.",
+  "RIENSANG-FOURTH_MATCH_FLAME.description": "모든 적에게 피해를 {Damage:diff()} 줍니다. [gold]화상 위력[/gold]을 {BurnPotency:diff()}, [gold]횟수[/gold]를 {LCBurnPower:diff()} 부여합니다.",
 
   "RIENSANG-WISHING_CAIRN.title": "소망석",
-  "RIENSANG-WISHING_CAIRN.description": "{Damage:diff()} 피해를 입힙니다. {LCParalyzePower:diff()} [gold]마비[/gold]를 부여합니다.",
+  "RIENSANG-WISHING_CAIRN.description": "피해를 {Damage:diff()} 줍니다. [gold]마비[/gold]를 {LCParalyzePower:diff()} 부여합니다.",
 
-  "RIENSANG-DIMENSION_SHREDDER.title": "차원 굴절기",
-  "RIENSANG-DIMENSION_SHREDDER.description": "무작위 적에게 {Damage:diff()} 피해를 입힙니다. +{BonusDamage:diff()} 추가 피해를 입힐 확률이 있습니다.\n확률 = 50 + 사용 후 [gold]정신력(SP)[/gold].",
+  "RIENSANG-DIMENSION_SHREDDER.title": "차원 찢개",
+  "RIENSANG-DIMENSION_SHREDDER.description": "무작위 적에게 피해를 {Damage:diff()} 줍니다. 피해량이 {BonusDamage:diff()}만큼 증가할 확률이 있습니다.\n확률 = 50 + 사용 후 [gold]정신력[/gold]",
 
-  "RIENSANG-FELL_BULLET.title": "마탄",
-  "RIENSANG-FELL_BULLET.description": "아군 한 명에게 {AllyDamage:diff()} 또는 {AllyHighDamage:diff()} 피해를 입힙니다. 모든 적에게 {EnemyDamage:diff()} 또는 {EnemyHighDamage:diff()} 피해를 입힙니다. 처치 시마다 {PoisePotency:diff()} [gold]호흡 위력[/gold]을 얻습니다. {BleedPotency:diff()} [gold]출혈 위력[/gold]을 부여합니다.",
+  "RIENSANG-FELL_BULLET.title": "흉탄",
+  "RIENSANG-FELL_BULLET.description": "아군 한 명에게 피해를 {AllyDamage:diff()} 또는 {AllyHighDamage:diff()} 줍니다. 모든 적에게 피해를 {EnemyDamage:diff()} 또는 {EnemyHighDamage:diff()} 줍니다. 이 카드로 적 처치할 때, [gold]호흡 위력[/gold]을 {PoisePotency:diff()} 얻고, [gold]출혈 위력[/gold]을 {BleedPotency:diff()} 부여합니다.",
 
   "RIENSANG-SUNSHOWER.title": "여우비",
-  "RIENSANG-SUNSHOWER.description": "모든 적에게 {Damage:diff()} 피해를 입힙니다. 일정 확률로 +{BonusDamage:diff()} 추가 피해를 입히고 15 [gold]정신력(SP)[/gold]을 회복합니다. 이번 턴과 다음 턴 동안 모든 아군에게 {LCProtectionPower:diff()} [gold]보호[/gold]를 부여합니다.",
+  "RIENSANG-SUNSHOWER.description": "모든 적에게 피해를 {Damage:diff()} 줍니다. 모든 아군에게 다음 턴까지 유지되는 [gold]보호[/gold] {LCProtectionPower:diff()}를 부여합니다. 피해량이 {BonusDamage:diff()}만큼 증가하고, [gold]정신력[/gold] 15를 회복할 확률이 있습니다.",
 
-  "RIENSANG-GREAT_TRICHILIOCOSM.title": "삼천대세계",
-  "RIENSANG-GREAT_TRICHILIOCOSM.description": "{PoisePotency:diff()} [gold]호흡 위력[/gold]과 {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻습니다. 모든 적에게 {Damage:diff()} 피해를 4번 입힙니다. 대상이 [gold]침잠[/gold] 또는 [gold]화상[/gold]을 10 이상 보유했다면 +1 피해를 입힙니다. [gold]破碎世界(파쇄세계)[/gold]를 부여합니다. {LCSinkingPower:diff()} [gold]침잠 횟수[/gold]를 부여합니다. {BurnPotency:diff()} [gold]화상 위력[/gold]과 {LCBurnPower:diff()} [gold]화상 횟수[/gold]를 부여합니다. [gold]치명타[/gold] 시 대상의 [gold]화상[/gold]을 즉시 발동시키고 횟수를 1 감소시킵니다.",
+  "RIENSANG-GREAT_TRICHILIOCOSM.title": "삼천대세계 [三千大세계]",
+  "RIENSANG-GREAT_TRICHILIOCOSM.description": "모든 적에게 피해를 {Damage:diff()}만큼 4회 줍니다. [gold]호흡 위력[/gold]을 {PoisePotency:diff()}, [gold]횟수[/gold]를 {LCPoisePower:diff()} 얻습니다. 대상에게 [gold]침잠 위력[/gold] 또는 [gold]화상 위력[/gold]이 10 이상 있다면 피해량이 1만큼 증가합니다. [gold]깨어진 세계[/gold]를 부여합니다. [gold]침잠 횟수[/gold]를 {LCSinkingPower:diff()} 부여합니다. [gold]화상 위력[/gold]을 {BurnPotency:diff()}, [gold]횟수[/gold]를 {LCBurnPower:diff()} 부여합니다. [gold]치명타[/gold] 발동시, 대상의 [gold]화상[/gold]을 즉시 1회 발동시킵니다.",
 
   "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.title": "지령이 가리키는 곳으로",
-  "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.description": "{Damage:diff()} 피해를 입힙니다. 다음 턴에 {FragileAmount:diff()} [gold]취약[/gold]을 부여합니다.",
+  "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.description": "피해를 {Damage:diff()} 줍니다. 다음 턴에 [gold]취약[/gold] {FragileAmount:diff()}을 부여합니다.",
 
   "RIENSANG-WILL_OF_THE_PRESCRIPT.title": "지령의 뜻",
-  "RIENSANG-WILL_OF_THE_PRESCRIPT.description": "{LCEvadePower:diff()} [gold]회피[/gold]를 얻습니다. [gold]회피[/gold] 시 카드 3장을 [gold]뽑습니다[/gold]. [gold]해금 III[/gold] 상태라면 {Energy:diff()} [gold]에너지[/gold]를 얻습니다.",
+  "RIENSANG-WILL_OF_THE_PRESCRIPT.description": "[gold]회피[/gold]를 {LCEvadePower:diff()} 얻습니다. [gold]회피[/gold] 성공시, 카드를 3장 뽑습니다. [gold]해금 III[/gold] 상태라면, {Energy:energyIcons()}를 얻습니다.",
 
-  "RIENSANG-WILL_OF_THE_CITY.title": "도시의 뜻",
-  "RIENSANG-WILL_OF_THE_CITY.description": "{Block:diff()} [gold]방어도[/gold]를 얻습니다. {Energy:diff()} {Energy:energyIcons()}를 얻고 카드 1장을 [gold]뽑습니다[/gold].",
+  "RIENSANG-WILL_OF_THE_CITY.title": "도시의 의지",
+  "RIENSANG-WILL_OF_THE_CITY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다. {Energy:energyIcons()}를 얻고 카드를 1장 뽑습니다.",
 
-  "RIENSANG-FAITH.title": "신념",
-  "RIENSANG-FAITH.description": "{Block:diff()} [gold]방어도[/gold]를 얻습니다. {Energy:diff()} [gold]에너지[/gold]를 회복합니다.",
+  "RIENSANG-BELIEF.title": "신념",
+  "RIENSANG-BELIEF.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다. {Energy:energyIcons()}를 얻습니다.",
 
-  "RIENSANG-BLIND_FAITH.title": "맹신",
-  "RIENSANG-BLIND_FAITH.description": "전투 시작 시, 이 카드의 복사본 {CopyAmount:diff()}장을 뽑기 카드더미에 섞어 넣습니다. {Damage:diff()} 피해를 입힙니다. 뽑기 카드더미의 모든 [gold]맹신[/gold]을 손패로 가져옵니다.",
+  "RIENSANG-BLIND_FAITH.title": "맹목적인 믿음",
+  "RIENSANG-BLIND_FAITH.description": "전투 시작 시, 이 카드의 복사본 {CopyAmount:diff()}장을 [gold]뽑을 카드 더미[/gold]에 추가합니다. 피해를 {Damage:diff()} 줍니다. [gold]뽑을 카드 더미[/gold]에 있는 모든 [gold]맹목적인 믿음[/gold]을 [gold]손[/gold]으로 가져옵니다.",
 
   "RIENSANG-BINDING_CHAIN.title": "구속의 사슬",
-  "RIENSANG-BINDING_CHAIN.description": "{LCEvadePower:diff()} [gold]회피[/gold]를 얻습니다. 대상은 이번 턴에 {StrLoss:diff()} [gold]힘[/gold]을 잃습니다. [gold]해금 III[/gold] 상태라면 대상이 [gold]힘[/gold]을 2 더 잃습니다.",
+  "RIENSANG-BINDING_CHAIN.description": "[gold]회피[/gold]를 {LCEvadePower:diff()} 얻습니다. 이번 턴 동안 대상이 [gold]힘[/gold]을 {StrLoss:diff()} 잃습니다. [gold]해금 III[/gold] 상태라면, 대상이 [gold]힘[/gold]을 추가로 2 잃습니다.",
 
   "RIENSANG-MULTISLASH.title": "다중 베기",
-  "RIENSANG-MULTISLASH.description": "{Damage:diff()} 피해를 2번 입힙니다. 카드 {DrawAmount:diff()}장을 [gold]뽑습니다[/gold]. [gold]해금 III[/gold] 상태라면 {Energy:diff()} [gold]에너지[/gold]를 회복합니다.",
+  "RIENSANG-MULTISLASH.description": "피해를 {Damage:diff()}만큼 2번 줍니다. 카드를 {DrawAmount:diff()}장 뽑습니다. [gold]해금 III[/gold] 상태라면, {Energy:energyIcons()}를 얻습니다.",
 
-  "RIENSANG-SENSE_QUARRY.title": "먹잇감 포착",
-  "RIENSANG-SENSE_QUARRY.description": "{Block:diff()} [gold]방어도[/gold]를 얻습니다. [gold]해금 III[/gold] 상태라면 {BonusBlock:diff()} 추가 [gold]방어도[/gold]와 {PoisePotency:diff()} [gold]호흡 위력[/gold]을 얻습니다.",
+  "RIENSANG-SENSE_QUARRY.title": "사냥감 포착",
+  "RIENSANG-SENSE_QUARRY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다. [gold]해금 III[/gold] 상태라면, [gold]방어도[/gold]를 {BonusBlock:diff()} 추가로 얻고 [gold]호흡 위력[/gold]을 {PoisePotency:diff()} 얻습니다.",
 
   "RIENSANG-THE_INDEXS_BLADE.title": "검지의 칼날",
-  "RIENSANG-THE_INDEXS_BLADE.description": "모든 적에게 {Damage:diff()} 피해를 입힙니다.",
+  "RIENSANG-THE_INDEXS_BLADE.description": "모든 적에게 피해를 {Damage:diff()} 줍니다.",
 
-  "RIENSANG-AS_THE_PRESCRIPT_ORDERED.title": "지령의 명에 따라",
-  "RIENSANG-AS_THE_PRESCRIPT_ORDERED.description": "뽑기 카드더미에서 무작위 공격 카드 한 장을 손패로 가져옵니다. 그 카드는 이번 턴 동안 비용이 0이 됩니다.",
+  "RIENSANG-AS_THE_PRESCRIPT_ORDERED.title": "지령대로",
+  "RIENSANG-AS_THE_PRESCRIPT_ORDERED.description": "[gold]뽑을 카드 더미[/gold]에서 무작위 공격 카드 1장을 [gold]손[/gold]으로 가져옵니다. 이번 턴 동안 그 카드의 비용이 0이 됩니다.",
 
-  "RIENSANG-UNDERTAKE_PRESCRIPTS.title": "지령 수락",
-  "RIENSANG-UNDERTAKE_PRESCRIPTS.description": "뽑기 카드더미의 무작위 카드 {Repeat:diff()}장을 사용합니다. {KarmaLoss:diff()} [gold]카르마[/gold]를 잃습니다.",
+  "RIENSANG-UNDERTAKE_PRESCRIPTS.title": "지령 수행",
+  "RIENSANG-UNDERTAKE_PRESCRIPTS.description": "[gold]뽑을 카드 더미[/gold]에 있는 무작위 카드를 {Repeat:diff()}장 사용합니다. [gold]카르마[/gold]를 {KarmaLoss:diff()} 잃습니다.",
 
-  "RIENSANG-SOMBER_PROCURATION.title": "憂鬱(우울)한 대행",
-  "RIENSANG-SOMBER_PROCURATION.description": "{Damage:diff()} 피해를 입히고 {Block:diff()} [gold]방어도[/gold]를 얻습니다. [gold]해금 III[/gold] 상태라면 {UnlockBonus:diff()} 추가 [gold]방어도[/gold]를 얻고 {UnlockBonus:diff()} 추가 피해를 입힙니다.",
+  "RIENSANG-SOMBER_PROCURATION.title": "침울한 대행",
+  "RIENSANG-SOMBER_PROCURATION.description": "피해를 {Damage:diff()} 줍니다. [gold]방어도[/gold]를 {Block:diff()} 얻습니다. [gold]해금 III[/gold] 상태라면, [gold]방어도[/gold]를 추가로 {UnlockBonus:diff()} 얻고 피해량이 {UnlockBonus:diff()}만큼 증가합니다.",
 
   "RIENSANG-DELIVER_PRESCRIPTS.title": "지령 전달",
-  "RIENSANG-DELIVER_PRESCRIPTS.description": "뽑기 카드더미의 무작위 카드 1장을 사용합니다. {KarmaLoss:diff()} [gold]카르마[/gold]를 잃습니다.",
+  "RIENSANG-DELIVER_PRESCRIPTS.description": "[gold]뽑을 카드 더미[/gold]에 있는 무작위 카드를 1장 사용합니다. [gold]카르마[/gold]를 {KarmaLoss:diff()} 잃습니다.",
 
-  "RIENSANG-TRADEOFF.title": "등가교환",
-  "RIENSANG-TRADEOFF.description": "손패의 모든 카드를 [gold]강화[/gold]합니다. 이렇게 강화된 카드 한 장당 {KarmaGain:diff()} [gold]카르마[/gold]를 얻습니다.",
+  "RIENSANG-TRADEOFF.title": "트레이드 오프",
+  "RIENSANG-TRADEOFF.description": "[gold]손[/gold]에 있는 모든 카드를 [gold]강화[/gold]합니다. 이 카드의 효과로 [gold]강화[/gold]된 카드 한 장당 [gold]카르마[/gold]를 {KarmaGain:diff()} 얻습니다.",
 
-  "RIENSANG-POISED_BREATHING.title": "호흡 조절",
-  "RIENSANG-POISED_BREATHING.description": "{LCEvadePower:diff()} [gold]회피[/gold]를 얻습니다. [gold]회피[/gold] 시 {PoiseAmount:diff()} [gold]호흡 위력[/gold]과 [gold]횟수[/gold]를 얻습니다.",
+  "RIENSANG-POISED_BREATHING.title": "침착한 호흡",
+  "RIENSANG-POISED_BREATHING.description": "[gold]회피[/gold]를 {LCEvadePower:diff()} 얻습니다. [gold]회피[/gold] 성공 시, [gold]호흡 위력[/gold]과 [gold]횟수[/gold]를 각각 {PoiseAmount:diff()} 얻습니다.",
 
   "RIENSANG-SLAM_DOWN_WITH_WEIGHT_TOPPLE_THE_BODY.title": "무게를 실어 내려쳐, 몸을 무너뜨리고",
-  "RIENSANG-SLAM_DOWN_WITH_WEIGHT_TOPPLE_THE_BODY.description": "[gold]타격 위력 증가[/gold]. {PoisePotency:diff()} [gold]호흡 위력[/gold]을 얻습니다. {Damage:diff()} 피해를 입힙니다.",
+  "RIENSANG-SLAM_DOWN_WITH_WEIGHT_TOPPLE_THE_BODY.description": "[gold]타격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]호흡 위력[/gold]을 {PoisePotency:diff()} 얻습니다.",
 
   "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.title": "끝을 세워, 심지까지 밀어 넣고",
-  "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.description": "[gold]관통 위력 증가[/gold]. {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻습니다. {Damage:diff()} 피해를 입힙니다.",
+  "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.description": "[gold]관통 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]호흡 횟수[/gold]를 {LCPoisePower:diff()} 얻습니다.",
 
   "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.title": "날을 눕혀, 숨결이 갈라지듯 잘라내고",
-  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]참격 위력 증가[/gold]. {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻습니다. {Damage:diff()} 피해를 입힙니다.",
+  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]호흡 위력[/gold]을 {LCPoisePower:diff()} 얻습니다.",
 
   "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.title": "휘둘러 떨어트려, 땅과 하나로 만들어",
-  "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.description": "[gold]타격 위력 증가[/gold]. {Damage:diff()} 피해를 입힙니다. {SinkingPotency:diff()} [gold]침잠 위력[/gold]을 부여합니다.",
+  "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.description": "[gold]타격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]침잠 위력[/gold]을 {SinkingPotency:diff()} 부여합니다.",
 
   "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.title": "점 하나를 겨눠, 안쪽에서 울리며",
-  "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.description": "[gold]관통 위력 증가[/gold]. {Damage:diff()} 피해를 입힙니다. {LCSinkingPower:diff()} [gold]침잠 횟수[/gold]를 부여합니다.",
+  "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.description": "[gold]관통 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]침잠 횟수[/gold]를 {LCSinkingPower:diff()} 부여합니다.",
 
   "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.title": "결을 낮게 깔아, 남은 것을 벗겨내고",
-  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]참격 위력 증가[/gold]. {Damage:diff()} 피해를 입힙니다. {SinkingPotency:diff()} [gold]침잠 위력[/gold]을 부여합니다.",
+  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]침잠 위력[/gold]을 {SinkingPotency:diff()} 부여합니다.",
 
   "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.title": "소리를 부수고, 생각을 납작하게 짓이겨라",
-  "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.description": "[gold]타격 위력 증가[/gold]. {Damage:diff()} 피해를 2번 입힙니다. 다음 턴에 {StrNextTurn:diff()} [gold]힘[/gold]을 얻습니다.",
+  "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.description": "[gold]타격 피해[/gold].\n피해를 {Damage:diff()}만큼 2번 줍니다. 다음 턴에 [gold]힘[/gold]을 {StrNextTurn:diff()} 얻습니다.",
 
   "RIENSANG-STAB_THE_HEART_OF_SILENCE_PENETRATE_THE_MEMORY.title": "고요의 중심을 찌르고, 기억을 꿰뚫어라",
-  "RIENSANG-STAB_THE_HEART_OF_SILENCE_PENETRATE_THE_MEMORY.description": "[gold]관통 위력 증가[/gold]. {Damage:diff()} 피해를 2번 입힙니다. 다음 턴에 {WeakNextTurn:diff()} [gold]허약[/gold]을 부여합니다.",
+  "RIENSANG-STAB_THE_HEART_OF_SILENCE_PENETRATE_THE_MEMORY.description": "[gold]관통 피해[/gold].\n피해를 {Damage:diff()}만큼 2번 줍니다. 다음 턴에 대상에게 [gold]약화[/gold]를 {WeakNextTurn:diff()} 부여합니다.",
 
   "RIENSANG-WITH_TEMPERED_SECRET_SEVER_THE_FORM.title": "날카롭게 벼린 비밀로, 형태를 베어내라",
-  "RIENSANG-WITH_TEMPERED_SECRET_SEVER_THE_FORM.description": "[gold]참격 위력 증가[/gold]. {Damage:diff()} 피해를 2번 입힙니다. {Vulnerable:diff()} [gold]취약[/gold]을 부여합니다.",
+  "RIENSANG-WITH_TEMPERED_SECRET_SEVER_THE_FORM.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()}만큼 2번 줍니다. [gold]취약[/gold]을 {Vulnerable:diff()} 부여합니다.",
 
   "RIENSANG-ENWRAP330_TIMES.title": "삼백삼십 휘감아",
-  "RIENSANG-ENWRAP330_TIMES.description": "[gold]타격 위력 증가[/gold]. {Damage:diff()} 피해를 2번 입힙니다.",
+  "RIENSANG-ENWRAP330_TIMES.description": "[gold]타격 피해[/gold].\n피해를 {Damage:diff()}만큼 2번 줍니다.",
 
   "RIENSANG-IN_LONG_SWATHS_OF_FROZEN_BLOOD.title": "얼어붙은 피를",
-  "RIENSANG-IN_LONG_SWATHS_OF_FROZEN_BLOOD.description": "{Block:diff()} [gold]방어도[/gold]를 얻습니다. {PoisePotency:diff()} [gold]호흡 위력[/gold]과 {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻습니다. {SinkingPotency:diff()} [gold]침잠 위력[/gold]과 {LCSinkingPower:diff()} [gold]침잠 횟수[/gold]를 부여합니다.",
+  "RIENSANG-IN_LONG_SWATHS_OF_FROZEN_BLOOD.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다. [gold]호흡 위력[/gold]을 {PoisePotency:diff()}, [gold]횟수[/gold]를 {LCPoisePower:diff()} 얻습니다. [gold]침잠 위력[/gold]을 {SinkingPotency:diff()}, [gold]횟수[/gold]를 {LCSinkingPower:diff()} 부여합니다.",
 
-  "RIENSANG-REVEL_WITH_SOUNDLESS_APPLAUSE.title": "소리 없이 손뼉 쳐 즐기고",
-  "RIENSANG-REVEL_WITH_SOUNDLESS_APPLAUSE.description": "[gold]관통 위력 증가[/gold]. {Damage:diff()} 피해를 {Repeat:diff()}번 입힙니다.",
+  "RIENSANG-REVEL_WITH_SOUNDLESS_APPLAUSE.title": "소리없이 손뼉 쳐 즐기고",
+  "RIENSANG-REVEL_WITH_SOUNDLESS_APPLAUSE.description": "[gold]관통 피해[/gold].\n피해를 {Damage:diff()}만큼 {Repeat:diff()}번 줍니다.",
 
   "RIENSANG-IMPALE_IN_VOICELESS_SORROW.title": "목소리 없이 슬피 꿰뚫어",
-  "RIENSANG-IMPALE_IN_VOICELESS_SORROW.description": "{LCEvadePower:diff()} [gold]회피[/gold]를 얻습니다. [gold]회피[/gold] 시 모든 적에게 {SinkingPotency:diff()} [gold]침잠 위력[/gold]을 부여합니다.",
+  "RIENSANG-IMPALE_IN_VOICELESS_SORROW.description": "[gold]회피[/gold]를 {LCEvadePower:diff()} 얻습니다. [gold]회피[/gold] 성공시, 모든 적에게 [gold]침잠 위력[/gold]을 {SinkingPotency:diff()} 부여합니다.",
 
   "RIENSANG-RAISE_AND_LAUGH_THE_BLADE.title": "날 세워 칼을 웃거라",
-  "RIENSANG-RAISE_AND_LAUGH_THE_BLADE.description": "[gold]참격 위력 증가[/gold]. {Damage:diff()} 피해를 {Repeat:diff()}번 입힙니다. {SinkingPotency:diff()} [gold]침잠 위력[/gold]을 부여합니다.",
+  "RIENSANG-RAISE_AND_LAUGH_THE_BLADE.description": "[gold]참격 피해[/gold]. 피해를 {Damage:diff()}만큼 {Repeat:diff()}번 줍니다. [gold]침잠 위력[/gold]을 {SinkingPotency:diff()} 부여합니다.",
 
   "RIENSANG-CRY_THE_WATERFALL.title": "낙엽 향 나듯 폭포를 울거라",
-  "RIENSANG-CRY_THE_WATERFALL.description": "{Block:diff()} [gold]방어도[/gold]를 얻습니다. 모든 적에게 {LCSinkingPower:diff()} [gold]침잠 횟수[/gold]를 부여합니다.",
+  "RIENSANG-CRY_THE_WATERFALL.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다 . 모든 적에게 [gold]침잠 횟수[/gold]를 {LCSinkingPower:diff()} 부여합니다.",
 
   "RIENSANG-EXECUTE.title": "처형",
-  "RIENSANG-EXECUTE.description": "{Damage:diff()} 피해를 2번 입힙니다. 적 처치 시 [gold]힘[/gold] 1을 얻습니다. 마지막으로 사용한 카드가 공격 카드가 아니었다면, {BonusDamage:diff()} 추가 피해를 입힙니다.",
+  "RIENSANG-EXECUTE.description": "피해를 {Damage:diff()}만큼 2번 줍니다. 이 카드로 적을 처치시, [gold]힘[/gold]을 1 얻습니다. 이전에 사용한 카드가 공격 카드가 아니라면, 피해량이 {BonusDamage:diff()}만큼 증가합니다",
 
-  "RIENSANG-ELIMINATE.title": "제거",
-  "RIENSANG-ELIMINATE.description": "{Damage:diff()} 피해를 2번 입힙니다. 적 처치 시 [gold]힘[/gold] 1을 얻습니다. 대상의 체력이 50% 이하라면, {BonusDamage:diff()} 추가 피해를 입힙니다.",
+  "RIENSANG-ELIMINATE.title": "처단",
+  "RIENSANG-ELIMINATE.description": "피해를 {Damage:diff()}만큼 2번 줍니다. 이 카드로 적을 처치시, [gold]힘[/gold]을 1 얻습니다. 대상의 체력이 50% 이하일 경우, 피해량이 {BonusDamage:diff()}만큼 증가합니다.",
 
-  "RIENSANG-PROCURATION_ENGRAVE.title": "대행: 각인",
-  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]참격 위력 증가[/gold]. {Damage:diff()} 피해를 입힙니다. [gold]해금 III[/gold] 상태라면 15% 추가 피해를 입힙니다.",
+  "RIENSANG-PROCURATION_ENGRAVE.title": "대행:새기기",
+  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]해금 III[/gold] 상태라면, 피해를 15% 추가로 줍니다.",
 
-  "RIENSANG-DEFENSIVE_STANCE.title": "방어 자세",
-  "RIENSANG-DEFENSIVE_STANCE.description": "이번 턴에 사용한 공격 카드는 피해를 입히는 대신 [gold]방어도[/gold]를 얻습니다.",
+  "RIENSANG-DEFENSIVE_STANCE.title": "방어 태세",
+  "RIENSANG-DEFENSIVE_STANCE.description": "이번 턴에 사용하는 공격 카드는 피해를 입히는 대신 [gold]방어도[/gold]를 얻습니다.",
 
   "RIENSANG-EQUIVALENT_EXCHANGE.title": "등가교환",
-  "RIENSANG-EQUIVALENT_EXCHANGE.description": "이번 턴에 받는 피해는 대신 [gold]카르마[/gold]로 변환됩니다.",
+  "RIENSANG-EQUIVALENT_EXCHANGE.description": "이번 턴에 받는 피해가 [gold]카르마[/gold]로 전환됩니다.",
 
-  "RIENSANG-RECITE_PRESCRIPT.title": "지령 낭독",
-  "RIENSANG-RECITE_PRESCRIPT.description": "손패의 무작위 카드 {Repeat:diff()}장을 사용하고 [gold]소멸[/gold]시킵니다. [gold]카르마[/gold]를 5 잃습니다.",
+  "RIENSANG-RECITE_PRESCRIPT.title": "지령 암송",
+  "RIENSANG-RECITE_PRESCRIPT.description": "[gold]손[/gold]에 있는 무작위 카드 {Repeat:diff()}장을 사용하고 [gold]소멸[/gold]시킵니다. [gold]카르마[/gold]를 5 잃습니다.",
 
-  "RIENSANG-THE_INDEX_NURSEFATHER.title": "검지 아비",
-  "RIENSANG-THE_INDEX_NURSEFATHER.description": "매 턴 시작 시 무작위 적에게 1 [gold]허약[/gold]을 부여합니다. [gold]해금 III[/gold] 상태라면 매 턴 카드를 1장 더 [gold]뽑습니다[/gold].",
+  "RIENSANG-THE_INDEX_NURSEFATHER.title": "거미집 검지 아비",
+  "RIENSANG-THE_INDEX_NURSEFATHER.description": "내 턴 시작 시 무작위 적 하나에게 [gold]약화[/gold] 1을 부여합니다. [gold]해금 III[/gold] 단계에서, 매 턴 카드를 1장 뽑습니다.",
 
-  "RIENSANG-SANGUINE_POINTILLISM.title": "혈액 점묘 [복제]",
-  "RIENSANG-SANGUINE_POINTILLISM.description": "{Damage:diff()} 피해를 입힙니다. {Chance:diff()}% 확률로 한 번 더 공격합니다. 대상의 디버프 종류당 확률이 +{BonusChance:diff()}% 증가합니다. 최대 2번 추가 공격합니다.",
+  "RIENSANG-SANGUINE_POINTILLISM.title": "혈점묘화 [Replica]",
+  "RIENSANG-SANGUINE_POINTILLISM.description": "피해를 {Damage:diff()} 줍니다. {Chance:diff()}% 확률로 1번 더 공격합니다.(최대 2번) 대상의 디버프 종류당 확률이 {BonusChance:diff()}% 증가합니다.",
 
-  "RIENSANG-RIME_SHANK.title": "얼음다리 [복제]",
-  "RIENSANG-RIME_SHANK.description": "모든 적에게 [blue]{LCSinkingPower:diff()}*X[/blue] [gold]침잠 횟수[/gold]를 부여합니다.",
+  "RIENSANG-RIME_SHANK.title": "얼음다리 [Replica]",
+  "RIENSANG-RIME_SHANK.description": "모든 적에게 [gold]침잠 횟수[/gold]를 {LCSinkingPower:diff()}만큼 [blue]X[/blue]번 부여합니다.",
 
-  "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "지령이 요구하는 대로",
-  "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.description": "손패를 모두 [gold]버리고[/gold], 버린 카드 수만큼 카드를 [gold]뽑습니다[/gold]. 무작위 카드 3장을 사용합니다.",
+  "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "지령의 뜻대로",
+  "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.description": "[gold]손[/gold]에 있는 카드를 전부 버리고, 버린 카드 수만큼 뽑습니다. 무작위 카드를 3장 사용합니다.",
 
   "RIENSANG-TO_DECIDE_MY_FATE.title": "나의 운명을 결정하기 위해",
-  "RIENSANG-TO_DECIDE_MY_FATE.description": "무작위 카드 [blue]X[/blue]장을 [gold]소멸[/gold]시키고 [blue]X[/blue]장을 [gold]뽑은[/gold] 뒤, 무작위 카드 [blue]X[/blue]+{ExtraPlays:diff()}장을 사용합니다. {KarmaLoss:diff()} [gold]카르마[/gold]를 잃습니다.",
+  "RIENSANG-TO_DECIDE_MY_FATE.description": "무작위 카드를 [blue]X[/blue]장 [gold]소멸[/gold]시키고 [blue]X[/blue]장 뽑습니다. 무작위 카드를 [blue]X[/blue] + {ExtraPlays:diff()}장 사용합니다. [gold]카르마[/gold]를 {KarmaLoss:diff()} 잃습니다.",
 
   "RIENSANG-THE_WILL_OF_HERMES.title": "헤르메스의 의지",
-  "RIENSANG-THE_WILL_OF_HERMES.description": "{IfUpgraded:show:{Energy:energyIcons()}를 얻습니다.\n} 이번 턴 동안 [gold]헤르메스[/gold]가 당신 대신 행동합니다. {KarmaLoss:diff()} [gold]카르마[/gold]를 잃습니다.",
+  "RIENSANG-THE_WILL_OF_HERMES.description": "{IfUpgraded:show:{Energy:energyIcons()}를 얻습니다.\n}이번 턴에 [gold]헤르메스[/gold]가 [blue]대행[/blue]합니다. [gold]카르마[/gold]를 {KarmaLoss:diff()} 잃습니다.",
 
-  "RIENSANG-OBEDIENCE.title": "복종",
-  "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:다음 턴에 {Energy:energyIcons()}를 얻습니다.\n} 다음 턴에 [gold]헤르메스[/gold]가 당신 대신 행동합니다. {KarmaLoss:diff()} [gold]카르마[/gold]를 잃습니다.",
+  "RIENSANG-OBEDIENCE.title": "순응",
+  "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:다음 턴에, {Energy:energyIcons()}를 얻습니다.\n}다음 턴에, [gold]헤르메스[/gold]가 [blue]대행[/blue]합니다. [gold]카르마[/gold]를 {KarmaLoss:diff()} 잃습니다.",
 
-  "RIENSANG-SINKING_DELUGE.title": "침잠 쇄도",
-  "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:3 [gold]침잠[/gold]을 부여합니다.\n} [gold](침잠 위력 * 횟수)/2[/gold]만큼 피해를 입힙니다. 모든 [gold]침잠[/gold]을 제거합니다.",
+  "RIENSANG-SINKING_DELUGE.title": "침잠 쇄도 [Replica]",
+  "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:[gold]침잠 위력[/gold]을 3 부여합니다.\n}[gold](침잠 위력 × 침잠 횟수)/2[/gold]만큼 피해를 줍니다. 대상의 모든 [gold]침잠[/gold]을 제거합니다.",
 
-  "RIENSANG-THE_ORACLES_PROXY.title": "신탁 대행자",
-  "RIENSANG-THE_ORACLES_PROXY.description": "다음 [blue]X[/blue]턴 동안 [gold]헤르메스[/gold]가 행동합니다. [blue]X[/blue]턴 동안 [gold]카르마[/gold]를 얻을 수 없습니다. [gold]헤르메스[/gold]가 행동한 매 라운드마다 {Heal:diff()}+X [gold]체력[/gold]을 회복합니다.",
+  "RIENSANG-THE_ORACLES_PROXY.title": "신탁의 대행자",
+  "RIENSANG-THE_ORACLES_PROXY.description": "다음 [blue]X[/blue]턴 동안 [gold]헤르메스[/gold]가 [blue]대행[/blue]합니다. [blue]X[/blue]턴 동안 [gold]카르마[/gold]를 얻을 수 없습니다. [gold]헤르메스[/gold]가 [blue]대행[/blue]한 매 라운드마다 [gold]체력[/gold]을 [blue]X[/blue] + {Heal:diff()} 회복합니다.",
 
   "RIENSANG-RECONSTRUCT.title": "재구성",
-  "RIENSANG-RECONSTRUCT.description": "손패의 카드 한 장을 [gold]변환[/gold]합니다. 손패에 이 카드의 복사본 하나를 생성합니다. {KarmaGain:diff()} [gold]카르마[/gold]를 얻습니다.",
+  "RIENSANG-RECONSTRUCT.description": "[gold]손[/gold]에서 카드를 1장 [gold]변환[/gold]합니다. 이 카드의 복사본을 생성하고 [gold]손[/gold]으로 가져옵니다. [gold]카르마[/gold]를 {KarmaGain:diff()} 얻습니다.",
 
-  "RIENSANG-PRECOGNITION_REPLICA.title": "예견 [복제]",
-  "RIENSANG-PRECOGNITION_REPLICA.description": "[blue]{LCEvadePower:diff()}*X[/blue] [gold]회피[/gold]를 얻습니다. [gold]회피[/gold] 시 {PoisePotency:diff()} [gold]호흡 위력[/gold]과 {LCPoisePower:diff()} [gold]호흡 횟수[/gold]를 얻으며, 다음 턴에 [gold]에너지[/gold] +1을 얻습니다.",
+  "RIENSANG-PRECOGNITION_REPLICA.title": "예지안 [Replica]",
+  "RIENSANG-PRECOGNITION_REPLICA.description": "[gold]회피[/gold] [blue]{LCEvadePower:diff()}[/blue]만큼 [blue]X[/blue]번 얻습니다. [gold]회피[/gold] 성공시, [gold]호흡 위력[/gold]을 {PoisePotency:diff()}, [gold]횟수[/gold]를 {LCPoisePower:diff()} 얻고, 다음 턴에 {Energy:energyIcons()}를 얻습니다.",
 
-  "RIENSANG-PROCURATION_ANNIHILATE.title": "대행: 절멸 [복제]",
-  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]참격 위력 증가[/gold]. {Damage:diff()} 피해를 입힙니다. [gold]해금 III[/gold] 상태라면 15% 추가 피해를 입힙니다.",
+  "RIENSANG-PROCURATION_ANNIHILATE.title": "대행:말살 [Replica]",
+  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]해금 III[/gold] 상태라면, 피해량이 15% 증가합니다.",
 
   "RIENSANG-GRACE_OF_GOD.title": "신의 은총",
-  "RIENSANG-GRACE_OF_GOD.description": "이번 전투에서 치명적인 피해를 입을 경우, 이번 턴 동안 피해를 입지 않습니다. [gold]발동 후 소멸[/gold].",
+  "RIENSANG-GRACE_OF_GOD.description": "이번 전투 중 사망에 이르는 피해를 입을 경우, 해당 턴 동안 무적이 됩니다.\n[gold]소멸[/gold].",
 
   "RIENSANG-STAR_OF_THE_CITY.title": "도시의 별",
-  "RIENSANG-STAR_OF_THE_CITY.description": "턴 시작 시, 모든 적에게 {SinkingPotency:diff()} [gold]침잠 위력[/gold]과 {SinkingCount:diff()} [gold]침잠 횟수[/gold]를 부여합니다.",
+  "RIENSANG-STAR_OF_THE_CITY.description": "내 턴 시작시, 모든 적에게 [gold]침잠 위력[/gold]을 {SinkingPotency:diff()}, [gold]횟수[/gold]를 {SinkingCount:diff()} 부여합니다.",
 
   "RIENSANG-ORACLE_DEVICE_CADUCEUS.title": "신탁 단말기 [카두세우스]",
-  "RIENSANG-ORACLE_DEVICE_CADUCEUS.description": "모든 [gold]카두세우스[/gold] 무기의 피해량이 +{DamageBonus:diff()} 증가합니다.",
+  "RIENSANG-ORACLE_DEVICE_CADUCEUS.description": "[gold]카두세우스[/gold] 카드의 피해량이 {DamageBonus:diff()}만큼 증가합니다.",
 
   "RIENSANG-UNLOCK_I.title": "해금-I",
-  "RIENSANG-UNLOCK_I.description": "{Damage:diff()} 피해를 입힙니다. [gold]해금-II[/gold]를 뽑기 카드더미 맨 위에 둡니다.",
+  "RIENSANG-UNLOCK_I.description": "피해를 {Damage:diff()} 줍니다. [gold]뽑을 카드 더미[/gold] 맨 위에 [gold]해금-II[/gold]를 추가합니다.",
 
   "RIENSANG-UNLOCK_I_I.title": "해금-II",
-  "RIENSANG-UNLOCK_I_I.description": "{Damage:diff()} 피해를 2번 입힙니다. [gold]해금-III[/gold]을 뽑기 카드더미 맨 위에 둡니다.",
+  "RIENSANG-UNLOCK_I_I.description": "피해를 {Damage:diff()}만큼 2번 줍니다. [gold]뽑을 카드 더미[/gold] 맨 위에 [gold]해금-III[/gold]를 추가합니다.",
 
   "RIENSANG-UNLOCK_II_I.title": "해금-III",
-  "RIENSANG-UNLOCK_II_I.description": "{Damage:diff()} 피해를 3번 입힙니다. 1 [gold]에너지[/gold]를 얻고 카드 {DrawAmount:diff()}장을 [gold]뽑습니다[/gold].",
+  "RIENSANG-UNLOCK_II_I.description": "피해를 {Damage:diff()}만큼 3번 줍니다. {Energy:energyIcons()}를 얻고 카드를 {DrawAmount:diff()}장 뽑습니다.",
 
   "RIENSANG-GODS_BLESSING.title": "신의 축복",
-  "RIENSANG-GODS_BLESSING.description": "[gold]카르마[/gold]가 15 미만이고 덱에 [gold]카두세우스[/gold] 카드가 15장 이상 있을 때만 사용할 수 있습니다.\n[gold]대행 [헤르메스][/gold]를 9로 설정합니다.",
-  "RIENSANG-SPORK.title": "스포크",
-  "RIENSANG-SPORK.description": "이 카드가 손패에 있다면 반드시 가장 먼저 사용해야 합니다. 피해를 5 입습니다.",
+  "RIENSANG-GODS_BLESSING.description": "[gold]카르마[/gold]가 0일 때, [gold]덱[/gold]에 [gold]카두세우스[/gold] 카드가 15장 이상 있을 경우, [gold]대행(헤르메스)[/gold]를 9로 변경합니다.",
 
-  "RIENSANG-FPOON.title": "프푼",
-  "RIENSANG-FPOON.description": "이 카드를 뽑을 때, {SinkingPotency:diff()} [gold]침잠 위력[/gold]과 {LCSinkingPower:diff()} [gold]침잠 횟수[/gold]를 얻습니다. [gold]휘발성[/gold].",
+  "RIENSANG-SPORK.title": "숟가락포크",
+  "RIENSANG-SPORK.description": "이 카드가 [gold]손[/gold]에 있다면, 다른 카드보다 먼저 사용해야 합니다. 체력을 5 잃습니다.",
 
-  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.title": "지령 불이행 위험",
-  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.description": "[gold]카르마[/gold] 수치에 기반한 피해를 입습니다.\n피해량 = [gold]카르마 / 5[/gold].\n이 카드를 사용하지 않을 경우, 10 [gold]카르마[/gold]를 얻습니다.\n뽑기 카드더미 맨 위에 이 카드의 복사본을 한 장 추가합니다."
+  "RIENSANG-FPOON.title": "포크숟가락",
+  "RIENSANG-FPOON.description": "이 카드를 뽑을 때마다, [gold]침잠 위력[/gold]을 {SinkingPotency:diff()}, [gold]침잠 횟수[/gold]를 {LCSinkingPower:diff()} 얻습니다. [gold]소멸[/gold].",
+
+  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.title": "지령 불이행",
+  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.description": "[gold]카르마[/gold] 수치에 기반한 피해를 입습니다.\n피해량 = [gold]카르마 / 5[/gold].\n이 카드를 사용하지 않을 경우, [gold]카르마[/gold]를 10 얻습니다. \n이 카드의 복사본을 [gold]뽑을 카드 더미[/gold] 맨 위에 추가합니다."
 }

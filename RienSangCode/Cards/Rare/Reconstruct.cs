@@ -17,6 +17,7 @@ using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.HoverTips;
+using RienSang.RienSangCode.Extensions;
 
 namespace RienSang.RienSangCode.Cards.Rare;
 
@@ -32,7 +33,7 @@ public class Reconstruct : RienSangCard
     public override bool GainsKarma => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmaGain", 5)
+        new("KarmaGain", 5m)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -87,8 +88,8 @@ public class Reconstruct : RienSangCard
         await CardPileCmd.Add(copy, PileType.Hand);
 
         int uses = _usesThisCombat[Owner.Creature];
-        int karma = (int)DynamicVars["KarmaGain"].BaseValue + (uses * 5);
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, karma, Owner.Creature, this);
+        decimal karma = DynamicVars["KarmaGain"].BaseValue + (uses * 5);
+        await Owner.Creature.ApplyKarma(choiceContext, karma, Owner.Creature);
 
         _usesThisCombat[Owner.Creature] = uses + 1;
     }

@@ -23,7 +23,7 @@ public class DeliverPrescripts : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmaLoss", 3)
+        new("KarmaLoss", 3m)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -51,8 +51,7 @@ public class DeliverPrescripts : RienSangCard
             }
         }
 
-        int karmaLoss = (int)DynamicVars["KarmaLoss"].BaseValue;
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, -karmaLoss, Owner.Creature, this);
+        await Owner.Creature.ModifyKarma(choiceContext, -DynamicVars["KarmaLoss"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

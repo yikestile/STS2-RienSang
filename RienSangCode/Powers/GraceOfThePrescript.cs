@@ -5,6 +5,7 @@ using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -34,7 +35,7 @@ public class GraceofthePrescriptPower : RienSangPower
 
     private bool _isProcessing = false;
 
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power != this || _isProcessing) return;
 
@@ -49,7 +50,7 @@ public class GraceofthePrescriptPower : RienSangPower
             int oldAmount = (int)(power.Amount - amount);
             int newAmount = (int)power.Amount;
 
-            await CheckThresholds(oldAmount, newAmount);
+            await CheckThresholds(choiceContext, oldAmount, newAmount);
         }
         finally 
         {
@@ -57,15 +58,25 @@ public class GraceofthePrescriptPower : RienSangPower
         }
     }
 
-    private async Task CheckThresholds(int oldAmount, int newAmount)
+    private async Task CheckThresholds(PlayerChoiceContext choiceContext, int oldAmount, int newAmount)
     {
+        async Task SetPowerAmount<T>(int targetAmount) where T : PowerModel
+        {
+            var existing = Owner.GetPower<T>();
+            int currentAmount = existing?.Amount ?? 0;
+            int diff = targetAmount - currentAmount;
+            if (diff != 0)
+            {
+                await PowerCmd.Apply<T>(choiceContext, Owner, (decimal)diff, Owner, null);
+            }
+        }
 
-        if (oldAmount < 3 && newAmount >= 3) await PowerCmd.SetAmount<Unlock>(Owner, 1, Owner, null);
-        if (oldAmount < 6 && newAmount >= 6) await PowerCmd.SetAmount<Unlock>(Owner, 2, Owner, null);
+        if (oldAmount < 3 && newAmount >= 3) await SetPowerAmount<Unlock>(1);
+        if (oldAmount < 6 && newAmount >= 6) await SetPowerAmount<Unlock>(2);
         if (oldAmount < 9 && newAmount >= 9) 
         {
-            await PowerCmd.SetAmount<Unlock>(Owner, 3, Owner, null);
-            await PowerCmd.Apply<StrengthPower>(Owner, 1, Owner, null);
+            await SetPowerAmount<Unlock>(3);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, 1m, Owner, null);
         }
     }
 }

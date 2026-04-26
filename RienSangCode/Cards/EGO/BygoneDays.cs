@@ -46,8 +46,7 @@ public class BygoneDays : RienSangCard
             {
                 if (enemy.IsAlive)
                 {
-                    var sinking = await PowerCmd.Apply<LCSinkingPower>(enemy, count, Owner.Creature, this);
-                    sinking?.AddPotency(potency);
+                    await LCSinkingPower.Apply(choiceContext, enemy, count, potency, Owner.Creature, this);
                 }
             }
         }

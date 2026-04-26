@@ -39,7 +39,6 @@ public class WithTemperedSecretSeverTheForm : RienSangCard
         var player = Owner.Creature;
         decimal baseDamage = DynamicVars.Damage.BaseValue;
 
-        // Calculate bias chance: (75 - (Karma / 2)) / 100
         var karmaPower = player.GetPower<KarmicConsequence>();
         int karma = karmaPower?.DisplayAmount ?? 0;
         float rawChance = 75f - (karma / 2f);
@@ -52,7 +51,7 @@ public class WithTemperedSecretSeverTheForm : RienSangCard
                 await CaduceusManager.Execute(this, target, baseDamage, choiceContext, i, LimbusDamageType.Slash, biasChance);
             }
             
-            await PowerCmd.Apply<VulnerablePower>(target, DynamicVars["Vulnerable"].IntValue, player, this);
+            await PowerCmd.Apply<VulnerablePower>(choiceContext, target, DynamicVars["Vulnerable"].IntValue, player, this);
         }
     }
 

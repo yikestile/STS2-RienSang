@@ -20,11 +20,11 @@ public class Fpoon : RienSangCard
     {
     }
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable, CardKeyword.Ethereal];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new("SinkingPotency", 20),
-        new PowerVar<LCSinkingPower>(4) // Count
+        new PowerVar<LCSinkingPower>(4)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -35,8 +35,10 @@ public class Fpoon : RienSangCard
     {
         if (card == this)
         {
-            var sinking = await PowerCmd.Apply<LCSinkingPower>(Owner.Creature, DynamicVars[nameof(LCSinkingPower)].IntValue, Owner.Creature, this);
-            sinking?.AddPotency((int)DynamicVars["SinkingPotency"].BaseValue);
+            int count = DynamicVars[nameof(LCSinkingPower)].IntValue;
+            int potency = (int)DynamicVars["SinkingPotency"].BaseValue;
+            
+            await LCSinkingPower.Apply(choiceContext, Owner.Creature, count, potency, Owner.Creature, this);
         }
     }
 }

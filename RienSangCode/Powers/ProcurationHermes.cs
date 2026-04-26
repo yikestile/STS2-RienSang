@@ -15,6 +15,7 @@ using MegaCrit.Sts2.Core.Models;
 using RienSang.RienSangCode.Cards.Ancient;
 using RienSang.RienSangCode.Cards.Rare;
 using RienSang.RienSangCode.Extensions;
+using RienSang.RienSangCode.Powers;
 
 namespace RienSang.RienSangCode.Powers;
 
@@ -28,10 +29,10 @@ public class ProcurationHermes : RienSangPower
     
     private bool _localConsumedThisTurn = false;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
+    protected override IEnumerable<DynamicVar> CanonicalVars => new List<DynamicVar>
     {
-        new DynamicVar("HermesAmount", 0m),
-        new DynamicVar("HermesThresholdCount", 0m)
+        new("HermesAmount", 0m),
+        new("HermesThresholdCount", 0m)
     };
 
     public override int DisplayAmount => DynamicVars["HermesAmount"].IntValue;
@@ -58,7 +59,7 @@ public class ProcurationHermes : RienSangPower
             
             if (finalAmount == 9 && !_isGranting)
             {
-                TaskHelper.RunSafely(ProcessThreshold());
+                TaskHelper.RunSafely(ProcessThreshold(new ThrowingPlayerChoiceContext()));
             }
         }
     }
@@ -72,7 +73,7 @@ public class ProcurationHermes : RienSangPower
         await Task.CompletedTask;
     }
 
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power != this) return;
 
@@ -142,7 +143,7 @@ public class ProcurationHermes : RienSangPower
 
             if (newVirtual == 9 && diff > 0 && !_isGranting)
             {
-                await ProcessThreshold();
+                await ProcessThreshold(choiceContext);
             }
         }
     }
@@ -172,7 +173,7 @@ public class ProcurationHermes : RienSangPower
         await Task.CompletedTask;
     }
 
-    private async Task ProcessThreshold()
+    private async Task ProcessThreshold(PlayerChoiceContext choiceContext)
     {
         if (Owner.Player == null || _isGranting) return;
 
@@ -187,7 +188,7 @@ public class ProcurationHermes : RienSangPower
             _isGranting = true;
             try
             {
-                await GrantThresholdRewards();
+                await GrantThresholdRewards(choiceContext);
             }
             finally
             {
@@ -196,11 +197,11 @@ public class ProcurationHermes : RienSangPower
         }
     }
 
-    private async Task GrantThresholdRewards()
+    private async Task GrantThresholdRewards(PlayerChoiceContext choiceContext)
     {
         if (Owner.Player == null) return;
         
-        await TaskHelper.RunSafely(PowerCmd.Apply<GraceofthePrescriptPower>(Owner, 3, Owner, null));
+        await PowerCmd.Apply<GraceofthePrescriptPower>(choiceContext, Owner, 3m, Owner, null);
         
         DynamicVars["HermesThresholdCount"].BaseValue++;
         int thresholdCount = DynamicVars["HermesThresholdCount"].IntValue;
@@ -213,18 +214,18 @@ public class ProcurationHermes : RienSangPower
                 break;
             case 2:
                 cardTemplate = ModelDb.Card<FuriosoCrescendo>();
-                await PowerCmd.Apply<IndulgenceInPrescript>(Owner, 1, Owner, null);
+                await PowerCmd.Apply<IndulgenceInPrescript>(choiceContext, Owner, 1m, Owner, null);
                 break;
             default:
                 cardTemplate = ModelDb.Card<FuriosoLacrimosaCrescendo>();
-                await PowerCmd.Apply<IndulgenceInPrescript>(Owner, 1, Owner, null);
+                await PowerCmd.Apply<IndulgenceInPrescript>(choiceContext, Owner, 1m, Owner, null);
                 break;
         }
 
         if (cardTemplate != null && Owner.CombatState != null)
         {
             CardModel cardToGive = Owner.CombatState.CreateCard(cardTemplate, Owner.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(cardToGive, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardToCombat(cardToGive, PileType.Hand, Owner.Player);
         }
     }
 }

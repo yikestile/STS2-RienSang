@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Cards;
 using RienSang.RienSangCode.Character;
 using RienSang.RienSangCode.Powers;
+using RienSang.RienSangCode.Extensions;
 
 namespace RienSang.RienSangCode.Cards.Ancient;
 
@@ -40,7 +41,7 @@ public class ByGodsWill : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<LCEvadePower>(Owner.Creature, DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<LCEvadePower>(choiceContext, Owner.Creature, DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
 
         var unlockPower = Owner.Creature.GetPower<Unlock>();
         int currentUnlock = (int)(unlockPower?.Amount ?? 0);
@@ -53,14 +54,14 @@ public class ByGodsWill : RienSangCard
             if (currentGrace < 6m)
             {
                 decimal graceToGain = 6m - currentGrace;
-                await PowerCmd.Apply<GraceofthePrescriptPower>(Owner.Creature, graceToGain, Owner.Creature, this);
+                await PowerCmd.Apply<GraceofthePrescriptPower>(choiceContext, Owner.Creature, graceToGain, Owner.Creature, this);
 
                 decimal karmaMultiplier = DynamicVars["KarmaGain"].BaseValue; 
                 decimal karmaToGain = graceToGain * karmaMultiplier;
 
                 if (karmaToGain > 0)
                 {
-                    await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, karmaToGain, Owner.Creature, this);
+                    await Owner.Creature.ApplyKarma(choiceContext, karmaToGain, Owner.Creature, this);
                 }
             }
         }

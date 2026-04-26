@@ -24,18 +24,20 @@ public partial class XOnlyCameraTarget : Marker2D
     {
         if (Engine.IsEditorHint() || !_isInitialized) return;
 
-        bool isCinematicActive = false;
-        if (_anim != null && _anim.IsPlaying())
-        {
-            string current = _anim.CurrentAnimation;
-            if (current == "attack_lance_3")
-                isCinematicActive = true;
-        }
+        Vector2 parentPos = GetParent<Node2D>().GlobalPosition;
+        Vector2 rootPos = GetParent<Node2D>().GetParent<Node2D>().GlobalPosition;
+    
+        float currentDrift = parentPos.DistanceTo(rootPos);
+
+        bool isCinematicActive = currentDrift > 300f; 
 
         if (!isCinematicActive)
         {
             GlobalPosition = _restingGlobalPos;
         }
-
+        else 
+        {
+            GlobalPosition = new Vector2(GetParent<Node2D>().GlobalPosition.X, _restingGlobalPos.Y);
+        }
     }
 }

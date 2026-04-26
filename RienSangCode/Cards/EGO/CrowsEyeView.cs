@@ -43,8 +43,8 @@ public class CrowsEyeView : RienSangCard
 
         if (play.Target != null)
         {
-            await PowerCmd.Apply<WeakPower>(play.Target, 1m, Owner.Creature, this);
-            await PowerCmd.Apply<StrengthPower>(play.Target, -1m, Owner.Creature, this);
+            await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, 1m, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, play.Target, -1m, Owner.Creature, this);
         }
     }
 

@@ -50,7 +50,7 @@ public class DestroyTheSoundCrushFlatTheThought : RienSangCard
                 await CaduceusManager.Execute(this, target, baseDamage, choiceContext, i, LimbusDamageType.Blunt, biasChance);
             }
             
-            await PowerCmd.Apply<LCStrengthNextTurn>(player, DynamicVars["StrNextTurn"].IntValue, player, this);
+            await PowerCmd.Apply<LCStrengthNextTurn>(choiceContext, player, DynamicVars["StrNextTurn"].IntValue, player, this);
         }
     }
 

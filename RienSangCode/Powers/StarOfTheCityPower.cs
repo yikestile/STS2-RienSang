@@ -35,7 +35,7 @@ public sealed class StarOfTheCityPower : RienSangPower
         SetAmount(amount);
     }
     
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
     {
         if (side != Owner.Side)
         {
@@ -50,8 +50,7 @@ public sealed class StarOfTheCityPower : RienSangPower
         var enemies = combatState.HittableEnemies;
         foreach (var enemy in enemies)
         {
-             var sinking = await PowerCmd.Apply<LCSinkingPower>(enemy, count, Owner, null);
-             sinking?.AddPotency(potency);
+            await LCSinkingPower.Apply(new ThrowingPlayerChoiceContext(), enemy, count, potency, Owner, null);
         }
     }
 }

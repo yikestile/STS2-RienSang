@@ -26,14 +26,13 @@ public class SinkingDeluge : RienSangCard
         HoverTipFactory.FromPower<LCSinkingPower>(),
     ];
     
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext playContext, CardPlay play)
     {
         if (play.Target == null) return;
 
         if (IsUpgraded)
         {
-            var power = await PowerCmd.Apply<LCSinkingPower>(play.Target, 3, Owner.Creature, this);
-            power?.AddPotency(3);
+            await LCSinkingPower.Apply(playContext, play.Target, 3, 3, Owner.Creature, this);
         }
 
         var sinking = play.Target.GetPower<LCSinkingPower>();
@@ -43,7 +42,7 @@ public class SinkingDeluge : RienSangCard
             
             if (damage > 0)
             {
-                await DamageCmd.Attack(damage).FromCard(this).Targeting(play.Target).WithHitFx("vfx/vfx_attack_blunt").Execute(choiceContext);
+                await DamageCmd.Attack(damage).FromCard(this).Targeting(play.Target).WithHitFx("vfx/vfx_attack_blunt").Execute(playContext);
             }
 
             await PowerCmd.Remove(sinking);

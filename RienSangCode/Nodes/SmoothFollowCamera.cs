@@ -27,38 +27,35 @@ public partial class SmoothFollowCamera : Camera2D
     {
         if (Engine.IsEditorHint() || !_calibrated || _targetNode == null) return;
 
-        bool animationWantsCamera = IsAnimationActive();
+        var visualsNode = _targetNode.GetParent<Node2D>();
+        float animationPushDistance = visualsNode.Position.Length();
+        bool animationWantsCamera = animationPushDistance > 500f;
 
         Vector2 destination;
-
         if (animationWantsCamera)
         {
-            Enabled = true;
+            this.Enabled = true;
             destination = _targetNode.GlobalPosition;
         }
         else
         {
             destination = _restingPos;
-
             if (GlobalPosition.DistanceTo(_restingPos) < _returnThreshold)
             {
-                Enabled = false;
+                GlobalPosition = _restingPos;
+                this.Enabled = false;
                 return; 
             }
         }
 
-        float lerpFactor = 1.0f - Mathf.Pow(_followWeight, (float)delta);
-        GlobalPosition = GlobalPosition.Lerp(destination, lerpFactor);
-    }
+        float distance = GlobalPosition.DistanceTo(destination);
 
-    private bool IsAnimationActive()
-    {
-        var anim = GetParent()?.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
-        if (anim != null && anim.IsPlaying())
-        {
-            string current = anim.CurrentAnimation;
-            return current == "attack_lance_3";
-        }
-        return false;
+        float distanceBoost = Mathf.Remap(distance, 0, 1200, 1.0f, 3.5f);
+        distanceBoost = Mathf.Clamp(distanceBoost, 1.0f, 5.0f);
+
+        float activeWeight = Mathf.Max(0.0001f, _followWeight / distanceBoost);
+
+        float lerpFactor = 1.0f - Mathf.Pow(activeWeight, (float)delta);
+        GlobalPosition = GlobalPosition.Lerp(destination, lerpFactor);
     }
 }

@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Cards;
 using RienSang.RienSangCode.Character;
 using RienSang.RienSangCode.Powers;
+using RienSang.RienSangCode.Extensions;
 
 namespace RienSang.RienSangCode.Cards.Curse;
 
@@ -24,7 +25,7 @@ public class PrescriptIncomplianceRisk : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmaGain", 10)
+        new("KarmaGain", 10m)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -35,8 +36,7 @@ public class PrescriptIncomplianceRisk : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        var karmaPower = Owner.Creature.GetPower<KarmicConsequence>();
-        int currentKarma = karmaPower?.DisplayAmount ?? 0; 
+        decimal currentKarma = Owner.Creature.GetKarmaAmount();
         
         if (currentKarma > 0)
         {
@@ -50,7 +50,7 @@ public class PrescriptIncomplianceRisk : RienSangCard
 
     public override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
     {
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, (int)DynamicVars["KarmaGain"].BaseValue, Owner.Creature, this);
+        await Owner.Creature.ApplyKarma(choiceContext, DynamicVars["KarmaGain"].BaseValue, Owner.Creature);
         
         await CardCmd.Exhaust(choiceContext, this);
 

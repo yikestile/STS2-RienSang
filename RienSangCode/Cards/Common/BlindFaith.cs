@@ -35,7 +35,9 @@ public class BlindFaith : RienSangCard
     
     public CardModel GetClone() => CreateClone();
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, RienSangKeywords.Caduceus];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
+
+    protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { RienSangTags.BlindFaith };
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
@@ -66,7 +68,7 @@ public class BlindFaith : RienSangCard
     public static class BlindFaithStartPatch 
     {
         [HarmonyPostfix]
-        public static void Postfix(CombatState combatState, CombatSide side)
+        public static void Postfix(ICombatState combatState, CombatSide side)
         {
             if (side != CombatSide.Player) return;
             if (combatState.RoundNumber != 1) return; 
@@ -97,7 +99,7 @@ public class BlindFaith : RienSangCard
                     
                     if (newCards.Count > 0)
                     {
-                        TaskHelper.RunSafely(CardPileCmd.AddGeneratedCardsToCombat(newCards, PileType.Draw, false, CardPilePosition.Random));
+                        TaskHelper.RunSafely(CardPileCmd.AddGeneratedCardsToCombat(newCards, PileType.Draw, player, CardPilePosition.Random));
                     }
                 }
             }

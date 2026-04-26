@@ -35,7 +35,7 @@ public class Mang : RienSangPower
         return 1m;
     }
     
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power != this) return;
 
@@ -51,7 +51,7 @@ public class Mang : RienSangPower
 
         if (actualGain > 0 && amount > 0) 
         {
-            await PowerCmd.Apply<StrengthPower>(Owner, (int)actualGain * 1, Owner, null);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, (int)actualGain * 1, Owner, null);
         }
     }
     
@@ -60,8 +60,8 @@ public class Mang : RienSangPower
         if (side == Owner.Side)
         {
             Flash();
-            await PowerCmd.Apply<StrengthPower>(Owner, -(base.Amount * 1), Owner, null);
-            await PowerCmd.Remove( this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, -(base.Amount * 1), Owner, null);
+            await PowerCmd.Remove(this);
         }
     }
 }

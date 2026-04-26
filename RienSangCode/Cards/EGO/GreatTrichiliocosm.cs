@@ -39,8 +39,8 @@ public class GreatTrichiliocosm : RienSangCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(4, ValueProp.Move),
         new RepeatVar(4),
-        new PowerVar<LCPoisePower>(3),
-        new("PoisePotency", 7),
+        new PowerVar<LCPoisePower>(4),
+        new("PoisePotency", 10),
         new PowerVar<LCSinkingPower>(3),
         new PowerVar<LCBurnPower>(2),
         new("BurnPotency", 7)
@@ -55,8 +55,9 @@ public class GreatTrichiliocosm : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        var myPoise = await PowerCmd.Apply<LCPoisePower>(Owner.Creature, (int)DynamicVars[nameof(LCPoisePower)].BaseValue, Owner.Creature, this);
-        myPoise?.AddPotency((int)DynamicVars["PoisePotency"].BaseValue);
+        int poiseCount = (int)DynamicVars[nameof(LCPoisePower)].BaseValue;
+        int poisePotency = (int)DynamicVars["PoisePotency"].BaseValue;
+        await LCPoisePower.Apply(choiceContext, Owner.Creature, poiseCount, poisePotency, Owner.Creature, this);
 
         if (Owner.Creature.CombatState == null) return;
 
@@ -78,11 +79,14 @@ public class GreatTrichiliocosm : RienSangCard
         {
             if (!enemy.IsAlive) continue;
 
-            await PowerCmd.Apply<ShatteredWorld>(enemy, 1, Owner.Creature, this);
-            await PowerCmd.Apply<LCSinkingPower>(enemy, (int)DynamicVars[nameof(LCSinkingPower)].BaseValue, Owner.Creature, this); 
+            await PowerCmd.Apply<ShatteredWorld>(choiceContext, enemy, 1, Owner.Creature, this);
             
-            var burn = await PowerCmd.Apply<LCBurnPower>(enemy, (int)DynamicVars[nameof(LCBurnPower)].BaseValue, Owner.Creature, this); 
-            burn?.AddPotency((int)DynamicVars["BurnPotency"].BaseValue); 
+            int sinkingCount = (int)DynamicVars[nameof(LCSinkingPower)].BaseValue;
+            await LCSinkingPower.Apply(choiceContext, enemy, sinkingCount, 1, Owner.Creature, this); 
+            
+            int burnCount = (int)DynamicVars[nameof(LCBurnPower)].BaseValue;
+            int burnPotency = (int)DynamicVars["BurnPotency"].BaseValue;
+            await LCBurnPower.Apply(choiceContext, enemy, burnCount, burnPotency, Owner.Creature, this);
         }
     }
 
@@ -94,8 +98,9 @@ public class GreatTrichiliocosm : RienSangCard
     [HarmonyPatch(typeof(Hook), nameof(Hook.AfterAttack))]
     public static class GreatTrichiliocosmCritHook
     {
+        [HarmonyPatch(typeof(Hook), nameof(Hook.AfterAttack), new[] { typeof(ICombatState), typeof(PlayerChoiceContext), typeof(AttackCommand) })] // Added types for safety
         [HarmonyPostfix]
-        public static void Postfix(CombatState combatState, AttackCommand command)
+        public static void Postfix(ICombatState combatState, PlayerChoiceContext choiceContext, AttackCommand command)
         {
             if (command.Attacker == null || command.Attacker.Player == null) return;
             var player = command.Attacker.Player;
@@ -117,7 +122,7 @@ public class GreatTrichiliocosm : RienSangCard
                 var burnPower = target.GetPower<LCBurnPower>();
                 if (burnPower != null && burnPower.Count > 0 && burnPower.Potency > 0)
                 {
-                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, burnPower.Potency, ValueProp.Unpowered, creature, null);
+                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, (decimal)burnPower.Potency, ValueProp.Unpowered, creature, null);
                     
                     await PowerCmd.Decrement(burnPower);
                 }

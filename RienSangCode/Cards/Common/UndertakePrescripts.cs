@@ -19,13 +19,13 @@ namespace RienSang.RienSangCode.Cards.Common;
 [Pool(typeof(RienSangCardPool))]
 public class UndertakePrescripts : RienSangCard
 {
-    public UndertakePrescripts() : base(2, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+    public UndertakePrescripts() : base(2, CardType.Skill, CardRarity.Common, TargetType.None)
     {
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new RepeatVar(2),
-        new("KarmaLoss", 5)
+        new("KarmaLoss", 5m)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -55,8 +55,7 @@ public class UndertakePrescripts : RienSangCard
             }
         }
 
-        int karmaLoss = (int)DynamicVars["KarmaLoss"].BaseValue;
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, -karmaLoss, Owner.Creature, this);
+        await Owner.Creature.ModifyKarma(choiceContext, -DynamicVars["KarmaLoss"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

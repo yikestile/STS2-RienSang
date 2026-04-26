@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Cards;
 using RienSang.RienSangCode.Character;
 using RienSang.RienSangCode.Powers;
+using RienSang.RienSangCode.Extensions;
 
 namespace RienSang.RienSangCode.Cards.Basic;
 
@@ -28,18 +29,6 @@ public class ByUnpredictableWhim : RienSangCard
         new ("KarmaMultiplier", 5m),
         new PowerVar<GraceofthePrescriptPower>(6m)
     ];
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords
-    {
-        get
-        {
-            if (IsUpgraded)
-            {
-                yield return CardKeyword.Innate;
-            }
-            yield return CardKeyword.Exhaust;
-        }
-    }
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<GraceofthePrescriptPower>(),
@@ -60,14 +49,14 @@ public class ByUnpredictableWhim : RienSangCard
             if (currentGrace < 6m)
             {
                 decimal graceToGain = 6m - currentGrace;
-                await PowerCmd.Apply<GraceofthePrescriptPower>(Owner.Creature, graceToGain, Owner.Creature, this);
+                await PowerCmd.Apply<GraceofthePrescriptPower>(choiceContext, Owner.Creature, graceToGain, Owner.Creature, this);
                 
                 decimal karmaMultiplier = DynamicVars["KarmaMultiplier"].BaseValue;
                 decimal karmaToGain = graceToGain * karmaMultiplier;
                 
                 if (karmaToGain > 0)
                 {
-                    await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, karmaToGain, Owner.Creature, this);
+                    await Owner.Creature.ApplyKarma(choiceContext, karmaToGain, Owner.Creature, this);
                 }
             }
         }
@@ -76,5 +65,6 @@ public class ByUnpredictableWhim : RienSangCard
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);
+        AddKeyword(CardKeyword.Innate);
     }
 }

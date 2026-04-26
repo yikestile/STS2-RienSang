@@ -32,7 +32,7 @@ public class GloomInRuins : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<LCGloomingPower>(Owner.Creature, DynamicVars[nameof(LCGloomingPower)].IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<LCGloomingPower>(choiceContext, Owner.Creature, DynamicVars[nameof(LCGloomingPower)].IntValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

@@ -26,7 +26,7 @@ public class LayVerticalTheEndInsertUpToTheWick : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(3, ValueProp.Move),
-        new PowerVar<LCPoisePower>(2)
+        new PowerVar<LCPoisePower>(4)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
@@ -51,11 +51,7 @@ public class LayVerticalTheEndInsertUpToTheWick : RienSangCard
             await CaduceusManager.Execute(this, target, baseDamage, choiceContext, 0, LimbusDamageType.Pierce, biasChance);
         }
         
-        var poise = await PowerCmd.Apply<LCPoisePower>(player, DynamicVars[nameof(LCPoisePower)].IntValue, player, this);
-        if (poise != null)
-        {
-            poise.AddPotency(1);
-        }
+        await LCPoisePower.Apply(choiceContext, player, DynamicVars[nameof(LCPoisePower)].IntValue, 1, player, this);
     }
 
     protected override void OnUpgrade()

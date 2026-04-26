@@ -41,8 +41,8 @@ public class PrescriptDevice : RienSangRelic
         
         Flash();
 
-        await PowerCmd.Apply<MarkofthePrescriptPower>(Owner.Creature, 1, Owner.Creature, null);
-        await PowerCmd.Apply<WoundcasingMask>(Owner.Creature, 1, Owner.Creature, null);
+        await PowerCmd.Apply<MarkofthePrescriptPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, 1m, Owner.Creature, null);
+        await PowerCmd.Apply<WoundcasingMask>(new ThrowingPlayerChoiceContext(), Owner.Creature, 1m, Owner.Creature, null);
     }
     
     public override async Task AfterPlayerTurnStartLate(PlayerChoiceContext choiceContext, Player player)
@@ -54,11 +54,11 @@ public class PrescriptDevice : RienSangRelic
 
         var potentialTargets = combatState.HittableEnemies;
         
-        if (potentialTargets is { Count: > 0 })
+        if (potentialTargets.Count > 0)
         {
             var target = potentialTargets.OrderBy(_ => Owner.RunState.Rng.Niche.NextFloat()).First();
             
-            await PowerCmd.Apply<ThePrescriptsTarget>((Creature)target, 1, Owner.Creature, null);
+            await PowerCmd.Apply<ThePrescriptsTarget>(choiceContext, target, 1m, Owner.Creature, null);
         }
     }
 }

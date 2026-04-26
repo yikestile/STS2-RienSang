@@ -51,7 +51,7 @@ public class TheOraclesProxyPower : RienSangPower
         HealAmount = heal;
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
     {
         if (side != Owner.Side) return;
 
@@ -64,13 +64,13 @@ public class TheOraclesProxyPower : RienSangPower
         }
     }
 
-    public override async Task BeforePlayPhaseStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterAutoPrePlayPhaseEntered(PlayerChoiceContext choiceContext, Player player)
     {
         if (player != Owner.Player) return;
 
         if (player.Creature.CombatState != null)
         {
-            CombatState combatState = player.Creature.CombatState;
+            ICombatState combatState = player.Creature.CombatState;
             if (combatState == null) return;
 
             using (CardSelectCmd.PushSelector(new VakuuCardSelector()))
@@ -83,7 +83,7 @@ public class TheOraclesProxyPower : RienSangPower
                     
                     if (hand.Cards.FirstOrDefault(c => c.CanPlay() && !IsExcluded(c)) is not CardModel card) break;
 
-                    Creature? target = GetTarget(card, combatState, player);
+                    Creature? target = GetTarget(card, (CombatState)combatState, player);
                 
                     await card.SpendResources();
                     await CardCmd.AutoPlay(choiceContext, card, target, AutoPlayType.Default, skipXCapture: true);

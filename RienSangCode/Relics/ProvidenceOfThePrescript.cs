@@ -29,12 +29,11 @@ public class ProvidenceOfThePrescript : RienSangRelic
         var rng = player.RunState.Rng.Niche;
         if (rng.NextFloat() < 0.5f)
         {
-            var poise = await PowerCmd.Apply<LCPoisePower>(player.Creature, 1, player.Creature, null);
-            poise?.AddPotency(3);
+            await LCPoisePower.Apply(choiceContext, player.Creature, 1, 3, player.Creature, null);
         }
         else
         {
-            await PowerCmd.Apply<LCPoisePower>(player.Creature, 2, player.Creature, null);
+            await LCPoisePower.Apply(choiceContext, player.Creature, 2, 1, player.Creature, null);
         }
     }
 

@@ -38,7 +38,6 @@ public class StabTheHeartOfSilencePenetrateTheMemory : RienSangCard
         var player = Owner.Creature;
         decimal baseDamage = DynamicVars.Damage.BaseValue;
 
-        // Calculate bias chance: (75 - (Karma / 2)) / 100
         var karmaPower = player.GetPower<KarmicConsequence>();
         int karma = karmaPower?.DisplayAmount ?? 0;
         float rawChance = 75f - (karma / 2f);
@@ -51,7 +50,7 @@ public class StabTheHeartOfSilencePenetrateTheMemory : RienSangCard
                 await CaduceusManager.Execute(this, target, baseDamage, choiceContext, i, LimbusDamageType.Pierce, biasChance);
             }
             
-            await PowerCmd.Apply<LCWeakNextTurn>(target, DynamicVars["WeakNextTurn"].IntValue, player, this);
+            await PowerCmd.Apply<LCWeakNextTurn>(choiceContext, target, DynamicVars["WeakNextTurn"].IntValue, player, this);
         }
     }
 

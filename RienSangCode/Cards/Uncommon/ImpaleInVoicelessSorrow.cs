@@ -36,7 +36,7 @@ public class ImpaleInVoicelessSorrow : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<LCEvadePower>(Owner.Creature, (decimal)DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<LCEvadePower>(choiceContext, Owner.Creature, (decimal)DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
         
         int sinkingVal = (int)DynamicVars["SinkingPotency"].BaseValue;
         

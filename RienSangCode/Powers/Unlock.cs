@@ -6,6 +6,7 @@ using LimbusCore.LimbusCoreCode.Mechanics;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -33,7 +34,7 @@ public class Unlock : RienSangPower
         }
     }
 
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power != this) return;
 
@@ -49,17 +50,17 @@ public class Unlock : RienSangPower
         DynamicVars["HealAmount"].BaseValue = newAmount * 2;
         DynamicVars["SPHealAmount"].BaseValue = newAmount * 5;
 
-        await CheckUnlockMilestones(oldAmount, newAmount);
+        await CheckUnlockMilestones(choiceContext, oldAmount, newAmount);
         Flash();
         InvokeDisplayAmountChanged();
     }
 
-    private async Task CheckUnlockMilestones(int oldAmount, int newAmount)
+    private async Task CheckUnlockMilestones(PlayerChoiceContext choiceContext, int oldAmount, int newAmount)
     {
         if (oldAmount < 3 && newAmount >= 3)
         {
-            await PowerCmd.Apply<DexterityPower>(Owner, 1, Owner, null);
-            await PowerCmd.Apply<ShinFate>(Owner, 1, Owner, null);
+            await PowerCmd.Apply<DexterityPower>(choiceContext, Owner, 1, Owner, null);
+            await PowerCmd.Apply<ShinFate>(choiceContext, Owner, 1, Owner, null);
         }
     }
     

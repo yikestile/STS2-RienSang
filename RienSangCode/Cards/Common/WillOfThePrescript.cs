@@ -38,7 +38,7 @@ public class WillOfThePrescript : RienSangCard
     {
         var player = Owner.Creature;
         
-        await PowerCmd.Apply<LCEvadePower>(player, DynamicVars[nameof(LCEvadePower)].IntValue, player, this);
+        await PowerCmd.Apply<LCEvadePower>(choiceContext, player, DynamicVars[nameof(LCEvadePower)].IntValue, player, this);
         
         EvadeRegistry.EvadeEffectStacks[player] += 1;
         EvadeRegistry.PendingDraw[player] += (int)DynamicVars["DrawAmount"].BaseValue;

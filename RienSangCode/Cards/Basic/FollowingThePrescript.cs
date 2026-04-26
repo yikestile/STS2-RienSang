@@ -40,7 +40,7 @@ public class FollowingThePrescript : RienSangCard
                 DynamicVars.Damage.BaseValue, 
                 choiceContext, 
                 0,
-                forcedWeaponRoll: 5
+                forcedWeaponRoll: 7
             );
         }
     }

@@ -8,7 +8,8 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.
+Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Character;
 using RienSang.RienSangCode.Extensions;
@@ -42,7 +43,6 @@ public class RaiseAndLaughTheBlade : RienSangCard
         var player = Owner.Creature;
         decimal baseDamage = DynamicVars.Damage.BaseValue;
 
-        // Calculate bias chance: (75 - (Karma / 2)) / 100
         var karmaPower = player.GetPower<KarmicConsequence>();
         int karma = karmaPower?.DisplayAmount ?? 0;
         float rawChance = 75f - (karma / 2f);
@@ -55,12 +55,8 @@ public class RaiseAndLaughTheBlade : RienSangCard
                 await CaduceusManager.Execute(this, target, baseDamage, choiceContext, i, LimbusDamageType.Slash, biasChance);
             }
             
-            int val = (int)DynamicVars["SinkingPotency"].BaseValue;
-            var sinking = await PowerCmd.Apply<LCSinkingPower>(target, 1, player, this);
-            if (sinking != null)
-            {
-                sinking.AddPotency(val);
-            }
+            int potency = (int)DynamicVars["SinkingPotency"].BaseValue;
+            await LCSinkingPower.Apply(choiceContext, target, 1, potency, player, this);
         }
     }
 

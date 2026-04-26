@@ -35,7 +35,7 @@ public class TheIndexNursefather : RienSangCard
     {
         var player = Owner.Creature;
         
-        await PowerCmd.Apply<TheIndexNursefatherPower>(player,(int)DynamicVars["PowerAmount"].BaseValue, player, this);
+        await PowerCmd.Apply<TheIndexNursefatherPower>(choiceContext, player,(int)DynamicVars["PowerAmount"].BaseValue, player, this);
     }
 
     protected override void OnUpgrade()

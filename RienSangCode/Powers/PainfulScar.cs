@@ -25,11 +25,8 @@ public class PainfulScar : RienSangPower, LCPanicPower
 
         Flash();
 
-        var burn = await PowerCmd.Apply<LCBurnPower>(Owner, 2, Owner, null);
-        burn?.AddPotency(3);
-
-        var bleed = await PowerCmd.Apply<LCBleedPower>(Owner, 2, Owner, null);
-        bleed?.AddPotency(3);
+        await LCBurnPower.Apply(choiceContext, Owner, 2, 3, Owner, null);
+        await LCBleedPower.Apply(choiceContext, Owner, 2, 3, Owner, null);
     }
 
     public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)

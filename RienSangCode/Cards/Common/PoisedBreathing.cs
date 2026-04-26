@@ -24,8 +24,8 @@ public class PoisedBreathing : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCEvadePower>(2),
-        new("PoiseAmount", 3)
+        new PowerVar<LCEvadePower>(5),
+        new("PoiseAmount", 5)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -35,17 +35,17 @@ public class PoisedBreathing : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<LCEvadePower>(Owner.Creature, DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<LCEvadePower>(choiceContext, Owner.Creature, (decimal)DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
         
         int poiseVal = (int)DynamicVars["PoiseAmount"].BaseValue;
         
         EvadeRegistry.EvadeEffectStacks[Owner.Creature] += 1;
         EvadeRegistry.PendingPoisePotency[Owner.Creature] += poiseVal;
         
-        if (poiseVal > EvadeRegistry.PendingPoiseCount[Owner.Creature])
-        {
-            EvadeRegistry.PendingPoiseCount[Owner.Creature] = poiseVal;
-        }
+        // Simplified: The Power class now handles potency accumulation internally via AfterApplied.
+        // We need to ensure the count is set correctly if it's a new power instance.
+        // For EvadeRegistry, we just set the pending values, the patch will apply it.
+        EvadeRegistry.PendingPoiseCount[Owner.Creature] = DynamicVars[nameof(LCPoisePower)].IntValue;
     }
 
     protected override void OnUpgrade()

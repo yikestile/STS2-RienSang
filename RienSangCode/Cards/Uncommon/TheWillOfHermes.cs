@@ -30,7 +30,7 @@ public class TheWillOfHermes : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmaLoss", 20),
+        new("KarmaLoss", 20m),
         new EnergyVar(0)
     ];
 
@@ -49,11 +49,11 @@ public class TheWillOfHermes : RienSangCard
             await PlayerCmd.GainEnergy(energyGain, Owner);
         }
         
-        await PowerCmd.Apply<KarmicConsequence>(Owner.Creature, -DynamicVars["KarmaLoss"].IntValue, Owner.Creature, this);
+        await Owner.Creature.ModifyKarma(choiceContext, -DynamicVars["KarmaLoss"].BaseValue, Owner.Creature, this);
 
         if (Owner.Creature.CombatState != null)
         {
-            CombatState combatState = Owner.Creature.CombatState;
+            ICombatState combatState = Owner.Creature.CombatState;
             if (combatState == null) return;
 
             using (CardSelectCmd.PushSelector(new VakuuCardSelector()))
@@ -81,7 +81,7 @@ public class TheWillOfHermes : RienSangCard
         return card is Tradeoff or AsThePrescriptOrdered or Reconstruct;
     }
 
-    private Creature? GetTarget(CardModel card, CombatState combatState)
+    private Creature? GetTarget(CardModel card, ICombatState combatState)
     {
         Rng combatTargets = Owner.RunState.Rng.CombatTargets;
         return card.TargetType switch

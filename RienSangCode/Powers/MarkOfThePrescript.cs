@@ -12,7 +12,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Helpers; // TaskHelperのために追加
 using RienSang.RienSangCode.Cards.Ancient;
 using RienSang.RienSangCode.Cards.Basic; 
 using RienSang.RienSangCode.Cards.Rare; 
@@ -20,6 +19,7 @@ using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Powers;
 using RienSang.RienSangCode.Relics;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Models.Afflictions;
 
 namespace RienSang.RienSangCode.Powers;
 
@@ -58,7 +58,7 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         var hand = PileType.Hand.GetPile(Owner.Player);
         if (hand == null) return; 
 
-        var availableCards = hand.Cards.Where(c => 
+        var validCandidates = hand.Cards.Where(c => 
             !c.HasSingleTurnMark() && 
             !c.Keywords.Contains(CardKeyword.Unplayable) &&
             c.GetType().Name != "ByUnpredictableWhim" &&
@@ -67,38 +67,52 @@ public sealed class MarkofthePrescriptPower : RienSangPower
             c.GetType().Name != "Reconstruct" 
         ).ToList();
 
-        availableCards = availableCards.Where(c => {
-            if (c is GodsBlessing godsBlessing) {
-                return godsBlessing.MeetConditions;
-            }
+        validCandidates = validCandidates.Where(c => {
+            if (c is GodsBlessing godsBlessing) return godsBlessing.MeetConditions;
             return true;
         }).ToList();
 
-        if (!availableCards.Any()) return;
+        if (!validCandidates.Any()) return;
 
         var targetMarkCount = IsUpgraded ? 3 : 2;
-        var markedCount = 0;
         var cardsToMark = new List<CardModel>();
+        var rng = Owner.CombatState.RunState.Rng.Niche;
 
-        var furiosoCards = availableCards.Where(c => c is FuriosoCrescendo or FuriosoLacrimosaCrescendo or FuriosoReplica).ToList();
-        foreach (var furiosoCard in furiosoCards)
-        {
-            if (markedCount < targetMarkCount)
-            {
-                cardsToMark.Add(furiosoCard);
-                markedCount++;
-            }
-        }
+        var weightedPool = validCandidates.Select(c => new {
+            Card = c,
+            Weight = (c.Affliction is Bound) ? 50 : 100
+        }).ToList();
 
-        if (markedCount < targetMarkCount)
+        while (cardsToMark.Count < targetMarkCount && weightedPool.Count > 0)
         {
-            var remainingCards = availableCards.Except(cardsToMark).ToList();
-            if (Owner.CombatState != null)
+            int totalWeight = weightedPool.Sum(item => item.Weight);
+            int roll = rng.NextInt(totalWeight);
+            int currentSum = 0;
+            
+            int selectedIndex = -1;
+
+            for (int i = 0; i < weightedPool.Count; i++)
             {
-                var rng = Owner.CombatState.RunState.Rng.Niche;
-                var randomCards = remainingCards.OrderBy(_ => rng.NextInt()).Take(targetMarkCount - markedCount).ToList();
-                cardsToMark.AddRange(randomCards);
+                currentSum += weightedPool[i].Weight;
+                if (roll < currentSum)
+                {
+                    selectedIndex = i;
+                    break;
+                }
             }
+
+            if (selectedIndex != -1)
+            {
+                var selected = weightedPool[selectedIndex].Card;
+                cardsToMark.Add(selected);
+                weightedPool.RemoveAt(selectedIndex);
+
+                if (selected.Affliction is Bound)
+                {
+                    weightedPool.RemoveAll(item => item.Card.Affliction is Bound);
+                }
+            }
+            else break;
         }
 
         foreach (var card in cardsToMark)
@@ -107,25 +121,25 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         }
     }
 
-    public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var playedCard = cardPlay.Card; 
-        if (playedCard.Owner != Owner?.Player) return Task.CompletedTask;
+        if (playedCard.Owner != Owner?.Player) return;
 
         if (playedCard.HasSingleTurnMark())
         {
+            var atonement = Owner.GetPower<AtonementPower>();
+            if (atonement != null)
+            {
+                Flash();
+                await Owner.ModifyKarma(choiceContext, -5m * atonement.Amount, Owner, null);
+            }
+
             playedCard.ClearSingleTurnMark();
             
-            TaskHelper.RunSafely(ApplyPrescriptRewards(playedCard));
+            await PowerCmd.Apply<GraceofthePrescriptPower>(choiceContext, Owner, 1m, Owner, cardPlay.Card);
+            await PowerCmd.Apply<ProcurationHermes>(choiceContext, Owner, 1m, Owner, cardPlay.Card);
         }
-        
-        return Task.CompletedTask;
-    }
-
-    private async Task ApplyPrescriptRewards(CardModel sourceCard)
-    {
-        await PowerCmd.Apply<GraceofthePrescriptPower>(Owner, 1m, Owner, null);
-        await PowerCmd.Apply<ProcurationHermes>(Owner, 1m, Owner, null);
     }
 
     public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
@@ -153,11 +167,11 @@ public sealed class MarkofthePrescriptPower : RienSangPower
                 _totalMissedThisCombat[Owner] = totalMissedBefore + currentMissed;
             }
 
-            await PowerCmd.Apply<KarmicConsequence>(Owner, totalKarma, Owner, null);
+            await Owner.ApplyKarma(choiceContext, totalKarma, Owner);
         }
     }
     
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power == this && power.Amount <= 0m && Owner?.Player != null)
         {

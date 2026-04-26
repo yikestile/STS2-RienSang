@@ -42,11 +42,7 @@ public class CryTheWaterfall : RienSangCard
             {
                 if (enemy.IsAlive)
                 {
-                    var sinking = await PowerCmd.Apply<LCSinkingPower>(enemy, (decimal)DynamicVars[nameof(LCSinkingPower)].IntValue, Owner.Creature, this);
-                    if (sinking != null)
-                    {
-                        sinking.AddPotency(1);
-                    }
+                    await LCSinkingPower.Apply(choiceContext, enemy, DynamicVars[nameof(LCSinkingPower)].IntValue, 1, Owner.Creature, this);
                 }
             }
         }

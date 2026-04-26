@@ -10,12 +10,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Character;
+using RienSang.RienSangCode.Extensions;
 
 namespace RienSang.RienSangCode.Powers;
 
 public class EquivalentExchangePower : RienSangPower
 {
-    private int damageAccumulated = 0;
+    private decimal damageAccumulated = 0;
 
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.None;
@@ -25,19 +26,19 @@ public class EquivalentExchangePower : RienSangPower
 
         if (target == Owner && amount > 0)
         {
-            damageAccumulated += (int)amount;
+            damageAccumulated += amount;
             return 0m;
         }
         return amount;
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
     {
         if (side == CombatSide.Player)
         {
             if (damageAccumulated > 0)
             {
-                await PowerCmd.Apply<KarmicConsequence>(Owner, damageAccumulated, Owner, null);
+                await Owner.ApplyKarma(choiceContext, damageAccumulated, Owner);
             }
             await PowerCmd.Remove(this);
         }

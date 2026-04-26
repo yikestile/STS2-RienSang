@@ -11,7 +11,11 @@ using MegaCrit.Sts2.Core.Random;
 using RienSang.RienSangCode.Cards;
 using RienSang.RienSangCode.Powers;
 using RienSang.RienSangCode.Character;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using Godot;
+using System;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 
 namespace RienSang.RienSangCode.Mechanics;
 
@@ -48,7 +52,7 @@ public static class CaduceusManager
         
         if (hitIndex == 0)
         {
-            await PowerCmd.Apply<ProcurationHermes>(player, 1, player, null);
+            await PowerCmd.Apply<ProcurationHermes>(context, player, 1m, player, null);
         }
 
         if (player.CombatState != null)
@@ -77,6 +81,8 @@ public static class CaduceusManager
             var vfx = "vfx/vfx_attack_slash";
             var damageType = LimbusDamageType.None; 
             string animTrigger = "";
+
+            bool isBehindAttack = rng.NextFloat() > 0.5f;
         
             switch (weaponRoll)
             {
@@ -86,8 +92,7 @@ public static class CaduceusManager
                     animTrigger = $"attack_hatchet_{(GlobalAnimIndex % 3) + 1}";
                     GlobalAnimIndex++;
                     HatchetUsesTurn++;
-                    var poiseInstance = await PowerCmd.Apply<LCPoisePower>(player, 1m, player, null);
-                    poiseInstance?.AddPotency(2);
+                    await LCPoisePower.Apply(context, player, 1, 3, player, null);
                     break;
 
                 case 2: // Stiletto (Pierce)
@@ -98,8 +103,7 @@ public static class CaduceusManager
                     StilettoUsesTurn++;
                     if (target != null)
                     {
-                        var sinkingInstance = await PowerCmd.Apply<LCSinkingPower>(target, 1m, player, null);
-                        sinkingInstance?.AddPotency(2);
+                        await LCSinkingPower.Apply(context, target, 1, 2, player, null);
                     }
                     break;
 
@@ -108,7 +112,7 @@ public static class CaduceusManager
                     damageMultiplier = 1.05m;
                     animTrigger = $"attack_bastardsword_{(GlobalAnimIndex % 3) + 1}";
                     if (BastardSwordUsesTurn < 2) {
-                        await PowerCmd.Apply<LCStrengthNextTurn>(player, 1, player, null);
+                        await PowerCmd.Apply<LCStrengthNextTurn>(context, player, 1m, player, null);
                     }
                     GlobalAnimIndex++;
                     BastardSwordUsesTurn++;
@@ -120,7 +124,7 @@ public static class CaduceusManager
                     vfx = "vfx/vfx_attack_slash"; 
                     animTrigger = $"attack_rapier_{(GlobalAnimIndex % 3) + 1}";
                     if (RapierUsesTurn < 2) {
-                        await PowerCmd.Apply<LCWeakNextTurn>(target!, 1, player, null);
+                        await PowerCmd.Apply<LCWeakNextTurn>(context, target!, 1m, player, null);
                     }
                     GlobalAnimIndex++;
                     RapierUsesTurn++;
@@ -144,7 +148,7 @@ public static class CaduceusManager
                     damageMultiplier = 1.15m;
                     animTrigger = $"attack_greatsword_{(GlobalAnimIndex % 3) + 1}";
                     if (GreatSwordUsesTurn < 2) {
-                        await PowerCmd.Apply<LCSlashFragility>(target!, 1, player, null);
+                        await PowerCmd.Apply<LCSlashFragility>(context, target!, 1m, player, null);
                     }
                     GlobalAnimIndex++;
                     GreatSwordUsesTurn++;
@@ -155,8 +159,9 @@ public static class CaduceusManager
                     damageMultiplier = 1.15m;
                     vfx = "vfx/vfx_attack_slash"; 
                     animTrigger = $"attack_lance_{(GlobalAnimIndex % 3) + 1}";
+
                     if (LanceUsesTurn < 2) {
-                        await PowerCmd.Apply<LCPierceFragility>(target!, 1, player, null);
+                        await PowerCmd.Apply<LCPierceFragility>(context, target!, 1m, player, null);
                     }
                     GlobalAnimIndex++;
                     LanceUsesTurn++;
@@ -168,7 +173,7 @@ public static class CaduceusManager
                     vfx = "vfx/vfx_attack_blunt";
                     animTrigger = $"attack_whip_{(GlobalAnimIndex % 3) + 1}";
                     if (WhipUsesTurn < 2) {
-                        await PowerCmd.Apply<LCBluntFragility>(target!, 1, player, null);
+                        await PowerCmd.Apply<LCBluntFragility>(context, target!, 1m, player, null);
                     }
                     GlobalAnimIndex++;
                     WhipUsesTurn++;
@@ -187,8 +192,9 @@ public static class CaduceusManager
                         GlobalAnimIndex++;
                     }
                     ScytheUsesTurn++;
-                    var scythePoise = await PowerCmd.Apply<LCPoisePower>(player, 1, player, null);
-                    scythePoise?.AddPotency(0);
+                    // Updated: Applying Scythe poise bonus
+                    await LCPoisePower.Apply(context, player, 1, 0, player, null);
+                    var scythePoise = player.GetPower<LCPoisePower>();
                     scythePoise?.ForceCrit();
                     vfx = "vfx/vfx_attack_slash";
                     break;
@@ -208,14 +214,29 @@ public static class CaduceusManager
             
             if (card.Owner.Character is Character.RienSang character && target != null)
             {
-                if (hitIndex == 0 || Character.RienSang.LastDashTarget[player] != target) 
+                var node = NCombatRoom.Instance?.GetCreatureNode(player);
+                var targetNode = NCombatRoom.Instance?.GetCreatureNode(target);
+
+                if (node != null && targetNode != null)
                 {
-                    await character.DashTo(player, target, 0.4f);
+                    Vector2 offsetDir = (player.Side == CombatSide.Player) ? Vector2.Left : Vector2.Right;
+                    if (isBehindAttack) offsetDir = -offsetDir;
+                    Vector2 targetPos = targetNode.GlobalPosition + offsetDir * 200f;
+
+                    if (hitIndex == 0 || Character.RienSang.LastDashTarget[player] != target) 
+                    {
+                        await character.DashTo(player, target, 0.4f, dashBehind: isBehindAttack);
+                    }
+                    else if ((node.GlobalPosition - targetPos).Length() > 50f)
+                    {
+                        node.GlobalPosition = targetPos;
+                    }
                 }
-    
+
                 if (!string.IsNullOrEmpty(animTrigger))
                 {
-                    character.PrepareVisualsForAction(player, target);
+                    character.PrepareVisualsForAction(player, target, isBehindAttack: isBehindAttack);
+
                     var (totalLength, impactDelays) = character.PlayAnimation(player, animTrigger);
                     
                     if (impactDelays.Length > 1)

@@ -26,15 +26,13 @@ public class SenseQuarry : RienSangCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(7, ValueProp.Move), 
         new("BonusBlock", 3),
-        new PowerVar<LCPoisePower>("PoisePotency", 2m)
+        new PowerVar<LCPoisePower>("PoisePotency", 4m)
     ];
 
     private bool IsUnlockIII => Owner.Creature.GetPower<Unlock>()?.Amount >= 3;
 
     protected override bool ShouldGlowGoldInternal => IsUnlockIII;
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Unlock];
-
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<Unlock>(),
         HoverTipFactory.FromPower<LCPoisePower>()
@@ -47,9 +45,7 @@ public class SenseQuarry : RienSangCard
         if (IsUnlockIII)
         {
             await CreatureCmd.GainBlock(Owner.Creature, (decimal)DynamicVars["BonusBlock"].BaseValue, ValueProp.Unpowered, null);
-            var poise = await PowerCmd.Apply<LCPoisePower>(Owner.Creature, 1, Owner.Creature, this); 
-
-            poise?.AddPotency(DynamicVars["PoisePotency"].IntValue);
+            await LCPoisePower.Apply(choiceContext, Owner.Creature, 1, DynamicVars["PoisePotency"].IntValue, Owner.Creature, this);
         }
     }
 
@@ -57,6 +53,6 @@ public class SenseQuarry : RienSangCard
     {
         DynamicVars.Block.UpgradeValueBy(1);
         DynamicVars["BonusBlock"].UpgradeValueBy(2);
-        DynamicVars["PoisePotency"].UpgradeValueBy(1);
+        DynamicVars["PoisePotency"].UpgradeValueBy(2);
     }
 }

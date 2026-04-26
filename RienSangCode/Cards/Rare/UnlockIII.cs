@@ -26,7 +26,8 @@ public class UnlockIII : RienSangCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(2, ValueProp.Move),
         new RepeatVar(3),
-        new ("DrawAmount", 1)
+        new ("DrawAmount", 1),
+        new EnergyVar(1)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

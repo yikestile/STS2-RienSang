@@ -30,7 +30,7 @@ public class OracleDeviceCaduceus : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<OracleDevicePower>(Owner.Creature, DynamicVars["DamageBonus"].IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<OracleDevicePower>(choiceContext, Owner.Creature, DynamicVars["DamageBonus"].IntValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

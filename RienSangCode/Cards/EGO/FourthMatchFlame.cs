@@ -50,8 +50,7 @@ public class FourthMatchFlame : RienSangCard
         var enemies = Owner.Creature.CombatState.Enemies.Where(e => e.IsAlive).ToList();
         foreach (var enemy in enemies)
         {
-            var burn = await PowerCmd.Apply<LCBurnPower>(enemy, count, Owner.Creature, this);
-            burn?.AddPotency(potency);
+            await LCBurnPower.Apply(choiceContext, enemy, count, potency, Owner.Creature, this);
         }
     }
 

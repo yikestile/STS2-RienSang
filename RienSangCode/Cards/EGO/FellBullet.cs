@@ -79,12 +79,10 @@ public class FellBullet : RienSangCard
 
                 if (shouldTriggerFatal && attackCommand.Results.Any((DamageResult r) => r.WasTargetKilled))
                 {
-                    var poise = await PowerCmd.Apply<LCPoisePower>(Owner.Creature, 1, Owner.Creature, this);
-                    poise?.AddPotency((int)DynamicVars["PoisePotency"].BaseValue);
+                    await LCPoisePower.Apply(choiceContext, Owner.Creature, 1, (int)DynamicVars["PoisePotency"].BaseValue, Owner.Creature, this);
                 }
 
-                var bleed = await PowerCmd.Apply<LCBleedPower>(enemy, (int)DynamicVars[nameof(LCBleedPower)].BaseValue, Owner.Creature, this);
-                bleed?.AddPotency((int)DynamicVars["BleedPotency"].BaseValue);
+                await LCBleedPower.Apply(choiceContext, enemy, (int)DynamicVars[nameof(LCBleedPower)].BaseValue, (int)DynamicVars["BleedPotency"].BaseValue, Owner.Creature, this);
             }
         }
     }

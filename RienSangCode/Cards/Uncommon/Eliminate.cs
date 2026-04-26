@@ -68,7 +68,6 @@ public class Eliminate() : RienSangCard(2, CardType.Attack, CardRarity.Uncommon,
         }
         finally
         {
-            // Ensure character always returns home, even if loop breaks early
             if (Owner.Character is Character.RienSang character)
             {
                 await character.ReturnToIdlePosition(Owner.Creature, 0.3f);
@@ -77,7 +76,7 @@ public class Eliminate() : RienSangCard(2, CardType.Attack, CardRarity.Uncommon,
 
         if (killedEnemy)
         {
-            await PowerCmd.Apply<StrengthPower>(Owner.Creature, (int)DynamicVars["StrGain"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, (int)DynamicVars["StrGain"].BaseValue, Owner.Creature, this);
         }
     }
 

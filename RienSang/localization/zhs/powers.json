@@ -4,8 +4,8 @@
   "RIENSANG-PROCURATION_HERMES.smartDescription": "达到 [blue]9[/blue] 层时，获得一张[gold]特殊卡牌[/gold]与 [blue]3[/blue] 层[gold]指令的恩宠[/gold]。\n在未达到[gold]解禁 II[/gold]前，层数上限限制为 8。 \n触发后的本回合内无法再次获得。",
 
   "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.title": "指令之印",
-  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "每回合标记随机卡牌。使用标记卡牌可获得[gold]指令的恩宠[/gold]与[gold]代行 [赫尔墨斯][/gold]。未使用的标记卡牌会产生[gold]因果报应[/gold]。",
-  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "每回合标记 [blue]2[/blue] 张随机卡牌。使用标记卡牌可获得 [blue]1[/blue] 层[gold]指令的恩宠[/gold]与[gold]代行 [赫尔墨斯][/gold]。\n每有一张未被使用的标记卡牌，获得 [blue]5[/blue] 层[gold]因果报应[/gold]。",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "每回合标记随机卡牌。使用标记卡牌可获得[gold]指令的恩宠[/gold]与[gold]代行 (赫尔墨斯)[/gold]。未使用的标记卡牌会产生[gold]因果报应[/gold]。",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "每回合标记 [blue]2[/blue] 张随机卡牌。使用标记卡牌可获得 [blue]1[/blue] 层[gold]指令的恩宠[/gold]与[gold]代行 (赫尔墨斯)[/gold]。\n每有一张未被使用的标记卡牌，获得 [blue]5[/blue] 层[gold]因果报应[/gold]。",
 
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.title": "指令的恩宠",
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.description": "积累层数以获得[gold]力量[/gold]并推进[gold]解禁[/gold]进度。",

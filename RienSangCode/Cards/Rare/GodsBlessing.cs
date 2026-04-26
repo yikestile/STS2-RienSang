@@ -25,11 +25,6 @@ public class GodsBlessing : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { };
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
-    {
-        CardKeyword.Retain
-    };
-    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<ProcurationHermes>(),
         HoverTipFactory.FromPower<KarmicConsequence>()
@@ -41,11 +36,11 @@ public class GodsBlessing : RienSangCard
         {
             if (Owner == null || Owner.Creature == null) return false;
 
-            int uniqueCaduceusCount = CountUniqueCaduceusCards(Owner);
+            int uniqueCaduceusCount = Character.RienSang.CountUniqueCaduceusCards(Owner);
             if (uniqueCaduceusCount < 15) return false;
 
-            var karmicPower = Owner.Creature.GetPower<KarmicConsequence>();
-            if (karmicPower != null && karmicPower.Amount >= 15) return false;
+            decimal karma = Owner.Creature.GetKarmaAmount();
+            if (karma >= 15) return false;
 
             return true;
         }
@@ -64,7 +59,7 @@ public class GodsBlessing : RienSangCard
         }
         else
         {
-            await PowerCmd.Apply<ProcurationHermes>(Owner.Creature, 1m, Owner.Creature, this);
+            await PowerCmd.Apply<ProcurationHermes>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
             var newHermes = Owner.Creature.GetPower<ProcurationHermes>();
             if (newHermes != null)
             {
@@ -76,29 +71,6 @@ public class GodsBlessing : RienSangCard
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);
-    }
-
-    private int CountUniqueCaduceusCards(Player player)
-    {
-        HashSet<ModelId> uniqueCaduceusCards = new HashSet<ModelId>();
-
-        AddCaduceusCardsFromPile(PileType.Hand.GetPile(player), uniqueCaduceusCards);
-        AddCaduceusCardsFromPile(PileType.Draw.GetPile(player), uniqueCaduceusCards);
-        AddCaduceusCardsFromPile(PileType.Discard.GetPile(player), uniqueCaduceusCards);
-        AddCaduceusCardsFromPile(PileType.Exhaust.GetPile(player), uniqueCaduceusCards);
-        
-        return uniqueCaduceusCards.Count;
-    }
-
-    private void AddCaduceusCardsFromPile(CardPile pile, HashSet<ModelId> uniqueIds)
-    {
-        if (pile == null) return;
-        foreach (var card in pile.Cards)
-        {
-            if (card.CanonicalKeywords.Contains(RienSangKeywords.Caduceus))
-            {
-                uniqueIds.Add(card.Id);
-            }
-        }
+        AddKeyword(CardKeyword.Retain);
     }
 }

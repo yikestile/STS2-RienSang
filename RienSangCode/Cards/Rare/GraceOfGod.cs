@@ -19,7 +19,7 @@ public class GraceOfGod() : RienSangCard(2, CardType.Power, CardRarity.Rare, Tar
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<Powers.GraceOfGodPower>(Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<Powers.GraceOfGodPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
     
     protected override void OnUpgrade()

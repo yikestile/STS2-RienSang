@@ -26,7 +26,7 @@ public class SlamDownWithWeightToppleTheBody : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(3, ValueProp.Move),
-        new("PoisePotency", 2)
+        new("PoisePotency", 4)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
@@ -50,14 +50,12 @@ public class SlamDownWithWeightToppleTheBody : RienSangCard
         {
             await CaduceusManager.Execute(this, target, baseDamage, choiceContext, 0, LimbusDamageType.Blunt, biasChance);
         }
-        
-        var poise = await PowerCmd.Apply<LCPoisePower>(player, 1, player, this);
-        poise?.AddPotency((int)DynamicVars["PoisePotency"].BaseValue);
+        await LCPoisePower.Apply(choiceContext, player, 1, (int)DynamicVars["PoisePotency"].BaseValue, player, this);
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2);
-        DynamicVars["PoisePotency"].UpgradeValueBy(1);
+        DynamicVars["PoisePotency"].UpgradeValueBy(2);
     }
 }

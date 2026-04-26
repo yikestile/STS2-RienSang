@@ -39,7 +39,7 @@ public class TheOraclesProxy : RienSangCard
         if (x > 0)
         {
             int healPerTurn = (int)DynamicVars["Heal"].BaseValue + x;
-            await PowerCmd.Apply<Powers.TheOraclesProxyPower>(Owner.Creature, x, Owner.Creature, this);
+            await PowerCmd.Apply<Powers.TheOraclesProxyPower>(choiceContext, Owner.Creature, x, Owner.Creature, this);
             
             var hermes = Owner.Creature.GetPower<Powers.TheOraclesProxyPower>();
             if (hermes != null)

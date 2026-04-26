@@ -6,5 +6,4 @@ namespace RienSang.RienSangCode.Character;
 public static class RienSangKeywords
 {
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.Before)] public static CardKeyword Caduceus;
-    [CustomEnum] [KeywordProperties(AutoKeywordPosition.Before)] public static CardKeyword Unlock;
 }

@@ -1,6 +1,4 @@
 ﻿{
   "RIENSANG-CADUCEUS.title": "使者之杖",
-  "RIENSANG-CADUCEUS.description": "每次使用[gold]使者之杖[/gold]时都会随机分配一种武器。每张卡牌第一次使用[gold]使者之杖[/gold]时获得 [blue]1[/blue] 层[gold]代行 [赫尔墨斯][/gold]。",
-  "RIENSANG-UNLOCK.title": "解禁",
-  "RIENSANG-UNLOCK.description": "达到[gold]解禁 III[/gold]时，获得[gold]心 (心) - 天命[/gold]与 [blue]1[/blue] 点[gold]敏捷[/gold]。\n战斗结束时：根据[gold]解禁[/gold]状态[gold]治疗[/gold]生命值与理智值(SP)。"
+  "RIENSANG-CADUCEUS.description": "每次使用[gold]使者之杖[/gold]时都会随机分配一种武器。每张卡牌第一次使用[gold]使者之杖[/gold]时获得 [blue]1[/blue] 层[gold]代行 [赫尔墨斯][/gold]。"
 }

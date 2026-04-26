@@ -67,7 +67,7 @@ public class Omnitool : RienSangRelic
         }
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
     {
         if (side == CombatSide.Player)
         {
@@ -80,17 +80,17 @@ public class Omnitool : RienSangRelic
 
                 if (slash > 0)
                 {
-                    await PowerCmd.Apply<LCSlashFragility>(enemy, slash, Owner.Creature, null);
+                    await PowerCmd.Apply<LCSlashFragility>(choiceContext, enemy, (decimal)slash, Owner.Creature, null);
                     anyApplied = true;
                 }
                 if (blunt > 0)
                 {
-                    await PowerCmd.Apply<LCBluntFragility>(enemy, blunt, Owner.Creature, null);
+                    await PowerCmd.Apply<LCBluntFragility>(choiceContext, enemy, (decimal)blunt, Owner.Creature, null);
                     anyApplied = true;
                 }
                 if (pierce > 0)
                 {
-                    await PowerCmd.Apply<LCPierceFragility>(enemy, pierce, Owner.Creature, null);
+                    await PowerCmd.Apply<LCPierceFragility>(choiceContext, enemy, (decimal)pierce, Owner.Creature, null);
                     anyApplied = true;
                 }
             }

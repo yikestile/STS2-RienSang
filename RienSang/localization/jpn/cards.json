@@ -1,12 +1,12 @@
 ﻿{
   "RIENSANG-FURIOSO_REPLICA.title": "Furioso [Replica]",
-  "RIENSANG-FURIOSO_REPLICA.description": "精神力(SP) 0以上：[blue]10[/blue] [gold]SP[/gold]を消費し、{Mang:diff()} [gold]望[/gold]を得る。{PoisePotency:diff()} [gold]呼吸威力[/gold]と{LCPoisePower:diff()} [gold]回数[/gold]を得る。[gold]カドゥケウス[/gold]を使用して{Damage:diff()}ダメージを{Repeat:diff()}回与える。全ての[gold]代行 [ヘルメス][/gold]を消費する。",
+  "RIENSANG-FURIOSO_REPLICA.description": "精神力(SP) 0以上：[blue]10[/blue] [gold]SP[/gold]を消費し、{Mang:diff()} [gold]望[/gold]を得る。{PoisePotency:diff()} [gold]呼吸威力[/gold]と{LCPoisePower:diff()} [gold]回数[/gold]を得る。[gold]カドゥケウス[/gold]を使用して{Damage:diff()}ダメージを{Repeat:diff()}回与える。全ての[gold]代行 (ヘルメス)[/gold]を消費する。",
 
   "RIENSANG-FURIOSO_CRESCENDO.title": "Furioso [Crescendo]",
-  "RIENSANG-FURIOSO_CRESCENDO.description": "精神力(SP) 0以上：[blue]20[/blue] [gold]SP[/gold]を消費し、{Mang:diff()} [gold]望[/gold]を得る。{PoisePotency:diff()} [gold]呼吸威力[/gold]と{LCPoisePower:diff()} [gold]回数[/gold]を得る。[gold]カドゥケウス[/gold]を使用して{Damage:diff()}ダメージを{Repeat:diff()}回与える。全ての[gold]代行 [ヘルメス][/gold]を消費する。",
+  "RIENSANG-FURIOSO_CRESCENDO.description": "精神力(SP) 0以上：[blue]20[/blue] [gold]SP[/gold]を消費し、{Mang:diff()} [gold]望[/gold]を得る。{PoisePotency:diff()} [gold]呼吸威力[/gold]と{LCPoisePower:diff()} [gold]回数[/gold]を得る。[gold]カドゥケウス[/gold]を使用して{Damage:diff()}ダメージを{Repeat:diff()}回与える。全ての[gold]代行 (ヘルメス)[/gold]を消費する。",
 
   "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.title": "Furioso [Lacrimosa Crescendo]",
-  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.description": "精神力(SP) 0以上：[blue]30[/blue] [gold]SP[/gold]を消費し、{Mang:diff()} [gold]望[/gold]を得る。{PoisePotency:diff()} [gold]呼吸威力[/gold]と{LCPoisePower:diff()} [gold]回数[/gold]を得る。[gold]カドゥケウス[/gold]を使用して{Damage:diff()}ダメージを{Repeat:diff()}回与える。全ての[gold]代行 [ヘルメス][/gold]を消費する。",
+  "RIENSANG-FURIOSO_LACRIMOSA_CRESCENDO.description": "精神力(SP) 0以上：[blue]30[/blue] [gold]SP[/gold]を消費し、{Mang:diff()} [gold]望[/gold]を得る。{PoisePotency:diff()} [gold]呼吸威力[/gold]と{LCPoisePower:diff()} [gold]回数[/gold]を得る。[gold]カドゥケウス[/gold]を使用して{Damage:diff()}ダメージを{Repeat:diff()}回与える。全ての[gold]代行 (ヘルメス)[/gold]を消費する。",
 
   "RIENSANG-GLOOM_IN_RUINS.title": "廃墟の憂鬱",
   "RIENSANG-GLOOM_IN_RUINS.description": "[gold]沈潜[/gold]がダメージを与えるようになります。的中時：[gold]沈潜威力[/gold]5につき{SinkingDamage:diff()}ダメージを受けます。",
@@ -59,8 +59,8 @@
   "RIENSANG-WILL_OF_THE_CITY.title": "都市の意志",
   "RIENSANG-WILL_OF_THE_CITY.description": "{Block:diff()} [gold]ブロック[/gold]を得る。{Energy:diff()} {Energy:energyIcons()}を得て、カードを1枚[gold]ドロー[/gold]する。",
 
-  "RIENSANG-FAITH.title": "信仰",
-  "RIENSANG-FAITH.description": "{Block:diff()} [gold]ブロック[/gold]を得る。{Energy:diff()} [gold]エネルギー[/gold]を回復する。",
+  "RIENSANG-BELIEF.title": "信仰",
+  "RIENSANG-BELIEF.description": "{Block:diff()} [gold]ブロック[/gold]を得る。{Energy:energyIcons()}を回復する。",
 
   "RIENSANG-BLIND_FAITH.title": "盲信",
   "RIENSANG-BLIND_FAITH.description": "戦闘開始時、このカードのコピーを{CopyAmount:diff()}枚、山札に加える。{Damage:diff()}ダメージを与える。山札にある全ての[gold]盲信[/gold]を手札に加える。",
@@ -164,7 +164,7 @@
   "RIENSANG-SANGUINE_POINTILLISM.title": "模造された生",
   "RIENSANG-SANGUINE_POINTILLISM.description": "{Damage:diff()}ダメージを与える。{Chance:diff()}%の確率で、さらにもう一度攻撃する。対象に付与された弱体化(デバフ)1種類につき、確率が+{BonusChance:diff()}%増加する。(最大2回まで追加攻撃)",
 
-  "RIENSANG-RIME_SHANK.title": "氷の脚 [模造]",
+  "RIENSANG-RIME_SHANK.title": "氷の脚 [Replica]",
   "RIENSANG-RIME_SHANK.description": "全ての敵に[blue]{LCSinkingPower:diff()}*X[/blue]の[gold]沈潜回数[/gold]を付与する。",
 
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "指令の要求するままに",
@@ -179,7 +179,7 @@
   "RIENSANG-OBEDIENCE.title": "服従",
   "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:次のターンに{Energy:energyIcons()}を得る。\n} 次のターン、[gold]ヘルメス[/gold]が代行します。{KarmaLoss:diff()} [gold]カルマ[/gold]を失う。",
 
-  "RIENSANG-SINKING_DELUGE.title": "沈潜殺到",
+  "RIENSANG-SINKING_DELUGE.title": "沈潜殺到 [Replica]",
   "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:[gold]沈潜[/gold] 3を付与。\n} [gold](沈潜威力 * 回数)/2[/gold]に等しいダメージを与える。全ての[gold]沈潜[/gold]を解除する。",
 
   "RIENSANG-THE_ORACLES_PROXY.title": "神託の代行者",
@@ -200,7 +200,7 @@
   "RIENSANG-STAR_OF_THE_CITY.title": "都市の星",
   "RIENSANG-STAR_OF_THE_CITY.description": "ターン開始時、全ての敵に{SinkingPotency:diff()} [gold]沈潜威力[/gold]と{SinkingCount:diff()} [gold]回数[/gold]を付与する。",
 
-  "RIENSANG-ORACLE_DEVICE_CADUCEUS.title": "神託端末機[カドゥケウス]",
+  "RIENSANG-ORACLE_DEVICE_CADUCEUS.title": "神託端末機(カドゥケウス)",
   "RIENSANG-ORACLE_DEVICE_CADUCEUS.description": "全ての[gold]カドゥケウス[/gold]武器のダメージが +{DamageBonus:diff()}増加します。",
 
   "RIENSANG-UNLOCK_I.title": "解禁-I",
@@ -213,7 +213,7 @@
   "RIENSANG-UNLOCK_II_I.description": "{Damage:diff()}ダメージを3回与える。[gold]エネルギー[/gold] 1を得て、カードを{DrawAmount:diff()}枚[gold]ドロー[/gold]する。",
 
   "RIENSANG-GODS_BLESSING.title": "主の祝福",
-  "RIENSANG-GODS_BLESSING.description": "[gold]カルマ[/gold]が15未満であり、かつデッキに[gold]カドゥケウス[/gold]カードが15枚以上ある場合のみプレイ可能。\n[gold]代行 [ヘルメス][/gold]を9にする。",
+  "RIENSANG-GODS_BLESSING.description": "[gold]カルマ[/gold]が15未満であり、かつデッキに[gold]カドゥケウス[/gold]カードが15枚以上ある場合のみプレイ可能。\n[gold]代行 (ヘルメス)[/gold]を9にする。",
   "RIENSANG-SPORK.title": "スポーク",
   "RIENSANG-SPORK.description": "このカードが手札にある場合、必ず最初にプレイしなければならない。5ダメージを受ける。",
 

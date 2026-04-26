@@ -29,7 +29,7 @@ public class ThePrescriptsTarget : RienSangPower
         return 1m;
     }
     
-    public override async Task AfterSideTurnStart(CombatSide combatSide, CombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide combatSide, ICombatState combatState)
     {
         if (combatSide == CombatSide.Enemy)
         {

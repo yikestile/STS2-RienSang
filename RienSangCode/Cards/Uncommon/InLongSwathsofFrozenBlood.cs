@@ -22,8 +22,8 @@ public class InLongSwathsOfFrozenBlood : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar("Block", 5, ValueProp.Move),
-        new PowerVar<LCPoisePower>(2),
-        new DynamicVar("PoisePotency", 2m),
+        new PowerVar<LCPoisePower>(4),
+        new DynamicVar("PoisePotency", 4m),
         new PowerVar<LCSinkingPower>(2),
         new DynamicVar("SinkingPotency", 2m)
     ];
@@ -34,30 +34,22 @@ public class InLongSwathsOfFrozenBlood : RienSangCard
         
         int poiseCount = DynamicVars[nameof(LCPoisePower)].IntValue;
         int poisePotency = DynamicVars["PoisePotency"].IntValue;
-        var poise = await PowerCmd.Apply<LCPoisePower>(Owner.Creature, (decimal)poiseCount, Owner.Creature, this);
-        if (poise != null)
-        {
-            poise.AddPotency(poisePotency);
-        }
+        await LCPoisePower.Apply(choiceContext, Owner.Creature, poiseCount, poisePotency, Owner.Creature, this);
 
         var target = cardPlay.Target;
         if (target != null && target.IsAlive)
         {
             int sinkingCount = DynamicVars[nameof(LCSinkingPower)].IntValue;
             int sinkingPotency = DynamicVars["SinkingPotency"].IntValue;
-            var sinking = await PowerCmd.Apply<LCSinkingPower>(target, (decimal)sinkingCount, Owner.Creature, this);
-            if (sinking != null)
-            {
-                sinking.AddPotency(sinkingPotency);
-            }
+            await LCSinkingPower.Apply(choiceContext, target, sinkingCount, sinkingPotency, Owner.Creature, this);
         }
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(1);
-        DynamicVars[nameof(LCPoisePower)].UpgradeValueBy(1);
-        DynamicVars["PoisePotency"].UpgradeValueBy(1);
+        DynamicVars[nameof(LCPoisePower)].UpgradeValueBy(2);
+        DynamicVars["PoisePotency"].UpgradeValueBy(2);
         DynamicVars[nameof(LCSinkingPower)].UpgradeValueBy(1);
         DynamicVars["SinkingPotency"].UpgradeValueBy(1);
     }

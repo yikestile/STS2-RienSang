@@ -33,6 +33,8 @@ using RienSang.RienSangCode.Cards.Common;
 using RienSang.RienSangCode.Cards.Curse;
 using RienSang.RienSangCode.Cards.Rare;
 using RienSang.RienSangCode.Cards.Uncommon;
+using MegaCrit.Sts2.Core.Entities.Players;
+using RienSang.RienSangCode.Mechanics;
 
 namespace RienSang.RienSangCode.Character;
 
@@ -46,19 +48,106 @@ public class RienSang : CustomCharacterModel
     public override CharacterGender Gender => CharacterGender.Masculine;
     public override int StartingHp => 66;
 
-    public override IEnumerable<CardModel> StartingDeck =>
-    [
-        ModelDb.Card<StrikeRienSang>(),
-        ModelDb.Card<StrikeRienSang>(),
-        ModelDb.Card<StrikeRienSang>(),
-        ModelDb.Card<StrikeRienSang>(),
-        ModelDb.Card<DefendRienSang>(),
-        ModelDb.Card<DefendRienSang>(),
-        ModelDb.Card<DefendRienSang>(),
-        ModelDb.Card<FollowingThePrescript>(),
-        ModelDb.Card<ByUnpredictableWhim>(),
-        ModelDb.Card<CrowsEyeView>()
-    ];
+public override IEnumerable<CardModel> StartingDeck =>
+[
+  // Basic
+  ModelDb.Card<ByUnpredictableWhim>(),
+  ModelDb.Card<FollowingThePrescript>(),
+  // Common
+  ModelDb.Card<Faith>(),
+  ModelDb.Card<Tradeoff>(),
+  ModelDb.Card<BlindFaith>(),
+  ModelDb.Card<Multislash>(),
+  ModelDb.Card<SenseQuarry>(),
+  ModelDb.Card<BindingChain>(),
+  ModelDb.Card<WillOfTheCity>(),
+  ModelDb.Card<TheIndexsBlade>(),
+  ModelDb.Card<PoisedBreathing>(),
+  ModelDb.Card<DeliverPrescripts>(),
+  ModelDb.Card<SomberProcuration>(),
+  ModelDb.Card<WillOfThePrescript>(),
+  ModelDb.Card<UndertakePrescripts>(),
+  ModelDb.Card<AsThePrescriptOrdered>(),
+  ModelDb.Card<ToWhereThePrescriptPoints>(),
+  ModelDb.Card<AimTowardAPointLetItEchoWithin>(),
+  ModelDb.Card<SwingToFellHaveItMeetTheGround>(),
+  ModelDb.Card<CarveAtALowSlantPeelWhatRemains>(),
+  ModelDb.Card<SlamDownWithWeightToppleTheBody>(),
+  ModelDb.Card<LayVerticalTheEndInsertUpToTheWick>(),
+  ModelDb.Card<LayTheBladeOnItsSideSliceLikeASeveredBreath>(),
+  // Uncommon
+  ModelDb.Card<Execute>(),
+  ModelDb.Card<Eliminate>(),
+  ModelDb.Card<Obedience>(),
+  ModelDb.Card<RimeShank>(),
+  ModelDb.Card<Enwrap330Times>(),
+  ModelDb.Card<ToDecideMyFate>(),
+  ModelDb.Card<DefensiveStance>(),
+  ModelDb.Card<RecitePrescript>(),
+  ModelDb.Card<TheWillOfHermes>(),
+  ModelDb.Card<EquivalentExchange>(),
+  ModelDb.Card<ProcurationEngrave>(),
+  ModelDb.Card<SanguinePointillism>(),
+  ModelDb.Card<TheIndexNursefather>(),
+  ModelDb.Card<AsThePrescriptDemands>(),
+  ModelDb.Card<RaiseAndLaughTheBlade>(),
+  ModelDb.Card<ImpaleInVoicelessSorrow>(),
+  ModelDb.Card<InLongSwathsOfFrozenBlood>(),
+  ModelDb.Card<RevelWithSoundlessApplause>(),
+  ModelDb.Card<WithTemperedSecretSeverTheForm>(),
+  ModelDb.Card<DestroyTheSoundCrushFlatTheThought>(),
+  ModelDb.Card<StabTheHeartOfSilencePenetrateTheMemory>(),
+  ModelDb.Card<CryTheWaterfall>(),
+  ModelDb.Card<AbsoluteFaith>(),
+  ModelDb.Card<Atonement>(),
+  ModelDb.Card<EnforcingPrescript>(),
+  ModelDb.Card<Weave>(),
+  ModelDb.Card<WeaknessExploit>(),
+  ModelDb.Card<ThickVapor>(),
+  ModelDb.Card<PoisedWarding>(),
+  ModelDb.Card<SteadyTheBreath>(),
+  ModelDb.Card<ThisWillDo>(),
+  // Rare
+  ModelDb.Card<UnlockI>(),
+  ModelDb.Card<UnlockII>(),
+  ModelDb.Card<UnlockIII>(),
+  ModelDb.Card<GraceOfGod>(),
+  ModelDb.Card<Reconstruct>(),
+  ModelDb.Card<SinkingDeluge>(),
+  ModelDb.Card<StarOfTheCity>(),
+  ModelDb.Card<TheOraclesProxy>(),
+  ModelDb.Card<PrecognitionReplica>(),
+  ModelDb.Card<OracleDeviceCaduceus>(),
+  ModelDb.Card<ProcurationAnnihilate>(),
+  ModelDb.Card<GodsBlessing>(),
+  ModelDb.Card<DeepBreath>(),
+  ModelDb.Card<SorsSalutis>(),
+  ModelDb.Card<SorsImmanis>(),
+  ModelDb.Card<OFortuna>(),
+  ModelDb.Card<DivineProtection>(),
+  ModelDb.Card<CompulsoryOffering>(),
+  ModelDb.Card<Volition>(),
+  ModelDb.Card<Conviction>(),
+  ModelDb.Card<FaithBeyondQuestion>(),
+  ModelDb.Card<GodsFavor>(),
+  // Ancient
+  ModelDb.Card<GloomInRuins>(),
+  ModelDb.Card<ByGodsWill>(),
+  // EGO
+  ModelDb.Card<Sunshower>(),
+  ModelDb.Card<BygoneDays>(),
+  ModelDb.Card<FellBullet>(),
+  ModelDb.Card<CrowsEyeView>(),
+  ModelDb.Card<WishingCairn>(),
+  ModelDb.Card<FourthMatchFlame>(),
+  ModelDb.Card<DimensionShredder>(),
+  ModelDb.Card<GreatTrichiliocosm>(),
+  // Curse
+  ModelDb.Card<Fpoon>(),
+  ModelDb.Card<Spork>(),
+  ModelDb.Card<PrescriptIncomplianceRisk>()
+];
+
     
     public override IReadOnlyList<RelicModel> StartingRelics => [ModelDb.Relic<PrescriptDevice>()];
 
@@ -94,7 +183,7 @@ public class RienSang : CustomCharacterModel
     private static readonly SpireField<Creature, Vector2?> _originalPositions = new SpireField<Creature, Vector2?>(() => null);
     public static readonly SpireField<Creature, Creature?> LastDashTarget = new SpireField<Creature, Creature?>(() => null);
 
-    public void PrepareVisualsForAction(Creature creature, Creature target)
+    public void PrepareVisualsForAction(Creature creature, Creature target, bool isBehindAttack = false)
     {
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
         var targetNode = NCombatRoom.Instance?.GetCreatureNode(target);
@@ -103,7 +192,11 @@ public class RienSang : CustomCharacterModel
         var visuals = node.Visuals.GetNodeOrNull<Sprite2D>("Visuals");
         if (visuals != null)
         {
-            visuals.FlipH = node.GlobalPosition.X > targetNode.GlobalPosition.X;
+            const float baseScale = 0.676f;
+            
+            bool shouldFaceLeft = node.GlobalPosition.X > targetNode.GlobalPosition.X;
+            
+            visuals.Scale = new Vector2(shouldFaceLeft ? -baseScale : baseScale, baseScale);
             visuals.Position = Vector2.Zero;
         }
     }
@@ -136,24 +229,48 @@ public class RienSang : CustomCharacterModel
 
             if (animPlayer.HasAnimation(godotTrigger))
             {
+                var originalAnim = animPlayer.GetAnimation(godotTrigger);
+                var anim = (Animation)originalAnim.Duplicate();
+    
                 var visuals = node.Visuals.GetNodeOrNull<Sprite2D>("Visuals");
+
                 if (visuals != null)
                 {
-                    var slash = visuals.GetNodeOrNull<CanvasItem>("SlashTex");
-                    var smoke = visuals.GetNodeOrNull<CanvasItem>("Smoke");
-                    if (slash != null) slash.Visible = false;
-                    if (smoke != null) smoke.Visible = false;
+                    bool isFlipped = visuals.Scale.X < 0;
+                    float multiplier = isFlipped ? -1f : 1f;
+
+                    int trackCount = anim.GetTrackCount();
+                    for (int i = 0; i < trackCount; i++)
+                    {
+                        if (anim.TrackGetPath(i) == "Visuals:position")
+                        {
+                            int keyCount = anim.TrackGetKeyCount(i);
+                            for (int k = 0; k < keyCount; k++)
+                            {
+                                Vector2 originalPos = (Vector2)anim.TrackGetKeyValue(i, k);
+                                float newX = originalPos.X * multiplier;
+                                anim.TrackSetKeyValue(i, k, new Vector2(newX, originalPos.Y));
+                            }
+                        }
+                    }
                 }
 
-                var anim = animPlayer.GetAnimation(godotTrigger);
+                var library = animPlayer.GetAnimationLibrary("");
+                string tempName = godotTrigger + "_temp";
+    
+                if (library.HasAnimation(tempName)) library.RemoveAnimation(tempName);
+                library.AddAnimation(tempName, anim);
+
                 float totalLength = anim.Length;
                 float[] impactDelays = GetImpactDelays(godotTrigger, totalLength);
 
-                animPlayer.Play(godotTrigger);
+                animPlayer.Play(tempName);
+    
                 if (godotTrigger != "idle_loop" && godotTrigger != "die")
                 {
                     animPlayer.Queue("idle_loop");
                 }
+    
                 return (totalLength, impactDelays);
             }
         }
@@ -196,7 +313,7 @@ public class RienSang : CustomCharacterModel
         };
     }
 
-    public async Task DashTo(Creature creature, Creature target, float duration)
+    public async Task DashTo(Creature creature, Creature target, float duration, bool dashBehind = false)
     {
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
         var targetNode = NCombatRoom.Instance?.GetCreatureNode(target);
@@ -211,7 +328,11 @@ public class RienSang : CustomCharacterModel
         PlayAnimation(creature, "dash");
 
         var tween = node.CreateTween();
-        Vector2 targetPos = targetNode.GlobalPosition + (creature.Side == CombatSide.Player ? Vector2.Left : Vector2.Right) * 150f;
+        
+        Vector2 offsetDir = (creature.Side == CombatSide.Player) ? Vector2.Left : Vector2.Right;
+        if (dashBehind) offsetDir = -offsetDir;
+
+        Vector2 targetPos = targetNode.GlobalPosition + offsetDir * 200f;
         tween.TweenProperty(node, "global_position", targetPos, duration).SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out);
         
         await Task.Delay((int)(duration * 1000));
@@ -223,17 +344,26 @@ public class RienSang : CustomCharacterModel
         if (node == null || !_originalPositions[creature].HasValue) return;
 
         var tween = node.CreateTween();
-        tween.TweenProperty(node, "global_position", _originalPositions[creature]!.Value, duration).SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.InOut);
-        
+    
+        tween.TweenProperty(node, "global_position", _originalPositions[creature]!.Value, duration)
+            .SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.InOut);
+    
         await Task.Delay((int)(duration * 1000));
-        
+    
         _originalPositions[creature] = null;
-        
         LastDashTarget[creature] = null;
+
         var visuals = node.Visuals.GetNodeOrNull<Sprite2D>("Visuals");
         if (visuals != null)
         {
-            visuals.FlipH = creature.Side != CombatSide.Player; 
+            const float baseScale = 0.676f;
+        
+            float targetXScale = (creature.Side == CombatSide.Player) ? baseScale : -baseScale;
+
+            var flipTween = node.CreateTween();
+            flipTween.TweenProperty(visuals, "scale", new Vector2(targetXScale, baseScale), 0.1f)
+                .SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out);
+            
             visuals.Position = Vector2.Zero;
         }
     }
@@ -250,6 +380,30 @@ public class RienSang : CustomCharacterModel
     private string EnergyCounterPaths(int i)
     {
         return "res://RienSang/images/ui/combat/energy_counters/riensang/limbus_orb_layer.png";
+    }
+
+    public static int CountUniqueCaduceusCards(Player player)
+    {
+        HashSet<ModelId> uniqueCaduceusCards = new HashSet<ModelId>();
+
+        AddCaduceusCardsFromPile(PileType.Hand.GetPile(player), uniqueCaduceusCards);
+        AddCaduceusCardsFromPile(PileType.Draw.GetPile(player), uniqueCaduceusCards);
+        AddCaduceusCardsFromPile(PileType.Discard.GetPile(player), uniqueCaduceusCards);
+        AddCaduceusCardsFromPile(PileType.Exhaust.GetPile(player), uniqueCaduceusCards);
+        
+        return uniqueCaduceusCards.Count;
+    }
+
+    private static void AddCaduceusCardsFromPile(CardPile pile, HashSet<ModelId> uniqueIds)
+    {
+        if (pile == null) return;
+        foreach (var card in pile.Cards)
+        {
+            if (card.CanonicalKeywords.Contains(RienSangKeywords.Caduceus))
+            {
+                uniqueIds.Add(card.Id);
+            }
+        }
     }
     
     [HarmonyPatch(typeof(NCreature), nameof(NCreature.SetAnimationTrigger))]
