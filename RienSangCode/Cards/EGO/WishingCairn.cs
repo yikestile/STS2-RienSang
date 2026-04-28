@@ -20,6 +20,7 @@ public class WishingCairn : RienSangCard
 {
     public WishingCairn() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
+        CurrentDamageType = LimbusDamageType.Pierce;
     }
 
     public override bool IsEgoCard => true;
@@ -38,6 +39,7 @@ public class WishingCairn : RienSangCard
     {
         if (play.Target != null)
         {
+            DamageTypeTracker.LastDamageType[play.Target] = CurrentDamageType;
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
             
             int paralyze = DynamicVars[nameof(LCParalyzePower)].IntValue;

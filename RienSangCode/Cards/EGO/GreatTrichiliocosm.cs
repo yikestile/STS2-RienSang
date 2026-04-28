@@ -31,6 +31,7 @@ public class GreatTrichiliocosm : RienSangCard
 {
     public GreatTrichiliocosm() : base(3, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
+        CurrentDamageType = LimbusDamageType.Pierce;
     }
 
     public override bool IsEgoCard => true;
@@ -72,6 +73,10 @@ public class GreatTrichiliocosm : RienSangCard
 
         for (int i = 0; i < hits; i++)
         {
+            foreach (var enemy in enemies)
+            {
+                if (enemy.IsAlive) DamageTypeTracker.LastDamageType[enemy] = CurrentDamageType;
+            }
             await DamageCmd.Attack(baseDmg).FromCard(this).TargetingAllOpponents(Owner.Creature.CombatState).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         }
 
@@ -98,7 +103,7 @@ public class GreatTrichiliocosm : RienSangCard
     [HarmonyPatch(typeof(Hook), nameof(Hook.AfterAttack))]
     public static class GreatTrichiliocosmCritHook
     {
-        [HarmonyPatch(typeof(Hook), nameof(Hook.AfterAttack), new[] { typeof(ICombatState), typeof(PlayerChoiceContext), typeof(AttackCommand) })] // Added types for safety
+        [HarmonyPatch(typeof(Hook), nameof(Hook.AfterAttack), new[] { typeof(ICombatState), typeof(PlayerChoiceContext), typeof(AttackCommand) })]
         [HarmonyPostfix]
         public static void Postfix(ICombatState combatState, PlayerChoiceContext choiceContext, AttackCommand command)
         {

@@ -183,8 +183,8 @@
   "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:施加 3 层[gold]沉沦强度[/gold]\n} 造成等同于 [gold](沉沦强度 * 次数)/2[/gold] 的伤害。移除所有[gold]沉沦[/gold]。",
 
   "RIENSANG-THE_ORACLES_PROXY.title": "神谕代行者",
-  "RIENSANG-THE_ORACLES_PROXY.description": "[gold]赫尔墨斯[/gold]将在接下来的 [blue]X[/blue] 个回合代你行动。在此期间无法获得[gold]因果报应[/gold]。[gold]赫尔墨斯[/gold]每行动一个轮次，[gold]治疗[/gold] [blue]{Heal:diff()}+X[/blue] 点生命值。",
-
+  "RIENSANG-THE_ORACLES_PROXY.description": "[gold]赫尔墨斯[/gold]将在接下来的 [blue]X[/blue] 个回合代你行动。每回合获得 [blue]X-1[/blue] 点{energyPrefix:energyIcons(1)}。期间无法获得[gold]因果报应[/gold]。[gold]赫尔墨斯[/gold]每行动一个轮次，[gold]治疗[/gold] [blue]{Heal:diff()}+X[/blue] 点生命值。",
+  
   "RIENSANG-RECONSTRUCT.title": "重构",
   "RIENSANG-RECONSTRUCT.description": "[gold]转化[/gold]一张手牌。在手牌中生成一张该牌的复制品。获得 {KarmaGain:diff()} 层[gold]因果报应[/gold]。",
 
@@ -211,10 +211,7 @@
 
   "RIENSANG-UNLOCK_II_I.title": "解禁-III",
   "RIENSANG-UNLOCK_II_I.description": "造成 {Damage:diff()} 点伤害 3 次。获得 1 点[gold]能量[/gold]并[gold]抽[/gold] {DrawAmount:diff()} 张牌。",
-
-  "RIENSANG-GODS_BLESSING.title": "神的祝愿",
-  "RIENSANG-GODS_BLESSING.description": "仅能在[gold]因果报应[/gold]为 15 或以下且牌组中拥有 15 张以上[gold]使者之杖[/gold]时使用。\n将[gold]代行 (赫尔墨斯)[/gold]层数设为 9。",
-
+  
   "RIENSANG-SPORK.title": "勺叉",
   "RIENSANG-SPORK.description": "若此牌在手中，必须优先打出。受到 5 点伤害。",
 
@@ -222,5 +219,71 @@
   "RIENSANG-FPOON.description": "当你抽到此牌时，获得 {SinkingPotency:diff()} 层[gold]沉沦强度[/gold]与 {LCSinkingPower:diff()} 层[gold]次数[/gold]。[gold]虚无[/gold]。",
 
   "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.title": "指令违背风险",
-  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.description": "受到基于[gold]因果报应[/gold]层数的伤害。\n伤害量 = [gold]因果报应 / 5[/gold]。\n若未打出此牌，获得 10 层[gold]因果报应[/gold]。\n在抽牌堆顶部加入一张此牌的复制品。"
+  "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.description": "受到基于[gold]因果报应[/gold]层数的伤害。\n伤害量 = [gold]因果报应 / 5[/gold]。\n若未打出此牌，获得 10 层[gold]因果报应[/gold]。\n在抽牌堆顶部加入一张此牌的复制品。",
+
+  "RIENSANG-FAITH.title": "信奉",
+  "RIENSANG-FAITH.description": "造成等同于本场战斗中已使用的所有[gold]盲信[/gold]数量的伤害。当前伤害：[blue]{Damage:diff()}[/blue]",
+
+  "RIENSANG-VOLITION.title": "意志",
+  "RIENSANG-VOLITION.description": "使用[gold]弃牌堆[/gold]中所有的[gold]盲信[/gold]。",
+
+  "RIENSANG-CONVICTION.title": "确信",
+  "RIENSANG-CONVICTION.description": "根据你拥有的[gold]盲信[/gold]总数，创建等量的[gold]盲信[/gold]复制品并放入[gold]抽牌堆[/gold]。",
+
+  "RIENSANG-ABSOLUTE_FAITH.title": "绝对信仰",
+  "RIENSANG-ABSOLUTE_FAITH.description": "将[gold]弃牌堆[/gold]中所有的[gold]盲信[/gold]移回[gold]抽牌堆[/gold]。{IfUpgraded:show:将 [blue]1[/blue] 张[gold]盲信[/gold]放入[gold]手牌[/gold]。}",
+
+  "RIENSANG-FAITH_BEYOND_QUESTION.title": "不容置疑的信仰",
+  "RIENSANG-FAITH_BEYOND_QUESTION.description": "每使用一次[gold]盲信[/gold]，使所有[gold]盲信[/gold]的伤害增加 [blue]1[/blue] 点。",
+
+  "RIENSANG-ATONEMENT.title": "赎罪",
+  "RIENSANG-ATONEMENT.description": "每当你使用一张[gold]标记[/gold]卡牌，减少 [blue]{Potency}[/blue] 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-ENFORCING_PRESCRIPT.title": "执行指令",
+  "RIENSANG-ENFORCING_PRESCRIPT.description": "获得 [blue]{KarmaGain:diff()}[/blue] 层[gold]因果报应[/gold]。\n将一名敌人的攻击意图减半。",
+
+  "RIENSANG-WEAKNESS_EXPLOIT.title": "弱点利用",
+  "RIENSANG-WEAKNESS_EXPLOIT.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，获得 [blue]{LCCritDmgUp:diff()}[/blue] [gold]暴击伤害提升[/gold]。",
+
+  "RIENSANG-PROTECTIVE_VAPOR.title": "保护之气",
+  "RIENSANG-PROTECTIVE_VAPOR.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，获得 [blue]{Block:diff()}[/blue] 点[gold]格挡[/gold]。将此卡移回[gold]手牌[/gold]。",
+
+  "RIENSANG-POISED_WARDING.title": "呼吸之御",
+  "RIENSANG-POISED_WARDING.description": "每回合：获得 [blue]{Potency}[/blue] 层[gold]呼吸法强度[/gold]。\n[gold]暴击时[/gold]：获得 [blue]{Potency}[/blue] 点[gold]格挡[/gold]。",
+
+  "RIENSANG-STEADY_THE_BREATH.title": "稳固呼吸",
+  "RIENSANG-STEADY_THE_BREATH.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，在本回合与下回合获得 [blue]{LCProtectionPower:diff()}[/blue] 层[gold]保护[/gold]。",
+
+  "RIENSANG-THIS_WILL_DO.title": "这就足够了",
+  "RIENSANG-THIS_WILL_DO.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，将所选技能使用两次。",
+  "RIENSANG-THIS_WILL_DO.selectionScreenPrompt": "选择一个要使用两次的[gold]技能[/gold]。",
+
+  "RIENSANG-DEEP_BREATH.title": "深呼吸",
+  "RIENSANG-DEEP_BREATH.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，获得 {Energy:energyIcons()} 并[gold]抽[/gold] [blue]1[/blue] 张牌。",
+
+  "RIENSANG-SORS_SALUTIS.title": "救赎之命",
+  "RIENSANG-SORS_SALUTIS.description": "若你受到的伤害超过 [blue]10[/blue] 点，则实际承受一半伤害，另一半转化为[gold]因果报应[/gold]。",
+
+  "RIENSANG-SORS_IMMANIS.title": "严酷之命",
+  "RIENSANG-SORS_IMMANIS.description": "获得额外回合。获得 [blue]{KarmicConsequence:diff()}[/blue] 层[gold]因果报应[/gold]。",
+
+  "RIENSANG-O_FORTUNA.title": "哦，命运女神",
+  "RIENSANG-O_FORTUNA.description": "{IfUpgraded:show:失去 [blue]20[/blue] 层[gold]因果报应[/gold]。\n}将[gold]因果报应[/gold]层数上限提升至 [blue]200[/blue]。结束你的回合。",
+
+  "RIENSANG-DIVINE_PROTECTION.title": "神圣庇护",
+  "RIENSANG-DIVINE_PROTECTION.description": "获得 [blue]{KarmicConsequence:diff()}[/blue] 层[gold]因果报应[/gold]。使本回合获得的[gold]格挡[/gold]与[gold]回避[/gold]翻倍。",
+
+  "RIENSANG-COMPULSORY_OFFERING.title": "强制供奉",
+  "RIENSANG-COMPULSORY_OFFERING.description": "消耗 [blue]20[/blue] 层[gold]呼吸法强度[/gold]并获得 [blue]{KarmicConsequence:diff()}[/blue] 层[gold]因果报应[/gold]，[gold]抽[/gold] [blue]2[/blue] 张牌。\n选择[gold]手牌[/gold]中的一张[gold]能力[/gold]牌并使用两次。若没有能力牌，则改为选择一张[gold]技能[/gold]牌。",
+  "RIENSANG-COMPULSORY_OFFERING.selectionScreenPrompt": "选择一个要使用两次的[gold]能力[/gold]。",
+
+  "RIENSANG-GODS_FAVOR.title": "神之恩宠",
+  "RIENSANG-GODS_FAVOR.description": "当[gold]因果报应[/gold]低于 [blue]15[/blue] 且[gold]卡组[/gold]内含有 [blue]15[/blue] 张以上[gold]使者之杖[/gold]卡牌时可使用。\n获得 [blue]1[/blue] 层[gold]代行 (赫尔墨斯)[/gold]。\n跳过当前的[gold]代行 (赫尔墨斯)[/gold]奖励阶段。",
+
+  "RIENSANG-GODS_BLESSING.title": "神之祝福",
+  "RIENSANG-GODS_BLESSING.description": "当[gold]因果报应[/gold]低于 [blue]15[/blue] 且[gold]卡组[/gold]内含有 [blue]15[/blue] 张以上[gold]使者之杖[/gold]卡牌时可使用。\n将[gold]代行 (赫尔墨斯)[/gold]层数设为 [blue]9[/blue]。",
+
+  "RIENSANG-WEAVE.title": "编织",
+  "RIENSANG-WEAVE.description": "获得 [blue]{KarmaGain:diff()}[/blue] 层[gold]因果报应[/gold]。随机生成一张独特的[gold]使者之杖[/gold]卡牌。"
+  
 }

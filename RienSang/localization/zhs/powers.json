@@ -77,5 +77,33 @@
 
   "RIENSANG-DEFENSIVE_STANCE_POWER.title": "防御架势",
   "RIENSANG-DEFENSIVE_STANCE_POWER.description": "攻击牌不再造成伤害，改为获得[gold]格挡[/gold]。",
-  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "本回合内使用的攻击牌不再造成伤害，改为获得[gold]格挡[/gold]点数。"
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "本回合内使用的攻击牌不再造成伤害，改为获得[gold]格挡[/gold]点数。",
+
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.title": "不容置疑的信仰",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.description": "每次使用“盲信”卡牌时，增加所有“盲信”造成的伤害。",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.smartDescription": "当前“盲信”卡牌造成 [blue]{Potency}[/blue] 点额外伤害。后续每使用一张“盲信”卡牌，该加成将提升 [blue]{Amount}[/blue] 点。",
+
+  "RIENSANG-POISED_WARDING_POWER.title": "呼吸之御",
+  "RIENSANG-POISED_WARDING_POWER.description": "每回合获得[gold]呼吸法强度[/gold]。触发[gold]暴击[/gold]时：获得[gold]格挡[/gold]。",
+  "RIENSANG-POISED_WARDING_POWER.smartDescription": "每回合开始时，获得 [blue]{PoiseGain}[/blue] 层[gold]呼吸法强度[/gold]。\n[gold]暴击时[/gold]：获得 [blue]{BlockGain}[/blue] 点[gold]格挡[/gold]。",
+
+  "RIENSANG-SORS_SALUTIS_POWER.title": "救赎之命",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "受到的伤害减半，剩余部分转化为[gold]因果报应[/gold]。",
+  "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "若单次受到的伤害超过 [blue]10[/blue] 点，则实际承受一半伤害，另一半转化为[gold]因果报应[/gold]。",
+
+  "RIENSANG-SORS_IMMANIS_POWER.title": "严酷之命",
+  "RIENSANG-SORS_IMMANIS_POWER.description": "获得额外回合。需消耗[gold]因果报应[/gold]。",
+  "RIENSANG-SORS_IMMANIS_POWER.smartDescription": "获得额外回合。",
+
+  "RIENSANG-DIVINE_PROTECTION_POWER.title": "神圣庇护",
+  "RIENSANG-DIVINE_PROTECTION_POWER.description": "使本回合获得的[gold]格挡[/gold]与[gold]回避[/gold]翻倍。",
+  "RIENSANG-DIVINE_PROTECTION_POWER.smartDescription": "使本回合获得的[gold]格挡[/gold]与[gold]回避[/gold]翻倍。",
+
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.title": "因果报应 [福尔图娜]",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.description": "随着层数增加，获得[gold]脆弱[/gold]与[gold]诅咒[/gold]。达到 200 层时[red]死亡[/red]。",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.smartDescription": "每 [blue]20[/blue] 层获得 [blue]1[/blue] 层[gold]脆弱[/gold]。\n[blue]达到 40 层时[/blue]：获得一张临时[gold]诅咒[/gold]卡。\n[blue]达到 80 层时[/blue]：获得 2 张临时[gold]诅咒[/gold]卡，且[gold]每回合少抽 1 张牌[/gold]。\n[blue]达到 100 层时[/blue]：[gold]每回合能量 -1[/gold]。\n[blue]达到 120 层时[/blue]：获得一张永久[gold]诅咒[/gold]卡。\n[blue]达到 160 层时[/blue]：获得另一张永久[gold]诅咒[/gold]卡，且[gold]少抽 1 张牌[/gold]。\n[blue]达到 200 层时[/blue]：[red]死亡[/red]。",
+
+  "RIENSANG-ATONEMENT_POWER.title": "赎罪",
+  "RIENSANG-ATONEMENT_POWER.description": "现在每使用一张[gold]标记[/gold]卡牌都会减少[gold]因果报应[/gold]。",
+  "RIENSANG-ATONEMENT_POWER.smartDescription": "每当你使用一张[gold]标记[/gold]卡牌，减少 [blue]{KarmaReduction}[/blue] 层[gold]因果报应[/gold]。"
 }

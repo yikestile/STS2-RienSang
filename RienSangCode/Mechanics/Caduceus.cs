@@ -192,7 +192,6 @@ public static class CaduceusManager
                         GlobalAnimIndex++;
                     }
                     ScytheUsesTurn++;
-                    // Updated: Applying Scythe poise bonus
                     await LCPoisePower.Apply(context, player, 1, 0, player, null);
                     var scythePoise = player.GetPower<LCPoisePower>();
                     scythePoise?.ForceCrit();
@@ -205,6 +204,11 @@ public static class CaduceusManager
                 rienSangCard.CurrentDamageType = damageType;
             }
             
+            if (target != null)
+            {
+                DamageTypeTracker.LastDamageType[target] = damageType;
+            }
+
             decimal finalDamage = baseDamage * damageMultiplier;
             var oraclePower = player.GetPower<OracleDevicePower>();
             if (oraclePower != null)

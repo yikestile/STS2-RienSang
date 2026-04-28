@@ -19,6 +19,7 @@ public class CrowsEyeView : RienSangCard
 {
     public CrowsEyeView() : base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
     {
+        CurrentDamageType = LimbusDamageType.Pierce;
     }
 
     public override bool IsEgoCard => true;
@@ -37,7 +38,10 @@ public class CrowsEyeView : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        GD.Print($"[LimbusCore] Crow's Eye View played. Current SP: {SanityManager.GetSanity(Owner)}");
+        if (play.Target != null)
+        {
+            DamageTypeTracker.LastDamageType[play.Target] = CurrentDamageType;
+        }
 
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
 

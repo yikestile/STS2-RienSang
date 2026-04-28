@@ -24,6 +24,7 @@ public class Sunshower : RienSangCard
 {
     public Sunshower() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
+        CurrentDamageType = LimbusDamageType.Pierce;
     }
 
     public override bool IsEgoCard => true;
@@ -57,6 +58,10 @@ public class Sunshower : RienSangCard
 
         if (Owner.Creature.CombatState != null)
         {
+            foreach (var enemy in Owner.Creature.CombatState.Enemies)
+            {
+                if (enemy.IsAlive) DamageTypeTracker.LastDamageType[enemy] = CurrentDamageType;
+            }
             await DamageCmd.Attack(damage).FromCard(this).TargetingAllOpponents(Owner.Creature.CombatState).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         }
 

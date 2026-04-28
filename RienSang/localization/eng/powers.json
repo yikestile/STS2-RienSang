@@ -93,7 +93,7 @@
 
   "RIENSANG-SORS_IMMANIS_POWER.title": "Sors Immanis",
   "RIENSANG-SORS_IMMANIS_POWER.description": "Take an extra turn. Costs [gold]Karmic Consequence[/gold].",
-  "RIENSANG-SORS_IMMANIS_POWER.smartDescription": "Take an extra turn at the end of the round. Expires after one use.",
+  "RIENSANG-SORS_IMMANIS_POWER.smartDescription": "Take an extra turn.",
 
   "RIENSANG-DIVINE_PROTECTION_POWER.title": "Divine Protection",
   "RIENSANG-DIVINE_PROTECTION_POWER.description": "Doubles [gold]Block[/gold] and [gold]Evade[/gold] gained this turn.",

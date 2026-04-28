@@ -183,13 +183,13 @@
   "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:Inflict [blue]3[/blue] [gold]Sinking[/gold]\n} Deal Damage equal to [gold](Sinking Potency * Count)/2[/gold]. Removes ALL [gold]Sinking[/gold].",
 
   "RIENSANG-THE_ORACLES_PROXY.title": "The Oracle's Proxy",
-  "RIENSANG-THE_ORACLES_PROXY.description": "[gold]Hermes[/gold] will play for the next [blue]X[/blue] turns. Cannot gain [gold]Karmic Consequence[/gold] for [blue]X[/blue] turns. Heal [blue]{Heal:diff()}+X[/blue] [gold]HP[/gold] for every round [gold]Hermes[/gold] played.",
+  "RIENSANG-THE_ORACLES_PROXY.description": "[gold]Hermes[/gold] will play for the next [blue]X[/blue] turns. \nGain [blue]X-1[/blue] {energyPrefix:energyIcons(1)} each turn. \nCannot gain [gold]Karmic Consequence[/gold]. \nHeal [blue]{Heal:diff()}+X[/blue] [gold]HP[/gold] for every round [gold]Hermes[/gold] played.",
 
   "RIENSANG-RECONSTRUCT.title": "Reconstruct",
   "RIENSANG-RECONSTRUCT.description": "[gold]Transform[/gold] a card in your [gold]hand[/gold]. Create a copy of this card in your [gold]hand[/gold]. Gain [blue]{KarmaGain:diff()}[/blue] [gold]Karmic Consequence[/gold].",
 
   "RIENSANG-PRECOGNITION_REPLICA.title": "Precognition [Replica]",
-  "RIENSANG-PRECOGNITION_REPLICA.description": "Gain [blue]{LCEvadePower:diff()}*X[/blue] [gold]Evade[/gold]. [gold]On Evade[/gold], Gain [blue]{PoisePotency:diff()}[/blue] [gold]Poise Potency[/gold] and [blue]{LCPoisePower:diff()}[/blue] [gold]Count[/gold], Gain [blue]{Energy:energyIcons()}[/blue] next turn.",
+  "RIENSANG-PRECOGNITION_REPLICA.description": "Gain [blue]{LCEvadePower:diff()}*X[/blue] [gold]Evade[/gold]. [gold]On Evade[/gold], Gain [blue]{PoisePotency:diff()}[/blue] [gold]Poise Potency[/gold] and [blue]{LCPoisePower:diff()}[/blue] [gold]Count[/gold], Gain {Energy:energyIcons()} next turn.",
 
   "RIENSANG-PROCURATION_ANNIHILATE.title": "Procuration: Annihilate [Replica]",
   "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]Slash Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. At [gold]Unlock III[/gold], deal [blue]15%[/blue] more damage.",
@@ -210,7 +210,7 @@
   "RIENSANG-UNLOCK_I_I.description": "Deal [blue]{Damage:diff()}[/blue] Damage [blue]2[/blue] times. Add [gold]Unlock-III[/gold] to the top of [gold]drawpile[/gold].",
 
   "RIENSANG-UNLOCK_II_I.title": "Unlock-III",
-  "RIENSANG-UNLOCK_II_I.description": "Deal [blue]{Damage:diff()}[/blue] Damage [blue]3[/blue] times. Gain [blue]{Energy:energyIcons()}[/blue] and [gold]Draw[/gold] [blue]{DrawAmount:diff()}[/blue] cards.",
+  "RIENSANG-UNLOCK_II_I.description": "Deal [blue]{Damage:diff()}[/blue] Damage [blue]3[/blue] times. Gain {Energy:energyIcons()} and [gold]Draw[/gold] [blue]{DrawAmount:diff()}[/blue] cards.",
 
   "RIENSANG-SPORK.title": "Spork",
   "RIENSANG-SPORK.description": "If this card is in the [gold]hand[/gold], it must be played first. Take [blue]5[/blue] damage.",
@@ -221,8 +221,8 @@
   "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.title": "Prescript Incompliance Risk",
   "RIENSANG-PRESCRIPT_INCOMPLIANCE_RISK.description": "Take Damage based on [gold]Karmic Consequence[/gold]. \nDamage = [gold]Karmic Consequence/5[/gold]. \nIf this card is not played, gain [blue]10[/blue] [gold]Karmic Consequence[/gold]. \nAdd a copy of this card on top of your [gold]Draw Pile[/gold].",
 
-  "RIENSANG-ABSOLUTE_FAITH.title": "Absolute Faith",
-  "RIENSANG-ABSOLUTE_FAITH.description": "Deal damage equal to ALL [gold]Blind Faith[/gold] played this combat. Current damage: [blue]{Damage:diff()}[/blue]",
+  "RIENSANG-FAITH.title": "Faith",
+  "RIENSANG-FAITH.description": "Deal damage equal to ALL [gold]Blind Faith[/gold] played this combat. Current damage: [blue]{Damage:diff()}[/blue]",
 
   "RIENSANG-VOLITION.title": "Volition",
   "RIENSANG-VOLITION.description": "Play Every [gold]Blind Faith[/gold] in you [gold]Discard Pile[/gold].",
@@ -230,8 +230,8 @@
   "RIENSANG-CONVICTION.title": "Conviction",
   "RIENSANG-CONVICTION.description": "Create [gold]Blind Faith[/gold] copies equal to the total amount of your [gold]Blind Faith[/gold]. Put them in your [gold]Draw Pile[/gold].",
   
-  "RIENSANG-FAITH.title": "Faith",
-  "RIENSANG-FAITH.description": "Return ALL [gold]Blind Faith[/gold] from [gold]Discard Pile[/gold] to [gold]Draw Pile[/gold]. {IfUpgraded:show:Put [blue]1[/blue] [gold]Blind Faith[/gold] in your [gold]Hand[/gold].}",
+  "RIENSANG-ABSOLUTE_FAITH.title": "Absolute Faith",
+  "RIENSANG-ABSOLUTE_FAITH.description": "Return ALL [gold]Blind Faith[/gold] from [gold]Discard Pile[/gold] to [gold]Draw Pile[/gold]. {IfUpgraded:show:Put [blue]1[/blue] [gold]Blind Faith[/gold] in your [gold]Hand[/gold].}",
 
   "RIENSANG-FAITH_BEYOND_QUESTION.title": "Faith Beyond Question",
   "RIENSANG-FAITH_BEYOND_QUESTION.description": "Increase damage of ALL [gold]Blind Faith[/gold] by [blue]1[/blue] each time it is used.",
@@ -240,13 +240,13 @@
   "RIENSANG-ATONEMENT.description": "Reduce [gold]Karmic Consequence[/gold] by [blue]{Potency}[/blue] whenever you play a [gold]Marked[/gold] card.",
   
   "RIENSANG-ENFORCING_PRESCRIPT.title": "Enforcing Prescript",
-  "RIENSANG-ENFORCING_PRESCRIPT.description": "Gain [blue]{KarmaGain:diff()}[/blue] [gold]Karmic Consequence[/gold]. Split an enemy's attack intent in half.",
+  "RIENSANG-ENFORCING_PRESCRIPT.description": "Gain [blue]{KarmaGain:diff()}[/blue] [gold]Karmic Consequence[/gold].\nSplit an enemy's attack intent in half.",
 
   "RIENSANG-WEAKNESS_EXPLOIT.title": "Weakness Exploit",
   "RIENSANG-WEAKNESS_EXPLOIT.description": "Consume [blue]{PotencyCost:diff()}[/blue] [gold]Poise Potency[/gold] to gain [blue]{LCCritDmgUp:diff()}[/blue] [gold]Crit DMG Up[/gold].",
 
-  "RIENSANG-THICK_VAPOR.title": "Thick Vapor",
-  "RIENSANG-THICK_VAPOR.description": "Consume [blue]{PotencyCost:diff()}[/blue] [gold]Poise Potency[/gold] to gain [blue]{Block:diff()}[/blue] [gold]Block[/gold]. Return this card to your [gold]Hand[/gold].",
+  "RIENSANG-PROTECTIVE_VAPOR.title": "Protective Vapor",
+  "RIENSANG-PROTECTIVE_VAPOR.description": "Consume [blue]{PotencyCost:diff()}[/blue] [gold]Poise Potency[/gold] to gain [blue]{Block:diff()}[/blue] [gold]Block[/gold]. Return this card to your [gold]Hand[/gold].",
 
   "RIENSANG-POISED_WARDING.title": "Poised Warding",
   "RIENSANG-POISED_WARDING.description": "Each turn: Gain [blue]{Potency}[/blue] [gold]Poise Potency[/gold].\n[gold]On Crit[/gold]: Gain [blue]{Potency}[/blue] [gold]Block[/gold].",
@@ -274,7 +274,7 @@
   "RIENSANG-DIVINE_PROTECTION.description": "Gain [blue]{KarmicConsequence:diff()}[/blue] [gold]Karmic Consequence[/gold]. Double [gold]Block[/gold] and [gold]Evade[/gold] gained this turn.",
 
   "RIENSANG-COMPULSORY_OFFERING.title": "Compulsory Offering",
-  "RIENSANG-COMPULSORY_OFFERING.description": "Consume [blue]20[/blue] [gold]Poise Potency[/gold] and Gain [blue]{KarmicConsequence:diff()}[/blue] [gold]Karmic Consequence[/gold] to [gold]Draw[/gold] [blue]2[/blue] cards. \nChoose a [gold]Power[/gold] in your [gold]Hand[/gold] and play it twice. \nIf there are no Power cards, choose a [gold]Skill[/gold] instead." ,
+  "RIENSANG-COMPULSORY_OFFERING.description": "Consume [blue]20[/blue] [gold]Poise Potency[/gold] and Gain [blue]{KarmicConsequence:diff()}[/blue] [gold]Karmic Consequence[/gold] to [gold]Draw[/gold] [blue]2[/blue] cards. \nChoose a [gold]Power[/gold] in your [gold]Hand[/gold] and play it twice. \nIf there are no [gold]Power[/gold] cards, choose a [gold]Skill[/gold] instead." ,
   "RIENSANG-COMPULSORY_OFFERING.selectionScreenPrompt": "Choose a [gold]Power[/gold] to play twice.",
   
   "RIENSANG-GODS_FAVOR.title": "God's Favor",

@@ -37,18 +37,26 @@ public class TheOraclesProxyPower : RienSangPower
         get => (int)DynamicVars["HealAmount"].BaseValue;
         set => DynamicVars["HealAmount"].BaseValue = value;
     }
+
+    public int EnergyGain 
+    {
+        get => (int)DynamicVars["EnergyGain"].BaseValue;
+        set => DynamicVars["EnergyGain"].BaseValue = value;
+    }
     
     public bool IsActive { get; set; } = false;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("HealAmount", 0m)
+        new("HealAmount", 0m),
+        new("EnergyGain", 0m)
     ];
 
     public TheOraclesProxyPower() : base() { }
-    public TheOraclesProxyPower(int turns, int heal) : base() 
+    public TheOraclesProxyPower(int turns, int heal, int energy) : base() 
     { 
         SetAmount(turns); 
         HealAmount = heal;
+        EnergyGain = energy;
     }
 
     public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
@@ -62,6 +70,13 @@ public class TheOraclesProxyPower : RienSangPower
             Flash();
             await CreatureCmd.Heal(Owner, HealAmount);
         }
+    }
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (player != Owner.Player || EnergyGain <= 0) return;
+        
+        await PlayerCmd.GainEnergy(EnergyGain, player);
     }
 
     public override async Task AfterAutoPrePlayPhaseEntered(PlayerChoiceContext choiceContext, Player player)

@@ -23,7 +23,7 @@ public class Obedience : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new("KarmaLoss", 20m),
-        new EnergyVar(0) // Added for {Energy:diff()}
+        new EnergyVar(0)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -36,13 +36,16 @@ public class Obedience : RienSangCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         int energyGain = DynamicVars.Energy.IntValue;
-        if (energyGain > 0)
-        {
-            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, Owner.Creature, energyGain, Owner.Creature, this);
-        }
         
         await Owner.Creature.ModifyKarma(choiceContext, -DynamicVars["KarmaLoss"].BaseValue, Owner.Creature);
+        
         await PowerCmd.Apply<TheOraclesProxyPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        var hermes = Owner.Creature.GetPower<TheOraclesProxyPower>();
+        if (hermes != null)
+        {
+            hermes.EnergyGain = energyGain;
+            hermes.HealAmount = 0;
+        }
     }
 
     protected override void OnUpgrade()

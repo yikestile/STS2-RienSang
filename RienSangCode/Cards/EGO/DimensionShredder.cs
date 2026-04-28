@@ -21,6 +21,7 @@ public class DimensionShredder : RienSangCard
 {
     public DimensionShredder() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
     {
+        CurrentDamageType = LimbusDamageType.Pierce;
     }
 
     public override bool IsEgoCard => true;
@@ -55,6 +56,7 @@ public class DimensionShredder : RienSangCard
                 var target = potentialTargets.TakeRandom(1, Owner.RunState.Rng.CombatTargets).FirstOrDefault();
                 if (target != null)
                 {
+                    DamageTypeTracker.LastDamageType[target] = CurrentDamageType;
                     await DamageCmd.Attack(damage).FromCard(this).Targeting(target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
                 }
             }

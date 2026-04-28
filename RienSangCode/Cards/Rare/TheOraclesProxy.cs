@@ -22,8 +22,8 @@ public class TheOraclesProxy : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DynamicVar("Turns", 0m),
-        new DynamicVar("Heal", 3m)
+        new("Turns", 0m),
+        new("Heal", 3m)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardKeyword.Exhaust];
@@ -38,15 +38,18 @@ public class TheOraclesProxy : RienSangCard
         int x = ResolveEnergyXValue();
         if (x > 0)
         {
-            int healPerTurn = (int)DynamicVars["Heal"].BaseValue + x;
+            int baseHeal = (int)DynamicVars["Heal"].BaseValue;
+            int healPerTurn = baseHeal + x;
+            int energyGain = x - 1;
+
             await PowerCmd.Apply<Powers.TheOraclesProxyPower>(choiceContext, Owner.Creature, x, Owner.Creature, this);
             
             var hermes = Owner.Creature.GetPower<Powers.TheOraclesProxyPower>();
             if (hermes != null)
             {
                 hermes.HealAmount = healPerTurn;
+                hermes.EnergyGain = energyGain;
             }
-            
         }
     }
 

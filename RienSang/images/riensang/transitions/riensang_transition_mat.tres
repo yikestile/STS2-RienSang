@@ -1,9 +1,13 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b7paidvhpfrhy"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b7paidvhpfrhy"]
 
 [ext_resource type="Shader" uid="uid://iehg5jh5ujye" path="res://RienSang/images/riensang/transitions/riensang_transition_mat.gdshader" id="1_04vuu"]
-[ext_resource type="Texture2D" uid="uid://dty2eq2482q4y" path="res://RienSang/images/riensang/transitions/silent_transition.png" id="2_t8kvw"]
+[ext_resource type="Texture2D" uid="uid://coh0xo7slhedj" path="res://RienSang/images/riensang/transitions/The_Index_Logo.png" id="2_04vuu"]
+[ext_resource type="Texture2D" uid="uid://dm647tdb7ht74" path="res://RienSang/images/riensang/transitions/pixelfont.png" id="2_t8kvw"]
 
 [resource]
 shader = ExtResource("1_04vuu")
-shader_parameter/transitionTex = ExtResource("2_t8kvw")
-shader_parameter/threshold = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/icon_texture = ExtResource("2_04vuu")
+shader_parameter/icon_dimension = Vector2(242, 284)
+shader_parameter/pixelfont_texture = ExtResource("2_t8kvw")
+shader_parameter/font_sheet_chars = Vector2(13, 5)

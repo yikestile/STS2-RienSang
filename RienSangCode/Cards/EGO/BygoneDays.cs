@@ -21,6 +21,7 @@ public class BygoneDays : RienSangCard
 {
     public BygoneDays() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies)
     {
+        CurrentDamageType = LimbusDamageType.Pierce;
     }
 
     public override bool IsEgoCard => true;
@@ -46,6 +47,7 @@ public class BygoneDays : RienSangCard
             {
                 if (enemy.IsAlive)
                 {
+                    DamageTypeTracker.LastDamageType[enemy] = CurrentDamageType;
                     await LCSinkingPower.Apply(choiceContext, enemy, count, potency, Owner.Creature, this);
                 }
             }

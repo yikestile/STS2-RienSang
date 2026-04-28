@@ -77,5 +77,33 @@
 
   "RIENSANG-DEFENSIVE_STANCE_POWER.title": "防御構え",
   "RIENSANG-DEFENSIVE_STANCE_POWER.description": "攻撃カード使用時、ダメージを与える代わりに[gold]ブロック[/gold]を得ます。",
-  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "このターンに使用した攻撃カードは、ダメージを与える代わりに[gold]ブロック[/gold]を得ます。"
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "このターンに使用した攻撃カードは、ダメージを与える代わりに[gold]ブロック[/gold]を得ます。",
+
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.title": "盲信",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.description": "「盲信」カードを使用するたびに、全ての「盲信」のダメージが増加します。",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.smartDescription": "現在、全ての「盲信」カードのダメージが[blue]{Potency}[/blue]増加しています。今後「盲信」カードを使用するたびに、このボーナスがさらに[blue]{Amount}[/blue]増加します。",
+
+  "RIENSANG-POISED_WARDING_POWER.title": "守備の呼吸",
+  "RIENSANG-POISED_WARDING_POWER.description": "毎ターン[gold]呼吸威力[/gold]を得ます。[gold]クリティカル[/gold]時、[gold]ブロック[/gold]を得ます。",
+  "RIENSANG-POISED_WARDING_POWER.smartDescription": "毎ターン開始時、[gold]呼吸威力[/gold] [blue]{PoiseGain}[/blue]を得ます。\n[gold]クリティカル時[/gold]：[gold]ブロック[/gold] [blue]{BlockGain}[/blue]を得ます。",
+
+  "RIENSANG-SORS_SALUTIS_POWER.title": "救済の運命",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "受けるダメージを半分に軽減し、残りの数値を[gold]カルマ[/gold]として受け取ります。",
+  "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "[blue]10[/blue]を超えるダメージを受ける場合、その半分をダメージとして受け、もう半分を[gold]カルマ[/gold]として受け取ります。",
+
+  "RIENSANG-SORS_IMMANIS_POWER.title": "過酷な運命",
+  "RIENSANG-SORS_IMMANIS_POWER.description": "追加のターンを得ます。引き換えに[gold]カルマ[/gold]を消費します。",
+  "RIENSANG-SORS_IMMANIS_POWER.smartDescription": "追加のターンを得ます。",
+
+  "RIENSANG-DIVINE_PROTECTION_POWER.title": "神聖な保護",
+  "RIENSANG-DIVINE_PROTECTION_POWER.description": "このターンに獲得する[gold]ブロック[/gold]と[gold]回避[/gold]を2倍にします。",
+  "RIENSANG-DIVINE_PROTECTION_POWER.smartDescription": "このターンに獲得する[gold]ブロック[/gold]と[gold]回避[/gold]を2倍にします。",
+
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.title": "カルマ [フォルトゥーナ]",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.description": "スタックが増えるにつれて[gold]脆弱[/gold]と[gold]呪い[/gold]を得ます。200スタックで[red]死亡[/red]します。",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.smartDescription": "[blue]20[/blue]スタックごとに[gold]脆弱[/gold] [blue]1[/blue]を得ます。\n[blue]40スタック時[/blue]：一時的な[gold]呪い[/gold]を得る。\n[blue]80スタック時[/blue]：一時的な[gold]呪い[/gold] 2枚獲得、[gold]毎ターンのドロー枚数が1枚減少[/gold]。\n[blue]100スタック時[/blue]：[gold]毎ターンのエネルギー -1[/gold]。\n[blue]120スタック時[/blue]：永続的な[gold]呪い[/gold]を得る。\n[blue]160スタック時[/blue]：永続的な[gold]呪い[/gold]をさらにもう1枚獲得、[gold]ドロー枚数がさらに1枚減少[/gold]。\n[blue]200スタック時[/blue]：[red]死亡する[/red]。",
+
+  "RIENSANG-ATONEMENT_POWER.title": "贖罪",
+  "RIENSANG-ATONEMENT_POWER.description": "[gold]印[/gold]が付与されたカードを使用するたびに、[gold]カルマ[/gold]が減少するようになります。",
+  "RIENSANG-ATONEMENT_POWER.smartDescription": "[gold]印[/gold]カードを使用するたびに、[gold]カルマ[/gold]を[blue]{KarmaReduction}[/blue]減少させます。"
 }

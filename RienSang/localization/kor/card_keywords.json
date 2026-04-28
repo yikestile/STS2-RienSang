@@ -1,4 +1,6 @@
 {
   "RIENSANG-CADUCEUS.title": "카두세우스",
-  "RIENSANG-CADUCEUS.description": "[gold]카두세우스[/gold]를 사용할 때마다 무작위 무기가 할당됩니다. 카드당 최초 [gold]카두세우스[/gold] 사용 시 [gold]대행 (헤르메스)[/gold]를 [blue]1[/blue] 얻습니다."
+  "RIENSANG-CADUCEUS.description": "[gold]카두세우스[/gold]를 사용할 때마다 무작위 무기가 할당됩니다. 카드당 최초 [gold]카두세우스[/gold] 사용 시 [gold]대행 [헤르메스][/gold]를 [blue]1[/blue] 얻습니다.",
+  "RIENSANG-UNLOCK.title": "해금",
+  "RIENSANG-UNLOCK.description": "[gold]해금 III[/gold] 달성 시, [gold]신(心) - 운명[/gold]과 [gold]민첩[/gold] [blue]1[/blue]을 얻습니다. \n전투 종료: [gold]해금[/gold] 단계에 비례하여 체력과 정신력을 [gold]회복[/gold]합니다."
 }

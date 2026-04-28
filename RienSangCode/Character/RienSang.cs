@@ -48,105 +48,19 @@ public class RienSang : CustomCharacterModel
     public override CharacterGender Gender => CharacterGender.Masculine;
     public override int StartingHp => 66;
 
-public override IEnumerable<CardModel> StartingDeck =>
-[
-  // Basic
-  ModelDb.Card<ByUnpredictableWhim>(),
-  ModelDb.Card<FollowingThePrescript>(),
-  // Common
-  ModelDb.Card<Faith>(),
-  ModelDb.Card<Tradeoff>(),
-  ModelDb.Card<BlindFaith>(),
-  ModelDb.Card<Multislash>(),
-  ModelDb.Card<SenseQuarry>(),
-  ModelDb.Card<BindingChain>(),
-  ModelDb.Card<WillOfTheCity>(),
-  ModelDb.Card<TheIndexsBlade>(),
-  ModelDb.Card<PoisedBreathing>(),
-  ModelDb.Card<DeliverPrescripts>(),
-  ModelDb.Card<SomberProcuration>(),
-  ModelDb.Card<WillOfThePrescript>(),
-  ModelDb.Card<UndertakePrescripts>(),
-  ModelDb.Card<AsThePrescriptOrdered>(),
-  ModelDb.Card<ToWhereThePrescriptPoints>(),
-  ModelDb.Card<AimTowardAPointLetItEchoWithin>(),
-  ModelDb.Card<SwingToFellHaveItMeetTheGround>(),
-  ModelDb.Card<CarveAtALowSlantPeelWhatRemains>(),
-  ModelDb.Card<SlamDownWithWeightToppleTheBody>(),
-  ModelDb.Card<LayVerticalTheEndInsertUpToTheWick>(),
-  ModelDb.Card<LayTheBladeOnItsSideSliceLikeASeveredBreath>(),
-  // Uncommon
-  ModelDb.Card<Execute>(),
-  ModelDb.Card<Eliminate>(),
-  ModelDb.Card<Obedience>(),
-  ModelDb.Card<RimeShank>(),
-  ModelDb.Card<Enwrap330Times>(),
-  ModelDb.Card<ToDecideMyFate>(),
-  ModelDb.Card<DefensiveStance>(),
-  ModelDb.Card<RecitePrescript>(),
-  ModelDb.Card<TheWillOfHermes>(),
-  ModelDb.Card<EquivalentExchange>(),
-  ModelDb.Card<ProcurationEngrave>(),
-  ModelDb.Card<SanguinePointillism>(),
-  ModelDb.Card<TheIndexNursefather>(),
-  ModelDb.Card<AsThePrescriptDemands>(),
-  ModelDb.Card<RaiseAndLaughTheBlade>(),
-  ModelDb.Card<ImpaleInVoicelessSorrow>(),
-  ModelDb.Card<InLongSwathsOfFrozenBlood>(),
-  ModelDb.Card<RevelWithSoundlessApplause>(),
-  ModelDb.Card<WithTemperedSecretSeverTheForm>(),
-  ModelDb.Card<DestroyTheSoundCrushFlatTheThought>(),
-  ModelDb.Card<StabTheHeartOfSilencePenetrateTheMemory>(),
-  ModelDb.Card<CryTheWaterfall>(),
-  ModelDb.Card<AbsoluteFaith>(),
-  ModelDb.Card<Atonement>(),
-  ModelDb.Card<EnforcingPrescript>(),
-  ModelDb.Card<Weave>(),
-  ModelDb.Card<WeaknessExploit>(),
-  ModelDb.Card<ThickVapor>(),
-  ModelDb.Card<PoisedWarding>(),
-  ModelDb.Card<SteadyTheBreath>(),
-  ModelDb.Card<ThisWillDo>(),
-  // Rare
-  ModelDb.Card<UnlockI>(),
-  ModelDb.Card<UnlockII>(),
-  ModelDb.Card<UnlockIII>(),
-  ModelDb.Card<GraceOfGod>(),
-  ModelDb.Card<Reconstruct>(),
-  ModelDb.Card<SinkingDeluge>(),
-  ModelDb.Card<StarOfTheCity>(),
-  ModelDb.Card<TheOraclesProxy>(),
-  ModelDb.Card<PrecognitionReplica>(),
-  ModelDb.Card<OracleDeviceCaduceus>(),
-  ModelDb.Card<ProcurationAnnihilate>(),
-  ModelDb.Card<GodsBlessing>(),
-  ModelDb.Card<DeepBreath>(),
-  ModelDb.Card<SorsSalutis>(),
-  ModelDb.Card<SorsImmanis>(),
-  ModelDb.Card<OFortuna>(),
-  ModelDb.Card<DivineProtection>(),
-  ModelDb.Card<CompulsoryOffering>(),
-  ModelDb.Card<Volition>(),
-  ModelDb.Card<Conviction>(),
-  ModelDb.Card<FaithBeyondQuestion>(),
-  ModelDb.Card<GodsFavor>(),
-  // Ancient
-  ModelDb.Card<GloomInRuins>(),
-  ModelDb.Card<ByGodsWill>(),
-  // EGO
-  ModelDb.Card<Sunshower>(),
-  ModelDb.Card<BygoneDays>(),
-  ModelDb.Card<FellBullet>(),
-  ModelDb.Card<CrowsEyeView>(),
-  ModelDb.Card<WishingCairn>(),
-  ModelDb.Card<FourthMatchFlame>(),
-  ModelDb.Card<DimensionShredder>(),
-  ModelDb.Card<GreatTrichiliocosm>(),
-  // Curse
-  ModelDb.Card<Fpoon>(),
-  ModelDb.Card<Spork>(),
-  ModelDb.Card<PrescriptIncomplianceRisk>()
-];
+    public override IEnumerable<CardModel> StartingDeck =>
+    [
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<StrikeRienSang>(),
+        ModelDb.Card<DefendRienSang>(),
+        ModelDb.Card<DefendRienSang>(),
+        ModelDb.Card<DefendRienSang>(),
+        ModelDb.Card<FollowingThePrescript>(),
+        ModelDb.Card<ByUnpredictableWhim>(),
+        ModelDb.Card<CrowsEyeView>()
+    ];
 
     
     public override IReadOnlyList<RelicModel> StartingRelics => [ModelDb.Relic<PrescriptDevice>()];
@@ -166,13 +80,9 @@ public override IEnumerable<CardModel> StartingDeck =>
     public override string CustomCharacterSelectIconPath => "char_select_riensang.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_riensang_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_riensang.png".CharacterUiPath();
-    
     public override string CustomRestSiteAnimPath => "res://RienSang/scenes/riensang/riensang_rest_site.tscn";
     public override string CustomMerchantAnimPath => "res://RienSang/scenes/riensang/riensang_merchant.tscn";
-    
-    public override string CustomCharacterSelectTransitionPath =>
-        "res://RienSang/images/riensang/transitions/riensang_transition_mat.tres";
-    
+    public override string CustomCharacterSelectTransitionPath => "res://RienSang/images/riensang/transitions/riensang_transition_mat.tres";
     public override string CustomTrailPath => "res://RienSang/scenes/riensang/card_trail_riensang.tscn";
     
     public override CreatureAnimator? GenerateAnimator(MegaSprite controller)
@@ -205,14 +115,13 @@ public override IEnumerable<CardModel> StartingDeck =>
     {
         NGame.Instance?.ScreenShake(strength, duration);
     }
-
+    
     public (float total, float[] impacts) PlayAnimation(Creature creature, string trigger)
     {
         if (creature == null || string.IsNullOrEmpty(trigger)) return (0f, []);
-
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
         if (node?.Visuals == null) return (0f, []);
-
+        
         var animPlayer = node.Visuals.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
         if (animPlayer != null)
         {
@@ -226,19 +135,17 @@ public override IEnumerable<CardModel> StartingDeck =>
                 "dash" => "dash_forward",
                 _ => trigger
             };
-
+            
             if (animPlayer.HasAnimation(godotTrigger))
             {
                 var originalAnim = animPlayer.GetAnimation(godotTrigger);
                 var anim = (Animation)originalAnim.Duplicate();
-    
                 var visuals = node.Visuals.GetNodeOrNull<Sprite2D>("Visuals");
-
                 if (visuals != null)
                 {
                     bool isFlipped = visuals.Scale.X < 0;
                     float multiplier = isFlipped ? -1f : 1f;
-
+                    
                     int trackCount = anim.GetTrackCount();
                     for (int i = 0; i < trackCount; i++)
                     {
@@ -254,28 +161,28 @@ public override IEnumerable<CardModel> StartingDeck =>
                         }
                     }
                 }
-
                 var library = animPlayer.GetAnimationLibrary("");
                 string tempName = godotTrigger + "_temp";
-    
                 if (library.HasAnimation(tempName)) library.RemoveAnimation(tempName);
                 library.AddAnimation(tempName, anim);
-
+                
                 float totalLength = anim.Length;
                 float[] impactDelays = GetImpactDelays(godotTrigger, totalLength);
-
+                
                 animPlayer.Play(tempName);
-    
                 if (godotTrigger != "idle_loop" && godotTrigger != "die")
                 {
+
                     animPlayer.Queue("idle_loop");
+
                 }
-    
                 return (totalLength, impactDelays);
             }
         }
         return (0f, []);
     }
+
+
 
     private float[] GetImpactDelays(string animName, float totalLength)
     {
@@ -325,10 +232,10 @@ public override IEnumerable<CardModel> StartingDeck =>
         }
 
         LastDashTarget[creature] = target;
+        
         PlayAnimation(creature, "dash");
 
         var tween = node.CreateTween();
-        
         Vector2 offsetDir = (creature.Side == CombatSide.Player) ? Vector2.Left : Vector2.Right;
         if (dashBehind) offsetDir = -offsetDir;
 
@@ -343,13 +250,16 @@ public override IEnumerable<CardModel> StartingDeck =>
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
         if (node == null || !_originalPositions[creature].HasValue) return;
 
+        var currentTarget = LastDashTarget[creature];
+
         var tween = node.CreateTween();
-    
         tween.TweenProperty(node, "global_position", _originalPositions[creature]!.Value, duration)
             .SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.InOut);
-    
+
         await Task.Delay((int)(duration * 1000));
-    
+
+        if (LastDashTarget[creature] != currentTarget) return;
+
         _originalPositions[creature] = null;
         LastDashTarget[creature] = null;
 
@@ -357,10 +267,10 @@ public override IEnumerable<CardModel> StartingDeck =>
         if (visuals != null)
         {
             const float baseScale = 0.676f;
-        
             float targetXScale = (creature.Side == CombatSide.Player) ? baseScale : -baseScale;
 
             var flipTween = node.CreateTween();
+
             flipTween.TweenProperty(visuals, "scale", new Vector2(targetXScale, baseScale), 0.1f)
                 .SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out);
             

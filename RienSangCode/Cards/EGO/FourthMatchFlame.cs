@@ -23,6 +23,7 @@ public class FourthMatchFlame : RienSangCard
 {
     public FourthMatchFlame() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
     {
+        CurrentDamageType = LimbusDamageType.Slash;
     }
 
     public override bool IsEgoCard => true;
@@ -42,12 +43,17 @@ public class FourthMatchFlame : RienSangCard
     {
         if (Owner.Creature.CombatState == null) return;
 
+        var enemies = Owner.Creature.CombatState.Enemies.Where(e => e.IsAlive).ToList();
+        foreach (var enemy in enemies)
+        {
+            DamageTypeTracker.LastDamageType[enemy] = CurrentDamageType;
+        }
+
         await DamageCmd.Attack((int)DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(Owner.Creature.CombatState).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
 
         int potency = (int)DynamicVars["BurnPotency"].BaseValue;
         int count = (int)DynamicVars[nameof(LCBurnPower)].BaseValue;
 
-        var enemies = Owner.Creature.CombatState.Enemies.Where(e => e.IsAlive).ToList();
         foreach (var enemy in enemies)
         {
             await LCBurnPower.Apply(choiceContext, enemy, count, potency, Owner.Creature, this);

@@ -1,9 +1,10 @@
 shader_type canvas_item;
-uniform sampler2D transitionTex;
-uniform float threshold : hint_range(0,1);
+
+uniform sampler2D icon_texture : source_color;
+
 void fragment() {
-    float falloff = 1.0 - texture(transitionTex, UV).r;
-    float remap  = mix(-0.1, 1.1, threshold);
-    falloff = step(falloff, remap);
-    COLOR.a = falloff;
+    // This shader now only draws the icon provided by icon_texture.
+    // The centering and text are handled by C# Nodes.
+    vec4 tex = texture(icon_texture, UV);
+    COLOR = tex;
 }

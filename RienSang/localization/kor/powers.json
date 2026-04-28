@@ -1,15 +1,15 @@
 {
-  "RIENSANG-PROCURATION_HERMES.title": "대행(헤르메스)",
+  "RIENSANG-PROCURATION_HERMES.title": "대행[헤르메스]",
   "RIENSANG-PROCURATION_HERMES.description": "[blue]9[/blue]중첩 시: [gold]특수 카드[/gold]와 [gold]지령의 가호[/gold] 얻습니다. 최대 중첩 수는 [gold]해금[/gold] 단계에 따라 제한됩니다.",
   "RIENSANG-PROCURATION_HERMES.smartDescription": "[blue]9[/blue]중첩 시: [gold]특수 카드[/gold]와 [gold]지령의 가호[/gold]를 [blue]3[/blue] 얻습니다.\n[gold]해금 II[/gold] 미만일 경우 최대 중첩 수가 [blue]8[/blue]로 제한됩니다.\n소모된 턴에는 다시 얻을 수 없습니다.",
 
   "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.title": "지령의 표식",
-  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "매 턴 무작위 카드에 표식을 부여합니다. 표식 카드를 사용하면 [gold]지령의 가호[/gold]와 [gold]대행(헤르메스)[/gold]를 얻습니다. 사용하지 않은 표식은 [gold]카르마[/gold]를 부여합니다.",
-  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "매 턴 무작위 카드 [blue]2[/blue]장에 표식을 부여합니다. 표식 카드 사용 시 [gold]지령의 가호[/gold]를 [blue]1[/blue], [gold]대행(헤르메스)[/gold]를 [blue]1[/blue] 얻습니다.\n손패에 남은 표식 카드 1장당 [gold]카르마[/gold]를 [blue]5[/blue] 부여합니다.",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.description": "매 턴 무작위 카드에 표식을 부여합니다. 표식 카드를 사용하면 [gold]지령의 가호[/gold]와 [gold]대행[헤르메스][/gold]를 얻습니다. 사용하지 않은 표식은 [gold]카르마[/gold]를 부여합니다.",
+  "RIENSANG-MARKOFTHE_PRESCRIPT_POWER.smartDescription": "매 턴 무작위 카드 [blue]2[/blue]장에 표식을 부여합니다. 표식 카드 사용 시 [gold]지령의 가호[/gold]를 [blue]1[/blue], [gold]대행[헤르메스][/gold]를 [blue]1[/blue] 얻습니다.\n손패에 남은 표식 카드 1장당 [gold]카르마[/gold]를 [blue]5[/blue] 부여합니다.",
 
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.title": "지령의 가호",
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.description": "중첩을 쌓아 [gold]힘[/gold]을 얻고 [gold]해금[/gold] 단계를 진행시킵니다.",
-  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "최대 [blue]9[/blue]중첩. [blue]9[/blue]중첩 시 [gold]힘[/gold] [blue]1[/blue] 얻습니다.\n[blue]3/6/9[/blue]중첩 달성 시, 각각 [gold]해금 I/II/III[/gold]가 됩니다.",
+  "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "최대 [blue]9[/blue]중첩. [blue]9[/blue]중첩 시 [gold]힘[/gold]을 [blue]1[/blue] 얻습니다.\n[blue]3/6/9[/blue]중첩 달성 시, 각각 [gold]해금 I/II/III[/gold]가 됩니다.",
 
   "RIENSANG-UNLOCK.title": "해금",
   "RIENSANG-UNLOCK.description": "[gold]해금 III[/gold] 달성 시, [gold]신(心) - 운명[/gold]과 [gold]민첩[/gold]을 얻습니다.\n전투 종료 시, 해금 단계에 비례하여 체력과 정신력을 [gold]회복[/gold]합니다.",
@@ -40,8 +40,8 @@
   "RIENSANG-INDULGENCE_IN_PRESCRIPT.smartDescription": "[gold]Furioso[/gold]에 다음과 같은 효과를 적용합니다: [gold]침잠 위력[/gold]을 [blue]1[/blue] 부여하고 [gold]호흡 위력[/gold]을 [blue]1[/blue] 추가로 획득합니다. 가하는 피해량이 [blue]10%[/blue] 증가합니다. 턴 종료 시 소멸합니다.",
 
   "RIENSANG-KARMIC_CONSEQUENCE.title": "카르마",
-  "RIENSANG-KARMIC_CONSEQUENCE.description": "중첩이 쌓일수록 [purple]취약[/purple]과 [gold]저주[/gold]를 얻음. [blue]100[/blue]중첩 시 [red]사망[/red]함.",
-  "RIENSANG-KARMIC_CONSEQUENCE.smartDescription": "[blue]20[/blue]중첩당 [purple]취약[/purple] [blue]1[/blue] 얻습니다.\n[blue]40중첩 시[/blue]: 일시적인 [gold]저주[/gold] 카드를 1장 획득합니다.\n[blue]60중첩 시[/blue]: 매 턴 뽑는 카드 수가 1장 줄어듭니다.\n[blue]80중첩 시[/blue]: 영구적인 [gold]저주[/gold] 카드를 1장 획득합니다.\n[blue]100중첩 시[/blue]: 즉시 [red]사망[/red]합니다.",
+  "RIENSANG-KARMIC_CONSEQUENCE.description": "중첩이 쌓일수록 [purple]취약[/purple]과 [gold]저주[/gold]를 얻음. [blue]100[/blue]중첩 시 [red]사망[/red]합니다.",
+  "RIENSANG-KARMIC_CONSEQUENCE.smartDescription": "[blue]20[/blue]중첩당 [purple]취약[/purple]을 [blue]1[/blue] 얻습니다.\n[blue]40중첩 시[/blue]: 일시적인 [gold]저주[/gold] 카드를 1장 획득합니다.\n[blue]60중첩 시[/blue]: 매 턴 뽑는 카드 수가 1장 줄어듭니다.\n[blue]80중첩 시[/blue]: 영구적인 [gold]저주[/gold] 카드를 1장 획득합니다.\n[blue]100중첩 시[/blue]: 즉시 [red]사망[/red]합니다.",
 
   "RIENSANG-STAR_OF_THE_CITY_POWER.title": "도시의 별",
   "RIENSANG-STAR_OF_THE_CITY_POWER.description": "내 턴 시작 시, 모든 적에게 [gold]침잠 위력[/gold]과 [gold]횟수[/gold]를 부여합니다.",
@@ -52,7 +52,7 @@
   "RIENSANG-THE_INDEX_NURSEFATHER_POWER.smartDescription": "내 턴 시작 시 무작위 적에게 [gold]약화[/gold] [blue]{Amount}[/blue]를 부여합니다. [gold]해금 III[/gold] 달성 시, 매 턴 카드를 [blue]1[/blue]장 더 뽑습니다.",
 
   "RIENSANG-GRACE_OF_GOD_POWER.title": "신의 은총",
-  "RIENSANG-GRACE_OF_GOD_POWER.description": "한 턴 동안 치명적인 피해를 방지합니다. 발동 후 소멸함.",
+  "RIENSANG-GRACE_OF_GOD_POWER.description": "한 턴 동안 치명적인 피해를 방지합니다. 발동 후 사라집니다.",
   "RIENSANG-GRACE_OF_GOD_POWER.smartDescription": "이번 전투에서 치명적인 피해를 입을 때, 해당 턴 동안만 피해 면역 상대가 됩니다..",
 
   "RIENSANG-SHATTERED_WORLD.title": "깨어진 세계",
@@ -67,7 +67,7 @@
   "RIENSANG-THE_ORACLES_PROXY_POWER.description": "[gold]헤르메스[/gold]가 당신을 대신해 행동하며 매 턴 체력을 회복합니다.",
   "RIENSANG-THE_ORACLES_PROXY_POWER.smartDescription": "[gold]헤르메스[/gold]가 당신을 대신해 행동합니다. 남은 턴: [blue]{Amount}[/blue]. 매 턴 체력을 [blue]{HealAmount:diff()}[/blue] 회복합니다.",
 
-  "RIENSANG-ORACLE_DEVICE_POWER.title": "신탁 단말기 (카두세우스)",
+  "RIENSANG-ORACLE_DEVICE_POWER.title": "신탁 단말기 [카두세우스]",
   "RIENSANG-ORACLE_DEVICE_POWER.description": "모든 [gold]카두세우스[/gold] 카드의 피해량이 증가합니다.",
   "RIENSANG-ORACLE_DEVICE_POWER.smartDescription": "모든 [gold]카두세우스[/gold] 카드의 피해량이 [blue]{Amount}[/blue] 증가합니다.",
 
@@ -77,5 +77,33 @@
 
   "RIENSANG-DEFENSIVE_STANCE_POWER.title": "방어 태세",
   "RIENSANG-DEFENSIVE_STANCE_POWER.description": "공격 카드가 피해를 주는 대신 [gold]방어도[/gold]를 얻습니다.",
-  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "이번 턴에 사용하는 공격 카드가 피해를 주는 대신 그만큼 [gold]방어도[/gold]를 얻습니다."
+  "RIENSANG-DEFENSIVE_STANCE_POWER.smartDescription": "이번 턴에 사용하는 공격 카드가 피해를 주는 대신 그만큼 [gold]방어도[/gold]를 얻습니다.",
+
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.title": "확고한 신념",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.description": "[gold]맹목적인 신념[/gold]을 사용할 때마다 [gold]맹목적인 신념[/gold]의 피해량이 증가합니다.",
+  "RIENSANG-FAITH_BEYOND_QUESTION_POWER.smartDescription": "[gold]맹목적인 신념[/gold]의 피해량이 [blue]{Potency}[/blue]만큼 증가합니다. [gold]맹목적인 신념[/gold]을 사용할 때마다 피해량이 [blue]{Amount}[/blue]만큼 증가합니다.",
+
+  "RIENSANG-POISED_WARDING_POWER.title": "평정의 수호",
+  "RIENSANG-POISED_WARDING_POWER.description": "내 턴 시작 시 [gold]호흡 위력[/gold]을 얻습니다.\n치명타 발동 시 [gold]방어도[/gold]를 얻습니다.",
+  "RIENSANG-POISED_WARDING_POWER.smartDescription": "내 턴 시작 시 [gold]호흡 위력[/gold]을 [blue]{PoiseGain}[/blue] 얻습니다.\n치명타 발동 시 [gold]방어도[/gold]를 [blue]{BlockGain}[/blue] 얻습니다.",
+
+  "RIENSANG-SORS_SALUTIS_POWER.title": "구원의 숙명",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "받는 피해가 절반으로 감소하지만, 감소한 만큼 [gold]카르마[/gold]를 얻습니다.",
+  "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "[blue]10[/blue] 이상의 피해를 입을 경우, 그 피해의 절반을 [gold]카르마[/gold]로 대신 받습니다.",
+
+  "RIENSANG-SORS_IMMANIS_POWER.title": "가혹한 숙명",
+  "RIENSANG-SORS_IMMANIS_POWER.description": "추가 턴을 얻습니다. 대가로 [gold]카르마[/gold]를 얻습니다.",
+  "RIENSANG-SORS_IMMANIS_POWER.smartDescription": "이번 내 턴 종료 시 추가 턴을 얻습니다.",
+
+  "RIENSANG-DIVINE_PROTECTION_POWER.title": "신성한 가호",
+  "RIENSANG-DIVINE_PROTECTION_POWER.description": "이번 턴에 얻는 [gold]방어도[/gold]와 [gold]회피[/gold]가 2배가 됩니다.",
+  "RIENSANG-DIVINE_PROTECTION_POWER.smartDescription": "이번 턴에 얻는 [gold]방어도[/gold]와 [gold]회피[/gold]가 2배가 됩니다.",
+
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.title": "카르마 [운명]",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.description": "중첩이 쌓일수록 [gold]취약[/gold]과 [gold]불이익[/gold]을 얻습니다. 200중첩에 도달하면 [red]사망[/red]합니다.",
+  "RIENSANG-KARMIC_CONSEQUENCE_FORTUNA.smartDescription": "[blue]20[/blue]중첩당 [gold]취약[/gold]을 [blue]1[/blue] 얻습니다. \n[blue]40중첩 시[/blue]: 일시적인 [gold]저주[/gold]를 얻습니다. \n[blue]80중첩 시[/blue]: 일시적인 [gold]저주[/gold]를 [blue]2[/blue]장 얻고 [gold]매 턴 카드를 [blue]1[/blue]장 덜 뽑습니다. \n[blue]100중첩 시[/blue]: 매 턴 [gold]에너지[/gold]가 1 감소합니다. \n[blue]120중첩 시[/blue]: 영구적인 [gold]저주[/gold]를 얻습니다. \n[blue]160중첩 시[/blue]: 영구적인 [gold]저주[/gold]를 추가로 얻고 [gold]매 턴 카드를 [blue]1[/blue]장 추가로 덜 뽑습니다. \n[blue]200중첩 시[/blue]: [red]사망[/red]합니다.",
+
+  "RIENSANG-ATONEMENT_POWER.title": "참회",
+  "RIENSANG-ATONEMENT_POWER.description": "[gold]표식[/gold] 카드를 사용할 때마다 [gold]카르마[/gold]가 감소합니다.",
+  "RIENSANG-ATONEMENT_POWER.smartDescription": "[gold]표식[/gold] 카드를 사용할 때마다 [gold]카르마[/gold]가 [blue]{KarmaReduction}[/blue]만큼 감소합니다."
 }

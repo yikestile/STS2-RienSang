@@ -7,6 +7,7 @@
         <DefaultItemExcludes>packages/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
         <PathMap>$(AppOutputBase)=.\</PathMap>
+        <PlatformTarget>AnyCPU</PlatformTarget> <!-- Added for cross-platform compatibility -->
     </PropertyGroup>
 
     <!-- OS Detection -->
@@ -40,7 +41,7 @@
     <PropertyGroup Condition="'$(IsLinux)' == 'true'">
         <SteamLibraryPath>$(HOME)/.local/share/Steam/steamapps</SteamLibraryPath>
         <!-- Change the path here if using a downloaded binary instead of the Steam version-->
-        <GodotPath>$(SteamLibraryPath)/common/Godot Engine/godot.x11.opt.tools.64</GodotPath>
+        <GodotPath>$(HOME)/.local/share/Steam/steamapps/common/Godot Engine/godot.x11.opt.tools.64</GodotPath>
 
         <!-- The below should not need to be changed. -->
         <Sts2Path>$(SteamLibraryPath)/common/Slay the Spire 2</Sts2Path>

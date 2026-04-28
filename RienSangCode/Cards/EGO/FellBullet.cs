@@ -27,6 +27,7 @@ public class FellBullet : RienSangCard
 {
     public FellBullet() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyAlly)
     {
+        CurrentDamageType = LimbusDamageType.Pierce;
     }
 
     public override bool IsEgoCard => true;
@@ -73,6 +74,8 @@ public class FellBullet : RienSangCard
             var enemies = Owner.Creature.CombatState.Enemies.Where(e => e.IsAlive).ToList();
             foreach (var enemy in enemies)
             {
+                DamageTypeTracker.LastDamageType[enemy] = CurrentDamageType;
+                
                 bool shouldTriggerFatal = enemy.Powers.All((PowerModel p) => p.ShouldPowerBeRemovedAfterOwnerDeath() || MegaCrit.Sts2.Core.Hooks.Hook.ShouldPowerBeRemovedOnDeath(p));
 
                 AttackCommand attackCommand = await DamageCmd.Attack(enemyDamage).FromCard(this).Targeting(enemy).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
