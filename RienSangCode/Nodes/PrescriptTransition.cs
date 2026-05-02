@@ -45,7 +45,7 @@ public partial class PrescriptTransition : ColorRect
         _scrambleLabel.VerticalAlignment = VerticalAlignment.Center;
         _scrambleLabel.AddThemeFontOverride("font", font);
         _scrambleLabel.AddThemeFontSizeOverride("font_size", 36); 
-        _scrambleLabel.AddThemeColorOverride("font_color", new Color("ced9ff")); 
+        _scrambleLabel.AddThemeColorOverride("font_color", new Color("9ed1ff")); 
         _scrambleLabel.Text = ""; 
         AddChild(_scrambleLabel);
 

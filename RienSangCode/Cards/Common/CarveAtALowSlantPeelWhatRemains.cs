@@ -60,5 +60,6 @@ public class CarveAtALowSlantPeelWhatRemains : RienSangCard
     {
         DynamicVars.Damage.UpgradeValueBy(2);
         DynamicVars["SinkingPotency"].UpgradeValueBy(1);
+        DynamicVars[nameof(LCSinkingPower)].UpgradeValueBy(1);
     }
 }

@@ -7,15 +7,21 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using RienSang.RienSangCode.Extensions;
 
 namespace RienSang.RienSangCode.Powers;
+
 public class GraceofthePrescriptPower : RienSangPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+
+    private bool _threshold3Reached = false;
+    private bool _threshold6Reached = false;
+    private bool _threshold9Reached = false;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
@@ -47,10 +53,8 @@ public class GraceofthePrescriptPower : RienSangPower
                 power.SetAmount(9); 
             }
 
-            int oldAmount = (int)(power.Amount - amount);
             int newAmount = (int)power.Amount;
-
-            await CheckThresholds(choiceContext, oldAmount, newAmount);
+            await CheckThresholds(choiceContext, newAmount);
         }
         finally 
         {
@@ -58,24 +62,33 @@ public class GraceofthePrescriptPower : RienSangPower
         }
     }
 
-    private async Task CheckThresholds(PlayerChoiceContext choiceContext, int oldAmount, int newAmount)
+    private async Task CheckThresholds(PlayerChoiceContext choiceContext, int newAmount)
     {
-        async Task SetPowerAmount<T>(int targetAmount) where T : PowerModel
+        async Task ApplyUnlock(int targetAmount)
         {
-            var existing = Owner.GetPower<T>();
+            var existing = Owner.GetPower<Unlock>();
             int currentAmount = existing?.Amount ?? 0;
             int diff = targetAmount - currentAmount;
-            if (diff != 0)
+            if (diff > 0)
             {
-                await PowerCmd.Apply<T>(choiceContext, Owner, (decimal)diff, Owner, null);
+                await PowerCmd.Apply<Unlock>(choiceContext, Owner, (decimal)diff, Owner, null);
             }
         }
 
-        if (oldAmount < 3 && newAmount >= 3) await SetPowerAmount<Unlock>(1);
-        if (oldAmount < 6 && newAmount >= 6) await SetPowerAmount<Unlock>(2);
-        if (oldAmount < 9 && newAmount >= 9) 
+        if (newAmount >= 3 && !_threshold3Reached)
         {
-            await SetPowerAmount<Unlock>(3);
+            _threshold3Reached = true;
+            await ApplyUnlock(1);
+        }
+        if (newAmount >= 6 && !_threshold6Reached)
+        {
+            _threshold6Reached = true;
+            await ApplyUnlock(2);
+        }
+        if (newAmount >= 9 && !_threshold9Reached)
+        {
+            _threshold9Reached = true;
+            await ApplyUnlock(3);
             await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, 1m, Owner, null);
         }
     }

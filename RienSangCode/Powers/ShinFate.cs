@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Extensions;
 
 namespace RienSang.RienSangCode.Powers;
+
 public class ShinFate : RienSangPower
 {
     public override PowerType Type => PowerType.Buff;

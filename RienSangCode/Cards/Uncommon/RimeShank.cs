@@ -23,7 +23,8 @@ public class RimeShank : RienSangCard
     protected override bool HasEnergyCostX => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCSinkingPower>(3)
+        new("SinkingPotency", 3), 
+        new PowerVar<LCSinkingPower>(3) 
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -37,14 +38,16 @@ public class RimeShank : RienSangCard
         int x = ResolveEnergyXValue();
         if (x > 0)
         {
-            int sinkingCount = DynamicVars[nameof(LCSinkingPower)].IntValue * x;
+            int totalPotency = (int)DynamicVars["SinkingPotency"].BaseValue * x;
+            int totalCount = DynamicVars[nameof(LCSinkingPower)].IntValue * x;
+
             if (Owner.Creature.CombatState != null)
             {
                 foreach (var enemy in Owner.Creature.CombatState.Enemies)
                 {
                     if (enemy.IsAlive)
                     {
-                        await LCSinkingPower.Apply(choiceContext, enemy, sinkingCount, 1, Owner.Creature, this);
+                        await LCSinkingPower.Apply(choiceContext, enemy, totalCount, totalPotency, Owner.Creature, this);
                     }
                 }
             }
@@ -53,6 +56,7 @@ public class RimeShank : RienSangCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars[nameof(LCSinkingPower)].UpgradeValueBy(1); // 3 -> 4
+        DynamicVars["SinkingPotency"].UpgradeValueBy(1);
+        DynamicVars[nameof(LCSinkingPower)].UpgradeValueBy(1);
     }
 }

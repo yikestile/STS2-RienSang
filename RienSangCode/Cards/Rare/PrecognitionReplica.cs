@@ -30,7 +30,7 @@ public class PrecognitionReplica : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCEvadePower>(7), 
+        new PowerVar<LCEvadePower>(8), 
         new("PoisePotency", 7),
         new PowerVar<LCPoisePower>(3), 
         new EnergyVar(1)

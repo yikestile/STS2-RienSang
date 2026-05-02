@@ -12,9 +12,9 @@
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "최대 [blue]9[/blue]중첩. [blue]9[/blue]중첩 시 [gold]힘[/gold]을 [blue]1[/blue] 얻습니다.\n[blue]3/6/9[/blue]중첩 달성 시, 각각 [gold]해금 I/II/III[/gold]가 됩니다.",
 
   "RIENSANG-UNLOCK.title": "해금",
-  "RIENSANG-UNLOCK.description": "[gold]해금 III[/gold] 달성 시, [gold]신(心) - 운명[/gold]과 [gold]민첩[/gold]을 얻습니다.\n전투 종료 시, 해금 단계에 비례하여 체력과 정신력을 [gold]회복[/gold]합니다.",
-  "RIENSANG-UNLOCK.smartDescription": "[gold]해금 III[/gold] 달성 시, [gold]신(心) - 운명[/gold]과 [gold]민첩[/gold]을 [blue]1[/blue] 얻습니다.\n전투 종료 시, 해금 I/II/III 단계에 따라 체력을 [blue]{HealAmount:diff()}[/blue], 정신력을 [blue]{SPHealAmount:diff()}[/blue] 회복합니다.",
-
+  "RIENSANG-UNLOCK.description": "[gold]해금 III[/gold] 달성 시, [gold]민첩[/gold]을 얻습니다. 추가로 이 전투에서 [gold]정신력[/gold]이 0 이상이고, [gold]대행[헤르메스][/gold]가 처음으로 9스택이 될 때, [gold]신(心) - 운명[/gold]을 얻습니다.\n전투 종료 시, 해금 단계에 비례하여 체력과 정신력을 [gold]회복[/gold]합니다.",
+  "RIENSANG-UNLOCK.smartDescription": "[gold]해금 III[/gold] 달성 시, [gold]민첩[/gold]을 [blue]1[/blue] 얻습니다. 추가로 이 전투에서 [gold]정신력[/gold]이 0 이상이고, [gold]대행[헤르메스][/gold]가 처음으로 9스택이 될 때, [gold]신(心) - 운명[/gold]을 얻습니다. \n전투 종료 시, 해금 I/II/III 단계에 따라 체력을 [blue]{HealAmount:diff()}[/blue], 정신력을 [blue]{SPHealAmount:diff()}[/blue] 회복합니다.",
+  
   "RIENSANG-THE_PRESCRIPTS_TARGET.title": "지령 대상",
   "RIENSANG-THE_PRESCRIPTS_TARGET.description": "[gold]이상[/gold]에게 받는 피해가 증가합니다.",
   "RIENSANG-THE_PRESCRIPTS_TARGET.smartDescription": "[gold]이상[/gold]에게 받는 피해가 [blue]5%[/blue] 증가합니다.",
@@ -88,7 +88,7 @@
   "RIENSANG-POISED_WARDING_POWER.smartDescription": "내 턴 시작 시 [gold]호흡 위력[/gold]을 [blue]{PoiseGain}[/blue] 얻습니다.\n치명타 발동 시 [gold]방어도[/gold]를 [blue]{BlockGain}[/blue] 얻습니다.",
 
   "RIENSANG-SORS_SALUTIS_POWER.title": "구원의 숙명",
-  "RIENSANG-SORS_SALUTIS_POWER.description": "받는 피해가 절반으로 감소하지만, 감소한 만큼 [gold]카르마[/gold]를 얻습니다.",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "[blue]10[/blue] 이상의 피해를 입을 경우, 그 피해의 절반을 [gold]카르마[/gold]로 대신 받습니다.",
   "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "[blue]10[/blue] 이상의 피해를 입을 경우, 그 피해의 절반을 [gold]카르마[/gold]로 대신 받습니다.",
 
   "RIENSANG-SORS_IMMANIS_POWER.title": "가혹한 숙명",

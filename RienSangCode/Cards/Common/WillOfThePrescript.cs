@@ -24,7 +24,7 @@ public class WillOfThePrescript : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCEvadePower>(9),
+        new PowerVar<LCEvadePower>(14),
         new("DrawAmount", 3),
         new EnergyVar(1)
     ];
@@ -52,6 +52,6 @@ public class WillOfThePrescript : RienSangCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars[nameof(LCEvadePower)].UpgradeValueBy(3);
+        DynamicVars[nameof(LCEvadePower)].UpgradeValueBy(5);
     }
 }

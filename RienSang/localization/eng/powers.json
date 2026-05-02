@@ -12,8 +12,8 @@
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "Max 9 stacks. At [blue]9[/blue] stacks Gain [blue]1[/blue] [gold]Strength[/gold]. At [blue]3/6/9[/blue] stacks, grant [gold]Unlock I/II/III[/gold].",
 
   "RIENSANG-UNLOCK.title": "Unlock",
-  "RIENSANG-UNLOCK.description": "At [gold]Unlock III[/gold], gain [gold]Shin (心) - Fate[/gold] and [gold]Dexterity[/gold]. \nCombat End: [gold]Heal[/gold] HP and SP based on state.",
-  "RIENSANG-UNLOCK.smartDescription": "At [gold]Unlock III[/gold], gain [gold]Shin - Fate[/gold] and [blue]1[/blue] [gold]Dexterity[/gold]. \nCombat End: [gold]Heal[/gold] [blue]{HealAmount:diff()}[/blue] HP and [blue]{SPHealAmount:diff()}[/blue] SP at Unlock I/II/III.",
+  "RIENSANG-UNLOCK.description": "At [gold]Unlock III[/gold], gain [gold]Dexterity[/gold]. \nAdditionally, upon reaching 9 [gold]Procuration Hermes[/gold] for the first time this combat, gain [gold]Shin (心) - Fate[/gold] \nCombat End: [gold]Heal[/gold] HP and SP based on state.",
+  "RIENSANG-UNLOCK.smartDescription": "At [gold]Unlock III[/gold], [blue]1[/blue] [gold]Dexterity[/gold]. \nAdditionally, upon reaching 9 [gold]Procuration Hermes[/gold] for the first time this combat, gain [gold]Shin (心) - Fate[/gold].\nCombat End: [gold]Heal[/gold] [blue]{HealAmount:diff()}[/blue] HP and [blue]{SPHealAmount:diff()}[/blue] SP at Unlock I/II/III.",
 
   "RIENSANG-THE_PRESCRIPTS_TARGET.title": "The Prescript’s Target",
   "RIENSANG-THE_PRESCRIPTS_TARGET.description": "Takes more damage from [gold]Yi Sang[/gold].",
@@ -88,7 +88,7 @@
   "RIENSANG-POISED_WARDING_POWER.smartDescription": "At the start of each turn, Gain [blue]{PoiseGain}[/blue] [gold]Poise Potency[/gold].\n[gold]On Crit[/gold]: Gain [blue]{BlockGain}[/blue] [gold]Block[/gold].",
 
   "RIENSANG-SORS_SALUTIS_POWER.title": "Sors Salutis",
-  "RIENSANG-SORS_SALUTIS_POWER.description": "Reduces damage received by half, taking the remainder as [gold]Karmic Consequence[/gold].",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "If you would take more than [blue]10[/blue] damage, take half of it as damage and the other half as [gold]Karmic Consequence[/gold].",
   "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "If you would take more than [blue]10[/blue] damage, take half of it as damage and the other half as [gold]Karmic Consequence[/gold].",
 
   "RIENSANG-SORS_IMMANIS_POWER.title": "Sors Immanis",

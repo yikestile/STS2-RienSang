@@ -24,7 +24,7 @@ public class BindingChain : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCEvadePower>(4),
+        new PowerVar<LCEvadePower>(7),
         new("StrLoss", 2)
     ];
     
@@ -54,7 +54,7 @@ public class BindingChain : RienSangCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars[nameof(LCEvadePower)].UpgradeValueBy(2);
+        DynamicVars[nameof(LCEvadePower)].UpgradeValueBy(3);
         DynamicVars["StrLoss"].UpgradeValueBy(1);
     }
 }

@@ -17,11 +17,11 @@ namespace RienSang.RienSangCode.Cards.Rare;
 [Pool(typeof(RienSangCardPool))]
 public class AbsoluteFaith : RienSangCard
 {
-    public AbsoluteFaith() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public AbsoluteFaith() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, RienSangKeywords.Caduceus];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {

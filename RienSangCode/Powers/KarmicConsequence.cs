@@ -16,6 +16,8 @@ using MegaCrit.Sts2.Core.Models;
 using RienSang.RienSangCode.Cards.Curse;
 using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Character;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Rooms;
 
 namespace RienSang.RienSangCode.Powers;
 
@@ -32,6 +34,9 @@ public class KarmicConsequence : RienSangPower
     public override int DisplayAmount => DynamicVars["KarmaAmount"].IntValue;
 
     protected override bool IsVisibleInternal => true;
+    
+    public bool Threshold40Triggered { get; set; } = false;
+    public bool Threshold80Triggered { get; set; } = false;
 
     public KarmicConsequence() : base() { } 
     
@@ -81,13 +86,15 @@ public class KarmicConsequence : RienSangPower
             await PowerCmd.Apply<LCFragilePower>(choiceContext, Owner, newMilestones20 - oldMilestones20, Owner, null);
         }
 
-        if (oldKarma < 40 && newKarma >= 40)
+        if (newKarma >= 40 && !Threshold40Triggered)
         {
+            Threshold40Triggered = true;
             await ApplyRandomCurse(choiceContext, true);
         }
 
-        if (oldKarma < 80 && newKarma >= 80)
+        if (newKarma >= 80 && !Threshold80Triggered)
         {
+            Threshold80Triggered = true;
             await ApplyRandomCurse(choiceContext, false);
         }
 
@@ -153,5 +160,13 @@ public class KarmicConsequence : RienSangPower
         {
             await PowerCmd.Apply<LCFragilePower>(choiceContext, Owner, milestones, Owner, null);
         }
+    }
+
+    public override Task AfterCombatEnd(CombatRoom room)
+    {
+        DynamicVars["KarmaAmount"].BaseValue = 0;
+        Threshold40Triggered = false;
+        Threshold80Triggered = false;
+        return Task.CompletedTask;
     }
 }

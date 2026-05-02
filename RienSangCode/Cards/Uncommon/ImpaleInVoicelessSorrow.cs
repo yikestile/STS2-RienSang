@@ -25,7 +25,7 @@ public class ImpaleInVoicelessSorrow : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCEvadePower>(4),
+        new PowerVar<LCEvadePower>(7),
         new("SinkingPotency", 5)
     ];
 
@@ -46,6 +46,6 @@ public class ImpaleInVoicelessSorrow : RienSangCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars[nameof(LCEvadePower)].UpgradeValueBy(2);
+        DynamicVars[nameof(LCEvadePower)].UpgradeValueBy(5);
     }
 }

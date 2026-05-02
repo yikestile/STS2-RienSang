@@ -20,6 +20,8 @@ using RienSang.RienSangCode.Powers;
 using RienSang.RienSangCode.Relics;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Models.Afflictions;
+using RienSang.RienSangCode.Cards.Common;
+using RienSang.RienSangCode.Cards.Uncommon;
 
 namespace RienSang.RienSangCode.Powers;
 
@@ -29,6 +31,7 @@ public sealed class MarkofthePrescriptPower : RienSangPower
     public override PowerStackType StackType => PowerStackType.None;
     
     private static readonly SpireField<Creature, int> _totalMissedThisCombat = new SpireField<Creature, int>(() => 0);
+    private static readonly SpireField<Creature, int> _rollingMarkedPlayedCounter = new SpireField<Creature, int>(() => 0);
 
     public bool HermesConsumedThisTurn = false;
 
@@ -61,22 +64,28 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         var validCandidates = hand.Cards.Where(c => 
             !c.HasSingleTurnMark() && 
             !c.Keywords.Contains(CardKeyword.Unplayable) &&
-            c.GetType().Name != "ByUnpredictableWhim" &&
-            c.GetType().Name != "ByGodsWill" &&
-            c.GetType().Name != "Tradeoff" &&
-            c.GetType().Name != "Reconstruct" 
+            !IsMarkException(c)
         ).ToList();
-
-        validCandidates = validCandidates.Where(c => {
-            if (c is GodsBlessing godsBlessing) return godsBlessing.MeetConditions;
-            return true;
-        }).ToList();
 
         if (!validCandidates.Any()) return;
 
         var targetMarkCount = IsUpgraded ? 3 : 2;
         var cardsToMark = new List<CardModel>();
         var rng = Owner.CombatState.RunState.Rng.Niche;
+
+        var furiosoCards = validCandidates.Where(c => 
+            c is FuriosoReplica || c is FuriosoCrescendo || c is FuriosoLacrimosaCrescendo
+        ).ToList();
+
+        foreach (var furiosoCard in furiosoCards)
+        {
+            if (cardsToMark.Count < targetMarkCount)
+            {
+                cardsToMark.Add(furiosoCard);
+                validCandidates.Remove(furiosoCard);
+            }
+            else break;
+        }
 
         var weightedPool = validCandidates.Select(c => new {
             Card = c,
@@ -88,7 +97,6 @@ public sealed class MarkofthePrescriptPower : RienSangPower
             int totalWeight = weightedPool.Sum(item => item.Weight);
             int roll = rng.NextInt(totalWeight);
             int currentSum = 0;
-            
             int selectedIndex = -1;
 
             for (int i = 0; i < weightedPool.Count; i++)
@@ -128,10 +136,18 @@ public sealed class MarkofthePrescriptPower : RienSangPower
 
         if (playedCard.HasSingleTurnMark())
         {
+            _rollingMarkedPlayedCounter[Owner]++;
+
+            if (_rollingMarkedPlayedCounter[Owner] >= 3)
+            {
+                _rollingMarkedPlayedCounter[Owner] = 0;
+                _totalMissedThisCombat[Owner] = Math.Max(0, _totalMissedThisCombat[Owner] - 1);
+                Flash();
+            }
+
             var atonement = Owner.GetPower<AtonementPower>();
             if (atonement != null)
             {
-                Flash();
                 await Owner.ModifyKarma(choiceContext, -5m * atonement.Amount, Owner, null);
             }
 
@@ -153,21 +169,34 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         int currentMissed = hand.Cards.Count(c => c.HasSingleTurnMark());
         if (currentMissed > 0)
         {
-            decimal totalKarma;
+            decimal turnKarma = 0;
+
             if (IsUpgraded)
             {
-                totalKarma = 5m * currentMissed;
+                turnKarma = 5m * currentMissed;
             }
             else
             {
-                int totalMissedBefore = _totalMissedThisCombat[Owner];
-                int penaltyPerCard = 5 + (totalMissedBefore * 5);
-                totalKarma = penaltyPerCard * currentMissed;
+                for (int i = 0; i < currentMissed; i++)
+                {
+                    int currentFloor = _totalMissedThisCombat[Owner];
 
-                _totalMissedThisCombat[Owner] = totalMissedBefore + currentMissed;
+                    int cardPenalty = currentFloor switch
+                    {
+                        0 => 5, // Total 5
+                        1 => 5, // Total 10
+                        2 => 15, // Total 25
+                        3 => 15, // Total 40
+                        4 => 25, // Total 65
+                        5 => 30, // Total 95
+                        _ => 5 + (currentFloor * 5)
+                    };
+
+                    turnKarma += (decimal)cardPenalty;
+                    _totalMissedThisCombat[Owner]++;
+                }
             }
-
-            await Owner.ApplyKarma(choiceContext, totalKarma, Owner);
+            await Owner.ApplyKarma(choiceContext, turnKarma, Owner);
         }
     }
     
@@ -188,5 +217,12 @@ public sealed class MarkofthePrescriptPower : RienSangPower
             }
         }
         await Task.CompletedTask;
+    }
+
+    private bool IsMarkException(CardModel card)
+    {
+        return card is GodsBlessing || card is GodsFavor || card is ByUnpredictableWhim || card is ByGodsWill ||
+               card is Weave || card is Tradeoff || card is Reconstruct || card is CompulsoryOffering ||
+               card is WeaknessExploit || card is ProtectiveVapor || card is SteadyTheBreath || card is ThisWillDo || card is DeepBreath;
     }
 }

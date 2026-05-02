@@ -19,7 +19,8 @@ public class RevelWithSoundlessApplause() : RienSangCard(2, CardType.Attack, Car
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(4m, ValueProp.Move),
-        new RepeatVar(2)
+        new RepeatVar(3)
+        
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
@@ -34,7 +35,6 @@ public class RevelWithSoundlessApplause() : RienSangCard(2, CardType.Attack, Car
         {
             if (target != null && target.IsAlive)
             {
-                // Passing Pierce bias; assuming your default bias float is 0.75f based on prior logs
                 await CaduceusManager.Execute(this, target, baseDamage, choiceContext, i, LimbusDamageType.Pierce,
                     0.75f);
             }

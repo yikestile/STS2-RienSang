@@ -18,6 +18,7 @@ using Godot;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.HoverTips;
 using RienSang.RienSangCode.Extensions;
+using MegaCrit.Sts2.Core.Combat;
 
 namespace RienSang.RienSangCode.Cards.Rare;
 
@@ -94,8 +95,17 @@ public class Reconstruct : RienSangCard
         _usesThisCombat[Owner.Creature] = uses + 1;
     }
 
+    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    {
+        if (side == Owner.Creature.Side)
+        {
+            _usesThisCombat[Owner.Creature] = 0;
+        }
+        await Task.CompletedTask;
+    }
+
     protected override void OnUpgrade()
     {
-        DynamicVars["KarmaGain"].UpgradeValueBy(-1);
+        DynamicVars["KarmaGain"].UpgradeValueBy(-2);
     }
 }

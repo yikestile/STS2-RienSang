@@ -12,9 +12,9 @@
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "最大9スタック。[blue]9[/blue]スタック時、[gold]筋力[/gold] [blue]1[/blue]を得ます。[blue]3/6/9[/blue]スタック到達時、それぞれ[gold]解禁 I/II/III[/gold]を付与します。",
 
   "RIENSANG-UNLOCK.title": "解禁",
-  "RIENSANG-UNLOCK.description": "[gold]解禁 III[/gold]時、[gold]シン(心) - 運命[/gold]と[gold]敏捷[/gold]を得ます。\n戦闘終了時：状態に応じてHPと精神力(SP)を[gold]回復[/gold]します。",
-  "RIENSANG-UNLOCK.smartDescription": "[gold]解禁 III[/gold]時、[gold]シン(心) - 運命[/gold]と[gold]敏捷[/gold] [blue]1[/blue]を得ます。\n戦闘終了時：解禁 I/II/IIIの段階に応じて、HPを[blue]{HealAmount:diff()}[/blue]、精神力(SP)を[blue]{SPHealAmount:diff()}[/blue][gold]回復[/gold]します。",
-
+  "RIENSANG-UNLOCK.description": "[gold]解禁 III[/gold]時、[gold]敏捷[/gold]を得る。 \nさらに、精神力(SP)が0以上かつ[gold]ヘルメスの代行者[/gold]が9に達した際、この戦闘中一度のみ[gold]シン(心) - 運命[/gold]を得る。 \n戦闘終了時：状態に応じてHPと精神力(SP)を[gold]回復[/gold]する。",
+  "RIENSANG-UNLOCK.smartDescription": "[gold]解禁 III[/gold]時、[gold]敏捷[/gold] [blue]1[/blue] を得る。 \nさらに、精神力(SP)が0以上かつ[gold]ヘルメスの代行者[/gold]が9に達した際、この戦闘中一度のみ[gold]シン(心) - 運命[/gold]を得る。 \n戦闘終了時：解禁 I/II/IIIの段階に応じて、HPを[blue]{HealAmount:diff()}[/blue]、精神力(SP)を[blue]{SPHealAmount:diff()}[/blue] [gold]回復[/gold]する。",
+  
   "RIENSANG-THE_PRESCRIPTS_TARGET.title": "指令対象",
   "RIENSANG-THE_PRESCRIPTS_TARGET.description": "[gold]イサン[/gold]から受けるダメージが増加します。",
   "RIENSANG-THE_PRESCRIPTS_TARGET.smartDescription": "[gold]イサン[/gold]から受けるダメージが[blue]5%[/blue]増加します。",
@@ -88,7 +88,7 @@
   "RIENSANG-POISED_WARDING_POWER.smartDescription": "毎ターン開始時、[gold]呼吸威力[/gold] [blue]{PoiseGain}[/blue]を得ます。\n[gold]クリティカル時[/gold]：[gold]ブロック[/gold] [blue]{BlockGain}[/blue]を得ます。",
 
   "RIENSANG-SORS_SALUTIS_POWER.title": "救済の運命",
-  "RIENSANG-SORS_SALUTIS_POWER.description": "受けるダメージを半分に軽減し、残りの数値を[gold]カルマ[/gold]として受け取ります。",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "[blue]10[/blue]を超えるダメージを受ける場合、その半分をダメージとして受け、もう半分を[gold]カルマ[/gold]として受け取ります。",
   "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "[blue]10[/blue]を超えるダメージを受ける場合、その半分をダメージとして受け、もう半分を[gold]カルマ[/gold]として受け取ります。",
 
   "RIENSANG-SORS_IMMANIS_POWER.title": "過酷な運命",

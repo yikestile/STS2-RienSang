@@ -30,7 +30,9 @@ public class SomberProcuration : RienSangCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<Unlock>()
     ];
-
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
+    
     private bool IsUnlockIII => Owner.Creature.GetPower<Unlock>()?.Amount >= 3;
 
     protected override bool ShouldGlowGoldInternal => IsUnlockIII;

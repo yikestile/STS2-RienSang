@@ -47,12 +47,19 @@ public class BlindFaith : RienSangCard
         }
 
         var drawPile = PileType.Draw.GetPile(Owner);
-        if (drawPile != null)
+        var hand = PileType.Hand.GetPile(Owner);
+
+        if (drawPile != null && hand != null)
         {
             var copies = drawPile.Cards.Where(c => c is BlindFaith).ToList(); 
             
             foreach (var copy in copies)
             {
+                if (hand.Cards.Count >= CardPile.MaxCardsInHand)
+                {
+                    break; 
+                }
+
                 await CardPileCmd.Add(copy, PileType.Hand);
             }
         }

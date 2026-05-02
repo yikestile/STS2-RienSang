@@ -48,7 +48,7 @@
   "RIENSANG-SUNSHOWER.description": "Deal [blue]{Damage:diff()}[/blue] damage to ALL enemies. Has a chance to deal [blue]+{BonusDamage:diff()}[/blue] damage and heal [blue]15[/blue] [gold]SP[/gold]. Gain [blue]{LCProtectionPower:diff()}[/blue] [gold]Protection[/gold] this turn and next turn to ALL allies.",
 
   "RIENSANG-GREAT_TRICHILIOCOSM.title": "Great Trichiliocosm [三千大世界]",
-  "RIENSANG-GREAT_TRICHILIOCOSM.description": "Gain [blue]{PoisePotency:diff()}[/blue] [gold]Poise Potency[/gold] and [blue]{LCPoisePower:diff()}[/blue] [gold]Count[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage [blue]4[/blue] times to ALL enemies. If target has [blue]10+[/blue] [gold]Sinking[/gold] or [gold]Burn[/gold], deal [blue]+1[/blue] Damage. Inflict [gold]Shattered World[/gold]. Inflict [blue]{LCSinkingPower:diff()}[/blue] [gold]Sinking Count[/gold]. Inflict [blue]{BurnPotency:diff()}[/blue] [gold]Burn Potency[/gold] and [blue]{LCBurnPower:diff()}[/blue] [gold]Count[/gold]. [gold]On Crit[/gold], activate [gold]Burn[/gold] on target once, then reduce Count by [blue]1[/blue].",
+  "RIENSANG-GREAT_TRICHILIOCOSM.description": "Gain {PoisePotency:diff()} [gold]Poise Potency[/gold] and {LCPoisePower:diff()} [gold]Count[/gold]. Deal {Damage:diff()} Damage 4 times to ALL enemies. If target has 10+ [gold]Sinking[/gold] or [gold]Burn[/gold], deal +1 Damage. Inflict [gold]Shattered World[/gold], {LCSinkingPower:diff()} [gold]Sinking Count[/gold], {BurnPotency:diff()} [gold]Burn Potency[/gold] and {LCBurnPower:diff()} [gold]Count[/gold]. [gold]On Crit[/gold], activate [gold]Burn[/gold] on target once, then reduce Count by 1.",
 
   "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.title": "To Where The Prescript Points",
   "RIENSANG-TO_WHERE_THE_PRESCRIPT_POINTS.description": "Deal [blue]{Damage:diff()}[/blue] damage. Inflict [blue]{FragileAmount:diff()}[/blue] [gold]Fragile[/gold] next turn.",
@@ -57,7 +57,7 @@
   "RIENSANG-WILL_OF_THE_PRESCRIPT.description": "Gain [blue]{LCEvadePower:diff()}[/blue] [gold]Evade[/gold]. [gold]On Evade[/gold], [gold]Draw[/gold] [blue]3[/blue] cards. At [gold]Unlock III[/gold], gain {Energy:energyIcons()}.",
 
   "RIENSANG-WILL_OF_THE_CITY.title": "Will Of The City",
-  "RIENSANG-WILL_OF_THE_CITY.description": "Gain [blue]{Block:diff()}[/blue] [gold]Block[/gold]. [gold]Draw[/gold] [blue]1[/blue] card. At [gold]Unlock III[/gold], Gain {Energy:energyIcons()}.",
+  "RIENSANG-WILL_OF_THE_CITY.description": "Gain [blue]{Block:diff()}[/blue] [gold]Block[/gold]. \nNext Turn: [gold]Draw[/gold] [blue]1[/blue] card. \nAt [gold]Unlock III[/gold], Gain {Energy:energyIcons()} next turn.",
 
   "RIENSANG-BELIEF.title": "Belief",
   "RIENSANG-BELIEF.description": "Gain [blue]{Block:diff()}[/blue] [gold]Block[/gold]. Restore {Energy:energyIcons()}.",
@@ -102,7 +102,7 @@
   "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.description": "[gold]Pierce Rate UP[/gold]. Gain [blue]{LCPoisePower:diff()}[/blue] [gold]Poise Count[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage.",
 
   "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.title": "Lay the Blade on its Side, Slice Like a Severed Breath",
-  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]Slash Rate UP[/gold]. Gain [blue]{LCPoisePower:diff()}[/blue] [gold]Poise[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage.",
+  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]Slash Rate UP[/gold]. Gain [blue]{LCPoisePower:diff()}[/blue] [gold]Poise Potency[/gold] and [gold]Count[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage.",
 
   "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.title": "Swing to Fell, Have it Meet the Ground",
   "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.description": "[gold]Blunt Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. Inflict [blue]{SinkingPotency:diff()}[/blue] [gold]Sinking Potency[/gold].",
@@ -111,7 +111,7 @@
   "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.description": "[gold]Pierce Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. Inflict [blue]{LCSinkingPower:diff()}[/blue] [gold]Sinking Count[/gold].",
 
   "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.title": "Carve at a Low Slant, Peel What Remains",
-  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]Slash Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. Inflict [blue]{SinkingPotency:diff()}[/blue] [gold]Sinking Potency[/gold].",
+  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]Slash Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. Inflict [blue]{SinkingPotency:diff()}[/blue] [gold]Sinking Potency[/gold] and [gold]Count[/gold].",
 
   "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.title": "Destroy the Sound, Crush Flat the Thought",
   "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.description": "[gold]Blunt Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage [blue]2[/blue] times. Gain [blue]{StrNextTurn:diff()}[/blue] [gold]Strength[/gold] next turn.",
@@ -165,7 +165,7 @@
   "RIENSANG-SANGUINE_POINTILLISM.description": "Deal [blue]{Damage:diff()}[/blue] Damage. [blue]{Chance:diff()}%[/blue] Chance to hit one more time. [blue]+{BonusChance:diff()}%[/blue] chance for each type of debuff on target. Max [blue]2[/blue] extra hit.",
 
   "RIENSANG-RIME_SHANK.title": "Rime Shank [Replica]",
-  "RIENSANG-RIME_SHANK.description": "Inflict [blue]{LCSinkingPower:diff()}*X[/blue] [gold]Sinking Count[/gold] on ALL enemies.",
+  "RIENSANG-RIME_SHANK.description": "Inflict [blue]{LCSinkingPower:diff()}*X[/blue] [gold]Sinking Potency[/gold] and [gold]Count[/gold] on ALL enemies.",
 
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "As the Prescript Demands",
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.description": "[gold]Discard[/gold] your [gold]hand[/gold], [gold]Draw[/gold] as many cards as you discarded. Plays [blue]3[/blue] random cards.",
@@ -284,5 +284,5 @@
   "RIENSANG-GODS_BLESSING.description": "Playable at less than [blue]15[/blue] [gold]Karmic Consequence[/gold] while having [blue]15+[/blue] [gold]Caduceus[/gold] cards in the [gold]deck[/gold].\nSet [gold]Procuration Hermes[/gold] to [blue]9[/blue].",
 
   "RIENSANG-WEAVE.title": "Weave",
-  "RIENSANG-WEAVE.description": "Gain [blue]{KarmaGain:diff()}[/blue] [gold]Karmic Consequence[/gold]. Produce a random unique [gold]Caduceus[/gold] card."
+  "RIENSANG-WEAVE.description": "[gold]Produce[/gold] a random unique [gold]Caduceus[/gold] Card. Create a copy of this card in your [gold]hand[/gold]. Gain [blue]{KarmaGain:diff()}[/blue] [gold]Karmic Consequence[/gold]."
 }

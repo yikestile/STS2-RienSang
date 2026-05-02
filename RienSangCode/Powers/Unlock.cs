@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using BaseLib.Utils;
 using LimbusCore.LimbusCoreCode.Mechanics; 
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -13,10 +14,16 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Rooms;
 using RienSang.RienSangCode.Extensions;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Helpers;
 
 namespace RienSang.RienSangCode.Powers;
+
 public class Unlock : RienSangPower
 {
+    private static readonly SpireField<Creature, bool> _hermes9ReachedThisCombat = new SpireField<Creature, bool>(() => false);
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
@@ -50,20 +57,64 @@ public class Unlock : RienSangPower
         DynamicVars["HealAmount"].BaseValue = newAmount * 2;
         DynamicVars["SPHealAmount"].BaseValue = newAmount * 5;
 
-        await CheckUnlockMilestones(choiceContext, oldAmount, newAmount);
+        if (oldAmount < 3 && newAmount >= 3)
+        {
+            await PowerCmd.Apply<DexterityPower>(choiceContext, Owner, 1, Owner, null);
+        }
+
+        await UpdateShinFate(choiceContext);
         Flash();
         InvokeDisplayAmountChanged();
     }
 
-    private async Task CheckUnlockMilestones(PlayerChoiceContext choiceContext, int oldAmount, int newAmount)
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (oldAmount < 3 && newAmount >= 3)
+        if (player != Owner.Player) return;
+        await UpdateShinFate(choiceContext);
+    }
+
+    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
+    {
+        if (side == Owner.Side)
         {
-            await PowerCmd.Apply<DexterityPower>(choiceContext, Owner, 1, Owner, null);
-            await PowerCmd.Apply<ShinFate>(choiceContext, Owner, 1, Owner, null);
+            await UpdateShinFate(new ThrowingPlayerChoiceContext());
         }
     }
-    
+
+    public static async Task CheckShinRequirement(Creature creature, PlayerChoiceContext? context = null)
+    {
+        var unlock = creature.GetPower<Unlock>();
+        if (unlock != null)
+        {
+            await unlock.UpdateShinFate(context ?? new ThrowingPlayerChoiceContext());
+        }
+    }
+
+    public async Task UpdateShinFate(PlayerChoiceContext choiceContext)
+    {
+        if (Owner == null || Owner.IsDead || Owner.Player == null) return;
+
+        var hermes = Owner.GetPower<ProcurationHermes>();
+        if (hermes != null && hermes.DisplayAmount == 9)
+        {
+            _hermes9ReachedThisCombat[Owner] = true;
+        }
+
+        bool unlock3 = (int)Amount >= 3;
+        bool hermesReached = _hermes9ReachedThisCombat[Owner];
+        float sp = SanityManager.GetSanity(Owner.Player);
+
+        bool canGainShin = unlock3 && hermesReached && sp >= 0;
+
+        var currentShin = Owner.GetPower<ShinFate>();
+
+        if (canGainShin && currentShin == null)
+        {
+            await PowerCmd.Apply<ShinFate>(choiceContext, Owner, 1, Owner, null);
+            Flash();
+        }
+    }
+
     public override async Task AfterCombatEnd(CombatRoom room)
     {
         var healAmount = base.Amount * 2m;
@@ -82,5 +133,6 @@ public class Unlock : RienSangPower
                 SanityManager.ModifySanity(Owner.Player, spHeal);
             }
         }
+        _hermes9ReachedThisCombat[Owner] = false;
     }
 }

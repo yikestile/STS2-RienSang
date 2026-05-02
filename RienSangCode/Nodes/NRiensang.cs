@@ -2,11 +2,17 @@
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using LimbusCore.LimbusCoreCode;
 using System.Collections.Generic;
+using LimbusCore.LimbusCoreCode.Overlays;
+using RienSang.RienSangCode.Nodes; 
+using RienSang.RienSangCode.Powers; 
+using MegaCrit.Sts2.Core.Entities.Creatures;
 
 public partial class NRiensang : NCreatureVisuals
 {
     private AnimationPlayer? _anim;
     private Node2D? _visuals;
+    private PrescriptCombatOverlay? _combatOverlay; 
+    private NShinEffect? _shinAura;
     private string? _currentAttack = null;
     
     private float _debounceTimer = 0f;
@@ -27,6 +33,20 @@ public partial class NRiensang : NCreatureVisuals
         _anim = GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
         _visuals = GetNodeOrNull<Node2D>("Visuals");
 
+        _combatOverlay = new PrescriptCombatOverlay();
+        AddChild(_combatOverlay);
+
+        if (_visuals != null)
+        {
+            var shinScene = GD.Load<PackedScene>("res://LimbusCore/scenes/ShinEffect.tscn");
+            if (shinScene != null)
+            {
+                _shinAura = shinScene.Instantiate<NShinEffect>();
+                _shinAura.Name = "ShinAura";
+                _visuals.AddChild(_shinAura);
+            }
+        }
+
         if (_anim != null)
         {
             _anim.AnimationStarted += OnAnimationStartedCinematic;
@@ -41,11 +61,12 @@ public partial class NRiensang : NCreatureVisuals
         LimbusCinematicManager.PreloadBackground();
     }
 
+    
     public override void _Process(double delta)
     {
         base._Process(delta);
         if (_visuals == null || _anim == null) return;
-    
+
         if (_anim.CurrentAnimation == "idle_loop")
         {
             if (_visuals.Position != Vector2.Zero)
@@ -79,27 +100,35 @@ public partial class NRiensang : NCreatureVisuals
                 LimbusCinematicManager.ConfirmUiShow();
             }
         }
+
+        if (_shinAura != null)
+        {
+            var parentNCreature = GetParentOrNull<NCreature>();
+            if (parentNCreature != null && parentNCreature.Entity != null)
+            {
+                Creature creature = parentNCreature.Entity;
+                bool hasShin = creature.HasPower<ShinFate>();
+                _shinAura.UpdateShinVisibility(hasShin);
+            }
+        }
     }
 
     private void OnAnimationStartedCinematic(StringName animName)
     {
         string name = animName.ToString();
 
-        // 1. MIRROR TRIGGER: Use idle_loop to prepare the room once.
         if (name == "idle_loop" && !_isRoomMirrored)
         {
             LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0);
             _isRoomMirrored = true;
         }
 
-        // 2. ATTACK TRIGGER: Handle UI and internal parallax anchoring
         if (name.StartsWith("attack_"))
         {
             _currentAttack = name;
             _debounceTimer = 0f; 
             LimbusCinematicManager.StartUiHide();
         
-            // Ensure background is anchored during attacks
             LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0);
         }
     }
@@ -118,7 +147,6 @@ public partial class NRiensang : NCreatureVisuals
     private void OnAnimationFinishedCinematic(StringName animName)
     {
         string name = animName.ToString();
-        // Use the stored _currentAttack to ensure we clean up the correct sequence
         if (name == _currentAttack)
         {
             HandleAttackFinished();
@@ -126,4 +154,17 @@ public partial class NRiensang : NCreatureVisuals
     }
     
     public void DoScreenShake() { }
+
+    public void TriggerPrescriptOverlay(string text, bool isRandom)
+    {
+        if (_combatOverlay != null)
+        {
+            var centerPos = GetNodeOrNull<Marker2D>("CenterPos");
+            if (centerPos != null)
+            {
+                _combatOverlay.Position = centerPos.Position - (_combatOverlay.Size / 2f) + _combatOverlay.Offset;
+            }
+            _combatOverlay.Play(text, isRandom);
+        }
+    }
 }

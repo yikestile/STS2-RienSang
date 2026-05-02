@@ -57,8 +57,8 @@
   "RIENSANG-WILL_OF_THE_PRESCRIPT.description": "[gold]회피[/gold]를 {LCEvadePower:diff()} 얻습니다. [gold]회피[/gold] 성공시, 카드를 3장 뽑습니다. [gold]해금 III[/gold] 상태라면, {Energy:energyIcons()}를 얻습니다.",
 
   "RIENSANG-WILL_OF_THE_CITY.title": "도시의 의지",
-  "RIENSANG-WILL_OF_THE_CITY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다. {Energy:energyIcons()}를 얻고 카드를 1장 뽑습니다.",
-
+  "RIENSANG-WILL_OF_THE_CITY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다. 다음 턴에, 카드를 1장 뽑습니다.\n해금 III 상태라면, 추가로 다음 턴에 {Energy:energyIcons()}를 얻습니다.",
+  
   "RIENSANG-BELIEF.title": "믿음",
   "RIENSANG-BELIEF.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다. {Energy:energyIcons()}를 얻습니다.",
 
@@ -102,8 +102,8 @@
   "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.description": "[gold]관통 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]호흡 횟수[/gold]를 {LCPoisePower:diff()} 얻습니다.",
 
   "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.title": "날을 눕혀, 숨결이 갈라지듯 잘라내고",
-  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]호흡 위력[/gold]을 {LCPoisePower:diff()} 얻습니다.",
-
+  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]호흡 위력[/gold]과 [gold]횟수[/gold]를 각각 {LCPoisePower:diff()} 얻습니다.",
+ 
   "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.title": "휘둘러 떨어트려, 땅과 하나로 만들어",
   "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.description": "[gold]타격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]침잠 위력[/gold]을 {SinkingPotency:diff()} 부여합니다.",
 
@@ -111,8 +111,8 @@
   "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.description": "[gold]관통 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]침잠 횟수[/gold]를 {LCSinkingPower:diff()} 부여합니다.",
 
   "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.title": "결을 낮게 깔아, 남은 것을 벗겨내고",
-  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]침잠 위력[/gold]을 {SinkingPotency:diff()} 부여합니다.",
-
+  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]참격 피해[/gold].\n피해를 {Damage:diff()} 줍니다. [gold]침잠 위력[/gold]과 [gold]횟수[/gold]를 각각 {SinkingPotency:diff()} 부여합니다.",
+  
   "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.title": "소리를 부수고, 생각을 납작하게 짓이겨라",
   "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.description": "[gold]타격 피해[/gold].\n피해를 {Damage:diff()}만큼 2번 줍니다. 다음 턴에 [gold]힘[/gold]을 {StrNextTurn:diff()} 얻습니다.",
 
@@ -165,8 +165,8 @@
   "RIENSANG-SANGUINE_POINTILLISM.description": "피해를 {Damage:diff()} 줍니다. {Chance:diff()}% 확률로 1번 더 공격합니다.(최대 2번) 대상의 디버프 종류당 확률이 {BonusChance:diff()}% 증가합니다.",
 
   "RIENSANG-RIME_SHANK.title": "얼음다리 [Replica]",
-  "RIENSANG-RIME_SHANK.description": "모든 적에게 [gold]침잠 횟수[/gold]를 {LCSinkingPower:diff()}만큼 [blue]X[/blue]번 부여합니다.",
-
+  "RIENSANG-RIME_SHANK.description": "모든 적에게 [gold]침잠 위력[/gold]과 [gold]횟수[/gold]를 각각 {LCSinkingPower:diff()}만큼 [blue]X[/blue]번 부여합니다.",
+  
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "지령의 뜻대로",
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.description": "[gold]손[/gold]에 있는 카드를 전부 버리고, 버린 카드 수만큼 뽑습니다. 무작위 카드를 3장 사용합니다.",
 
@@ -284,5 +284,5 @@
   "RIENSANG-GODS_BLESSING.description": "[gold]카르마[/gold]가 [blue]15[/blue] 미만이고 [gold]덱[/gold]에 [gold]카두세우스[/gold] 카드가 [blue]15[/blue]장 이상일 때만 사용할 수 있습니다.\n[gold]대행(헤르메스)[/gold]를 [blue]9[/blue]가 되도록 얻습니다.",
 
   "RIENSANG-WEAVE.title": "직조",
-  "RIENSANG-WEAVE.description": "[gold]카르마[/gold]를 [blue]{KarmaGain:diff()}[/blue] 얻습니다. 덱에 존제하지 않는 무작위 [gold]카두세우스[/gold] 카드를 한 장 생성합니다."
+  "RIENSANG-WEAVE.description": "덱에 존제하지 않는 무작위 [gold]카두세우스[/gold] 카드를 한 장 생성합니다. 이 카드의 복사본을 생성하고 그 카드를 [gold]손[/gold]으로 가져옵니다. [gold]카르마[/gold]를 [blue]{KarmaGain:diff()}[/blue] 얻습니다."
 }

@@ -23,6 +23,11 @@ public class ByUnpredictableWhim : RienSangCard
     }
 
     public override bool GainsKarma => true;
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

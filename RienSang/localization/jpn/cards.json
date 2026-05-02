@@ -57,8 +57,8 @@
   "RIENSANG-WILL_OF_THE_PRESCRIPT.description": "{LCEvadePower:diff()} [gold]回避[/gold]を得る。[gold]回避[/gold]成功時、カードを3枚[gold]ドロー[/gold]する。[gold]解禁 III[/gold]時、{Energy:diff()} [gold]エネルギー[/gold]を得る。",
 
   "RIENSANG-WILL_OF_THE_CITY.title": "都市の意志",
-  "RIENSANG-WILL_OF_THE_CITY.description": "{Block:diff()} [gold]ブロック[/gold]を得る。{Energy:diff()} {Energy:energyIcons()}を得て、カードを1枚[gold]ドロー[/gold]する。",
-
+  "RIENSANG-WILL_OF_THE_CITY.description": "[blue]{Block:diff()}[/blue] [gold]ブロック[/gold]を得る。 \n次ターン：カードを[blue]1[/blue]枚[gold]ドロー[/gold]する。 \n[gold]解禁 III[/gold]時、次ターンに {Energy:energyIcons()} を得る。",
+  
   "RIENSANG-BELIEF.title": "信仰",
   "RIENSANG-BELIEF.description": "{Block:diff()} [gold]ブロック[/gold]を得る。{Energy:energyIcons()}を回復する。",
 
@@ -102,8 +102,8 @@
   "RIENSANG-LAY_VERTICAL_THE_END_INSERT_UP_TO_THE_WICK.description": "[gold]貫通威力増加[/gold]。{LCPoisePower:diff()} [gold]呼吸回数[/gold]を得る。{Damage:diff()}ダメージを与える。",
 
   "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.title": "刃を寝かせろ、 息が裂けるように 切り取って",
-  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]斬撃威力増加[/gold]。{LCPoisePower:diff()} [gold]呼吸[/gold]を得る。{Damage:diff()}ダメージを与える。",
-
+  "RIENSANG-LAY_THE_BLADE_ON_ITS_SIDE_SLICE_LIKE_A_SEVERED_BREATH.description": "[gold]斬撃威力増加[/gold]。[blue]{LCPoisePower:diff()}[/blue] [gold]呼吸威力[/gold]と[gold]回数[/gold]を得る。[blue]{Damage:diff()}[/blue]ダメージを与える。",
+  
   "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.title": "振り払って落とせ、 大地に平伏させて",
   "RIENSANG-SWING_TO_FELL_HAVE_IT_MEET_THE_GROUND.description": "[gold]打撃威力増加[/gold]。{Damage:diff()}ダメージを与える。{SinkingPotency:diff()} [gold]沈潜威力[/gold]を付与する。",
 
@@ -111,8 +111,8 @@
   "RIENSANG-AIM_TOWARD_A_POINT_LET_IT_ECHO_WITHIN.description": "[gold]貫通威力増加[/gold]。{Damage:diff()}ダメージを与える。{LCSinkingPower:diff()} [gold]沈潜回数[/gold]を付与する。",
 
   "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.title": "刃筋を低く這わせろ、 残ったものを剥ぎ取れ",
-  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]斬撃威力増加[/gold]。{Damage:diff()}ダメージを与える。{SinkingPotency:diff()} [gold]沈潜威力[/gold]を付与する。",
-
+  "RIENSANG-CARVE_AT_A_LOW_SLANT_PEEL_WHAT_REMAINS.description": "[gold]斬撃威力増加[/gold]。[blue]{Damage:diff()}[/blue]ダメージを与える。[blue]{SinkingPotency:diff()}[/blue] [gold]沈潜威力[/gold]と[gold]回数[/gold]を付与する。",
+  
   "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.title": "音を砕いて、 思考を平たく 踏み潰せ",
   "RIENSANG-DESTROY_THE_SOUND_CRUSH_FLAT_THE_THOUGHT.description": "[gold]打撃威力増加[/gold]。{Damage:diff()}ダメージを2回与える。次のターンに{StrNextTurn:diff()} [gold]筋力[/gold]を得る。",
 
@@ -165,7 +165,7 @@
   "RIENSANG-SANGUINE_POINTILLISM.description": "{Damage:diff()}ダメージを与える。{Chance:diff()}%の確率で、さらにもう一度攻撃する。対象に付与された弱体化(デバフ)1種類につき、確率が+{BonusChance:diff()}%増加する。(最大2回まで追加攻撃)",
 
   "RIENSANG-RIME_SHANK.title": "氷の脚 [Replica]",
-  "RIENSANG-RIME_SHANK.description": "全ての敵に[blue]{LCSinkingPower:diff()}*X[/blue]の[gold]沈潜回数[/gold]を付与する。",
+  "RIENSANG-RIME_SHANK.description": "全ての敵に[blue]{LCSinkingPower:diff()}*X[/blue]の[gold]沈潜威力[/gold]と[gold]回数[/gold]を付与する。",
 
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.title": "指令の要求するままに",
   "RIENSANG-AS_THE_PRESCRIPT_DEMANDS.description": "手札を全て[gold]捨てる[/gold]。捨てた枚数分カードを[gold]ドロー[/gold]する。ランダムなカードを3枚プレイする。",
@@ -284,5 +284,5 @@
   "RIENSANG-GODS_BLESSING.description": "[gold]カルマ[/gold]が[blue]15[/blue]未満、かつ[gold]デッキ[/gold]内に[gold]カドゥケウス[/gold]カードが[blue]15[/blue]枚以上ある場合のみ使用可能。\n[gold]代行 (ヘルメス)[/gold]を[blue]9[/blue]にする。",
 
   "RIENSANG-WEAVE.title": "織り",
-  "RIENSANG-WEAVE.description": "[gold]カルマ[/gold]を[blue]{KarmaGain:diff()}[/blue]得る。ランダムな固有の[gold]カドゥケウス[/gold]カードを1枚生成する。"
+  "RIENSANG-WEAVE.description": "ランダムな固有の[gold]カドゥケウス[/gold]カードを1枚[gold]生成[/gold]する。このカードのコピーを1枚[gold]手札[/gold]に加える。 [blue]{KarmaGain:diff()}[/blue] [gold]カルマ[/gold]を得る。"
 }

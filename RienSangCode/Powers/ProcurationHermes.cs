@@ -146,6 +146,22 @@ public class ProcurationHermes : RienSangPower
                 await ProcessThreshold(choiceContext);
             }
         }
+        
+        if (newVirtual != currentVirtual)
+        {
+            DynamicVars["HermesAmount"].BaseValue = newVirtual;
+            InvokeDisplayAmountChanged();
+
+            if (newVirtual == 9 && diff > 0)
+            {
+                await Unlock.CheckShinRequirement(Owner, choiceContext);
+        
+                if (!_isGranting)
+                {
+                    await ProcessThreshold(choiceContext);
+                }
+            }
+        }
     }
 
     public void LockGaining()

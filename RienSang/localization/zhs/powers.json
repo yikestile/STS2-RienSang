@@ -12,9 +12,9 @@
   "RIENSANG-GRACEOFTHE_PRESCRIPT_POWER.smartDescription": "层数上限为 9。达到 [blue]9[/blue] 层时获得 [blue]1[/blue] 点[gold]力量[/gold]。在达到 [blue]3/6/9[/blue] 层时，分别获得[gold]解禁 I/II/III[/gold]。",
 
   "RIENSANG-UNLOCK.title": "解禁",
-  "RIENSANG-UNLOCK.description": "达到[gold]解禁 III[/gold]时，获得[gold]心 (心) - 天命[/gold]与[gold]敏捷[/gold]。战斗结束时：根据阶段[gold]治疗[/gold]生命值与理智值(SP)。",
-  "RIENSANG-UNLOCK.smartDescription": "达到[gold]解禁 III[/gold]时，获得[gold]心 - 天命[/gold]与 [blue]1[/blue] 点[gold]敏捷[/gold]。\n战斗结束时：在解禁 I/II/III 阶段分别[gold]治疗[/gold] [blue]{HealAmount:diff()}[/blue] 点生命值与 [blue]{SPHealAmount:diff()}[/blue] 点理智值。",
-
+  "RIENSANG-UNLOCK.description": "达到[gold]解禁 III[/gold]时，获得[gold]敏捷[/gold]。 \n此外，当理智值(SP)不低于0且[gold]赫尔墨斯使徒[/gold]达到9层时，本次战斗中首次获得[gold]心 (心) - 天命[/gold]。 \n战斗结束时：根据阶段[gold]治疗[/gold]生命值与理智值(SP)。",
+  "RIENSANG-UNLOCK.smartDescription": "达到[gold]解禁 III[/gold]时，获得 [blue]1[/blue] 点[gold]敏捷[/gold]。 \n此外，当理智值(SP)不低于0且[gold]赫尔墨斯使徒[/gold]达到9层时，本次战斗中首次获得[gold]心 (心) - 天命[/gold]。 \n战斗结束时：在解禁 I/II/III 阶段分别[gold]治疗[/gold] [blue]{HealAmount:diff()}[/blue] 点生命值与 [blue]{SPHealAmount:diff()}[/blue] 点理智值(SP)。",
+  
   "RIENSANG-THE_PRESCRIPTS_TARGET.title": "指令目标",
   "RIENSANG-THE_PRESCRIPTS_TARGET.description": "受到来自[gold]李箱[/gold]的伤害增加。",
   "RIENSANG-THE_PRESCRIPTS_TARGET.smartDescription": "受到来自[gold]李箱[/gold]的伤害增加 [blue]5%[/blue]。",
@@ -88,7 +88,7 @@
   "RIENSANG-POISED_WARDING_POWER.smartDescription": "每回合开始时，获得 [blue]{PoiseGain}[/blue] 层[gold]呼吸法强度[/gold]。\n[gold]暴击时[/gold]：获得 [blue]{BlockGain}[/blue] 点[gold]格挡[/gold]。",
 
   "RIENSANG-SORS_SALUTIS_POWER.title": "救赎之命",
-  "RIENSANG-SORS_SALUTIS_POWER.description": "受到的伤害减半，剩余部分转化为[gold]因果报应[/gold]。",
+  "RIENSANG-SORS_SALUTIS_POWER.description": "若单次受到的伤害超过 [blue]10[/blue] 点，则实际承受一半伤害，另一半转化为[gold]因果报应[/gold]。",
   "RIENSANG-SORS_SALUTIS_POWER.smartDescription": "若单次受到的伤害超过 [blue]10[/blue] 点，则实际承受一半伤害，另一半转化为[gold]因果报应[/gold]。",
 
   "RIENSANG-SORS_IMMANIS_POWER.title": "严酷之命",

@@ -14,19 +14,27 @@ using RienSang.RienSangCode.Character;
 using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Powers;
 using MegaCrit.Sts2.Core.Models;
+using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.Combat;
 
 namespace RienSang.RienSangCode.Cards.Uncommon;
 
 [Pool(typeof(RienSangCardPool))]
 public class Weave : RienSangCard
 {
-    public Weave() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.None)
+    private static readonly SpireField<Creature, int> _usesThisCombat = new SpireField<Creature, int>(() => 0);
+
+    public Weave() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.None)
     {
     }
 
+    public override bool GainsKarma => true;
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmaGain", 10m)
+        new("KarmaGain", 5m)
     ];
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<KarmicConsequence>()
@@ -34,10 +42,9 @@ public class Weave : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await Owner.Creature.ApplyKarma(choiceContext, DynamicVars["KarmaGain"].BaseValue, Owner.Creature, this);
-
         var player = Owner;
-        var combat = player.Creature.CombatState;
+        var creature = player.Creature;
+        var combat = creature.CombatState;
         
         var existingCaduceusIds = player.Piles.SelectMany(p => p.Cards)
             .Where(c => c.CanonicalKeywords.Contains(RienSangKeywords.Caduceus))
@@ -58,10 +65,30 @@ public class Weave : RienSangCard
             var newCard = combat.CreateCard(chosenTemplate, player);
             await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
         }
+
+        var copy = CreateClone();
+        await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, player);
+
+        int uses = _usesThisCombat[creature];
+        decimal karmaBase = DynamicVars["KarmaGain"].BaseValue;
+        decimal karmaToGain = karmaBase + (uses * 5);
+
+        await creature.ApplyKarma(choiceContext, karmaToGain, creature, this);
+
+        _usesThisCombat[creature] = uses + 1;
+    }
+
+    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    {
+        if (side == Owner.Creature.Side)
+        {
+            _usesThisCombat[Owner.Creature] = 0;
+        }
+        await Task.CompletedTask;
     }
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        DynamicVars["KarmaGain"].UpgradeValueBy(-1);
     }
 }

@@ -17,6 +17,7 @@ using RienSang.RienSangCode.Cards.Curse;
 using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Character;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Rooms;
 
 namespace RienSang.RienSangCode.Powers;
 
@@ -33,7 +34,11 @@ public class KarmicConsequenceFortuna : RienSangPower
     public override int DisplayAmount => DynamicVars["KarmaAmount"].IntValue;
 
     protected override bool IsVisibleInternal => true;
-
+    
+    public bool Threshold40Triggered { get; set; } = false;
+    public bool Threshold80Triggered { get; set; } = false;
+    public bool Threshold120Triggered { get; set; } = false;
+    public bool Threshold160Triggered { get; set; } = false;
     public KarmicConsequenceFortuna() : base() { } 
     
     public KarmicConsequenceFortuna(int amount) : this()
@@ -63,7 +68,7 @@ public class KarmicConsequenceFortuna : RienSangPower
         if (diff == 0) return;
 
         int currentKarma = DynamicVars["KarmaAmount"].IntValue;
-        int newKarma = Math.Clamp(currentKarma + diff, 0, 200); // Increased Max to 200
+        int newKarma = Math.Clamp(currentKarma + diff, 0, 200);
 
         if (newKarma != currentKarma)
         {
@@ -82,28 +87,28 @@ public class KarmicConsequenceFortuna : RienSangPower
             await PowerCmd.Apply<LCFragilePower>(choiceContext, Owner, newMilestones20 - oldMilestones20, Owner, null);
         }
 
-        // 40 for 1 temp curse
-        if (oldKarma < 40 && newKarma >= 40)
+        if (newKarma >= 40 && !Threshold40Triggered)
         {
+            Threshold40Triggered = true;
             await ApplyRandomCurse(choiceContext, true);
         }
 
-        // 80 for 2 more temp curse
-        if (oldKarma < 80 && newKarma >= 80)
+        if (newKarma >= 80 && !Threshold80Triggered)
         {
+            Threshold80Triggered = true;
             await ApplyRandomCurse(choiceContext, true);
             await ApplyRandomCurse(choiceContext, true);
         }
 
-        // 120 for 1 perma curse
-        if (oldKarma < 120 && newKarma >= 120)
+        if (newKarma >= 120 && !Threshold120Triggered)
         {
+            Threshold120Triggered = true;
             await ApplyRandomCurse(choiceContext, false);
         }
 
-        // 160 for 1 more perma curse
-        if (oldKarma < 160 && newKarma >= 160)
+        if (newKarma >= 160 && !Threshold160Triggered)
         {
+            Threshold160Triggered = true;
             await ApplyRandomCurse(choiceContext, false);
         }
 
@@ -172,5 +177,15 @@ public class KarmicConsequenceFortuna : RienSangPower
         {
             await PowerCmd.Apply<LCFragilePower>(choiceContext, Owner, milestones, Owner, null);
         }
+    }
+
+    public override Task AfterCombatEnd(CombatRoom room)
+    {
+        DynamicVars["KarmaAmount"].BaseValue = 0;
+        Threshold40Triggered = false;
+        Threshold80Triggered = false;
+        Threshold120Triggered = false;
+        Threshold160Triggered = false;
+        return Task.CompletedTask;
     }
 }
