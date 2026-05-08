@@ -13,8 +13,6 @@ using RienSang.RienSangCode.Mechanics;
 
 
 namespace RienSang.RienSangCode.Cards.Basic;
-
-
 [Pool(typeof(RienSangCardPool))]
 public class FollowingThePrescript : RienSangCard
 {
@@ -22,17 +20,13 @@ public class FollowingThePrescript : RienSangCard
     [
         new DamageVar(5, ValueProp.Move)
     ];
-  
     public FollowingThePrescript() : base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
     {
     }
-
-
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
         RienSangKeywords.Caduceus
     ];
-  
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Target != null)
@@ -40,8 +34,6 @@ public class FollowingThePrescript : RienSangCard
             await CaduceusManager.Execute(this, cardPlay.Target, DynamicVars.Damage.BaseValue, choiceContext, 0);
         }
     }
-
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2);

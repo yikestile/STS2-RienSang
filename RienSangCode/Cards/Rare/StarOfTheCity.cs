@@ -24,21 +24,31 @@ public class StarOfTheCity : RienSangCard
         HoverTipFactory.FromPower<LCSinkingPower>(),
     ];
     
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new DynamicVar("SinkingPotency", 5),
-        new PowerVar<LCSinkingPower>("SinkingCount", 2m)
-    ];
+    protected override IEnumerable<DynamicVar> CanonicalVars
+    {
+        get
+        {
+            int stacksApplied = IsUpgraded ? 2 : 1;
+
+            return new List<DynamicVar>
+            {
+                new DynamicVar("SinkingPotency", stacksApplied * StarOfTheCityPower.SinkingPotencyPerStack),
+                new DynamicVar("SinkingCount", stacksApplied * StarOfTheCityPower.SinkingCountPerStack)
+            };
+        }
+    }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var player = Owner.Creature;
-        await PowerCmd.Apply<StarOfTheCityPower>(choiceContext, player, 1, player, this);
+        
+        int stacksToApply = IsUpgraded ? 2 : 1;
+        await PowerCmd.Apply<StarOfTheCityPower>(choiceContext, player, stacksToApply, player, this);
     }
     
     protected override void OnUpgrade()
     {
-         DynamicVars["SinkingPotency"].UpgradeValueBy(3);
-         DynamicVars["SinkingCount"].UpgradeValueBy(1);
+        DynamicVars["SinkingPotency"].UpgradeValueBy(5);
+        DynamicVars["SinkingCount"].UpgradeValueBy(2);
     }
 }

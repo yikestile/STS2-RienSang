@@ -198,7 +198,6 @@ public partial class PrescriptCombatOverlay : Control
 
         for (int i = 0; i < MaxChars; i++)
         {
-            // Pick from CharMap only
             char charToDisplay = (i < lockIndex) ? _targetString[i] : CharMap[rng.RandiRange(0, CharMap.Length - 1)];
             UpdateSpriteChar(i, charToDisplay);
         }

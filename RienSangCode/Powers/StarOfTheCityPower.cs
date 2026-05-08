@@ -20,10 +20,13 @@ public sealed class StarOfTheCityPower : RienSangPower
     public override PowerStackType StackType => PowerStackType.Counter;
     public override bool IsInstanced => false;
 
+    public const int SinkingPotencyPerStack = 5;
+    public const int SinkingCountPerStack = 2;
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new List<DynamicVar>
     {
-        new("SinkingCount", 2m),
-        new("SinkingPotency", 5m)
+        new("SinkingPotency", 0m),
+        new("SinkingCount", 0m)
     };
     
     public StarOfTheCityPower()
@@ -34,6 +37,24 @@ public sealed class StarOfTheCityPower : RienSangPower
     {
         SetAmount(amount);
     }
+
+    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        UpdateDynamicVars();
+        return Task.CompletedTask;
+    }
+
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    {
+        UpdateDynamicVars();
+        return Task.CompletedTask;
+    }
+
+    private void UpdateDynamicVars()
+    {
+        DynamicVars["SinkingPotency"].BaseValue = Amount * SinkingPotencyPerStack;
+        DynamicVars["SinkingCount"].BaseValue = Amount * SinkingCountPerStack;
+    }
     
     public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
     {
@@ -43,14 +64,13 @@ public sealed class StarOfTheCityPower : RienSangPower
         }
 
         Flash();
-        int stack = (int)base.Amount;
-        int count = 2 * stack;
-        int potency = 5 * stack;
+        int totalCount = (int)DynamicVars["SinkingCount"].BaseValue;
+        int totalPotency = (int)DynamicVars["SinkingPotency"].BaseValue;
 
         var enemies = combatState.HittableEnemies;
         foreach (var enemy in enemies)
         {
-            await LCSinkingPower.Apply(new ThrowingPlayerChoiceContext(), enemy, count, potency, Owner, null);
+            await LCSinkingPower.Apply(new ThrowingPlayerChoiceContext(), enemy, totalCount, totalPotency, Owner, null);
         }
     }
 }

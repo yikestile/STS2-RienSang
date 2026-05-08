@@ -42,18 +42,41 @@ public class EnforcingPrescript : RienSangCard
         {
             var monster = cardPlay.Target.Monster;
             var currentMove = monster.NextMove;
-            
-            var attackIntent = currentMove.Intents.OfType<SingleAttackIntent>().FirstOrDefault();
+        
+            var attackIntent = currentMove.Intents.OfType<AttackIntent>().FirstOrDefault();
             if (attackIntent != null)
             {
-                int baseDamage = attackIntent.GetSingleDamage(Owner.Creature.CombatState.Allies, cardPlay.Target) / 2;
-                
+                int originalHits;
+                decimal originalBaseDamage;
+
+ 
+                originalBaseDamage = attackIntent.DamageCalc?.Invoke() ?? 0m;
+
+                if (attackIntent is SingleAttackIntent)
+                {
+                    originalHits = 1;
+                }
+                else if (attackIntent is MultiAttackIntent multi)
+                {
+    
+                    originalHits = multi.Repeats;
+                }
+                else
+                {
+                    return;
+                }
+
+                int newHits = originalHits * 2;
+                decimal newBaseDamage = originalBaseDamage / 2m;
+
+                int newRepeats = newHits;
+
                 MoveState splitMove = new MoveState(
-                    currentMove.Id,
+                    currentMove.StateId, 
                     currentMove.PerformMove,
-                    new MultiAttackIntent(baseDamage, 2)
+                    new MultiAttackIntent((int)newBaseDamage, newRepeats)
                 );
-                
+            
                 monster.SetMoveImmediate(splitMove, forceTransition: true);
             }
         }

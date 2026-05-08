@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System; // Added for Math.Round
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BaseLib.Utils;
@@ -19,6 +20,9 @@ using MegaCrit.Sts2.Core.Combat;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Saves; // Added for [SavedProperty]
+using LimbusCore.LimbusCoreCode.Mechanics;
+using MegaCrit.Sts2.Core.Saves.Runs; // Added for SanityManager
 
 namespace RienSang.RienSangCode.Relics;
 
@@ -33,7 +37,7 @@ public class PrescriptDevice : RienSangRelic
     private static readonly string ScrambleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<MarkofthePrescriptPower>(1m), 
+        new PowerVar<MarkofthePrescriptPower>(1m),
         new PowerVar<ThePrescriptsTarget>(1m),
         new PowerVar<WoundcasingMask>(1m)
     ];
@@ -43,11 +47,11 @@ public class PrescriptDevice : RienSangRelic
         HoverTipFactory.FromPower<ThePrescriptsTarget>(),
         HoverTipFactory.FromPower<WoundcasingMask>(),
     ];
-    
+
     public override async Task BeforeCombatStartLate()
     {
         if (Owner?.Creature == null) return;
-        
+
         Flash();
 
         await PowerCmd.Apply<MarkofthePrescriptPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, 1m, Owner.Creature, null);
@@ -56,6 +60,8 @@ public class PrescriptDevice : RienSangRelic
         TriggerOverlay(GenerateRandomString(), true);
         _lastTurnWasClear = false;
         _unlockReachedThisTurn = false;
+        
+        
     }
 
     public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
@@ -128,12 +134,12 @@ public class PrescriptDevice : RienSangRelic
     public override async Task AfterPlayerTurnStartLate(PlayerChoiceContext choiceContext, Player player)
     {
         if (Owner?.Creature == null) return;
-        
+
         var combatState = Owner.Creature.CombatState;
-        if (combatState == null) return; 
+        if (combatState == null) return;
 
         var potentialTargets = combatState.HittableEnemies;
-        
+
         if (potentialTargets.Count > 0)
         {
             var target = potentialTargets.OrderBy(_ => Owner.RunState.Rng.Niche.NextFloat()).First();

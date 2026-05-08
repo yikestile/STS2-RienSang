@@ -1,5 +1,4 @@
 ﻿using Godot;
-using System;
 using System.Collections.Generic;
 
 [Tool]
@@ -9,18 +8,20 @@ public partial class GroundedSprite : Sprite2D
 
     public override void _Ready()
     {
-        Centered = false;
+        Centered = false; 
         _initialLocalPositions.Clear();
-    
+        CacheChildren();
+    }
+
+    private void CacheChildren()
+    {
         foreach (Node child in GetChildren())
         {
-            if (child is Node2D child2D)
+            if (child is Node2D child2D && !_initialLocalPositions.ContainsKey(child.GetInstanceId()))
             {
                 _initialLocalPositions[child.GetInstanceId()] = child2D.Position;
             }
         }
-
-        if (Texture != null) UpdateGrounding(); 
     }
 
     public override void _Process(double delta)
@@ -35,6 +36,8 @@ public partial class GroundedSprite : Sprite2D
 
         foreach (Node child in GetChildren())
         {
+            if (child.Name == "ShinAura") continue;
+
             if (child is Node2D child2D)
             {
                 ulong id = child.GetInstanceId();

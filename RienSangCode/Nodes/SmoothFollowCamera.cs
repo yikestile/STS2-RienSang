@@ -9,6 +9,7 @@ public partial class SmoothFollowCamera : Camera2D
     
     [Export] private float _followWeight = 0.1f; 
     [Export] private float _returnThreshold = 1.0f;
+    [Export] private float _activationThreshold = 150.0f;
 
     public override void _Ready()
     {
@@ -29,7 +30,8 @@ public partial class SmoothFollowCamera : Camera2D
 
         var visualsNode = _targetNode.GetParent<Node2D>();
         float animationPushDistance = visualsNode.Position.Length();
-        bool animationWantsCamera = animationPushDistance > 500f;
+        
+        bool animationWantsCamera = animationPushDistance >= _activationThreshold;
 
         Vector2 destination;
         if (animationWantsCamera)
@@ -49,13 +51,20 @@ public partial class SmoothFollowCamera : Camera2D
         }
 
         float distance = GlobalPosition.DistanceTo(destination);
+        
+        if (distance > 500f)
+        {
+            float snapLerp = 0.05f;
+            GlobalPosition = GlobalPosition.Lerp(destination, snapLerp);
+            distance = GlobalPosition.DistanceTo(destination);
+        }
+        
+        float distanceBoost = Mathf.Remap(distance, 0, 1000, 1.0f, 5.0f);
+        distanceBoost = Mathf.Clamp(distanceBoost, 1.0f, 10.0f);
 
-        float distanceBoost = Mathf.Remap(distance, 0, 1200, 1.0f, 3.5f);
-        distanceBoost = Mathf.Clamp(distanceBoost, 1.0f, 5.0f);
+        float activeWeight = Mathf.Clamp(_followWeight / distanceBoost, 0.001f, 0.95f);
 
-        float activeWeight = Mathf.Max(0.0001f, _followWeight / distanceBoost);
-
-        float lerpFactor = 1.0f - Mathf.Pow(activeWeight, (float)delta);
+        float lerpFactor = 1.0f - Mathf.Pow(1.0f - activeWeight, (float)delta * 60.0f);
         GlobalPosition = GlobalPosition.Lerp(destination, lerpFactor);
     }
 }
