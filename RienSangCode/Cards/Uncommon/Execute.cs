@@ -75,7 +75,7 @@ public class Execute() : RienSangCard(2, CardType.Attack, CardRarity.Uncommon, T
                 
                 var results = await CaduceusManager.Execute(this, target, dmg, choiceContext, i);
 
-                if (results != null && results.Results.Any((DamageResult r) => r.WasTargetKilled))
+                if (results != null && results.Results.SelectMany(list => list).Any((DamageResult r) => r.WasTargetKilled))
                 {
                     killedEnemy = true;
                     break;

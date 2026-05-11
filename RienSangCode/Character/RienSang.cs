@@ -22,17 +22,6 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Events.Custom;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
-using MegaCrit.Sts2.Core.Models.Cards;
-using MegaCrit.Sts2.Core.Models.Relics;
-using System.Threading.Tasks;
-using System.Linq;
-using MegaCrit.Sts2.Core.Helpers;
-using System;
-using RienSang.RienSangCode.Cards.Ancient;
-using RienSang.RienSangCode.Cards.Common;
-using RienSang.RienSangCode.Cards.Curse;
-using RienSang.RienSangCode.Cards.Rare;
-using RienSang.RienSangCode.Cards.Uncommon;
 using MegaCrit.Sts2.Core.Entities.Players;
 using RienSang.RienSangCode.Mechanics;
 

@@ -5,6 +5,7 @@ using System.Reflection;
 using MegaCrit.Sts2.Core.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
+using BaseLib.Config;
 
 namespace RienSang;
 
@@ -33,7 +34,6 @@ public class MainFile
         }
     
         Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(Assembly.GetExecutingAssembly());
-
         Harmony harmony = new(ModId);
         harmony.PatchAll();
     }
@@ -55,7 +55,6 @@ public class MainFile
         }
 
         [HarmonyPatch(nameof(NTransition.FadeIn))]
-        [HarmonyPrefix]
         public static bool PrefixFadeIn(ref Task __result)
         {
 

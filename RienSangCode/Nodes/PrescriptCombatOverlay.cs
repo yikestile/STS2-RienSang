@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MegaCrit.Sts2.Core.Saves;
 
 namespace RienSang.RienSangCode.Nodes;
 
@@ -103,6 +104,22 @@ public partial class PrescriptCombatOverlay : Control
         UpdateLayout();
     }
 
+    private void SetAudioVolume()
+    {
+        float localVolume = 0.3f;
+        
+        var settings = SaveManager.Instance.SettingsSave;
+        float gameMaster = settings.VolumeMaster;
+        float gameSfx = settings.VolumeSfx;
+
+        float finalLinear = localVolume * gameMaster * gameSfx;
+
+        float dbVolume = finalLinear > 0.0001f ? Mathf.LinearToDb(finalLinear) : -80.0f;
+
+        if (_audioPlayer != null) _audioPlayer.VolumeDb = dbVolume;
+        if (_audioPlayerBeep != null) _audioPlayerBeep.VolumeDb = dbVolume;
+    }
+
     private void UpdateSpriteChar(int spriteIndex, char c)
     {
         int mapIndex = CharMap.IndexOf(c);
@@ -166,8 +183,8 @@ public partial class PrescriptCombatOverlay : Control
         if (!_isAnimating) return;
         float fDelta = (float)delta;
         _internalTime += fDelta;
-
-        // Audio Logic
+        SetAudioVolume();
+        
         if (_audioPlayer != null)
         {
             if (_startStreamPlayed && _internalTime >= ScramblePhaseEnd && _loopStream != null && !_audioPlayer.Playing)

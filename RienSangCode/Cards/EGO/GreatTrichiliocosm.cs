@@ -119,17 +119,20 @@ public class GreatTrichiliocosm : RienSangCard
 
         private static async Task ApplyBurnActivation(AttackCommand command, Creature creature)
         {
-            foreach (var result in command.Results)
+            foreach (var resultList in command.Results)
             {
-                var target = result.Receiver;
-                if (target == null) continue;
-
-                var burnPower = target.GetPower<LCBurnPower>();
-                if (burnPower != null && burnPower.Count > 0 && burnPower.Potency > 0)
+                foreach (DamageResult result in resultList) 
                 {
-                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, (decimal)burnPower.Potency, ValueProp.Unpowered, creature, null);
-                    
-                    await PowerCmd.Decrement(burnPower);
+                    var target = result.Receiver;
+                    if (target == null) continue;
+
+                    var burnPower = target.GetPower<LCBurnPower>();
+                    if (burnPower != null && burnPower.Count > 0 && burnPower.Potency > 0)
+                    {
+                        await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, (decimal)burnPower.Potency, ValueProp.Unpowered, creature, null);
+                        
+                        await PowerCmd.Decrement(burnPower);
+                    }
                 }
             }
         }

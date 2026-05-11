@@ -48,7 +48,7 @@ public class PrescriptIncomplianceRisk : RienSangCard
         }
     }
 
-    public override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
+    protected override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
     {
         await Owner.Creature.ApplyKarma(choiceContext, DynamicVars["KarmaGain"].BaseValue, Owner.Creature);
         

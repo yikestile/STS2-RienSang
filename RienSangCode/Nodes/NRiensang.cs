@@ -6,6 +6,7 @@ using LimbusCore.LimbusCoreCode.Overlays;
 using RienSang.RienSangCode.Nodes; 
 using RienSang.RienSangCode.Powers; 
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Runs;
 
 public partial class NRiensang : NCreatureVisuals
 {
@@ -19,6 +20,7 @@ public partial class NRiensang : NCreatureVisuals
     private const float DebounceTimeLimit = 1.0f;
     
     private bool _isRoomMirrored = false;
+    private ulong _playerNetId = 0;
 
     private static readonly HashSet<string> DashingMoves = new() 
     { 
@@ -46,6 +48,19 @@ public partial class NRiensang : NCreatureVisuals
                 _visuals.AddChild(_shinAura);
             }
         }
+
+        var parentNCreature = GetParentOrNull<NCreature>();
+        if (parentNCreature != null && parentNCreature.Entity != null && parentNCreature.Entity.Player != null)
+        {
+            _playerNetId = parentNCreature.Entity.Player.NetId;
+        } else {
+
+            if (RunManager.Instance.NetService.Type == MegaCrit.Sts2.Core.Multiplayer.Game.NetGameType.Singleplayer)
+            {
+                _playerNetId = RunManager.Instance.NetService.NetId;
+            }
+        }
+
 
         if (_anim != null)
         {
@@ -80,7 +95,7 @@ public partial class NRiensang : NCreatureVisuals
             HandleAttackFinished();
         }
 
-        LimbusCinematicManager.UpdateShaderIntensity(_currentAttack != null, delta);
+        LimbusCinematicManager.UpdateShaderIntensity(_currentAttack != null, delta, _playerNetId);
         LimbusCinematicManager.UpdateCinematic(_visuals.GlobalPosition.X);
 
         if (LimbusCinematicManager.IsUiPendingShow)
@@ -88,7 +103,7 @@ public partial class NRiensang : NCreatureVisuals
             _debounceTimer -= (float)delta;
             bool isNearNeutral = Mathf.Abs(_visuals.Position.X) < 20.0f;
 
-            LimbusCinematicManager.UpdateBorders(_debounceTimer, DebounceTimeLimit, isNearNeutral);
+            LimbusCinematicManager.UpdateBorders(_debounceTimer, DebounceTimeLimit, isNearNeutral, _playerNetId);
 
             if (!LimbusCinematicManager.IsQueueClear())
             {
@@ -97,7 +112,7 @@ public partial class NRiensang : NCreatureVisuals
 
             if (_debounceTimer <= 0 && isNearNeutral)
             {
-                LimbusCinematicManager.ConfirmUiShow();
+                LimbusCinematicManager.ConfirmUiShow(_playerNetId);
             }
         }
 
@@ -119,7 +134,7 @@ public partial class NRiensang : NCreatureVisuals
 
         if (name == "idle_loop" && !_isRoomMirrored)
         {
-            LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0);
+            LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0, _playerNetId);
             _isRoomMirrored = true;
         }
 
@@ -127,9 +142,9 @@ public partial class NRiensang : NCreatureVisuals
         {
             _currentAttack = name;
             _debounceTimer = 0f; 
-            LimbusCinematicManager.StartUiHide();
+            LimbusCinematicManager.StartUiHide(_playerNetId);
         
-            LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0);
+            LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0, _playerNetId);
         }
     }
 
@@ -140,7 +155,7 @@ public partial class NRiensang : NCreatureVisuals
 
         if (_visuals != null) _visuals.Position = Vector2.Zero;
 
-        LimbusCinematicManager.EndUiSequence();
+        LimbusCinematicManager.EndUiSequence(_playerNetId);
         LimbusCinematicManager.EndBackgroundParallax();
     }
 

@@ -80,7 +80,7 @@ public class FellBullet : RienSangCard
 
                 AttackCommand attackCommand = await DamageCmd.Attack(enemyDamage).FromCard(this).Targeting(enemy).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
 
-                if (shouldTriggerFatal && attackCommand.Results.Any((DamageResult r) => r.WasTargetKilled))
+                if (shouldTriggerFatal && attackCommand.Results.SelectMany(list => list).Any((DamageResult r) => r.WasTargetKilled))
                 {
                     await LCPoisePower.Apply(choiceContext, Owner.Creature, 1, (int)DynamicVars["PoisePotency"].BaseValue, Owner.Creature, this);
                 }

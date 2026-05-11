@@ -18,7 +18,7 @@ public sealed class StarOfTheCityPower : RienSangPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override bool IsInstanced => false;
+    public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
 
     public const int SinkingPotencyPerStack = 5;
     public const int SinkingCountPerStack = 2;

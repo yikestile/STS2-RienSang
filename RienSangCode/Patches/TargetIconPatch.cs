@@ -52,6 +52,7 @@ public static class TargetIconPatch
             iconNode.CustomMinimumSize = iconNode.Size;
 
             iconNode.Position = hitbox.Position + (hitbox.Size / 2f) - (iconNode.Size / 2f);
+            iconNode.ZIndex = 2;
         }
     }
 

@@ -59,7 +59,7 @@ public class Eliminate() : RienSangCard(2, CardType.Attack, CardRarity.Uncommon,
                 if (target is not { IsAlive: true }) break;
                 
                 var results = await CaduceusManager.Execute(this, target, dmg, choiceContext, i);
-                if (results != null && results.Results.Any((DamageResult r) => r.WasTargetKilled))
+                if (results != null && results.Results.SelectMany(list => list).Any((DamageResult r) => r.WasTargetKilled))
                 {
                     killedEnemy = true;
                     break;

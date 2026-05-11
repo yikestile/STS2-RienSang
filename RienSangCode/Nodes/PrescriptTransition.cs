@@ -1,5 +1,7 @@
 ﻿using Godot;
 using System.Collections.Generic;
+using MegaCrit.Sts2.Core.Saves;
+using RienSang.RienSangCode;
 
 namespace RienSang;
 
@@ -74,6 +76,20 @@ public partial class PrescriptTransition : ColorRect
 
         UpdateLayout();
     }
+    
+    private void SetAudioVolume()
+    {
+        float localVolume = 0.3f;
+        
+        var settings = SaveManager.Instance.SettingsSave;
+        float gameMaster = settings.VolumeMaster;
+        float gameSfx = settings.VolumeSfx;
+        float finalLinear = localVolume * gameMaster * gameSfx;
+
+        float dbVolume = finalLinear > 0.0001f ? Mathf.LinearToDb(finalLinear) : -80.0f;
+
+        if (_audioPlayer != null) _audioPlayer.VolumeDb = dbVolume;
+    }
 
     private Sprite2D CreateCharSprite(Texture2D tex, float x, Color color)
     {
@@ -118,7 +134,8 @@ public partial class PrescriptTransition : ColorRect
         if (!_isAnimating) return;
         _internalTime += (float)delta;
         float progress = Mathf.Clamp(_internalTime / 2.0f, 0.0f, 1.0f);
-
+        SetAudioVolume();
+        
         if (_audioPlayer != null && !_hasPlayedLoop && !_audioPlayer.Playing && _loopStream != null)
         {
             _audioPlayer.Stream = _loopStream;

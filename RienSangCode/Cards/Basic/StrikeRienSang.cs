@@ -22,7 +22,7 @@ public class StrikeRienSang : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(play.Target).Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
