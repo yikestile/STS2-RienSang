@@ -22,11 +22,7 @@
   "RIENSANG-SHIN_FATE.title": "シン(心) - 運命",
   "RIENSANG-SHIN_FATE.description": "毎ターン[gold]エネルギー[/gold]を得ます。与えるダメージが増加し、[gold]呼吸[/gold]の獲得量が増えます。",
   "RIENSANG-SHIN_FATE.smartDescription": "毎ターン[gold]エネルギー[/gold] [blue]1[/blue]を得ます。与えるダメージが[blue]5%[/blue]増加します。カードから得られる[gold]呼吸威力[/gold]と[gold]回数[/gold]が増加します。",
-
-  "RIENSANG-MANG.title": "望 (マン)",
-  "RIENSANG-MANG.description": "[gold]フュリオッソ[/gold]が追加ダメージを与え、[gold]一時的な筋力[/gold]を得ます。",
-  "RIENSANG-MANG.smartDescription": "[gold]フュリオッソ[/gold]のダメージが[blue]{DamageBonus}%[/blue]増加します。[blue]{TempStr}[/blue]の[gold]一時的な筋力[/gold]を得ます。(最大[blue]3[/blue])",
-
+  
   "RIENSANG-WOUNDCASING_MASK.title": "傷を隠した仮面",
   "RIENSANG-WOUNDCASING_MASK.description": "ブロックされていないダメージを軽減します。[gold]フュリオッソ[/gold]を使用した場合、[gold]じりじりと焼ける傷[/gold]に変化します。",
   "RIENSANG-WOUNDCASING_MASK.smartDescription": "ブロックされていないダメージを[blue]5%[/blue]軽減します。この戦闘で[gold]フュリオッソ[/gold]を使用していた場合、ターン終了時に[gold]じりじりと焼ける傷[/gold]に変化します。消失。",

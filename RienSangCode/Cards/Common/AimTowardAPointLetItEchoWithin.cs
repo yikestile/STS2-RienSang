@@ -26,7 +26,7 @@ public class AimTowardAPointLetItEchoWithin : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(4, ValueProp.Move),
-        new PowerVar<LCSinkingPower>(1)
+        new PowerVar<LCSinkingPower>(3)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];

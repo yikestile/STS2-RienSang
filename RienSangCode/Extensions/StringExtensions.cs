@@ -29,17 +29,17 @@ public static class StringExtensions
 
     public static string RelicImagePath(this string path)
     {
-        return $"res://{MainFile.ModId}/images/relics/big/{path}";
+        return $"res://{MainFile.ModId}/images/relics/{path}";
     }
     
     public static string RelicOutlineImagePath(this string path)
     {
-        return $"res://{MainFile.ModId}/images/relics/big/{path}";
+        return $"res://{MainFile.ModId}/images/relics/{path}";
     }
 
     public static string BigRelicImagePath(this string path)
     {
-        return $"res://{MainFile.ModId}/images/relics/big/{path}";
+        return $"res://{MainFile.ModId}/images/relics/{path}";
     }
 
     public static string CharacterUiPath(this string path)

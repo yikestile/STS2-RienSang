@@ -17,46 +17,20 @@ namespace RienSang.RienSangCode.Powers;
 public sealed class StarOfTheCityPower : RienSangPower
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Counter;
-    public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
-
-    public const int SinkingPotencyPerStack = 5;
-    public const int SinkingCountPerStack = 2;
-
+    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerInstanceType InstanceType => PowerInstanceType.None;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => new List<DynamicVar>
     {
-        new("SinkingPotency", 0m),
-        new("SinkingCount", 0m)
+        new("SinkingPotency", 5),
+        new("SinkingCount", 2)
     };
     
-    public StarOfTheCityPower()
+    public StarOfTheCityPower() : base()
     {
-    }
-
-    public StarOfTheCityPower(int amount)
-    {
-        SetAmount(amount);
-    }
-
-    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
-    {
-        UpdateDynamicVars();
-        return Task.CompletedTask;
-    }
-
-    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
-    {
-        UpdateDynamicVars();
-        return Task.CompletedTask;
-    }
-
-    private void UpdateDynamicVars()
-    {
-        DynamicVars["SinkingPotency"].BaseValue = Amount * SinkingPotencyPerStack;
-        DynamicVars["SinkingCount"].BaseValue = Amount * SinkingCountPerStack;
     }
     
-    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
         if (side != Owner.Side)
         {
@@ -64,13 +38,13 @@ public sealed class StarOfTheCityPower : RienSangPower
         }
 
         Flash();
-        int totalCount = (int)DynamicVars["SinkingCount"].BaseValue;
-        int totalPotency = (int)DynamicVars["SinkingPotency"].BaseValue;
+        int sinkingPotency = 5;
+        int sinkingCount = 2;
 
         var enemies = combatState.HittableEnemies;
         foreach (var enemy in enemies)
         {
-            await LCSinkingPower.Apply(new ThrowingPlayerChoiceContext(), enemy, totalCount, totalPotency, Owner, null);
+            await LCSinkingPower.Apply(new ThrowingPlayerChoiceContext(), enemy, sinkingCount, sinkingPotency, Owner, null);
         }
     }
 }

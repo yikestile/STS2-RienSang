@@ -21,25 +21,19 @@ public partial class NRiensang : NCreatureVisuals
     
     private bool _isRoomMirrored = false;
     private ulong _playerNetId = 0;
-
-    private static readonly HashSet<string> DashingMoves = new() 
-    { 
-        "attack_lance_3", 
-        "attack_hammer_3",
-        "attack_furioso_finisher"
-    };
     
     public override void _Ready()
     {
         base._Ready();
         _anim = GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
         _visuals = GetNodeOrNull<Node2D>("Visuals");
-
+        
         _combatOverlay = new PrescriptCombatOverlay();
         AddChild(_combatOverlay);
 
         if (_visuals != null)
         {
+            
             var shinScene = GD.Load<PackedScene>("res://LimbusCore/scenes/ShinEffect.tscn");
             if (shinScene != null)
             {
@@ -82,7 +76,7 @@ public partial class NRiensang : NCreatureVisuals
         base._Process(delta);
         if (_visuals == null || _anim == null) return;
 
-        if (_anim.CurrentAnimation == "idle_loop")
+        if (_anim.CurrentAnimation == "idle")
         {
             if (_visuals.Position != Vector2.Zero)
             {
@@ -132,7 +126,7 @@ public partial class NRiensang : NCreatureVisuals
     {
         string name = animName.ToString();
 
-        if (name == "idle_loop" && !_isRoomMirrored)
+        if (name == "idle" && !_isRoomMirrored)
         {
             LimbusCinematicManager.StartBackgroundParallax(_visuals?.GlobalPosition.X ?? 0, _playerNetId);
             _isRoomMirrored = true;

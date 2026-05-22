@@ -17,8 +17,8 @@ namespace RienSang.RienSangCode.Powers;
 public sealed class SorsSalutisPower : RienSangPower
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.None;
-    public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
+    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerInstanceType InstanceType => PowerInstanceType.None;
 
     public SorsSalutisPower() : base() { }
 
@@ -29,7 +29,6 @@ public sealed class SorsSalutisPower : RienSangPower
             Flash();
             decimal half = amount / 2m;
             
-            // Give half as Karma
             TaskHelper.RunSafely(Owner.ApplyKarma(new ThrowingPlayerChoiceContext(), half, Owner, null));
             
             return half;

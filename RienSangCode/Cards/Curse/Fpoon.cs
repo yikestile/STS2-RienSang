@@ -24,7 +24,7 @@ public class Fpoon : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new("SinkingPotency", 20),
-        new PowerVar<LCSinkingPower>(4)
+        new PowerVar<LCSinkingPower>(2)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [

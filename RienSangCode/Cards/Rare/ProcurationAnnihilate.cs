@@ -19,12 +19,13 @@ namespace RienSang.RienSangCode.Cards.Rare;
 [Pool(typeof(RienSangCardPool))]
 public class ProcurationAnnihilate : RienSangCard
 {
-    public ProcurationAnnihilate() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    public ProcurationAnnihilate() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(15, ValueProp.Move)
+        new DamageVar(20, ValueProp.Move),
+        new("UnlockBonus", 30)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
@@ -46,7 +47,7 @@ public class ProcurationAnnihilate : RienSangCard
         var unlockPower = Owner.Creature.GetPower<Unlock>();
         if (unlockPower != null && unlockPower.Amount >= 3)
         {
-            baseDamage += Math.Floor(baseDamage * 0.30m); 
+            baseDamage += Math.Floor(baseDamage * (DynamicVars["UnlockBonus"].BaseValue / 100m));
         }
 
         if (target != null && target.IsAlive)

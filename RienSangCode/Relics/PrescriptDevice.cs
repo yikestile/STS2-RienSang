@@ -22,7 +22,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Saves; // Added for [SavedProperty]
 using LimbusCore.LimbusCoreCode.Mechanics;
-using MegaCrit.Sts2.Core.Saves.Runs; // Added for SanityManager
+using MegaCrit.Sts2.Core.Saves.Runs;
 
 namespace RienSang.RienSangCode.Relics;
 
@@ -48,7 +48,7 @@ public class PrescriptDevice : RienSangRelic
         HoverTipFactory.FromPower<WoundcasingMask>(),
     ];
 
-    public override async Task BeforeCombatStartLate()
+    public override async Task BeforeCombatStart()
     {
         if (Owner?.Creature == null) return;
 
@@ -64,7 +64,7 @@ public class PrescriptDevice : RienSangRelic
         
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
         if (side != CombatSide.Enemy) return;
 

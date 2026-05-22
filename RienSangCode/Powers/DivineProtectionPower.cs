@@ -28,7 +28,6 @@ public sealed class DivineProtectionPower : RienSangPower
     public override decimal ModifyBlockMultiplicative(Creature target, decimal block, ValueProp props, CardModel? cardSource, CardPlay? cardPlay)
     {
         if (Owner != target) return 1m;
-        // Double Block (like Shadowmeld)
         return (decimal)Math.Pow(2.0, Amount);
     }
 
@@ -37,14 +36,13 @@ public sealed class DivineProtectionPower : RienSangPower
         modifiedAmount = amount;
         if (target == Owner && canonicalPower is LCEvadePower)
         {
-            // Double Evade gained
             modifiedAmount = amount * (decimal)Math.Pow(2.0, Amount);
             return true;
         }
         return false;
     }
 
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == Owner.Side)
         {

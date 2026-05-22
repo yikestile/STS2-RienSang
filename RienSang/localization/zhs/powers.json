@@ -22,11 +22,7 @@
   "RIENSANG-SHIN_FATE.title": "心 - [天命]",
   "RIENSANG-SHIN_FATE.description": "每回合获得[gold]能量[/gold]。造成的伤害增加，且获得的[gold]呼吸法[/gold]层数增加。",
   "RIENSANG-SHIN_FATE.smartDescription": "每回合获得 [blue]1[/blue] 点[gold]能量[/gold]。造成的伤害增加 [blue]5%[/blue]。从卡牌中获得的[gold]呼吸法强度[/gold]与[gold]次数[/gold]增加。",
-
-  "RIENSANG-MANG.title": "望",
-  "RIENSANG-MANG.description": "[gold]Furioso[/gold] 造成的伤害增加，且获得[gold]临时力量[/gold]。",
-  "RIENSANG-MANG.smartDescription": "[gold]Furioso[/gold] 造成的伤害增加 [blue]{DamageBonus}%[/blue]。获得 [blue]{TempStr}[/blue] 点[gold]临时力量[/gold]。（最高 [blue]3[/blue] 层）。",
-
+  
   "RIENSANG-WOUNDCASING_MASK.title": "缠绕伤口的假面",
   "RIENSANG-WOUNDCASING_MASK.description": "受到的未被格挡伤害减少。若使用了 [gold]Furioso[/gold]，则转化为[gold]焦灼伤口[/gold]。",
   "RIENSANG-WOUNDCASING_MASK.smartDescription": "受到的未被格挡伤害减少 [blue]5%[/blue]。若本场战斗中使用了 [gold]Furioso[/gold]，则在回合结束时转化为[gold]焦灼伤口[/gold]。会消失。",

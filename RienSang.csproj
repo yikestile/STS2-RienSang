@@ -7,7 +7,8 @@
         <DefaultItemExcludes>packages/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
         <PathMap>$(AppOutputBase)=.\</PathMap>
-        <PlatformTarget>AnyCPU</PlatformTarget> <!-- Added for cross-platform compatibility -->
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <Version>1.1.1</Version>
     </PropertyGroup>
 
     <!-- OS Detection -->
@@ -76,7 +77,15 @@
             <Private>false</Private>
         </Reference>
     </ItemGroup>
-
+    
+    
+    <ItemGroup>
+        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="3.1.4" PrivateAssets="All" />
+        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.1.9" />
+        <AdditionalFiles Include="RienSang/localization/**/*.json"/>
+        <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+    </ItemGroup>
+    
     <ItemGroup Condition="Exists('$(ModsPath)LimbusCore')">
         <Reference Include="LimbusCore">
             <HintPath>$(ModsPath)LimbusCore/LimbusCore.dll</HintPath>
@@ -84,13 +93,6 @@
         </Reference>
     </ItemGroup>
     
-    <ItemGroup>
-        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="3.1.2" PrivateAssets="All" />
-        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.1.9" />
-        <AdditionalFiles Include="RienSang/localization/**/*.json"/>
-        <PackageReference Include="Lib.Harmony" Version="2.4.2" />
-    </ItemGroup>
-
     <ItemGroup>
         <Compile Remove="RienSang/**"/>
         <Compile Remove="materials/**"/>

@@ -9,7 +9,6 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Extensions;
 using MegaCrit.Sts2.Core.Helpers;
-
 namespace RienSang.RienSangCode.Powers;
 
 public sealed class GraceOfGodPower : RienSangPower

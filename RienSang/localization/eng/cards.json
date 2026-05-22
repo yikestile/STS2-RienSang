@@ -40,7 +40,7 @@
   "RIENSANG-WISHING_CAIRN.description": "Deal [blue]{Damage:diff()}[/blue] Damage. Inflict [blue]{LCParalyzePower:diff()}[/blue] [gold]Paralyze[/gold].",
 
   "RIENSANG-DIMENSION_SHREDDER.title": "Dimension Shredder",
-  "RIENSANG-DIMENSION_SHREDDER.description": "Deal [blue]{Damage:diff()}[/blue] Damage to a random enemy. Has a chance of doing [blue]+{BonusDamage:diff()}[/blue] Damage.\nChance = [blue]50[/blue] + [gold]SP[/gold] after use.",
+  "RIENSANG-DIMENSION_SHREDDER.description": "Deal [blue]{Damage:diff()}[/blue] Damage to a random enemy.\n[gold][lb]Head Hits[rb][/gold] deal [blue]+{BonusDamage:diff()}[/blue] Damage.",
 
   "RIENSANG-FELL_BULLET.title": "Fell Bullet",
   "RIENSANG-FELL_BULLET.description": "Deal [red]{AllyDamage:diff()}[/red] or [red]{AllyHighDamage:diff()}[/red] damage to an ally. Deal [blue]{EnemyDamage:diff()}[/blue] or [blue]{EnemyHighDamage:diff()}[/blue] damage to ALL enemies. Gain [blue]{PoisePotency:diff()}[/blue] [gold]Poise Potency[/gold] per kill. Inflict [blue]{BleedPotency:diff()}[/blue] [gold]Bleed Potency[/gold].",
@@ -148,7 +148,7 @@
   "RIENSANG-ELIMINATE.description": "Deal [blue]{Damage:diff()}[/blue] Damage [blue]2[/blue] times. Gain [blue]1[/blue] [gold]Strength[/gold] if this kills an enemy. If Target is at [blue]50%[/blue] HP or less, deal [blue]{BonusDamage:diff()}[/blue] more damage.",
 
   "RIENSANG-PROCURATION_ENGRAVE.title": "Procuration: Engrave",
-  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]Slash Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. At [gold]Unlock III[/gold], deal [blue]15%[/blue] more damage.",
+  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]Slash Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. At [gold]Unlock III[/gold], deal [blue]{UnlockBonus:diff()}%[/blue] more damage.",
 
   "RIENSANG-DEFENSIVE_STANCE.title": "Defensive Stance",
   "RIENSANG-DEFENSIVE_STANCE.description": "Attack cards you played this turn will gain [gold]Block[/gold] instead of dealing damage.",
@@ -175,10 +175,10 @@
   "RIENSANG-TO_DECIDE_MY_FATE.description": "[gold]Exhaust[/gold] [blue]X[/blue] random cards, [gold]Draw[/gold] [blue]X[/blue] cards, then play [blue]X[/blue]+[blue]{ExtraPlays:diff()}[/blue] random cards. Lose [blue]{KarmaLoss:diff()}[/blue] [gold]Karmic Consequence[/gold].",
 
   "RIENSANG-THE_WILL_OF_HERMES.title": "The Will of Hermes.",
-  "RIENSANG-THE_WILL_OF_HERMES.description": "{IfUpgraded:show:Gain [blue]{Energy:energyIcons()}[/blue]\n} [gold]Hermes[/gold] plays this turn for you. Lose [blue]{KarmaLoss:diff()}[/blue] [gold]Karmic Consequence[/gold].",
+  "RIENSANG-THE_WILL_OF_HERMES.description": "Gain [blue]{Energy:energyIcons()}[/blue]\n [gold]Hermes[/gold] plays this turn for you. Lose [blue]{KarmaLoss:diff()}[/blue] [gold]Karmic Consequence[/gold].",
 
   "RIENSANG-OBEDIENCE.title": "Obedience",
-  "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:Gain [blue]{Energy:energyIcons()}[/blue] next turn\n} [gold]Hermes[/gold] will play your next turn. Lose [blue]{KarmaLoss:diff()}[/blue] [gold]Karmic Consequence[/gold].",
+  "RIENSANG-OBEDIENCE.description": "Gain [blue]{Energy:energyIcons()}[/blue] next turn.\n[gold]Hermes[/gold] will play your next turn. Lose [blue]{KarmaLoss:diff()}[/blue] [gold]Karmic Consequence[/gold].",
 
   "RIENSANG-SINKING_DELUGE.title": "Sinking Deluge [Replica]",
   "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:Inflict [blue]3[/blue] [gold]Sinking[/gold]\n} Deal Damage equal to [gold](Sinking Potency * Count)/2[/gold]. Removes ALL [gold]Sinking[/gold].",
@@ -193,7 +193,7 @@
   "RIENSANG-PRECOGNITION_REPLICA.description": "Gain [blue]{LCEvadePower:diff()}*X[/blue] [gold]Evade[/gold]. [gold]On Evade[/gold], Gain [blue]{PoisePotency:diff()}[/blue] [gold]Poise Potency[/gold] and [blue]{LCPoisePower:diff()}[/blue] [gold]Count[/gold], Gain {Energy:energyIcons()} next turn.",
 
   "RIENSANG-PROCURATION_ANNIHILATE.title": "Procuration: Annihilate [Replica]",
-  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]Slash Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. At [gold]Unlock III[/gold], deal [blue]15%[/blue] more damage.",
+  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]Slash Rate UP[/gold]. Deal [blue]{Damage:diff()}[/blue] Damage. At [gold]Unlock III[/gold], deal [blue]{UnlockBonus:diff()}%[/blue] more damage.",
 
   "RIENSANG-GRACE_OF_GOD.title": "Grace of God",
   "RIENSANG-GRACE_OF_GOD.description": "If this unit would take lethal damage this combat, becomes immune to damage for the turn. [gold]Expires[/gold].",
@@ -250,7 +250,7 @@
   "RIENSANG-PROTECTIVE_VAPOR.description": "Consume [blue]{PotencyCost:diff()}[/blue] [gold]Poise Potency[/gold] to gain [blue]{Block:diff()}[/blue] [gold]Block[/gold]. Return this card to your [gold]Hand[/gold].",
 
   "RIENSANG-POISED_WARDING.title": "Poised Warding",
-  "RIENSANG-POISED_WARDING.description": "Each turn: Gain [blue]{Potency}[/blue] [gold]Poise Potency[/gold].\n[gold]On Crit[/gold]: Gain [blue]{Potency}[/blue] [gold]Block[/gold].",
+  "RIENSANG-POISED_WARDING.description": "Each turn: Gain [blue]{PoiseGain}[/blue] [gold]Poise Potency[/gold].\n[gold]On Crit[/gold]: Gain [blue]{BlockGain}[/blue] [gold]Block[/gold].",
   
   "RIENSANG-STEADY_THE_BREATH.title": "Steady the Breath",
   "RIENSANG-STEADY_THE_BREATH.description": "Consume [blue]{PotencyCost:diff()}[/blue] [gold]Poise Potency[/gold] to Gain [blue]{LCProtectionPower:diff()}[/blue] [gold]Protection[/gold] this turn and next turn.",
@@ -260,7 +260,7 @@
   "RIENSANG-THIS_WILL_DO.selectionScreenPrompt": "Choose a [gold]Skill[/gold] to play twice.",
 
   "RIENSANG-DEEP_BREATH.title": "Deep Breath",
-  "RIENSANG-DEEP_BREATH.description": "Consume [blue]{PotencyCost:diff()}[/blue] [gold]Poise Potency[/gold] to Gain {Energy:energyIcons()} and [gold]Draw[/gold] [blue]1[/blue] Card.",
+  "RIENSANG-DEEP_BREATH.description": "Consume [blue]{PotencyCost:diff()}[/blue] [gold]Poise Potency[/gold] to Gain {Energy:energyIcons()} and [gold]Draw[/gold] [blue]{DrawAmount:diff()}[/blue] Card.",
 
   "RIENSANG-SORS_SALUTIS.title": "Sors Salutis",
   "RIENSANG-SORS_SALUTIS.description": "If you would take more than [blue]10[/blue] damage, take half of it as damage and half as [gold]Karmic Consequence[/gold].",
@@ -279,10 +279,10 @@
   "RIENSANG-COMPULSORY_OFFERING.selectionScreenPrompt": "Choose a [gold]Power[/gold] to play twice.",
   
   "RIENSANG-GODS_FAVOR.title": "God's Favor",
-  "RIENSANG-GODS_FAVOR.description": "Playable at less than [blue]15[/blue] [gold]Karmic Consequence[/gold] while having [blue]15+[/blue] [gold]Caduceus[/gold] cards in the [gold]deck[/gold].\n Gain [blue]1[/blue] [gold]Procuration Hermes[/gold]. \nSkip the current [gold]Procuration Hermes[/gold] reward stage.",
+  "RIENSANG-GODS_FAVOR.description": "Playable at less than [blue]20[/blue] [gold]Karmic Consequence[/gold] while having [blue]12+[/blue] unique [gold]Caduceus[/gold] cards (Current: {CaduceusCount}).\n Gain [blue]1[/blue] [gold]Procuration Hermes[/gold]. \nSkip the current [gold]Procuration Hermes[/gold] reward stage.",
 
   "RIENSANG-GODS_BLESSING.title": "God's Blessing",
-  "RIENSANG-GODS_BLESSING.description": "Playable at less than [blue]15[/blue] [gold]Karmic Consequence[/gold] while having [blue]15+[/blue] [gold]Caduceus[/gold] cards in the [gold]deck[/gold].\nSet [gold]Procuration Hermes[/gold] to [blue]9[/blue].",
+  "RIENSANG-GODS_BLESSING.description": "Playable at less than [blue]20[/blue] [gold]Karmic Consequence[/gold] while having [blue]12+[/blue] unique [gold]Caduceus[/gold] cards (Current: {CaduceusCount}).\nSet [gold]Procuration Hermes[/gold] to [blue]9[/blue].",
 
   "RIENSANG-WEAVE.title": "Weave",
   "RIENSANG-WEAVE.description": "[gold]Produce[/gold] a random unique [gold]Caduceus[/gold] Card. Create a copy of this card in your [gold]hand[/gold]. Gain [blue]{KarmaGain:diff()}[/blue] [gold]Karmic Consequence[/gold]."

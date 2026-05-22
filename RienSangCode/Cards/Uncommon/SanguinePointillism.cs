@@ -25,7 +25,7 @@ public class SanguinePointillism : RienSangCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(8, ValueProp.Move),
         new("Chance", 20),
-        new("BonusChance", 5)
+        new("BonusChance", 10)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -70,7 +70,7 @@ public class SanguinePointillism : RienSangCard
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(1);
-        DynamicVars["Chance"].UpgradeValueBy(5);
-        DynamicVars["BonusChance"].UpgradeValueBy(5);
+        DynamicVars["Chance"].UpgradeValueBy(15);
+        DynamicVars["BonusChance"].UpgradeValueBy(10);
     }
 }

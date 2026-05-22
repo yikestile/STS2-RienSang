@@ -28,6 +28,10 @@ public class OracleDeviceCaduceus : RienSangCard
         new PowerVar<OracleDevicePower>("DamageBonus", 1m)
     ];
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+        RienSangKeywords.Caduceus 
+    ];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await PowerCmd.Apply<OracleDevicePower>(choiceContext, Owner.Creature, DynamicVars["DamageBonus"].IntValue, Owner.Creature, this);

@@ -3648,7 +3648,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_dash"]
-resource_name = "dash_forward"
+resource_name = "dash"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3820,7 +3820,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_idle"]
-resource_name = "idle_loop"
+resource_name = "idle"
 length = 2.7
 loop_mode = 1
 step = 0.05
@@ -3906,11 +3906,11 @@ _data = {
 &"attack_whip_3": SubResource("Animation_whip_3"),
 &"block": SubResource("Animation_block"),
 &"cast": SubResource("Animation_cast"),
-&"dash_forward": SubResource("Animation_dash"),
+&"dash": SubResource("Animation_dash"),
 &"die": SubResource("Animation_die"),
 &"evade": SubResource("Animation_evade"),
 &"hurt": SubResource("Animation_hurt"),
-&"idle_loop": SubResource("Animation_idle")
+&"idle": SubResource("Animation_idle")
 }
 
 [sub_resource type="Environment" id="Environment_35ixx"]
@@ -4064,7 +4064,7 @@ texture = ExtResource("13_wc76d")
 libraries = {
 &"": SubResource("AnimationLibrary_riensang")
 }
-autoplay = "idle_loop"
+autoplay = "idle"
 
 [node name="Bounds" type="Control" parent="."]
 unique_name_in_owner = true
@@ -4085,11 +4085,11 @@ position = Vector2(0, -242)
 
 [node name="TalkPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-1893, -1544)
+position = Vector2(64, -416)
 
 [node name="OrbPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-59, -416)
+position = Vector2(-64, -416)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_35ixx")

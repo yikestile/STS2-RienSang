@@ -39,8 +39,8 @@
   "RIENSANG-WISHING_CAIRN.description": "造成 {Damage:diff()} 点伤害。施加 {LCParalyzePower:diff()} 层[gold]麻痹[/gold]。",
 
   "RIENSANG-DIMENSION_SHREDDER.title": "维度切断器",
-  "RIENSANG-DIMENSION_SHREDDER.description": "对随机敌人造成 {Damage:diff()} 点伤害。有概率额外造成 +{BonusDamage:diff()} 点伤害。\n概率 = 50 + 打出后的[gold]理智值(SP)[/gold]。",
-
+  "RIENSANG-DIMENSION_SHREDDER.description": "对随机敌人造成 [blue]{Damage:diff()}[/blue] 点伤害。\n[gold][lb]爆头[rb][/gold] 额外造成 [blue]+{BonusDamage:diff()}[/blue] 点伤害。",
+  
   "RIENSANG-FELL_BULLET.title": "致死弹丸",
   "RIENSANG-FELL_BULLET.description": "对一名友军造成 {AllyDamage:diff()} 或 {AllyHighDamage:diff()} 点伤害。对所有敌人造成 {EnemyDamage:diff()} 或 {EnemyHighDamage:diff()} 点伤害。每击杀一个目标获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]。施加 {BleedPotency:diff()} 层[gold]流血强度[/gold]。",
 
@@ -147,7 +147,7 @@
   "RIENSANG-ELIMINATE.description": "造成 {Damage:diff()} 点伤害 2 次。若击杀了敌人，获得 1 点[gold]力量[/gold]。若目标生命值低于或等于 50%，额外造成 {BonusDamage:diff()} 点伤害。",
 
   "RIENSANG-PROCURATION_ENGRAVE.title": "代行：铭刻",
-  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。处于[gold]解禁 III[/gold]时，额外造成 15% 的伤害。",
+  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。处于[gold]解禁 III[/gold]时，额外造成 {UnlockBonus:diff()}% 的伤害。",
 
   "RIENSANG-DEFENSIVE_STANCE.title": "防御架势",
   "RIENSANG-DEFENSIVE_STANCE.description": "本回合内你打出的攻击牌不再造成伤害，改为获得[gold]格挡[/gold]。",
@@ -174,10 +174,10 @@
   "RIENSANG-TO_DECIDE_MY_FATE.description": "[gold]消耗[/gold] [blue]X[/blue] 张随机卡牌，[gold]抽取[/gold] [blue]X[/blue] 张牌，随后随机打出 [blue]X[/blue]+{ExtraPlays:diff()} 张牌。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
 
   "RIENSANG-THE_WILL_OF_HERMES.title": "赫尔墨斯之志",
-  "RIENSANG-THE_WILL_OF_HERMES.description": "{IfUpgraded:show:获得 {Energy:energyIcons()}\n} [gold]赫尔墨斯[/gold]将在本回合代你行动。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
+  "RIENSANG-THE_WILL_OF_HERMES.description": "获得 {Energy:energyIcons()}\n [gold]赫尔墨斯[/gold]将在本回合代你行动。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
 
   "RIENSANG-OBEDIENCE.title": "服从",
-  "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:下回合获得 {Energy:energyIcons()}\n} [gold]赫尔墨斯[/gold]将在你的下个回合代你行动。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
+  "RIENSANG-OBEDIENCE.description": "下回合获得 {Energy:energyIcons()}\n [gold]赫尔墨斯[/gold]将在你的下个回合代你行动。减少 {KarmaLoss:diff()} 层[gold]因果报应[/gold]。",
 
   "RIENSANG-SINKING_DELUGE.title": "沉沦爆发 [Replica]",
   "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:施加 3 层[gold]沉沦强度[/gold]\n} 造成等同于 [gold](沉沦强度 * 次数)/2[/gold] 的伤害。移除所有[gold]沉沦[/gold]。",
@@ -192,7 +192,7 @@
   "RIENSANG-PRECOGNITION_REPLICA.description": "获得 [blue]{LCEvadePower:diff()}*X[/blue] 层[gold]回避[/gold]。成功[gold]回避[/gold]时，获得 {PoisePotency:diff()} 层[gold]呼吸法强度[/gold]与 {LCPoisePower:diff()} 层[gold]次数[/gold]，下回合获得 +1 点[gold]能量[/gold]。",
 
   "RIENSANG-PROCURATION_ANNIHILATE.title": "代行：湮灭 [Replica]",
-  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。处于[gold]解禁 III[/gold]时，额外造成 15% 的伤害。",
+  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]斩击威力增幅[/gold]。造成 {Damage:diff()} 点伤害。处于[gold]解禁 III[/gold]时，额外造成 {UnlockBonus:diff()}% 的伤害。",
 
   "RIENSANG-GRACE_OF_GOD.title": "神之恩赐",
   "RIENSANG-GRACE_OF_GOD.description": "若该单位在本场战斗中将受到致死伤害，则在本回合内免疫所有伤害。[gold]触发后消失[/gold]。",
@@ -249,7 +249,7 @@
   "RIENSANG-PROTECTIVE_VAPOR.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，获得 [blue]{Block:diff()}[/blue] 点[gold]格挡[/gold]。将此卡移回[gold]手牌[/gold]。",
 
   "RIENSANG-POISED_WARDING.title": "呼吸之御",
-  "RIENSANG-POISED_WARDING.description": "每回合：获得 [blue]{Potency}[/blue] 层[gold]呼吸法强度[/gold]。\n[gold]暴击时[/gold]：获得 [blue]{Potency}[/blue] 点[gold]格挡[/gold]。",
+  "RIENSANG-POISED_WARDING.description": "每回合：获得 [blue]{PoiseGain}[/blue] 层[gold]呼吸法强度[/gold]。\n[gold]暴击时[/gold]：获得 [blue]{BlockGain}[/blue] 点[gold]格挡[/gold]。",
 
   "RIENSANG-STEADY_THE_BREATH.title": "稳固呼吸",
   "RIENSANG-STEADY_THE_BREATH.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，在本回合与下回合获得 [blue]{LCProtectionPower:diff()}[/blue] 层[gold]保护[/gold]。",
@@ -259,7 +259,7 @@
   "RIENSANG-THIS_WILL_DO.selectionScreenPrompt": "选择一张要打出两次的[gold]技能[/gold]。",
 
   "RIENSANG-DEEP_BREATH.title": "深呼吸",
-  "RIENSANG-DEEP_BREATH.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，获得 {Energy:energyIcons()} 并[gold]抽[/gold] [blue]1[/blue] 张牌。",
+  "RIENSANG-DEEP_BREATH.description": "消耗 [blue]{PotencyCost:diff()}[/blue] 层[gold]呼吸法强度[/gold]，获得 {Energy:energyIcons()} 并[gold]抽[/gold] [blue]{DrawAmount:diff()}[/blue] 张牌。",
 
   "RIENSANG-SORS_SALUTIS.title": "救赎之命",
   "RIENSANG-SORS_SALUTIS.description": "若你受到的伤害超过 [blue]10[/blue] 点，则实际承受一半伤害，另一半转化为[gold]因果报应[/gold]。",
@@ -278,11 +278,11 @@
   "RIENSANG-COMPULSORY_OFFERING.selectionScreenPrompt": "选择一个要打出两次的[gold]能力[/gold]。",
 
   "RIENSANG-GODS_FAVOR.title": "神之恩宠",
-  "RIENSANG-GODS_FAVOR.description": "当[gold]因果报应[/gold]低于 [blue]15[/blue] 且[gold]卡组[/gold]内含有 [blue]15[/blue] 张以上[gold]使者之杖[/gold]卡牌时可打出。\n获得 [blue]1[/blue] 层[gold]代行 (赫尔墨斯)[/gold]。跳过当前的[gold]代行 (赫尔墨斯)[/gold]奖励阶段。",
+  "RIENSANG-GODS_FAVOR.description": "当[gold]因果报应[/gold]低于 [blue]20[/blue] 且含有 [blue]12[/blue] 张以上不重复的[gold]使者之杖[/gold]卡牌时可打出 (当前: {CaduceusCount})。\n获得 [blue]1[/blue] 层[gold]代行 (赫尔墨斯)[/gold]。跳过当前的[gold]代行 (赫尔墨斯)[/gold]奖励阶段。",
 
   "RIENSANG-GODS_BLESSING.title": "神之祝福",
-  "RIENSANG-GODS_BLESSING.description": "当[gold]因果报应[/gold]低于 [blue]15[/blue] 且[gold]卡组[/gold]内含有 [blue]15[/blue] 张以上[gold]使者之杖[/gold]卡牌时可打出。\n将[gold]代行 (赫尔墨斯)[/gold]层数设为 [blue]9[/blue]。",
-
+  "RIENSANG-GODS_BLESSING.description": "当[gold]因果报应[/gold]低于 [blue]20[/blue] 且含有 [blue]12[/blue] 张以上不重复的[gold]使者之杖[/gold]卡牌时可打出 (当前: {CaduceusCount})。\n将[gold]代行 (赫尔墨斯)[/gold]层数设为 [blue]9[/blue]。",
+  
   "RIENSANG-WEAVE.title": "编织",
   "RIENSANG-WEAVE.description": "[gold]生成[/gold]一张随机独特的[gold]使者之杖[/gold]卡牌。在[gold]手牌[/gold]中生成一张该牌的复制品。获得 [blue]{KarmaGain:diff()}[/blue] 层[gold]因果报应[/gold]。"
 }

@@ -22,7 +22,7 @@ public class SteadyTheBreath : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<LCProtectionPower>(2),
+        new PowerVar<LCProtectionPower>(5),
         new("PotencyCost", 20m)
     ];
 

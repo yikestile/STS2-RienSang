@@ -23,7 +23,7 @@ public class Obedience : RienSangCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new("KarmaLoss", 20m),
-        new EnergyVar(0)
+        new EnergyVar(1)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];

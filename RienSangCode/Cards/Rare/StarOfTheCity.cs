@@ -16,7 +16,7 @@ namespace RienSang.RienSangCode.Cards.Rare;
 [Pool(typeof(RienSangCardPool))]
 public class StarOfTheCity : RienSangCard
 {
-    public StarOfTheCity() : base(2, CardType.Power, CardRarity.Rare, TargetType.None)
+    public StarOfTheCity() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
     
@@ -28,12 +28,10 @@ public class StarOfTheCity : RienSangCard
     {
         get
         {
-            int stacksApplied = IsUpgraded ? 2 : 1;
-
             return new List<DynamicVar>
             {
-                new DynamicVar("SinkingPotency", stacksApplied * StarOfTheCityPower.SinkingPotencyPerStack),
-                new DynamicVar("SinkingCount", stacksApplied * StarOfTheCityPower.SinkingCountPerStack)
+                new DynamicVar("SinkingPotency", 5),
+                new DynamicVar("SinkingCount", 2)
             };
         }
     }
@@ -42,13 +40,11 @@ public class StarOfTheCity : RienSangCard
     {
         var player = Owner.Creature;
         
-        int stacksToApply = IsUpgraded ? 2 : 1;
-        await PowerCmd.Apply<StarOfTheCityPower>(choiceContext, player, stacksToApply, player, this);
+        await PowerCmd.Apply<StarOfTheCityPower>(choiceContext, player, 1, player, this);
     }
     
     protected override void OnUpgrade()
     {
-        DynamicVars["SinkingPotency"].UpgradeValueBy(5);
-        DynamicVars["SinkingCount"].UpgradeValueBy(2);
+        EnergyCost.UpgradeBy(-1);
     }
 }

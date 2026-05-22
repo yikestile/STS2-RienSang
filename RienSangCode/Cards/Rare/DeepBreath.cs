@@ -16,13 +16,13 @@ namespace RienSang.RienSangCode.Cards.Rare;
 [Pool(typeof(RienSangCardPool))]
 public class DeepBreath : RienSangCard
 {
-    public DeepBreath() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public DeepBreath() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new EnergyVar(1),
-        new("DrawAmount", 1),
+        new EnergyVar(2),
+        new("DrawAmount", 3),
         new("PotencyCost", 20)
     ];
 
@@ -42,8 +42,8 @@ public class DeepBreath : RienSangCard
             await poise.ConsumePotency(IsUpgraded ? 10 : 20);
         }
 
-        await PlayerCmd.GainEnergy(1, Owner);
-        await CardPileCmd.Draw(choiceContext, 1, Owner);
+        await PlayerCmd.GainEnergy(2, Owner);
+        await CardPileCmd.Draw(choiceContext, 3, Owner);
     }
 
     protected override void OnUpgrade()

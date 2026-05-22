@@ -3,31 +3,20 @@ using BaseLib.Extensions;
 using BaseLib.Utils;
 using Godot;
 using LimbusCore.LimbusCoreCode.Mechanics;
+using LimbusCore.LimbusCoreCode.Cards;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using RienSang.RienSangCode.Character;
 using RienSang.RienSangCode.Extensions;
-using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Models;
-using System.Collections.Generic;
-using LimbusCore.LimbusCoreCode.Cards;
-using System.Linq;
 
 namespace RienSang.RienSangCode.Cards;
 
 [Pool(typeof(RienSangCardPool))]
-public abstract class RienSangCard : CustomCardModel, ILimbusSpCostCard
+public abstract class RienSangCard(int cost, CardType type, CardRarity rarity, TargetType target) : 
+    CustomCardModel(cost, type, rarity, target), ILimbusSpCostCard, ILimbusEgoCard, ILimbusSpecialCard
 {
-    protected RienSangCard() : this(0, CardType.Attack, CardRarity.Basic, TargetType.None)
-    {
-    }
-
-    protected RienSangCard(int cost, CardType type, CardRarity rarity, TargetType target) : base(cost, type, rarity, target)
-    {
-        _ = DynamicVars; 
-    }
-    
-    public virtual bool IsEgoCard { get; } = false;
-    public virtual bool GainsKarma { get; } = false;
-
+    public virtual bool IsEgoCard => false;
+    public virtual bool GainsKarma => false;
+    public virtual bool IsLCSpecialCard => false;
     public LimbusDamageType CurrentDamageType { get; set; } = LimbusDamageType.None;
 
     public virtual int SpCost => -1;
@@ -46,15 +35,15 @@ public abstract class RienSangCard : CustomCardModel, ILimbusSpCostCard
         }
     }
 
-    public override string CustomPortraitPath
-    {
-        get
-        {
-            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
-            return ResourceLoader.Exists(path) ? path : "card.png".BigCardImagePath();
-        }
-    }
+    public override string CustomPortraitPath => GetPortraitPath(true);
+    public override string PortraitPath => GetPortraitPath(false);
+    public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
-    public override string BetaPortraitPath => $"beta/{Id.Entry.ToLowerInvariant()}.png".CardImagePath();
+    private string GetPortraitPath(bool big)
+    {
+        var fileName = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png";
+        var path = big ? fileName.BigCardImagePath() : fileName.CardImagePath();
+        
+        return ResourceLoader.Exists(path) ? path : (big ? "card.png".BigCardImagePath() : "card.png".CardImagePath());
+    }
 }

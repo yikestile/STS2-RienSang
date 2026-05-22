@@ -13,6 +13,7 @@ using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Mechanics;
 using RienSang.RienSangCode.Powers;
 
+
 namespace RienSang.RienSangCode.Cards.Uncommon;
 
 [Pool(typeof(RienSangCardPool))]
@@ -23,7 +24,8 @@ public class ProcurationEngrave : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(7, ValueProp.Move)
+        new DamageVar(7, ValueProp.Move),
+        new DynamicVar("UnlockBonus", 20)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RienSangKeywords.Caduceus];
@@ -33,7 +35,6 @@ public class ProcurationEngrave : RienSangCard
         var target = cardPlay.Target;
         decimal baseDamage = DynamicVars.Damage.BaseValue;
 
-        // Calculate bias chance: (75 - (Karma / 2)) / 100
         var karmaPower = Owner.Creature.GetPower<KarmicConsequence>();
         int karma = karmaPower?.DisplayAmount ?? 0;
         float rawChance = 75f - (karma / 2f);
@@ -42,7 +43,7 @@ public class ProcurationEngrave : RienSangCard
         var unlockPower = Owner.Creature.GetPower<Unlock>();
         if (unlockPower != null && unlockPower.Amount >= 3)
         {
-            baseDamage += Math.Floor(baseDamage * 0.15m); 
+            baseDamage += Math.Floor(baseDamage * (DynamicVars["UnlockBonus"].BaseValue / 100m));
         }
 
         if (target != null && target.IsAlive)
@@ -53,6 +54,6 @@ public class ProcurationEngrave : RienSangCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Damage.UpgradeValueBy(5);
     }
 }

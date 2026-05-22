@@ -25,13 +25,13 @@ namespace RienSang.RienSangCode.Cards.Uncommon;
 [Pool(typeof(RienSangCardPool))]
 public class TheWillOfHermes : RienSangCard
 {
-    public TheWillOfHermes() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public TheWillOfHermes() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new("KarmaLoss", 20m),
-        new EnergyVar(0)
+        new EnergyVar(4)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -96,6 +96,6 @@ public class TheWillOfHermes : RienSangCard
     protected override void OnUpgrade()
     {
         DynamicVars["KarmaLoss"].UpgradeValueBy(10);
-        DynamicVars.Energy.UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 }

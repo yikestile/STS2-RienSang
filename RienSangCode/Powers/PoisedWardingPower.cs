@@ -22,8 +22,8 @@ namespace RienSang.RienSangCode.Powers;
 public sealed class PoisedWardingPower : RienSangPower
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Counter;
-    public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
+    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerInstanceType InstanceType => PowerInstanceType.None;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new("PoiseGain", 0m),
@@ -50,10 +50,10 @@ public sealed class PoisedWardingPower : RienSangPower
     private void UpdateDynamicVars()
     {
         DynamicVars["PoiseGain"].BaseValue = Amount * 3m;
-        DynamicVars["BlockGain"].BaseValue = Amount * 3m;
+        DynamicVars["BlockGain"].BaseValue = Amount * 1m;
     }
 
-    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
         if (side == Owner.Side)
         {

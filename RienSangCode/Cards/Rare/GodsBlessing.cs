@@ -14,6 +14,7 @@ using RienSang.RienSangCode.Character;
 using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Mechanics;
 using RienSang.RienSangCode.Powers;
+using RienSang.RienSangCode.Localization;
 
 namespace RienSang.RienSangCode.Cards.Rare;
 
@@ -23,7 +24,9 @@ public class GodsBlessing : RienSangCard
     {
     }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { };
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new CaduceusCountVar()
+    ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<ProcurationHermes>(),
@@ -37,10 +40,10 @@ public class GodsBlessing : RienSangCard
             if (Owner == null || Owner.Creature == null) return false;
 
             int uniqueCaduceusCount = Character.RienSang.CountUniqueCaduceusCards(Owner);
-            if (uniqueCaduceusCount < 15) return false;
+            if (uniqueCaduceusCount < 12) return false;
 
             decimal karma = Owner.Creature.GetKarmaAmount();
-            if (karma >= 15) return false;
+            if (karma >= 20) return false;
 
             return true;
         }

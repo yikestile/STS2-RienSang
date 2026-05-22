@@ -39,7 +39,7 @@ public class SizzlingWound : RienSangPower
         return dealer == Owner ? 1.05m : 1m;
     }
     
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         await CreatureCmd.Damage(choiceContext, Owner, base.DynamicVars.Damage, Owner);
     }

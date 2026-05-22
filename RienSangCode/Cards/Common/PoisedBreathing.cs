@@ -26,7 +26,7 @@ public class PoisedBreathing : RienSangCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<LCEvadePower>(7),
         new("PoiseAmount", 5),
-        new PowerVar<LCPoisePower>(1) // Added LCPoisePower to CanonicalVars
+        new PowerVar<LCPoisePower>(1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -39,17 +39,17 @@ public class PoisedBreathing : RienSangCard
         await PowerCmd.Apply<LCEvadePower>(choiceContext, Owner.Creature, (decimal)DynamicVars[nameof(LCEvadePower)].IntValue, Owner.Creature, this);
         
         int poiseVal = (int)DynamicVars["PoiseAmount"].BaseValue;
-        int poiseCount = (int)DynamicVars[nameof(LCPoisePower)].BaseValue; // Get count from DynamicVars
+        int poiseCount = (int)DynamicVars[nameof(LCPoisePower)].BaseValue; 
 
         EvadeRegistry.EvadeEffectStacks[Owner.Creature] += 1;
         EvadeRegistry.PendingPoisePotency[Owner.Creature] += poiseVal;
-        EvadeRegistry.PendingPoiseCount[Owner.Creature] += poiseCount; // Add to existing pending count
+        EvadeRegistry.PendingPoiseCount[Owner.Creature] += poiseCount;
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars[nameof(LCEvadePower)].UpgradeValueBy(4);
         DynamicVars["PoiseAmount"].UpgradeValueBy(2);
-        DynamicVars[nameof(LCPoisePower)].UpgradeValueBy(1); // Upgrade Poise Count
+        DynamicVars[nameof(LCPoisePower)].UpgradeValueBy(1);
     }
 }

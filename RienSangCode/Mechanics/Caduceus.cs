@@ -242,8 +242,8 @@ public static class CaduceusManager
                     character.PrepareVisualsForAction(player, target, isBehindAttack: isBehindAttack);
 
                     var (totalLength, impactDelays) = character.PlayAnimation(player, animTrigger);
-                    
-                    if (impactDelays.Length > 1)
+    
+                    if (impactDelays.Length > 0)
                     {
                         decimal subHitDamage = finalDamage / impactDelays.Length;
                         float lastWait = 0f;
@@ -252,29 +252,20 @@ public static class CaduceusManager
                         {
                             float currentWait = impactDelays[i] - lastWait;
                             if (currentWait > 0) await Task.Delay((int)(currentWait * 1000));
-                            
+            
                             var subCmd = DamageCmd.Attack(subHitDamage).FromCard(card).WithHitFx(vfx);
                             await subCmd.Targeting(target).Execute(context);
-                            
+            
                             lastWait = impactDelays[i];
                         }
-                        
-                        float remainingWait = totalLength - lastWait;
-                        if (remainingWait > 0) await Task.Delay((int)(remainingWait * 1000));
-                    }
-                    else if (impactDelays.Length == 1)
-                    {
-                        await Task.Delay((int)(impactDelays[0] * 1000));
-                        var cmd = DamageCmd.Attack(finalDamage).FromCard(card).WithHitFx(vfx);
-                        await cmd.Targeting(target).Execute(context);
-                        
-                        float remainingWait = totalLength - impactDelays[0];
-                        if (remainingWait > 0) await Task.Delay((int)(remainingWait * 1000));
                     }
                     else
                     {
-                        await Task.Delay((int)(totalLength * 1000));
+                        var cmd = DamageCmd.Attack(finalDamage).FromCard(card).WithHitFx(vfx);
+                        await cmd.Targeting(target).Execute(context);
                     }
+                    
+                    await character.WaitUntilAnimationFinished(player);
                 }
 
                 int totalHits = card.DynamicVars.ContainsKey("Repeat") ? card.DynamicVars.Repeat.IntValue : 1;

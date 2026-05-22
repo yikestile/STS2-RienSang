@@ -62,13 +62,14 @@ public class RienSang : CustomCharacterModel
     public override CustomEnergyCounter? CustomEnergyCounter => 
         new CustomEnergyCounter(EnergyCounterPaths, new Color(0.69f, 0.67f, 0.55f), new Color(1f, 1f, 1f));
     
-    public override string CustomVisualPath => "res://RienSang/scenes/riensang/riensang.tscn";
-    public override string CustomCharacterSelectBg => "res://RienSang/scenes/riensang/char_select_bg_riensang.tscn";
-    public override string CustomIconPath => "res://RienSang/scenes/riensang/riensang_icon.tscn";
+
     public override string CustomIconTexturePath => "char_icon_riensang.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_riensang.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_riensang_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_riensang.png".CharacterUiPath();
+    public override string CustomVisualPath => "res://RienSang/scenes/riensang/riensang.tscn";
+    public override string CustomCharacterSelectBg => "res://RienSang/scenes/riensang/char_select_bg_riensang.tscn";
+    public override string CustomIconPath => "res://RienSang/scenes/riensang/riensang_icon.tscn";
     public override string CustomRestSiteAnimPath => "res://RienSang/scenes/riensang/riensang_rest_site.tscn";
     public override string CustomMerchantAnimPath => "res://RienSang/scenes/riensang/riensang_merchant.tscn";
     public override string CustomCharacterSelectTransitionPath => "res://RienSang/images/riensang/transitions/riensang_transition_mat.tres";
@@ -116,12 +117,12 @@ public class RienSang : CustomCharacterModel
         {
             string godotTrigger = trigger.ToLowerInvariant() switch {
                 "hit" => "hurt",
-                "idle" => "idle_loop",
+                "idle" => "idle",
                 "dead" => "die",
                 "cast" => "cast",
                 "block" => "block",
                 "evade" => "evade",
-                "dash" => "dash_forward",
+                "dash" => "dash",
                 _ => trigger
             };
             
@@ -159,10 +160,10 @@ public class RienSang : CustomCharacterModel
                 float[] impactDelays = GetImpactDelays(godotTrigger, totalLength);
                 
                 animPlayer.Play(tempName);
-                if (godotTrigger != "idle_loop" && godotTrigger != "die")
+                if (godotTrigger != "idle" && godotTrigger != "die")
                 {
 
-                    animPlayer.Queue("idle_loop");
+                    animPlayer.Queue("idle");
 
                 }
                 return (totalLength, impactDelays);
@@ -170,9 +171,7 @@ public class RienSang : CustomCharacterModel
         }
         return (0f, []);
     }
-
-
-
+    
     private float[] GetImpactDelays(string animName, float totalLength)
     {
         return animName switch
@@ -209,6 +208,19 @@ public class RienSang : CustomCharacterModel
         };
     }
 
+    public async Task WaitUntilAnimationFinished(Creature player)
+    {
+        var node = NCombatRoom.Instance?.GetCreatureNode(player);
+        var animPlayer = node?.Visuals?.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
+
+        if (animPlayer != null && animPlayer.IsPlaying())
+        {
+            if (animPlayer.CurrentAnimation.Contains("idle")) return;
+
+            await node.ToSignal(animPlayer, AnimationPlayer.SignalName.AnimationChanged);
+        }
+    }
+    
     public async Task DashTo(Creature creature, Creature target, float duration, bool dashBehind = false)
     {
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
@@ -221,17 +233,19 @@ public class RienSang : CustomCharacterModel
         }
 
         LastDashTarget[creature] = target;
-        
+    
         PlayAnimation(creature, "dash");
 
-        var tween = node.CreateTween();
         Vector2 offsetDir = (creature.Side == CombatSide.Player) ? Vector2.Left : Vector2.Right;
         if (dashBehind) offsetDir = -offsetDir;
-
         Vector2 targetPos = targetNode.GlobalPosition + offsetDir * 200f;
-        tween.TweenProperty(node, "global_position", targetPos, duration).SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out);
-        
-        await Task.Delay((int)(duration * 1000));
+
+        var tween = node.CreateTween();
+        tween.TweenProperty(node, "global_position", targetPos, duration)
+            .SetTrans(Tween.TransitionType.Quad)
+            .SetEase(Tween.EaseType.Out);
+    
+        await node.ToSignal(tween, Tween.SignalName.Finished);
     }
 
     public async Task ReturnToIdlePosition(Creature creature, float duration)
@@ -245,7 +259,7 @@ public class RienSang : CustomCharacterModel
         tween.TweenProperty(node, "global_position", _originalPositions[creature]!.Value, duration)
             .SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.InOut);
 
-        await Task.Delay((int)(duration * 1000));
+        await Task.Delay((int)(duration * 750));
 
         if (LastDashTarget[creature] != currentTarget) return;
 
@@ -278,7 +292,7 @@ public class RienSang : CustomCharacterModel
     
     private string EnergyCounterPaths(int i)
     {
-        return "res://RienSang/images/ui/combat/energy_counters/riensang/limbus_orb_layer.png";
+        return "res://RienSang/images/ui/combat/limbus_orb_layer.png";
     }
 
     public static int CountUniqueCaduceusCards(Player player)

@@ -13,6 +13,7 @@ using RienSang.RienSangCode.Extensions;
 using RienSang.RienSangCode.Powers;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
+using RienSang.RienSangCode.Localization;
 
 namespace RienSang.RienSangCode.Cards.Rare;
 
@@ -30,10 +31,10 @@ public class GodsFavor : RienSangCard
             if (Owner == null || Owner.Creature == null) return false;
 
             int uniqueCaduceusCount = Character.RienSang.CountUniqueCaduceusCards(Owner);
-            if (uniqueCaduceusCount < 15) return false;
+            if (uniqueCaduceusCount < 12) return false;
 
             decimal karma = Owner.Creature.GetKarmaAmount();
-            if (karma >= 15) return false;
+            if (karma >= 20) return false;
 
             return true;
         }
@@ -42,6 +43,10 @@ public class GodsFavor : RienSangCard
     protected override bool IsPlayable => MeetConditions;
 
     protected override bool ShouldGlowGoldInternal => IsPlayable;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new CaduceusCountVar()
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

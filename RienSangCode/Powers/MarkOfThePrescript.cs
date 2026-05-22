@@ -158,7 +158,7 @@ public sealed class MarkofthePrescriptPower : RienSangPower
         }
     }
 
-    public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (Owner?.Player == null || side != Owner.Side) return;
         if (Owner.HasPower<TheOraclesProxyPower>()) return;

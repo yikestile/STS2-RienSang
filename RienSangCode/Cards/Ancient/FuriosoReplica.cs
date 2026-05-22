@@ -24,6 +24,7 @@ public class FuriosoReplica : RienSangCard
     public FuriosoReplica() : base(3, CardType.Attack, CardRarity.Ancient, TargetType.RandomEnemy)
     {
     }
+    public override bool IsLCSpecialCard => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

@@ -13,6 +13,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using RienSang.RienSangCode.Cards;
 using RienSang.RienSangCode.Character;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace RienSang.RienSangCode.Cards.EGO;
 
@@ -28,24 +29,21 @@ public class DimensionShredder : RienSangCard
     public override int SpCost => 25;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(20, ValueProp.Move),
-        new("BonusDamage", 20)
+        new DamageVar(15, ValueProp.Move),
+        new("BonusDamage", 15)
+    ];
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        HeadHitManager.HeadHitsHoverTip
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        float currentSP = SanityManager.GetSanity(Owner);
-        float chance = 50f + currentSP;
-        
         int damage = (int)DynamicVars.Damage.BaseValue;
-        
-        if (Owner.Creature.CombatState != null)
+
+        if (HeadHitManager.Roll(Owner))
         {
-            float roll = Owner.Creature.CombatState.RunState.Rng.Niche.NextFloat() * 100f;
-            if (roll < chance)
-            {
-                damage += (int)DynamicVars["BonusDamage"].BaseValue;
-            }
+            damage += (int)DynamicVars["BonusDamage"].BaseValue;
         }
 
         if (Owner.Creature.CombatState != null)

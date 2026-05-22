@@ -39,8 +39,8 @@
   "RIENSANG-WISHING_CAIRN.description": "{Damage:diff()}ダメージを与える。{LCParalyzePower:diff()} [gold]麻痺[/gold]を付与する。",
 
   "RIENSANG-DIMENSION_SHREDDER.title": "次元裂き",
-  "RIENSANG-DIMENSION_SHREDDER.description": "ランダムな敵に{Damage:diff()}ダメージを与える。追加で+{BonusDamage:diff()}ダメージを与える確率があります。\n確率 = 50 + 使用後の[gold]精神力(SP)[/gold]。",
-
+  "RIENSANG-DIMENSION_SHREDDER.description": "ランダムな敵に [blue]{Damage:diff()}[/blue] ダメージを与える。\n[gold][lb]頭部命中[rb][/gold] 時、[blue]+{BonusDamage:diff()}[/blue] ダメージを与える。",
+  
   "RIENSANG-FELL_BULLET.title": "魔弾",
   "RIENSANG-FELL_BULLET.description": "味方1体に{AllyDamage:diff()}（または{AllyHighDamage:diff()}）ダメージを与える。全ての敵に{EnemyDamage:diff()}（または{EnemyHighDamage:diff()}）ダメージを与える。敵を倒すごとに{PoisePotency:diff()} [gold]呼吸威力[/gold]を得る。{BleedPotency:diff()} [gold]出血威力[/gold]を付与する。",
 
@@ -147,7 +147,7 @@
   "RIENSANG-ELIMINATE.description": "{Damage:diff()}ダメージを2回与える。敵を倒した場合、[gold]筋力[/gold] 1を得る。対象のHPが50%以下の場合、追加で{BonusDamage:diff()}ダメージを与える。",
 
   "RIENSANG-PROCURATION_ENGRAVE.title": "代行：刻印",
-  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]斬撃威力増加[/gold]。{Damage:diff()}ダメージを与える。[gold]解禁 III[/gold]時、ダメージが15%増加する。",
+  "RIENSANG-PROCURATION_ENGRAVE.description": "[gold]斬撃威力増加[/gold]。{Damage:diff()}ダメージを与える。[gold]解禁 III[/gold]時、ダメージが{UnlockBonus:diff()}%増加する。",
 
   "RIENSANG-DEFENSIVE_STANCE.title": "防御構え",
   "RIENSANG-DEFENSIVE_STANCE.description": "このターンに使用した攻撃カードは、ダメージを与える代わりに[gold]ブロック[/gold]を得ます。",
@@ -174,10 +174,10 @@
   "RIENSANG-TO_DECIDE_MY_FATE.description": "ランダムなカードを[blue]X[/blue]枚[gold]廃棄[/gold]し、カードを[blue]X[/blue]枚[gold]ドロー[/gold]する。その後、ランダムなカードを[blue]X[/blue]+{ExtraPlays:diff()}枚プレイする。{KarmaLoss:diff()} [gold]カルマ[/gold]を失う。",
 
   "RIENSANG-THE_WILL_OF_HERMES.title": "ヘルメスの意志",
-  "RIENSANG-THE_WILL_OF_HERMES.description": "{IfUpgraded:show:{Energy:energyIcons()}を得る。\n} このターン、[gold]ヘルメス[/gold]が代行します。{KarmaLoss:diff()} [gold]カルマ[/gold]を失う。",
+  "RIENSANG-THE_WILL_OF_HERMES.description": "{Energy:energyIcons()}を得る。\n このターン、[gold]ヘルメス[/gold]が代行します。{KarmaLoss:diff()} [gold]カルマ[/gold]を失う。",
 
   "RIENSANG-OBEDIENCE.title": "服従",
-  "RIENSANG-OBEDIENCE.description": "{IfUpgraded:show:次のターンに{Energy:energyIcons()}を得る。\n} 次のターン、[gold]ヘルメス[/gold]が代行します。{KarmaLoss:diff()} [gold]カルマ[/gold]を失う。",
+  "RIENSANG-OBEDIENCE.description": "次のターンに{Energy:energyIcons()}を得る。\n 次のターン、[gold]ヘルメス[/gold]が代行します。{KarmaLoss:diff()} [gold]カルマ[/gold]を失う。",
 
   "RIENSANG-SINKING_DELUGE.title": "沈潜殺到 [Replica]",
   "RIENSANG-SINKING_DELUGE.description": "{IfUpgraded:show:[gold]沈潜[/gold] 3を付与。\n} [gold](沈潜威力 * 回数)/2[/gold]に等しいダメージを与える。全ての[gold]沈潜[/gold]を解除する。",
@@ -192,7 +192,7 @@
   "RIENSANG-PRECOGNITION_REPLICA.description": "[blue]{LCEvadePower:diff()}*X[/blue] [gold]回避[/gold]を得る。[gold]回避[/gold]成功時、{PoisePotency:diff()} [gold]呼吸威力[/gold]と{LCPoisePower:diff()} [gold]回数[/gold]を得、次のターンに[gold]エネルギー[/gold] +1を得る。",
 
   "RIENSANG-PROCURATION_ANNIHILATE.title": "代行：殲滅 [模造]",
-  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]斬撃威力増加[/gold]。{Damage:diff()}ダメージを与える。[gold]解禁 III[/gold]時、ダメージが15%増加する。",
+  "RIENSANG-PROCURATION_ANNIHILATE.description": "[gold]斬撃威力増加[/gold]。{Damage:diff()}ダメージを与える。[gold]解禁 III[/gold]時、ダメージが{UnlockBonus:diff()}%増加する。",
 
   "RIENSANG-GRACE_OF_GOD.title": "主の恩寵",
   "RIENSANG-GRACE_OF_GOD.description": "この戦闘で致命的なダメージを受ける場合、そのターンの間ダメージを受けなくなります。[gold]消失[/gold]。",
@@ -249,7 +249,7 @@
   "RIENSANG-PROTECTIVE_VAPOR.description": "[gold]呼吸威力[/gold]を[blue]{PotencyCost:diff()}[/blue]消費し、[blue]{Block:diff()}[/blue] [gold]ブロック[/gold]を得る。このカードを[gold]手札[/gold]に戻す。",
 
   "RIENSANG-POISED_WARDING.title": "守備の呼吸",
-  "RIENSANG-POISED_WARDING.description": "毎ターン：[gold]呼吸威力[/gold] [blue]{Potency}[/blue]を得る。\n[gold]クリティカル時[/gold]：[gold]ブロック[/gold] [blue]{Potency}[/blue]を得る。",
+  "RIENSANG-POISED_WARDING.description": "毎ターン：[gold]呼吸威力[/gold] [blue]{PoiseGain}[/blue]を得る。\n[gold]クリティカル時[/gold]：[gold]ブロック[/gold] [blue]{BlockGain}[/blue]を得る。",
 
   "RIENSANG-STEADY_THE_BREATH.title": "呼吸の安定",
   "RIENSANG-STEADY_THE_BREATH.description": "[gold]呼吸威力[/gold]を[blue]{PotencyCost:diff()}[/blue]消費し、このターンと次のターンの間、[blue]{LCProtectionPower:diff()}[/blue] [gold]保護[/gold]を得る。",
@@ -259,7 +259,7 @@
   "RIENSANG-THIS_WILL_DO.selectionScreenPrompt": "2回使用する[gold]スキル[/gold]を選択してください。",
 
   "RIENSANG-DEEP_BREATH.title": "深呼吸",
-  "RIENSANG-DEEP_BREATH.description": "[gold]呼吸威力[/gold]を[blue]{PotencyCost:diff()}[/blue]消費し、{Energy:energyIcons()}を得てカードを[blue]1[/blue]枚[gold]ドロー[/gold]する。",
+  "RIENSANG-DEEP_BREATH.description": "[gold]呼吸威力[/gold]を[blue]{PotencyCost:diff()}[/blue]消費し、{Energy:energyIcons()}を得てカードを[blue]{DrawAmount:diff()}[/blue]枚[gold]ドロー[/gold]する。",
 
   "RIENSANG-SORS_SALUTIS.title": "救済の運命",
   "RIENSANG-SORS_SALUTIS.description": "[blue]10[/blue]を超えるダメージを受ける場合、その半分をダメージとして受け、もう半分を[gold]カルマ[/gold]として受け取る。",
@@ -278,11 +278,11 @@
   "RIENSANG-COMPULSORY_OFFERING.selectionScreenPrompt": "2回使用する[gold]パワー[/gold]を選択してください。",
 
   "RIENSANG-GODS_FAVOR.title": "主の恩寵",
-  "RIENSANG-GODS_FAVOR.description": "[gold]カルマ[/gold]が[blue]15[/blue]未満、かつ[gold]デッキ[/gold]内に[gold]カドゥケウス[/gold]カードが[blue]15[/blue]枚以上ある場合のみ使用可能。\n[gold]代行 (ヘルメス)[/gold] [blue]1[/blue]を得る。\n現在の[gold]代行 (ヘルメス)[/gold]報酬段階をスキップする。",
+  "RIENSANG-GODS_FAVOR.description": "[gold]カルマ[/gold]が[blue]20[/blue]未満、かつ固有の[gold]カドゥケウス[/gold]カードが[blue]12[/blue]枚以上ある場合のみ使用可能 (現在: {CaduceusCount})。\n[gold]代行 (ヘルメス)[/gold] [blue]1[/blue]を得る。\n現在の[gold]代行 (ヘルメス)[/gold]報酬段階をスキップする。",
 
   "RIENSANG-GODS_BLESSING.title": "主の祝福",
-  "RIENSANG-GODS_BLESSING.description": "[gold]カルマ[/gold]が[blue]15[/blue]未満、かつ[gold]デッキ[/gold]内に[gold]カドゥケウス[/gold]カードが[blue]15[/blue]枚以上ある場合のみ使用可能。\n[gold]代行 (ヘルメス)[/gold]を[blue]9[/blue]にする。",
-
+  "RIENSANG-GODS_BLESSING.description": "[gold]カルマ[/gold]が[blue]20[/blue]未満、かつ固有の[gold]カドゥケウス[/gold]カードが[blue]12[/blue]枚以上ある場合のみ使用可能 (現在: {CaduceusCount})。\n[gold]代行 (ヘルメス)[/gold]を[blue]9[/blue]にする。",
+  
   "RIENSANG-WEAVE.title": "織り",
   "RIENSANG-WEAVE.description": "ランダムな固有の[gold]カドゥケウス[/gold]カードを1枚[gold]生成[/gold]する。このカードのコピーを1枚[gold]手札[/gold]に加える。 [blue]{KarmaGain:diff()}[/blue] [gold]カルマ[/gold]を得る。"
 }

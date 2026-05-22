@@ -24,7 +24,7 @@ public class SomberProcuration : RienSangCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(6, ValueProp.Move), 
         new BlockVar(6, ValueProp.Move),
-        new("UnlockBonus", 2)
+        new("UnlockBonus", 4)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -55,7 +55,7 @@ public class SomberProcuration : RienSangCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2);
-        DynamicVars.Block.UpgradeValueBy(2);
+        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Block.UpgradeValueBy(3);
     }
 }

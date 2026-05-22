@@ -21,7 +21,7 @@ public class SorsImmanis : RienSangCard
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("KarmicConsequence", 80m)
+        new("KarmicConsequence", 70m)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -31,10 +31,8 @@ public class SorsImmanis : RienSangCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // Gain 80(70) Karmic Consequence
         await Owner.Creature.ApplyKarma(choiceContext, DynamicVars["KarmicConsequence"].BaseValue, Owner.Creature, this);
         
-        // Apply power that grants extra turn
         await PowerCmd.Apply<SorsImmanisPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 

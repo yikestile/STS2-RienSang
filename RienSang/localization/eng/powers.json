@@ -23,10 +23,6 @@
   "RIENSANG-SHIN_FATE.description": "Gain [gold]Energy[/gold] each turn. Deal more damage and increase [gold]Poise[/gold] gains.",
   "RIENSANG-SHIN_FATE.smartDescription": "Gain [blue]1[/blue] [gold]Energy[/gold] every turn. Deal [blue]5%[/blue] more damage. Gain more [gold]Poise Potency[/gold] and [gold]Count[/gold] from cards.",
 
-  "RIENSANG-MANG.title": "Mang (望)",
-  "RIENSANG-MANG.description": "[gold]Furioso[/gold] deals extra damage and unit gains [gold]Temporary Strength[/gold].",
-  "RIENSANG-MANG.smartDescription": "[gold]Furioso[/gold] deals [blue]{DamageBonus}%[/blue] extra damage. Gain [blue]{TempStr}[/blue] [gold]Temporary Strength[/gold]. Max [blue]3[/blue].",
-
   "RIENSANG-WOUNDCASING_MASK.title": "Woundcasing Mask",
   "RIENSANG-WOUNDCASING_MASK.description": "Take less unblocked damage. Converts to [gold]Sizzling Wound[/gold] if [gold]Furioso[/gold] is used.",
   "RIENSANG-WOUNDCASING_MASK.smartDescription": "Take [blue]5%[/blue] less unblocked damage. Converts to [gold]Sizzling Wound[/gold] at turn end if [gold]Furioso[/gold] was used this combat. Expires.",

@@ -22,11 +22,7 @@
   "RIENSANG-SHIN_FATE.title": "신(心) - 운명",
   "RIENSANG-SHIN_FATE.description": "매 턴 [gold]에너지[/gold]를 얻습니다. 가하는 피해량과 [gold]호흡[/gold] 획득량이 증가합니다.",
   "RIENSANG-SHIN_FATE.smartDescription": "매 턴 [gold]에너지[/gold] [blue]1[/blue] 얻습니다. 가하는 피해량이 [blue]5%[/blue] 증가합니다. 카드로 얻는 [gold]호흡 위력[/gold] 및 [gold]횟수[/gold] 증가합니다.",
-
-  "RIENSANG-MANG.title": "망(望)",
-  "RIENSANG-MANG.description": "[gold]Furioso[/gold]가 추가 피해를 입히고 [gold]일시적인 힘[/gold]를 얻습니다.",
-  "RIENSANG-MANG.smartDescription": "[gold]Furioso[/gold]가 피해를 [blue]{DamageBonus}%[/blue]만큼 추가로 줍니다. [gold]일시적인 힘[/gold]을 [blue]{TempStr}[/blue] 얻습니다. (최대 [blue]3[/blue])",
-
+  
   "RIENSANG-WOUNDCASING_MASK.title": "상처를 가린 가면",
   "RIENSANG-WOUNDCASING_MASK.description": "[gold]방어도[/gold]로 막지 못한 피해가 감소됩니다. [gold]Furioso[/gold] 사용 시 [gold]이글거리는 상처[/gold]로 변환됩니다.",
   "RIENSANG-WOUNDCASING_MASK.smartDescription": "[gold]방어도[/gold]로 막지 못한 피해가 [blue]5%[/blue]만큼 감소됩니다. 이번 전투에서 [gold]Furioso[/gold]를 사용했다면 턴 종료 시 [gold]이글거리는 상처[/gold]로 변환됩니다.",

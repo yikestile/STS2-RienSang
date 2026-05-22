@@ -3,10 +3,10 @@
   "name": "The Index Nursefather Yi Sang",
   "author": "Eka",
   "description": "The Index Nursefather Yi Sang character mod, based on Limbus Company.",
-  "version": "v1.0.8",
+  "version": "v1.1.1",
   "min_game_version": "0.105.0",
   "has_pck": true,
   "has_dll": true,
-  "dependencies": [{"id": "BaseLib", "min_version": "v3.1.2"}, {"id": "LimbusCore", "min_version": "v1.0.9"}],
+  "dependencies": [{"id": "BaseLib", "min_version": "v3.1.4"}, {"id": "LimbusCore", "min_version": "v1.1.2"}],
   "affects_gameplay": true
 }

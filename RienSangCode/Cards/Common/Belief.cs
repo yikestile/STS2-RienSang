@@ -21,7 +21,7 @@ public class Belief : RienSangCard
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(7, ValueProp.Move),
+        new BlockVar(4, ValueProp.Move),
         new EnergyVar(1)
     ];
 
@@ -34,6 +34,6 @@ public class Belief : RienSangCard
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);
-        DynamicVars.Block.UpgradeValueBy(1);
+        DynamicVars.Block.UpgradeValueBy(2);
     }
 }

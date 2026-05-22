@@ -16,12 +16,13 @@ namespace RienSang.RienSangCode.Cards.Uncommon;
 [Pool(typeof(RienSangCardPool))]
 public class PoisedWarding : RienSangCard
 {
-    public PoisedWarding() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+    public PoisedWarding() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new("Potency", 3)
+        new("PoiseGain", 2),
+        new("BlockGain", 1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -36,6 +37,7 @@ public class PoisedWarding : RienSangCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Potency"].UpgradeValueBy(3);
+        DynamicVars["PoiseGain"].UpgradeValueBy(2);
+        DynamicVars["BlockGain"].UpgradeValueBy(1);
     }
 }
